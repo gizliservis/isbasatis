@@ -70,7 +70,7 @@ namespace Isbasatis.Entities.Data_Access
                         fis.Aciklama,
                         fis.Alacak,
                         fis.Borc,
-                        Bakiye = context.Fisler.OrderBy(c => c.Tarih).ThenBy(c=>c.Id).Where(c => c.CariId == cariId && c.Tarih <= fis.Tarih && c.Id>=fis.Id).Select(c => (decimal?)(c.Alacak ?? 0 - c.Borc ?? 0)).Sum() ?? 0
+                        Bakiye = context.Fisler.OrderBy(c => c.Tarih).ThenBy(c => c.Id).Where(c => c.CariId == cariId && c.Tarih <= fis.Tarih && c.Id >= fis.Id).Select(c => (decimal?)(c.Alacak ?? 0 - c.Borc ?? 0)).Sum() ?? 0
                     }).OrderBy(c => c.Tarih).ToList();
         }
         public object CariFisAyrintiGenelToplam(IsbaSatisContext context, int cariId)
@@ -91,7 +91,7 @@ namespace Isbasatis.Entities.Data_Access
         }
         public object CariGenelToplam(IsbaSatisContext context, int cariId)
         {
-            decimal alacak = context.Fisler.Where(c=>c.CariId==cariId).Sum(c=>c.Alacak) ?? 0 ;
+            decimal alacak = context.Fisler.Where(c => c.CariId == cariId).Sum(c => c.Alacak) ?? 0;
             decimal borc = context.Fisler.Where(c => c.CariId == cariId).Sum(c => c.Borc) ?? 0;
             List<GenelToplam> genelToplamlar = new List<GenelToplam>()
             {
