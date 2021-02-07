@@ -367,6 +367,7 @@
             this.btnSms.Id = 26;
             this.btnSms.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.mobilephone3;
             this.btnSms.Name = "btnSms";
+            this.btnSms.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSms_ItemClick);
             // 
             // btnAlisFatura
             // 

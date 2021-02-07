@@ -120,51 +120,107 @@ namespace IsbaSatis.BackOffice
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmStokHareketleri hareketleri = new frmStokHareketleri();
-            hareketleri.MdiParent = this;
-            hareketleri.Show();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.StokHareketleri))
+            {
+                frmStokHareketleri hareketleri = new frmStokHareketleri();
+                hareketleri.MdiParent = this;
+                hareketleri.Show();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+                
         }
 
         private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmKasa frm = new frmKasa();
-            frm.MdiParent = this;
-            frm.Show();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Kasalar))
+            {
+                frmKasa frm = new frmKasa();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+               
         }
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmDepo frm = new frmDepo();
-            frm.MdiParent = this;
-            frm.Show();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Depolar))
+            {
+                frmDepo frm = new frmDepo();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+             
         }
 
         private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmOdemeTuru frm = new frmOdemeTuru();
-            frm.MdiParent = this;
-            frm.Show();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.OdemeTurleri))
+            {
+                frmOdemeTuru frm = new frmOdemeTuru();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+              
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmFis frm = new frmFis();
-            frm.MdiParent = this;
-            frm.Show();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Fatura))
+            {
+                frmFis frm = new frmFis();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+             
         }
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmKasaHareketler hareketler = new frmKasaHareketler();
-            hareketler.MdiParent = this;
-            hareketler.Show();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.KasaHareketleri))
+            {
+                frmKasaHareketler hareketler = new frmKasaHareketler();
+                hareketler.MdiParent = this;
+                hareketler.Show();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+             
         }
 
         private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmPersonel personel = new frmPersonel();
-            personel.MdiParent = this;
-            personel.Show();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Personeller))
+            {
+                frmPersonel personel = new frmPersonel();
+                personel.MdiParent = this;
+                personel.Show();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+                
         }
 
         private void FisIslem_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -175,73 +231,160 @@ namespace IsbaSatis.BackOffice
 
         private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmTopluFiyat frm = new frmTopluFiyat();
-            frm.MdiParent = this;
-            frm.Show();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.TopluFiyatDegisikligi))
+            {
+                frmTopluFiyat frm = new frmTopluFiyat();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+                
         }
 
         private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmIndirim frm = new frmIndirim();
-            frm.MdiParent = this;
-            frm.Show();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Indirimler))
+            {
+                frmIndirim frm = new frmIndirim();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+                
         }
 
         private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Process.Start($"{Application.StartupPath}\\IsbaSatis.FrontOffice.exe");
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.SatisEkrani))
+            {
+                Process.Start($"{Application.StartupPath}\\IsbaSatis.FrontOffice.exe");
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+                
         }
 
         private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
-            frmRaporListele frm = new frmRaporListele();
-            frm.MdiParent = this;
-            frm.Show();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Raporlar))
+            {
+                frmRaporListele frm = new frmRaporListele();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+            
         }
 
         private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmRaporDuzenle frm = new frmRaporDuzenle();
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.RaporOlustur))
+            {
+                frmRaporDuzenle frm = new frmRaporDuzenle();
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+            
         }
 
         private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmEtiketOlustur frm = new frmEtiketOlustur();
-            frm.ShowDialog();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.EtiketBasımSihirbazi))
+            {
+                frmEtiketOlustur frm = new frmEtiketOlustur();
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+                
         }
 
         private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmOzgunRaporHazirla frm = new frmOzgunRaporHazirla();
-            frm.ShowDialog();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.OzgunRaporSihirbazi))
+            {
+                frmOzgunRaporHazirla frm = new frmOzgunRaporHazirla();
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+                
         }
 
         private void barButtonItem25_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmAjanda frm = new frmAjanda();
-            frm.WindowState = FormWindowState.Maximized;
-            frm.Show();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Ajanda))
+            {
+                frmAjanda frm = new frmAjanda();
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+                
         }
 
         private void barButtonItem38_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmDovizKurlari frm = new frmDovizKurlari();
-            frm.ShowDialog();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.DovizKurlari))
+            {
+                frmDovizKurlari frm = new frmDovizKurlari();
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+                
         }
 
         private void barButtonItem39_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmAyarlar frm = new frmAyarlar();
-            frm.ShowDialog();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Ayarlar))
+            {
+                frmAyarlar frm = new frmAyarlar();
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+                
         }
 
         private void barButtonItem40_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmBackup frm = new frmBackup();
-            frm.ShowDialog();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Yedekleme))
+            {
+                frmBackup frm = new frmBackup();
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+              
         }
 
         private void barButtonItem41_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -263,8 +406,16 @@ namespace IsbaSatis.BackOffice
 
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmHızliSatis frm = new frmHızliSatis();
-            frm.ShowDialog();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.HizliSatisMenusu))
+            {
+                frmHızliSatis frm = new frmHızliSatis();
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+                
         }
 
         private void barButtonItem43_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -272,5 +423,17 @@ namespace IsbaSatis.BackOffice
             frmKodlar frm = new frmKodlar("");
             frm.ShowDialog();
         }
+
+        private void btnSms_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Sms))
+            {
+                MessageBox.Show("Bu Modül Henüz Hazır Değil");
+            }
+            else
+            {
+                MessageBox.Show("Bu Modül Henüz Hazır Değil");
+            }
+            }
     }
 }
