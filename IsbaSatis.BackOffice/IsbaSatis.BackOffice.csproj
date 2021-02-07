@@ -600,6 +600,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\IsbasatısLisanslama\Isbasatis.LicenseManager\Isbasatis.LicenseManager.Client\Isbasatis.LicenseManager.Client.csproj">
+      <Project>{c3b1333b-d6c6-4395-be1d-421050f022c9}</Project>
+      <Name>Isbasatis.LicenseManager.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\IsbasatısLisanslama\Isbasatis.LicenseManager\Isbasatis.LicenseManager.LicenseInformations\Isbasatis.LicenseManager.LicenseInformations.csproj">
+      <Project>{c1ef6244-efbc-4671-b716-dfce891a12d2}</Project>
+      <Name>Isbasatis.LicenseManager.LicenseInformations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\IsbasatısLisanslama\Isbasatis.LicenseManager\Isbasatis.LisansManager.SystemInformations\Isbasatis.LisansManager.SystemInformations.csproj">
+      <Project>{f6ce1f14-e464-41a1-9582-126e8f86c334}</Project>
+      <Name>Isbasatis.LisansManager.SystemInformations</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DXApplication1\IsbaSatis.Update\IsbaSatis.Update.csproj">
       <Project>{12FB6636-963E-4631-A049-08830A6CCD7D}</Project>
       <Name>IsbaSatis.Update</Name>

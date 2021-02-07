@@ -36,11 +36,13 @@ using IsbaSatis.BackOffice.Hızlı_Satış;
 using IsbaSatis.Admin;
 using Isbasatis.Entities.Tools;
 using IsbaSatis.BackOffice.Kod;
+using Isbasatis.LicenseManager.Client;
 
 namespace IsbaSatis.BackOffice
 {
     public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        LicenseConfirmation confirm = new LicenseConfirmation();
         public Form1()
         {
             InitializeComponent();
@@ -78,9 +80,17 @@ namespace IsbaSatis.BackOffice
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmStok stok = new frmStok();
-            stok.MdiParent = this;
-            stok.Show();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Stok))
+            {
+                frmStok stok = new frmStok();
+                stok.MdiParent = this;
+                stok.Show();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+           
         }
 
         private void ribbonControl1_Click(object sender, EventArgs e)
@@ -90,10 +100,17 @@ namespace IsbaSatis.BackOffice
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
-            frmCari cari = new frmCari();
-            cari.MdiParent = this;
-            cari.Show();
+            if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Cari))
+            {
+                frmCari cari = new frmCari();
+                cari.MdiParent = this;
+                cari.Show();
+            }
+            else
+            {
+                MessageBox.Show("Modül Kullanılamaz Yetkili Kişiyle Görüşünüz");
+            }
+               
         }
 
         private void barButtonItem36_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

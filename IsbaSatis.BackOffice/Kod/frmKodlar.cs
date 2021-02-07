@@ -20,7 +20,6 @@ namespace IsbaSatis.BackOffice.Kod
     {
         IsbaSatisContext context = new IsbaSatisContext();
         KodDAL kodDal = new KodDAL();
-        private Isbasatis.Entities.Tables.Kod _entity;
         private string _tablo;
         public frmKodlar(string tablo)
         {

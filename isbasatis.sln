@@ -17,6 +17,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsbaSatis.Update", "DXAppli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsbaSatis.Admin", "IsbaSatis.Admin\IsbaSatis.Admin.csproj", "{4F74AF1A-FB3B-4DC5-8F32-385F1D78943D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isbasatis.LicenseManager.Client", "..\..\IsbasatısLisanslama\Isbasatis.LicenseManager\Isbasatis.LicenseManager.Client\Isbasatis.LicenseManager.Client.csproj", "{C3B1333B-D6C6-4395-BE1D-421050F022C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isbasatis.LicenseManager.LicenseInformations", "..\..\IsbasatısLisanslama\Isbasatis.LicenseManager\Isbasatis.LicenseManager.LicenseInformations\Isbasatis.LicenseManager.LicenseInformations.csproj", "{C1EF6244-EFBC-4671-B716-DFCE891A12D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isbasatis.LicenseManager.Test", "..\..\IsbasatısLisanslama\Isbasatis.LicenseManager\Isbasatis.LicenseManager.test\Isbasatis.LicenseManager.Test.csproj", "{DC79FF8E-1470-45A1-8193-E9A232EEAC63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isbasatis.LisansManager.SystemInformations", "..\..\IsbasatısLisanslama\Isbasatis.LicenseManager\Isbasatis.LisansManager.SystemInformations\Isbasatis.LisansManager.SystemInformations.csproj", "{F6CE1F14-E464-41A1-9582-126E8F86C334}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isbasatis.LicenseManager.LicenseCreator", "..\..\IsbasatısLisanslama\Isbasatis.LicenseManager\Isbasatis.LicenseManager.LicenseCreator\Isbasatis.LicenseManager.LicenseCreator.csproj", "{2EEBEC02-5B70-421E-907C-CE96D2C4E8C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +61,26 @@ Global
 		{4F74AF1A-FB3B-4DC5-8F32-385F1D78943D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F74AF1A-FB3B-4DC5-8F32-385F1D78943D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F74AF1A-FB3B-4DC5-8F32-385F1D78943D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3B1333B-D6C6-4395-BE1D-421050F022C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3B1333B-D6C6-4395-BE1D-421050F022C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3B1333B-D6C6-4395-BE1D-421050F022C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3B1333B-D6C6-4395-BE1D-421050F022C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1EF6244-EFBC-4671-B716-DFCE891A12D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1EF6244-EFBC-4671-B716-DFCE891A12D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1EF6244-EFBC-4671-B716-DFCE891A12D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1EF6244-EFBC-4671-B716-DFCE891A12D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC79FF8E-1470-45A1-8193-E9A232EEAC63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC79FF8E-1470-45A1-8193-E9A232EEAC63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC79FF8E-1470-45A1-8193-E9A232EEAC63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC79FF8E-1470-45A1-8193-E9A232EEAC63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6CE1F14-E464-41A1-9582-126E8F86C334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6CE1F14-E464-41A1-9582-126E8F86C334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6CE1F14-E464-41A1-9582-126E8F86C334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6CE1F14-E464-41A1-9582-126E8F86C334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EEBEC02-5B70-421E-907C-CE96D2C4E8C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EEBEC02-5B70-421E-907C-CE96D2C4E8C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EEBEC02-5B70-421E-907C-CE96D2C4E8C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EEBEC02-5B70-421E-907C-CE96D2C4E8C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
