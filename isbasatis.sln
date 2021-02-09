@@ -23,9 +23,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isbasatis.LicenseManager.Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isbasatis.LicenseManager.LicenseInformations", "Isbasatis.LicenseManager.LicenseInformations\Isbasatis.LicenseManager.LicenseInformations.csproj", "{C1EF6244-EFBC-4671-B716-DFCE891A12D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isbasatis.LicenseManager.Test", "Isbasatis.LicenseManager.test\Isbasatis.LicenseManager.Test.csproj", "{DC79FF8E-1470-45A1-8193-E9A232EEAC63}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isbasatis.LisansManager.SystemInformations", "Isbasatis.LisansManager.SystemInformations\Isbasatis.LisansManager.SystemInformations.csproj", "{F6CE1F14-E464-41A1-9582-126E8F86C334}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsbaSatis.LicenseManager.LicenseServer", "IsbaSatis.LicenseManager.LicenseServer\IsbaSatis.LicenseManager.LicenseServer.csproj", "{4F35451A-B517-4418-8A4C-90E10B2B3781}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsbaSatis.LisansManager.TCPClient", "IsbaSatis.LisansManager.TCPClient\IsbaSatis.LisansManager.TCPClient.csproj", "{CA8E33EB-1B95-4529-A7A8-92F8F2C755A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,14 +75,18 @@ Global
 		{C1EF6244-EFBC-4671-B716-DFCE891A12D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1EF6244-EFBC-4671-B716-DFCE891A12D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1EF6244-EFBC-4671-B716-DFCE891A12D2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC79FF8E-1470-45A1-8193-E9A232EEAC63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC79FF8E-1470-45A1-8193-E9A232EEAC63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC79FF8E-1470-45A1-8193-E9A232EEAC63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC79FF8E-1470-45A1-8193-E9A232EEAC63}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F6CE1F14-E464-41A1-9582-126E8F86C334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F6CE1F14-E464-41A1-9582-126E8F86C334}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6CE1F14-E464-41A1-9582-126E8F86C334}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6CE1F14-E464-41A1-9582-126E8F86C334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F35451A-B517-4418-8A4C-90E10B2B3781}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F35451A-B517-4418-8A4C-90E10B2B3781}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F35451A-B517-4418-8A4C-90E10B2B3781}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F35451A-B517-4418-8A4C-90E10B2B3781}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA8E33EB-1B95-4529-A7A8-92F8F2C755A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA8E33EB-1B95-4529-A7A8-92F8F2C755A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA8E33EB-1B95-4529-A7A8-92F8F2C755A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA8E33EB-1B95-4529-A7A8-92F8F2C755A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

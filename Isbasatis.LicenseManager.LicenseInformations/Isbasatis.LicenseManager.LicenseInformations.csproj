@@ -41,12 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\MessageType.cs" />
     <Compile Include="Enums\ModuleTypeEnum.cs" />
     <Compile Include="Enums\SystemInfoEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tables\License.cs" />
     <Compile Include="Tables\Module.cs" />
     <Compile Include="Tables\SystemInfo.cs" />
+    <Compile Include="Tables\TcpMessage.cs" />
     <Compile Include="Tools\EncrpytionTool.cs" />
   </ItemGroup>
   <ItemGroup />
