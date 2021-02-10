@@ -435,5 +435,10 @@ namespace IsbaSatis.BackOffice
                 MessageBox.Show("Bu Modül Henüz Hazır Değil");
             }
             }
+
+        private void barButtonItem45_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            MessageBox.Show(confirm.LicenseCount().ToString());
+        }
     }
 }

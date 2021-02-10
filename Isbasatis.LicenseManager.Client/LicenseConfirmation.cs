@@ -89,5 +89,9 @@ namespace Isbasatis.LicenseManager.Client
             }
             return license.Modules.Any(c => c.ModuleTypeEnum == module);
         }
+        public int LicenseCount()
+        {
+            return license.LicenseCount;
+        }
     }
 }

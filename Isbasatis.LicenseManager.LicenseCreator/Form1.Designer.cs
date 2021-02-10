@@ -37,9 +37,12 @@ namespace Isbasatis.LicenseManager.LicenseCreator
             this.btnLisanOlustur = new DevExpress.XtraEditors.SimpleButton();
             this.checkButton1 = new DevExpress.XtraEditors.CheckButton();
             this.checkButton2 = new DevExpress.XtraEditors.CheckButton();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtLicenseCount = new DevExpress.XtraEditors.SpinEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLicenseCount.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUserName
@@ -106,9 +109,9 @@ namespace Isbasatis.LicenseManager.LicenseCreator
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Ayarlar"),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "DovizKurlari"),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Yedekleme")});
-            this.checkedListBoxControl1.Location = new System.Drawing.Point(12, 145);
+            this.checkedListBoxControl1.Location = new System.Drawing.Point(12, 177);
             this.checkedListBoxControl1.Name = "checkedListBoxControl1";
-            this.checkedListBoxControl1.Size = new System.Drawing.Size(396, 193);
+            this.checkedListBoxControl1.Size = new System.Drawing.Size(396, 161);
             this.checkedListBoxControl1.TabIndex = 7;
             // 
             // btnLisanOlustur
@@ -122,12 +125,14 @@ namespace Isbasatis.LicenseManager.LicenseCreator
             // 
             // checkButton1
             // 
+            this.checkButton1.Checked = true;
             this.checkButton1.GroupIndex = 1;
             this.checkButton1.Location = new System.Drawing.Point(14, 5);
             this.checkButton1.Name = "checkButton1";
             this.checkButton1.Size = new System.Drawing.Size(196, 78);
             this.checkButton1.TabIndex = 9;
             this.checkButton1.Text = "İstemci Lisansı";
+            this.checkButton1.CheckedChanged += new System.EventHandler(this.checkButton1_CheckedChanged);
             // 
             // checkButton2
             // 
@@ -136,17 +141,46 @@ namespace Isbasatis.LicenseManager.LicenseCreator
             this.checkButton2.Name = "checkButton2";
             this.checkButton2.Size = new System.Drawing.Size(192, 78);
             this.checkButton2.TabIndex = 9;
+            this.checkButton2.TabStop = false;
             this.checkButton2.Text = "Server Lisansı";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.AppearancePressed.Options.UseTextOptions = true;
+            this.labelControl3.AppearancePressed.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.labelControl3.Location = new System.Drawing.Point(12, 144);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(79, 21);
+            this.labelControl3.TabIndex = 6;
+            this.labelControl3.Text = "Lisans Sayısı :";
+            // 
+            // txtLicenseCount
+            // 
+            this.txtLicenseCount.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtLicenseCount.Location = new System.Drawing.Point(98, 146);
+            this.txtLicenseCount.Name = "txtLicenseCount";
+            this.txtLicenseCount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtLicenseCount.Size = new System.Drawing.Size(310, 20);
+            this.txtLicenseCount.TabIndex = 10;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(420, 402);
+            this.Controls.Add(this.txtLicenseCount);
             this.Controls.Add(this.checkButton2);
             this.Controls.Add(this.checkButton1);
             this.Controls.Add(this.btnLisanOlustur);
             this.Controls.Add(this.checkedListBoxControl1);
+            this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtCompany);
@@ -156,6 +190,7 @@ namespace Isbasatis.LicenseManager.LicenseCreator
             ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLicenseCount.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -169,6 +204,8 @@ namespace Isbasatis.LicenseManager.LicenseCreator
         private DevExpress.XtraEditors.SimpleButton btnLisanOlustur;
         private DevExpress.XtraEditors.CheckButton checkButton1;
         private DevExpress.XtraEditors.CheckButton checkButton2;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.SpinEdit txtLicenseCount;
     }
 }
 

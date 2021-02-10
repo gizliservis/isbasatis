@@ -546,6 +546,7 @@
             this.barButtonItem45.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.earth;
             this.barButtonItem45.Name = "barButtonItem45";
             this.barButtonItem45.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem45.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem45_ItemClick);
             // 
             // barKullaniciAdi
             // 
