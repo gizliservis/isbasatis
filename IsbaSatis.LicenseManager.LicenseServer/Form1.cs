@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Isbasatis.LicenseManager.LicenseInformations.Enums;
 using Isbasatis.LicenseManager.LicenseInformations.Tables;
+using Isbasatis.LicenseManger.LicenseInformation.Manager;
 using Newtonsoft.Json;
 using WatsonTcp;
 
@@ -17,6 +18,8 @@ namespace IsbaSatis.LicenseManager.LicenseServer
     {
         WatsonTcpServer server;
         List<Client> clients = new List<Client>();
+        LicenseConfirmation licenseConfirm = new LicenseConfirmation();
+        private int licCount = 0;
         public Form1()
         {
             InitializeComponent();
@@ -24,9 +27,18 @@ namespace IsbaSatis.LicenseManager.LicenseServer
             server.ClientConnected += Client_Connected;
             server.ClientDisconnected += Client_Disconnected;
             server.MessageReceived += Message_Received;
-            
             gridControl1.DataSource = clients;
+            GetLicenseInfo();
             
+        }
+        private void GetLicenseInfo()
+        {
+            var info = licenseConfirm.GetLicenseInfo();
+            txtKullaniciAdi.Text = info.UserName;
+            txtSirketAdi.Text = info.Company;
+            txtLisansSayisi.Text = info.LicenseCount.ToString();
+            licCount = info.LicenseCount;
+
         }
 
         private void Message_Received(object sender, MessageReceivedFromClientEventArgs e)
@@ -42,8 +54,13 @@ namespace IsbaSatis.LicenseManager.LicenseServer
                     break;
                 case MessageType.SendUserName:
                    var Client=clients.SingleOrDefault(c => c.IpAddress == e.IpPort);
-                   Client.UserName = msg.Message;
-                   gridView1.RefreshData();
+                    if (Client!=null)
+                    {
+                        Client.UserName = msg.Message;
+                        gridView1.RefreshData();
+
+                    }
+                  
                     break;
 
 
@@ -57,6 +74,10 @@ namespace IsbaSatis.LicenseManager.LicenseServer
             var disconnectedClient = clients.SingleOrDefault(c => c.IpAddress == e.IpPort);
             clients.Remove(disconnectedClient);
             gridView1.RefreshData();
+            txtLisansSayisi.Invoke((MethodInvoker)delegate
+            {
+                txtLisansSayisi.Text = gridView1.RowCount + "/" + licCount;
+            });
         }
 
        
@@ -65,6 +86,12 @@ namespace IsbaSatis.LicenseManager.LicenseServer
 
         private void Client_Connected(object sender, ClientConnectedEventArgs e)
         {
+            if (gridView1.RowCount>=licCount)
+            {
+                SendMessage(e.IpPort, MessageType.ServerRejection, "Maksimum Kullanıcı Sayısı Aşıldı");
+                return;
+            }
+
             clients.Add(new Client
             {
                 IpAddress = e.IpPort,
@@ -72,6 +99,11 @@ namespace IsbaSatis.LicenseManager.LicenseServer
 
             });
             gridView1.RefreshData();
+            txtLisansSayisi.Invoke((MethodInvoker)delegate
+            {
+                txtLisansSayisi.Text = gridView1.RowCount + "/" + licCount;
+            });
+            
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

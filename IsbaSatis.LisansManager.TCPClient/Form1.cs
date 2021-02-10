@@ -43,6 +43,10 @@ namespace IsbaSatis.LisansManager.TCPClient
                     break;
                 case MessageType.LicenseControl:
                     break;
+                case MessageType.ServerRejection:
+                    MessageBox.Show(msg.Message);
+                    Application.Exit();
+                    break;
             }
           
         }

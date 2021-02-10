@@ -1,7 +1,7 @@
 ﻿using Isbasatis.LicenseManager.LicenseInformations.Enums;
+using Isbasatis.LicenseManager.LicenseInformations.Manager;
 using Isbasatis.LicenseManager.LicenseInformations.Tables;
 using Isbasatis.LicenseManager.LicenseInformations.Tools;
-using Isbasatis.LicenseManager.LicenseInformations.Manager;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Isbasatis.LicenseManager.Client
+namespace Isbasatis.LicenseManger.LicenseInformation.Manager
 {
    public class LicenseConfirmation
     {
@@ -88,9 +88,15 @@ namespace Isbasatis.LicenseManager.Client
             }
             return license.Modules.Any(c => c.ModuleTypeEnum == module);
         }
-        public int LicenseCount()
+        public LicenseInfo GetLicenseInfo()
         {
-            return license.LicenseCount;
+            return new LicenseInfo
+            {
+                UserName = license.UserName,
+                Company = license.Company,
+                LicenseCount = license.LicenseCount
+            };
         }
+       
     }
 }

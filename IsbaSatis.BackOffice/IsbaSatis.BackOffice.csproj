@@ -612,17 +612,9 @@
       <Project>{cae5e981-a5dc-4ccf-bf38-e9f75030451d}</Project>
       <Name>Isbasatis.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Isbasatis.LicenseManager.Client\Isbasatis.LicenseManager.Client.csproj">
-      <Project>{c3b1333b-d6c6-4395-be1d-421050f022c9}</Project>
-      <Name>Isbasatis.LicenseManager.Client</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Isbasatis.LicenseManager.LicenseInformations\Isbasatis.LicenseManager.LicenseInformations.csproj">
       <Project>{c1ef6244-efbc-4671-b716-dfce891a12d2}</Project>
       <Name>Isbasatis.LicenseManager.LicenseInformations</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Isbasatis.LisansManager.SystemInformations\Isbasatis.LisansManager.SystemInformations.csproj">
-      <Project>{f6ce1f14-e464-41a1-9582-126e8f86c334}</Project>
-      <Name>Isbasatis.LisansManager.SystemInformations</Name>
     </ProjectReference>
     <ProjectReference Include="..\IsbaSatis.Raporlar\IsbaSatis.Raporlar.csproj">
       <Project>{AB1485DC-2A63-493A-857F-CE87552F435D}</Project>

@@ -31,8 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,13 +50,24 @@
     <Compile Include="Enums\MessageType.cs" />
     <Compile Include="Enums\ModuleTypeEnum.cs" />
     <Compile Include="Enums\SystemInfoEnum.cs" />
+    <Compile Include="Manager\LicenseConfirmation.cs" />
+    <Compile Include="Manager\SystemInformations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tables\BaseBoard.cs" />
+    <Compile Include="Tables\Bios.cs" />
+    <Compile Include="Tables\Cpu.cs" />
+    <Compile Include="Tables\DiskDrive.cs" />
     <Compile Include="Tables\License.cs" />
+    <Compile Include="Tables\LicenseInfo.cs" />
     <Compile Include="Tables\Module.cs" />
+    <Compile Include="Tables\Network.cs" />
+    <Compile Include="Tables\OperatiingSystem.cs" />
     <Compile Include="Tables\SystemInfo.cs" />
     <Compile Include="Tables\TcpMessage.cs" />
     <Compile Include="Tools\EncrpytionTool.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

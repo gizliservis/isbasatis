@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Manager\LicenseConfirmation.cs" />
     <Compile Include="Manager\SystemInformations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tables\BaseBoard.cs" />

@@ -36,7 +36,8 @@ using IsbaSatis.BackOffice.Hızlı_Satış;
 using IsbaSatis.Admin;
 using Isbasatis.Entities.Tools;
 using IsbaSatis.BackOffice.Kod;
-using Isbasatis.LicenseManager.Client;
+using Isbasatis.LicenseManager.LicenseInformations;
+using Isbasatis.LicenseManger.LicenseInformation.Manager;
 
 namespace IsbaSatis.BackOffice
 {

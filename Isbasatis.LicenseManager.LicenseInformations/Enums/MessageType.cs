@@ -10,6 +10,7 @@ namespace Isbasatis.LicenseManager.LicenseInformations.Enums
     {
         Message,
         LicenseControl,
-        SendUserName
+        SendUserName,
+        ServerRejection
     }
 }

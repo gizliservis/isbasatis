@@ -1,7 +1,8 @@
 ﻿using Isbasatis.LicenseManager.LicenseInformations.Enums;
 using Isbasatis.LicenseManager.LicenseInformations.Tables;
 using Isbasatis.LicenseManager.LicenseInformations.Tools;
-using Isbasatis.LicenseManager.LicenseInformations.Manager;
+using Isbasatis.LisansManager.SystemInformations.Manager;
+using Isbasatis.LisansManager.SystemInformations.Tables;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

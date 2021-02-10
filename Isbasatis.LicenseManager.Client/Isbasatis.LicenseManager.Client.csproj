@@ -90,10 +90,6 @@
       <Project>{4F35451A-B517-4418-8A4C-90E10B2B3781}</Project>
       <Name>IsbaSatis.LicenseManager.LicenseServer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Isbasatis.LisansManager.SystemInformations\Isbasatis.LisansManager.SystemInformations.csproj">
-      <Project>{f6ce1f14-e464-41a1-9582-126e8f86c334}</Project>
-      <Name>Isbasatis.LisansManager.SystemInformations</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
