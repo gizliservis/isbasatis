@@ -22,7 +22,7 @@ namespace IsbaSatis.LisansManager.TCPClient
             client = new TCPClient();
             client.client.MessageReceived += Message_Received;
             client.client.ServerConnected += Server_Connected;
-            client.ClientStart();
+            
         }
 
         private void Server_Connected(object sender, EventArgs e)
@@ -38,12 +38,16 @@ namespace IsbaSatis.LisansManager.TCPClient
                 case MessageType.Message:
                     memoEdit1.Invoke((MethodInvoker)delegate
                     {
-                        memoEdit1.Text += msg.Message + System.Environment.NewLine;
+                        memoEdit1.Text +="Server : "+ msg.Message + System.Environment.NewLine;
                     });
                     break;
                 case MessageType.LicenseControl:
                     break;
                 case MessageType.ServerRejection:
+                    MessageBox.Show(msg.Message);
+                    Application.Exit();
+                    break;
+                case MessageType.ServerClosed:
                     MessageBox.Show(msg.Message);
                     Application.Exit();
                     break;
@@ -53,7 +57,14 @@ namespace IsbaSatis.LisansManager.TCPClient
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            client.SendMessage(MessageType.Message,"Merhaba Server");
+            memoEdit1.Text += "Ben : " + textEdit1.Text + System.Environment.NewLine;
+            client.SendMessage(MessageType.Message,textEdit1.Text);
+            textEdit1.Text = "";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            client.ClientStart();
         }
     }
 }

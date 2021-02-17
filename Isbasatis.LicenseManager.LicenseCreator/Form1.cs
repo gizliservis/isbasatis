@@ -13,6 +13,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using Isbasatis.LicenseManger.LicenseInformations.Manager;
+using License = Isbasatis.LicenseManager.LicenseInformations.Tables.License;
 
 namespace Isbasatis.LicenseManager.LicenseCreator
 {
@@ -40,6 +42,7 @@ namespace Isbasatis.LicenseManager.LicenseCreator
             lisans.Id = Guid.NewGuid();
             lisans.UserName = txtUserName.Text;
             lisans.Company = txtCompany.Text;
+            lisans.OnlineLisans = toggleSwitch1.IsOn;
             if (checkButton1.Checked)
             {
                 lisans.LicenseCount = 1;
@@ -110,6 +113,19 @@ namespace Isbasatis.LicenseManager.LicenseCreator
                 lisans.LicenseType = LicenseType.Server;
                 txtLicenseCount.Enabled = true;
             }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            LicenseConfirmation confirmation = new LicenseConfirmation();
+            License result = confirmation.GetOnlineLicense(Guid.Parse("2fb34994-10bc-4268-9f07-a426a7c03ade"));
+            if (result != null) MessageBox.Show(result.UserName);
+
+
+
+
+
+
         }
     }
 }

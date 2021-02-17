@@ -8,6 +8,7 @@ namespace Isbasatis.LicenseManager.LicenseInformations.Tables
 {
    public class LicenseInfo
     {
+        public Guid Id { get; set; }
         public string UserName { get; set; }
         public string Company { get; set; }
         public int LicenseCount { get; set; }

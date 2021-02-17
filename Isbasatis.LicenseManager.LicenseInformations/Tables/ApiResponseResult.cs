@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Isbasatis.LicenseManager.LicenseInformations.Tables
 {
-   public class Module
+   public class ApiResponseResult
     {
-        public Guid Id { get; set; }
-        public ModuleTypeEnum ModuleTypeEnum { get; set; }
+        public ReturnType returnType { get; set; }
+        public object Value { get; set; }
 
     }
 }

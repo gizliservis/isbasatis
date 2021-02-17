@@ -37,7 +37,7 @@ using IsbaSatis.Admin;
 using Isbasatis.Entities.Tools;
 using IsbaSatis.BackOffice.Kod;
 using Isbasatis.LicenseManager.LicenseInformations;
-using Isbasatis.LicenseManger.LicenseInformation.Manager;
+using Isbasatis.LicenseManger.LicenseInformations.Manager;
 
 namespace IsbaSatis.BackOffice
 {
@@ -439,7 +439,7 @@ namespace IsbaSatis.BackOffice
 
         private void barButtonItem45_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            MessageBox.Show(confirm.LicenseCount().ToString());
+            
         }
     }
 }

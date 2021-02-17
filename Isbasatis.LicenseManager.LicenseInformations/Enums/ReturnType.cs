@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace Isbasatis.LicenseManager.LicenseInformations.Enums
 {
-   public enum MessageType
+   public enum ReturnType
     {
-        Message,
-        LicenseControl,
-        SendUserName,
-        ServerRejection,
-        ServerClosed
+        Confirm,
+        Error
     }
 }

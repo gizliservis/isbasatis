@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsbaSatis.LicenseManager.Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsbaSatis.LisansManager.TCPClient", "IsbaSatis.LisansManager.TCPClient\IsbaSatis.LisansManager.TCPClient.csproj", "{CA8E33EB-1B95-4529-A7A8-92F8F2C755A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isbasatis.LicenseManager.API", "Isbasatis.LicenseManager.API\Isbasatis.LicenseManager.API.csproj", "{8EBF2CB0-1BB7-4C52-A63E-F0092BD3C3CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{CA8E33EB-1B95-4529-A7A8-92F8F2C755A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA8E33EB-1B95-4529-A7A8-92F8F2C755A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA8E33EB-1B95-4529-A7A8-92F8F2C755A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EBF2CB0-1BB7-4C52-A63E-F0092BD3C3CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EBF2CB0-1BB7-4C52-A63E-F0092BD3C3CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EBF2CB0-1BB7-4C52-A63E-F0092BD3C3CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EBF2CB0-1BB7-4C52-A63E-F0092BD3C3CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

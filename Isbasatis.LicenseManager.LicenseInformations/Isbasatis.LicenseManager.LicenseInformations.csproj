@@ -34,9 +34,14 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp, Version=106.11.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.11.7\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,10 +54,12 @@
     <Compile Include="Enums\LicenseType.cs" />
     <Compile Include="Enums\MessageType.cs" />
     <Compile Include="Enums\ModuleTypeEnum.cs" />
+    <Compile Include="Enums\ReturnType.cs" />
     <Compile Include="Enums\SystemInfoEnum.cs" />
     <Compile Include="Manager\LicenseConfirmation.cs" />
     <Compile Include="Manager\SystemInformations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tables\ApiResponseResult.cs" />
     <Compile Include="Tables\BaseBoard.cs" />
     <Compile Include="Tables\Bios.cs" />
     <Compile Include="Tables\Cpu.cs" />

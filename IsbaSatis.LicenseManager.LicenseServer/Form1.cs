@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Isbasatis.LicenseManager.LicenseInformations.Enums;
 using Isbasatis.LicenseManager.LicenseInformations.Tables;
-using Isbasatis.LicenseManger.LicenseInformation.Manager;
+using Isbasatis.LicenseManger.LicenseInformations.Manager;
 using Newtonsoft.Json;
 using WatsonTcp;
 
@@ -22,6 +22,7 @@ namespace IsbaSatis.LicenseManager.LicenseServer
         private int licCount = 0;
         public Form1()
         {
+            
             InitializeComponent();
             server = new WatsonTcpServer("192.168.1.242",148);
             server.ClientConnected += Client_Connected;
@@ -30,10 +31,11 @@ namespace IsbaSatis.LicenseManager.LicenseServer
             gridControl1.DataSource = clients;
             GetLicenseInfo();
             
+            
         }
         private void GetLicenseInfo()
         {
-            var info = licenseConfirm.GetLicenseInfo();
+            LicenseInfo info = licenseConfirm.GetLicenseInfo();
             txtKullaniciAdi.Text = info.UserName;
             txtSirketAdi.Text = info.Company;
             txtLisansSayisi.Text = info.LicenseCount.ToString();
@@ -44,12 +46,13 @@ namespace IsbaSatis.LicenseManager.LicenseServer
         private void Message_Received(object sender, MessageReceivedFromClientEventArgs e)
         {
             TcpMessage msg = JsonConvert.DeserializeObject<TcpMessage>(Encoding.UTF8.GetString(e.Data));
+            Client clientName = clients.FirstOrDefault(c => c.IpAddress == e.IpPort);
             switch (msg.MessageType)
             {
                 case MessageType.Message:
                     memoEdit1.Invoke((MethodInvoker)delegate
                     {
-                        memoEdit1.Text += e.IpPort + " : " + msg.Message + System.Environment.NewLine;
+                        memoEdit1.Text += clientName.UserName + " : " + msg.Message + System.Environment.NewLine;
                     });
                     break;
                 case MessageType.SendUserName:
@@ -109,13 +112,26 @@ namespace IsbaSatis.LicenseManager.LicenseServer
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             server.Start();
+            txtServerDurumu.Appearance.ForeColor = Color.Green;
+            txtServerDurumu.Text = "Başlatıldı";
+            
             
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             Client row = (Client) gridView1.GetFocusedRow();
-            SendMessage(row.IpAddress,MessageType.Message,textEdit1.Text);
+            if (row != null)
+            {
+                memoEdit1.Text += "Server : " + textEdit1.Text + System.Environment.NewLine;
+                SendMessage(row.IpAddress, MessageType.Message, textEdit1.Text);
+                textEdit1.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Seçili Bir Kullanıcı Bulunamadı");
+            }
+            
         }
 
         private void SendMessage(string ipAdress, MessageType messageType, string message)
@@ -126,6 +142,16 @@ namespace IsbaSatis.LicenseManager.LicenseServer
                 Message = message
             };
             server.Send(ipAdress, JsonConvert.SerializeObject(msg));
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            foreach (var client in clients)
+            {
+                SendMessage(client.IpAddress, MessageType.ServerClosed, "Server Kapatıldı Bu Yüzden uygulama Kapatılacak");
+
+            }
+            System.Threading.Thread.Sleep(1000);
         }
     }
 }
