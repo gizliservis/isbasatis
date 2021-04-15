@@ -13,6 +13,7 @@ using Isbasatis.Entities.Data_Access;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Data.Entity;
 using DevExpress.XtraGrid;
+using DevExpress.DataProcessing;
 
 namespace IsbaSatis.BackOffice.Kod
 {
@@ -36,6 +37,7 @@ namespace IsbaSatis.BackOffice.Kod
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            context.Kodlar.Local.ForEach(c => c.Tablo = _tablo);
             context.SaveChanges();
             this.Hide();
         }

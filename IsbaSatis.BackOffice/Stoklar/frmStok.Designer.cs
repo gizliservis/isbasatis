@@ -415,7 +415,7 @@
             // colMevcutStok
             // 
             resources.ApplyResources(this.colMevcutStok, "colMevcutStok");
-            this.colMevcutStok.FieldName = "MevcutStok";
+            this.colMevcutStok.FieldName = "MevcutStokBakiye";
             this.colMevcutStok.Name = "colMevcutStok";
             this.colMevcutStok.OptionsColumn.AllowEdit = false;
             // 

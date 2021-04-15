@@ -77,7 +77,7 @@
             this.btnKapat.Location = new System.Drawing.Point(485, 26);
             this.btnKapat.Name = "btnKapat";
             this.btnKapat.Size = new System.Drawing.Size(90, 45);
-            this.btnKapat.TabIndex = 0;
+            this.btnKapat.TabIndex = 2;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
@@ -88,7 +88,7 @@
             this.btnParolaUnuttum.Location = new System.Drawing.Point(389, 26);
             this.btnParolaUnuttum.Name = "btnParolaUnuttum";
             this.btnParolaUnuttum.Size = new System.Drawing.Size(90, 45);
-            this.btnParolaUnuttum.TabIndex = 0;
+            this.btnParolaUnuttum.TabIndex = 1;
             this.btnParolaUnuttum.Text = "Parolamı\r\nUnuttum";
             this.btnParolaUnuttum.Click += new System.EventHandler(this.btnParolaUnuttum_Click);
             // 
@@ -110,7 +110,7 @@
             this.txtKullanici.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtKullanici.Properties.Appearance.Options.UseFont = true;
             this.txtKullanici.Size = new System.Drawing.Size(565, 36);
-            this.txtKullanici.TabIndex = 11;
+            this.txtKullanici.TabIndex = 0;
             // 
             // txtParola
             // 
@@ -119,7 +119,7 @@
             this.txtParola.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtParola.Properties.Appearance.Options.UseFont = true;
             this.txtParola.Size = new System.Drawing.Size(565, 36);
-            this.txtParola.TabIndex = 11;
+            this.txtParola.TabIndex = 1;
             // 
             // frmKullaniciGiris
             // 

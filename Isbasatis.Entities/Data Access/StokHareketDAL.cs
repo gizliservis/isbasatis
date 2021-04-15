@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Isbasatis.Entities.Data_Access
 {
-    public class StokHareketDAL : EntityRepoSitoryBase<IsbaSatisContext, StokHareket,StokHareketValidator>
+    public class StokHareketDAL : EntityRepoSitoryBase<IsbaSatisContext, StokHareket, StokHareketValidator>
     {
         public object GetDepoStok(IsbaSatisContext context, int stokId)
         {
@@ -20,7 +20,7 @@ namespace Isbasatis.Entities.Data_Access
                 depolar.DepoAdi,
                 StokGiris = stokhareketleri.Where(c => c.Hareket == "Stok Giriş").Sum(c => c.Miktar) ?? 0,
                 StokCikis = stokhareketleri.Where(c => c.Hareket == "Stok Çıkış").Sum(c => c.Miktar) ?? 0,
-                MevcutStok = (stokhareketleri.Where(c => c.Hareket == "Stok Giriş").Sum(c => c.Miktar) ?? 0) - (stokhareketleri.Where(c => c.Hareket == "Stok Çıkış").Sum(c => c.Miktar) ?? 0),
+                MevcutStok = ((stokhareketleri.Where(c => c.Hareket == "Stok Giriş").Sum(c => c.Miktar) ?? 0) - (stokhareketleri.Where(c => c.Hareket == "Stok Çıkış").Sum(c => c.Miktar) ?? 0))
             }).ToList();
             return result;
         }
@@ -38,15 +38,15 @@ namespace Isbasatis.Entities.Data_Access
         }
         public object DepoStokListele(IsbaSatisContext context, int depoId)
         {
-            var tablo = context.Stoklar.GroupJoin(context.StokHareketleri.Where(c=>c.DepoId==depoId), c => c.Id, c => c.StokId, (Stoklar, StokHareketleri) => new
+            var tablo = context.Stoklar.GroupJoin(context.StokHareketleri.Where(c => c.DepoId == depoId), c => c.Id, c => c.StokId, (Stoklar, StokHareketleri) => new
             {
-               
-               
+
+
                 Stoklar.StokAdi,
                 Stoklar.Barkod,
                 StokGiris = StokHareketleri.Where(c => c.Hareket == "Stok Giriş").Sum(c => c.Miktar) ?? 0,
                 StokCikis = StokHareketleri.Where(c => c.Hareket == "Stok Çıkış").Sum(c => c.Miktar) ?? 0,
-                MevcutStok = StokHareketleri.Where(c => c.Hareket == "Stok Giriş").Sum(c => c.Miktar) ?? 0 - StokHareketleri.Where(c => c.Hareket == "Stok Çıkış").Sum(c => c.ToplamTutar)
+                MevcutStok = StokHareketleri.Where(c => c.Hareket == "Stok Giriş").Sum(c => c.Miktar) ?? 0 - StokHareketleri.Where(c => c.Hareket == "Stok Çıkış").Sum(c => c.Miktar)
 
             }).ToList();
             return tablo;
@@ -54,19 +54,21 @@ namespace Isbasatis.Entities.Data_Access
         }
         public object DepoStokListele1(IsbaSatisContext context)
         {
-            var tablo = (from c in context.StokHareketleri group c by new { c.Stok, c.Depo }into g select new
-            {
+            var tablo = (from c in context.StokHareketleri
+                         group c by new { c.Stok, c.Depo } into g
+                         select new
+                         {
 
-                DepoKodu=g.Key.Depo.DepoKodu,
-                DepoAdi=g.Key.Depo.DepoAdi,
-                Barkod=g.Key.Stok.Barkod,
-                StokKodu=g.Key.Stok.StokKodu,
-                StokAdi=g.Key.Stok.StokAdi,
-                StokGiris = g.Where(c => c.Hareket == "Stok Giriş").Sum(c => c.Miktar) ?? 0,
-                StokCikis = g.Where(c => c.Hareket == "Stok Çıkış").Sum(c => c.Miktar) ?? 0,
-                MevcutStok = (g.Where(c => c.Hareket == "Stok Giriş").Sum(c => c.Miktar) ?? 0) - g.Where(c => c.Hareket == "Stok Çıkış").Sum(c => c.ToplamTutar)
+                             DepoKodu = g.Key.Depo.DepoKodu,
+                             DepoAdi = g.Key.Depo.DepoAdi,
+                             Barkod = g.Key.Stok.Barkod,
+                             StokKodu = g.Key.Stok.StokKodu,
+                             StokAdi = g.Key.Stok.StokAdi,
+                             StokGiris = g.Where(c => c.Hareket == "Stok Giriş").Sum(c => c.Miktar) ?? 0,
+                             StokCikis = g.Where(c => c.Hareket == "Stok Çıkış").Sum(c => c.Miktar) ?? 0,
+                             MevcutStok = (g.Where(c => c.Hareket == "Stok Giriş").Sum(c => c.Miktar) ?? 0) - g.Where(c => c.Hareket == "Stok Çıkış").Sum(c => c.ToplamTutar)
 
-            }).ToList();
+                         }).ToList();
             return tablo;
 
         }
@@ -87,7 +89,7 @@ namespace Isbasatis.Entities.Data_Access
                     KayitSayisi=context.StokHareketleri.Where(c=>c.DepoId==depoId && c.Hareket=="Stok Çıkış").Count(),
                     Tutar=context.StokHareketleri.Where(c=>c.DepoId==depoId && c.Hareket=="Stok Çıkış").Sum(c=>c.Miktar) ?? 0
         },
-            
+
     };
             return genelToplamlar;
 

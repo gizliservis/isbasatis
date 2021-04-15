@@ -33,7 +33,7 @@ namespace IsbaSatis.BackOffice.Fişler
         CariDAL cariDAL = new CariDAL();
         Fis _fisentity = new Fis();
         FisAyarlari fisAyarlari = new FisAyarlari();
-        CodeNumara fisNo = new CodeNumara();
+        private CodeTool kodOlustur;
         StokHareket _stokhareketentity = new StokHareket();
         CariBakiye entityBakiye = new CariBakiye();
         CodeNumara odemefis = new CodeNumara();
@@ -43,6 +43,7 @@ namespace IsbaSatis.BackOffice.Fişler
         public frmFislerVeFaturalar(string fisKodu = null, string fisTuru = null,int? cariId=null)
         {
             InitializeComponent();
+            
             context.Stoklar.Load();
             context.Depolar.Load();
             context.Kasalar.Load();
@@ -86,7 +87,7 @@ namespace IsbaSatis.BackOffice.Fişler
             lblAlcak.Text = "-Görüntülenemiyor-";
             lblBorc.Text = "-Görüntülenemiyor-";
             lblBakiye.Text = "-Görüntülenemiyor-";
-            txtFisKodu.DataBindings.Add("Text", _fisentity, "FisKodu", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtKod.DataBindings.Add("Text", _fisentity, "FisKodu", false, DataSourceUpdateMode.OnPropertyChanged);
             txtFisturu.DataBindings.Add("Text", _fisentity, "FisTuru", false, DataSourceUpdateMode.OnPropertyChanged);
             cmbTarih.DataBindings.Add("EditValue", _fisentity, "Tarih", true, DataSourceUpdateMode.OnPropertyChanged, null, "F");
             txtBelgeNo.DataBindings.Add("Text", _fisentity, "BelgeNo", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -392,10 +393,8 @@ namespace IsbaSatis.BackOffice.Fişler
 
         private void frmFislerVeFaturalar_Load(object sender, EventArgs e)
         {
-            if (txtFisKodu.Text == "")
-            {
-                txtFisKodu.Text = fisNo.FisKodNumarasi();
-            }
+            kodOlustur = new CodeTool(this, CodeTool.Table.Fis, context);
+            kodOlustur.BarButonOlustur();
         }
         private StokHareket StokSec(Isbasatis.Entities.Tables.Stok entity)
 
@@ -611,10 +610,7 @@ namespace IsbaSatis.BackOffice.Fişler
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            if (txtFisKodu.Text == "")
-            {
-                txtFisKodu.Text = fisNo.FisKodNumarasi();
-            }
+            
             if (toggleSwitch1.IsOn == true && txtFisturu.Text == "Cari Devir Fişi")
             {
                 fisAyarlari.KasaHareketi = "Kasa Çıkış";
@@ -645,7 +641,7 @@ namespace IsbaSatis.BackOffice.Fişler
                 message += "Herhangi bir Ödeme bulunamadı" + System.Environment.NewLine;
                 hata++;
             }
-            if (txtFisKodu.Text == "")
+            if (txtKod.Text == "")
             {
                 message += "Fiş Kodu Alanı Boş Geçilemez." + System.Environment.NewLine;
                 hata++;
@@ -675,13 +671,13 @@ namespace IsbaSatis.BackOffice.Fişler
                 stokVeri.Tarih = stokVeri.Tarih == null
                     ? Convert.ToDateTime(cmbTarih.DateTime)
                     : Convert.ToDateTime(stokVeri.Tarih);
-                stokVeri.FisKodu = txtFisKodu.Text;
+                stokVeri.FisKodu = txtKod.Text;
                 stokVeri.Hareket = fisAyarlari.StokHareketi;
 
             }
             foreach (var itemHareket in context.PersonelHareketleri.Local.ToList())
             {
-                itemHareket.FisKodu = txtFisKodu.Text;
+                itemHareket.FisKodu = txtKod.Text;
             }
 
            
@@ -743,7 +739,9 @@ namespace IsbaSatis.BackOffice.Fişler
                 }
             }
             fisDAL.AddOrUpdate(context, fisOdeme);
+            kodOlustur.KodArttirma();
             context.SaveChanges();
+            
             this.Close();
 
 

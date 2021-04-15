@@ -127,6 +127,7 @@
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.groupGenelBilgiler = new DevExpress.XtraEditors.GroupControl();
+            this.txtKod = new DevExpress.XtraEditors.TextEdit();
             this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
             this.cmbBarkodTuru = new DevExpress.XtraEditors.ComboBoxEdit();
             this.calcMaxStokMiktar = new DevExpress.XtraEditors.CalcEdit();
@@ -183,12 +184,12 @@
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.calcAlisFiyati1 = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtStokKodu = new DevExpress.XtraEditors.TextEdit();
+            this.btnKod = new DevExpress.XtraEditors.DropDownButton();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupGenelBilgiler)).BeginInit();
             this.groupGenelBilgiler.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKod.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbBarkodTuru.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calcMaxStokMiktar.Properties)).BeginInit();
@@ -221,7 +222,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.calcAlisFiyati2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calcSatisFiyati1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calcAlisFiyati1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStokKodu.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ımageList2
@@ -267,7 +267,7 @@
             this.btnKapat.Location = new System.Drawing.Point(658, 26);
             this.btnKapat.Name = "btnKapat";
             this.btnKapat.Size = new System.Drawing.Size(90, 45);
-            this.btnKapat.TabIndex = 0;
+            this.btnKapat.TabIndex = 1;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
@@ -292,8 +292,8 @@
             // 
             // groupGenelBilgiler
             // 
-            this.groupGenelBilgiler.Controls.Add(this.txtStokKodu);
-            this.groupGenelBilgiler.Controls.Add(this.button1);
+            this.groupGenelBilgiler.Controls.Add(this.btnKod);
+            this.groupGenelBilgiler.Controls.Add(this.txtKod);
             this.groupGenelBilgiler.Controls.Add(this.txtAciklama);
             this.groupGenelBilgiler.Controls.Add(this.cmbBarkodTuru);
             this.groupGenelBilgiler.Controls.Add(this.calcMaxStokMiktar);
@@ -319,15 +319,22 @@
             this.groupGenelBilgiler.Location = new System.Drawing.Point(0, 41);
             this.groupGenelBilgiler.Name = "groupGenelBilgiler";
             this.groupGenelBilgiler.Size = new System.Drawing.Size(753, 227);
-            this.groupGenelBilgiler.TabIndex = 3;
+            this.groupGenelBilgiler.TabIndex = 2;
             this.groupGenelBilgiler.Text = "Genel Bilgiler";
+            // 
+            // txtKod
+            // 
+            this.txtKod.Location = new System.Drawing.Point(120, 49);
+            this.txtKod.Name = "txtKod";
+            this.txtKod.Size = new System.Drawing.Size(248, 20);
+            this.txtKod.TabIndex = 3;
             // 
             // txtAciklama
             // 
             this.txtAciklama.Location = new System.Drawing.Point(486, 115);
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(250, 75);
-            this.txtAciklama.TabIndex = 5;
+            this.txtAciklama.TabIndex = 14;
             // 
             // cmbBarkodTuru
             // 
@@ -337,7 +344,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbBarkodTuru.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cmbBarkodTuru.Size = new System.Drawing.Size(250, 20);
-            this.cmbBarkodTuru.TabIndex = 4;
+            this.cmbBarkodTuru.TabIndex = 8;
             // 
             // calcMaxStokMiktar
             // 
@@ -346,7 +353,7 @@
             this.calcMaxStokMiktar.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcMaxStokMiktar.Size = new System.Drawing.Size(250, 20);
-            this.calcMaxStokMiktar.TabIndex = 3;
+            this.calcMaxStokMiktar.TabIndex = 22;
             // 
             // calcMinStokMiktar
             // 
@@ -355,35 +362,35 @@
             this.calcMinStokMiktar.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcMinStokMiktar.Size = new System.Drawing.Size(251, 20);
-            this.calcMinStokMiktar.TabIndex = 3;
+            this.calcMinStokMiktar.TabIndex = 20;
             // 
             // txtGarantiSuresi
             // 
             this.txtGarantiSuresi.Location = new System.Drawing.Point(118, 170);
             this.txtGarantiSuresi.Name = "txtGarantiSuresi";
             this.txtGarantiSuresi.Size = new System.Drawing.Size(251, 20);
-            this.txtGarantiSuresi.TabIndex = 2;
+            this.txtGarantiSuresi.TabIndex = 18;
             // 
             // txtUreticiKodu
             // 
             this.txtUreticiKodu.Location = new System.Drawing.Point(118, 149);
             this.txtUreticiKodu.Name = "txtUreticiKodu";
             this.txtUreticiKodu.Size = new System.Drawing.Size(251, 20);
-            this.txtUreticiKodu.TabIndex = 2;
+            this.txtUreticiKodu.TabIndex = 16;
             // 
             // txtStokAdi
             // 
             this.txtStokAdi.Location = new System.Drawing.Point(118, 94);
             this.txtStokAdi.Name = "txtStokAdi";
             this.txtStokAdi.Size = new System.Drawing.Size(618, 20);
-            this.txtStokAdi.TabIndex = 2;
+            this.txtStokAdi.TabIndex = 10;
             // 
             // txtBarkod
             // 
             this.txtBarkod.Location = new System.Drawing.Point(118, 71);
             this.txtBarkod.Name = "txtBarkod";
             this.txtBarkod.Size = new System.Drawing.Size(250, 20);
-            this.txtBarkod.TabIndex = 2;
+            this.txtBarkod.TabIndex = 6;
             // 
             // toggleDurumu
             // 
@@ -403,7 +410,7 @@
             this.labelControl10.Location = new System.Drawing.Point(373, 195);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(107, 15);
-            this.labelControl10.TabIndex = 0;
+            this.labelControl10.TabIndex = 21;
             this.labelControl10.Text = "Max. Stok Miktarı :";
             // 
             // labelControl9
@@ -417,7 +424,7 @@
             this.labelControl9.Location = new System.Drawing.Point(3, 195);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(109, 15);
-            this.labelControl9.TabIndex = 0;
+            this.labelControl9.TabIndex = 19;
             this.labelControl9.Text = "Min. Stok Miktarı :";
             // 
             // labelControl8
@@ -429,7 +436,7 @@
             this.labelControl8.Location = new System.Drawing.Point(3, 172);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(109, 15);
-            this.labelControl8.TabIndex = 0;
+            this.labelControl8.TabIndex = 17;
             this.labelControl8.Text = "Garanti Süresi :";
             // 
             // labelControl7
@@ -441,7 +448,7 @@
             this.labelControl7.Location = new System.Drawing.Point(5, 151);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(107, 15);
-            this.labelControl7.TabIndex = 0;
+            this.labelControl7.TabIndex = 15;
             this.labelControl7.Text = "Üretici Kodu :";
             // 
             // labelControl11
@@ -455,7 +462,7 @@
             this.labelControl11.Location = new System.Drawing.Point(373, 115);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(107, 74);
-            this.labelControl11.TabIndex = 0;
+            this.labelControl11.TabIndex = 13;
             this.labelControl11.Text = "Açıklama :";
             // 
             // btnBirim
@@ -472,7 +479,7 @@
             this.btnBirim.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btnBirim.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.btnBirim.Size = new System.Drawing.Size(250, 24);
-            this.btnBirim.TabIndex = 1;
+            this.btnBirim.TabIndex = 12;
             this.btnBirim.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnBirim_ButtonClick);
             // 
             // labelControl6
@@ -486,7 +493,7 @@
             this.labelControl6.Location = new System.Drawing.Point(5, 124);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(107, 15);
-            this.labelControl6.TabIndex = 0;
+            this.labelControl6.TabIndex = 11;
             this.labelControl6.Text = "Birimi :";
             // 
             // labelControl5
@@ -502,7 +509,7 @@
             this.labelControl5.Location = new System.Drawing.Point(5, 97);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(107, 15);
-            this.labelControl5.TabIndex = 0;
+            this.labelControl5.TabIndex = 9;
             this.labelControl5.Text = "Stok Adı :";
             // 
             // labelControl4
@@ -514,7 +521,7 @@
             this.labelControl4.Location = new System.Drawing.Point(373, 76);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(107, 15);
-            this.labelControl4.TabIndex = 0;
+            this.labelControl4.TabIndex = 7;
             this.labelControl4.Text = "Barkod Türü:";
             // 
             // labelControl3
@@ -526,7 +533,7 @@
             this.labelControl3.Location = new System.Drawing.Point(5, 76);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(107, 15);
-            this.labelControl3.TabIndex = 0;
+            this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "Barkod :";
             // 
             // labelControl2
@@ -538,7 +545,7 @@
             this.labelControl2.Location = new System.Drawing.Point(5, 55);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(107, 15);
-            this.labelControl2.TabIndex = 0;
+            this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Stok Kodu :";
             // 
             // labelControl1
@@ -587,7 +594,7 @@
             this.labelControl15.Location = new System.Drawing.Point(373, 60);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(107, 15);
-            this.labelControl15.TabIndex = 0;
+            this.labelControl15.TabIndex = 6;
             this.labelControl15.Text = "Model :";
             // 
             // labelControl19
@@ -599,7 +606,7 @@
             this.labelControl19.Location = new System.Drawing.Point(373, 114);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(107, 15);
-            this.labelControl19.TabIndex = 0;
+            this.labelControl19.TabIndex = 14;
             this.labelControl19.Text = "Özel Kod - 4 :";
             // 
             // labelControl18
@@ -611,7 +618,7 @@
             this.labelControl18.Location = new System.Drawing.Point(7, 110);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(107, 15);
-            this.labelControl18.TabIndex = 0;
+            this.labelControl18.TabIndex = 12;
             this.labelControl18.Text = "Özel Kod - 3 :";
             // 
             // labelControl17
@@ -623,7 +630,7 @@
             this.labelControl17.Location = new System.Drawing.Point(373, 85);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(107, 15);
-            this.labelControl17.TabIndex = 0;
+            this.labelControl17.TabIndex = 10;
             this.labelControl17.Text = "Özel Kod - 2 :";
             // 
             // labelControl16
@@ -635,7 +642,7 @@
             this.labelControl16.Location = new System.Drawing.Point(5, 81);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(107, 15);
-            this.labelControl16.TabIndex = 0;
+            this.labelControl16.TabIndex = 8;
             this.labelControl16.Text = "Özel Kod - 1 :";
             // 
             // labelControl14
@@ -647,7 +654,7 @@
             this.labelControl14.Location = new System.Drawing.Point(5, 60);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(107, 15);
-            this.labelControl14.TabIndex = 0;
+            this.labelControl14.TabIndex = 4;
             this.labelControl14.Text = "Marka :";
             // 
             // labelControl13
@@ -659,7 +666,7 @@
             this.labelControl13.Location = new System.Drawing.Point(373, 34);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(107, 15);
-            this.labelControl13.TabIndex = 0;
+            this.labelControl13.TabIndex = 2;
             this.labelControl13.Text = "Stok Alt Grubu :";
             // 
             // labelControl12
@@ -688,7 +695,7 @@
             this.btnOzelKod4.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btnOzelKod4.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.btnOzelKod4.Size = new System.Drawing.Size(250, 24);
-            this.btnOzelKod4.TabIndex = 1;
+            this.btnOzelKod4.TabIndex = 15;
             this.btnOzelKod4.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnOzelKod4_ButtonClick);
             // 
             // btnOzelKod3
@@ -705,7 +712,7 @@
             this.btnOzelKod3.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btnOzelKod3.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.btnOzelKod3.Size = new System.Drawing.Size(253, 24);
-            this.btnOzelKod3.TabIndex = 1;
+            this.btnOzelKod3.TabIndex = 13;
             this.btnOzelKod3.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnOzelKod3_ButtonClick);
             // 
             // btnOzelKod2
@@ -722,7 +729,7 @@
             this.btnOzelKod2.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btnOzelKod2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.btnOzelKod2.Size = new System.Drawing.Size(250, 24);
-            this.btnOzelKod2.TabIndex = 1;
+            this.btnOzelKod2.TabIndex = 11;
             this.btnOzelKod2.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnOzelKod2_ButtonClick);
             // 
             // btnOzelKod1
@@ -739,7 +746,7 @@
             this.btnOzelKod1.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btnOzelKod1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.btnOzelKod1.Size = new System.Drawing.Size(253, 24);
-            this.btnOzelKod1.TabIndex = 1;
+            this.btnOzelKod1.TabIndex = 9;
             this.btnOzelKod1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnOzelKod1_ButtonClick);
             // 
             // btnModel
@@ -756,7 +763,7 @@
             this.btnModel.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btnModel.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.btnModel.Size = new System.Drawing.Size(250, 24);
-            this.btnModel.TabIndex = 1;
+            this.btnModel.TabIndex = 7;
             this.btnModel.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnModel_ButtonClick);
             // 
             // btnStokAltGrubu
@@ -773,7 +780,7 @@
             this.btnStokAltGrubu.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btnStokAltGrubu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.btnStokAltGrubu.Size = new System.Drawing.Size(250, 24);
-            this.btnStokAltGrubu.TabIndex = 1;
+            this.btnStokAltGrubu.TabIndex = 3;
             this.btnStokAltGrubu.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnStokAltGrubu_ButtonClick);
             // 
             // btnMarka
@@ -790,7 +797,7 @@
             this.btnMarka.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btnMarka.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.btnMarka.Size = new System.Drawing.Size(253, 24);
-            this.btnMarka.TabIndex = 1;
+            this.btnMarka.TabIndex = 5;
             this.btnMarka.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnMarka_ButtonClick);
             // 
             // btnStokGrubu
@@ -834,7 +841,7 @@
             this.labelControl21.Location = new System.Drawing.Point(373, 26);
             this.labelControl21.Name = "labelControl21";
             this.labelControl21.Size = new System.Drawing.Size(109, 15);
-            this.labelControl21.TabIndex = 0;
+            this.labelControl21.TabIndex = 2;
             this.labelControl21.Text = "Satış KDV :";
             // 
             // labelControl20
@@ -867,7 +874,7 @@
             this.calcAlisKdv.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcAlisKdv.Size = new System.Drawing.Size(249, 20);
-            this.calcAlisKdv.TabIndex = 3;
+            this.calcAlisKdv.TabIndex = 1;
             // 
             // groupFiyatlar
             // 
@@ -897,7 +904,7 @@
             this.calcSatisFiyati3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcSatisFiyati3.Size = new System.Drawing.Size(250, 20);
-            this.calcSatisFiyati3.TabIndex = 3;
+            this.calcSatisFiyati3.TabIndex = 11;
             // 
             // calcAlisFiyati3
             // 
@@ -906,7 +913,7 @@
             this.calcAlisFiyati3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcAlisFiyati3.Size = new System.Drawing.Size(249, 20);
-            this.calcAlisFiyati3.TabIndex = 3;
+            this.calcAlisFiyati3.TabIndex = 9;
             // 
             // labelControl27
             // 
@@ -919,7 +926,7 @@
             this.labelControl27.Location = new System.Drawing.Point(373, 80);
             this.labelControl27.Name = "labelControl27";
             this.labelControl27.Size = new System.Drawing.Size(109, 15);
-            this.labelControl27.TabIndex = 0;
+            this.labelControl27.TabIndex = 10;
             this.labelControl27.Text = "Satış Fiyatı - 3 :";
             // 
             // labelControl24
@@ -933,7 +940,7 @@
             this.labelControl24.Location = new System.Drawing.Point(5, 80);
             this.labelControl24.Name = "labelControl24";
             this.labelControl24.Size = new System.Drawing.Size(109, 15);
-            this.labelControl24.TabIndex = 0;
+            this.labelControl24.TabIndex = 8;
             this.labelControl24.Text = "Alış Fiyatı - 3 :";
             // 
             // calcSatisFiyati2
@@ -943,7 +950,7 @@
             this.calcSatisFiyati2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcSatisFiyati2.Size = new System.Drawing.Size(250, 20);
-            this.calcSatisFiyati2.TabIndex = 3;
+            this.calcSatisFiyati2.TabIndex = 7;
             // 
             // calcAlisFiyati2
             // 
@@ -952,7 +959,7 @@
             this.calcAlisFiyati2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcAlisFiyati2.Size = new System.Drawing.Size(249, 20);
-            this.calcAlisFiyati2.TabIndex = 3;
+            this.calcAlisFiyati2.TabIndex = 5;
             // 
             // labelControl26
             // 
@@ -965,7 +972,7 @@
             this.labelControl26.Location = new System.Drawing.Point(373, 54);
             this.labelControl26.Name = "labelControl26";
             this.labelControl26.Size = new System.Drawing.Size(109, 15);
-            this.labelControl26.TabIndex = 0;
+            this.labelControl26.TabIndex = 6;
             this.labelControl26.Text = "Satış Fiyatı - 2 :";
             // 
             // calcSatisFiyati1
@@ -988,7 +995,7 @@
             this.labelControl23.Location = new System.Drawing.Point(5, 54);
             this.labelControl23.Name = "labelControl23";
             this.labelControl23.Size = new System.Drawing.Size(109, 15);
-            this.labelControl23.TabIndex = 0;
+            this.labelControl23.TabIndex = 4;
             this.labelControl23.Text = "Alış Fiyatı - 2 :";
             // 
             // labelControl25
@@ -1002,7 +1009,7 @@
             this.labelControl25.Location = new System.Drawing.Point(373, 28);
             this.labelControl25.Name = "labelControl25";
             this.labelControl25.Size = new System.Drawing.Size(109, 15);
-            this.labelControl25.TabIndex = 0;
+            this.labelControl25.TabIndex = 2;
             this.labelControl25.Text = "Satış Fiyatı - 1 :";
             // 
             // calcAlisFiyati1
@@ -1012,7 +1019,7 @@
             this.calcAlisFiyati1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.calcAlisFiyati1.Size = new System.Drawing.Size(249, 20);
-            this.calcAlisFiyati1.TabIndex = 3;
+            this.calcAlisFiyati1.TabIndex = 1;
             // 
             // labelControl22
             // 
@@ -1028,23 +1035,13 @@
             this.labelControl22.TabIndex = 0;
             this.labelControl22.Text = "Alış Fiyatı - 1 :";
             // 
-            // button1
+            // btnKod
             // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(374, 44);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 30);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Otomatik \r\nKod Oluştur";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtStokKodu
-            // 
-            this.txtStokKodu.Location = new System.Drawing.Point(120, 49);
-            this.txtStokKodu.Name = "txtStokKodu";
-            this.txtStokKodu.Size = new System.Drawing.Size(248, 20);
-            this.txtStokKodu.TabIndex = 7;
+            this.btnKod.Location = new System.Drawing.Point(372, 47);
+            this.btnKod.Name = "btnKod";
+            this.btnKod.Size = new System.Drawing.Size(108, 23);
+            this.btnKod.TabIndex = 23;
+            this.btnKod.Text = "Kodlar";
             // 
             // frmStokIslem
             // 
@@ -1069,6 +1066,7 @@
             this.grpMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupGenelBilgiler)).EndInit();
             this.groupGenelBilgiler.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtKod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbBarkodTuru.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calcMaxStokMiktar.Properties)).EndInit();
@@ -1101,7 +1099,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.calcAlisFiyati2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calcSatisFiyati1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calcAlisFiyati1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStokKodu.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1171,7 +1168,7 @@
         private System.Windows.Forms.ImageList ımageList1;
         private DevExpress.XtraEditors.ButtonEdit btnBirim;
         private System.Windows.Forms.ImageList ımageList2;
-        private System.Windows.Forms.Button button1;
-        private DevExpress.XtraEditors.TextEdit txtStokKodu;
+        private DevExpress.XtraEditors.TextEdit txtKod;
+        private DevExpress.XtraEditors.DropDownButton btnKod;
     }
 }

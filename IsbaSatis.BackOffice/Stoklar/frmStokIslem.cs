@@ -14,6 +14,7 @@ using Isbasatis.Entities.RepoSitories;
 using Isbasatis.Entities.Data_Access;
 using IsbaSatis.BackOffice.Tanım;
 using Isbasatis.Entities.Tables.Other_Tables;
+using Isbasatis.Entities.Tools;
 
 namespace IsbaSatis.BackOffice.Stok
 {
@@ -22,14 +23,17 @@ namespace IsbaSatis.BackOffice.Stok
         private Isbasatis.Entities.Tables.Stok _entity;
         private StokDAL stokDAL = new StokDAL();
         private IsbaSatisContext context = new IsbaSatisContext();
-       private CodeNumara stokno = new CodeNumara();
-        
+        private CodeTool kodOlustur;
+
+
         public frmStokIslem(Isbasatis.Entities.Tables.Stok entity)
         {
             InitializeComponent();
+            kodOlustur = new CodeTool(this,CodeTool.Table.Stok,context);
+            kodOlustur.BarButonOlustur();
             _entity = entity;
             toggleDurumu.DataBindings.Add("EditValue", _entity, "Durumu", false, DataSourceUpdateMode.OnPropertyChanged);
-            txtStokKodu.DataBindings.Add("Text", _entity, "StokKodu", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtKod.DataBindings.Add("Text", _entity, "StokKodu", false, DataSourceUpdateMode.OnPropertyChanged);
             txtStokAdi.DataBindings.Add("Text", _entity, "StokAdi", false, DataSourceUpdateMode.OnPropertyChanged);
             txtBarkod.DataBindings.Add("Text", _entity, "Barkod", false, DataSourceUpdateMode.OnPropertyChanged);
             cmbBarkodTuru.DataBindings.Add("Text", _entity, "BarkodTuru", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -94,11 +98,12 @@ namespace IsbaSatis.BackOffice.Stok
         {
             if (stokDAL.AddOrUpdate(context, _entity))
             {
+                kodOlustur.KodArttirma();
                 stokDAL.Save(context);
                 this.Close();
             }
-            
-           
+
+
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -270,16 +275,9 @@ namespace IsbaSatis.BackOffice.Stok
 
         private void frmStokIslem_Load(object sender, EventArgs e)
         {
-          
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-            if (txtStokKodu.Text == "")
-            {
-                txtStokKodu.Text = stokno.StokKodNumarasi();
-            }
-        }
     }
 }

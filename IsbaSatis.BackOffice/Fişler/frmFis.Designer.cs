@@ -160,7 +160,7 @@
             // 
             // colCariAdi
             // 
-            this.colCariAdi.Caption = "Cari Adı";
+            this.colCariAdi.Caption = "Cari Adi";
             this.colCariAdi.FieldName = "Cari.CariAdi";
             this.colCariAdi.Name = "colCariAdi";
             this.colCariAdi.OptionsColumn.AllowEdit = false;
@@ -249,11 +249,11 @@
             // 
             // colPlasiyerId
             // 
-            this.colPlasiyerId.Caption = "gridColumn1";
+            this.colPlasiyerId.Caption = "Plasiyer Id";
             this.colPlasiyerId.FieldName = "PlasiyerId";
             this.colPlasiyerId.Name = "colPlasiyerId";
-            this.colPlasiyerId.Visible = true;
-            this.colPlasiyerId.VisibleIndex = 13;
+            this.colPlasiyerId.OptionsColumn.AllowEdit = false;
+            this.colPlasiyerId.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // gridcontFis
             // 

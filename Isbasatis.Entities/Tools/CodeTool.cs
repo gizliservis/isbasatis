@@ -35,17 +35,21 @@ namespace Isbasatis.Entities.Tools
             _table = table;
             manager.Form = _form;
             menu = new PopupMenu(manager);
+
         }
 
         public void BarButonOlustur()
         {
+            _context = new IsbaSatisContext();
             foreach (var kod in _context.Kodlar.Where(c => c.Tablo == _table.ToString()).ToList())
             {
                 BarButtonItem item = new BarButtonItem
                 {
                     Name ="btnKod"+kod.SonDeger,
                     Tag=kod.Id,
-                    Caption=KodOlustur(kod.OnEki,kod.SonDeger)
+                    Caption=KodOlustur(kod.OnEki,kod.SonDeger),
+                    ImageOptions = {Image=Isbasatis.Entities.Properties.Resources.code}
+                    
                 };
                 item.ItemClick += Button_Click;
                 menu.AddItem(item);
@@ -54,13 +58,37 @@ namespace Isbasatis.Entities.Tools
             BarButtonItem yeniKodEkle = new BarButtonItem
             {
                 Name = "btnYeniKodEkle",
-                Caption = "Yeni Kod Oluştur"
+                Caption = "Yeni Kod Oluştur",
+                ImageOptions = { Image = Isbasatis.Entities.Properties.Resources.add }
             };
             yeniKodEkle.ItemClick += YeniKodEkle_Click;
-            menu.AddItem(yeniKodEkle);
-            DropDownButton buton = (DropDownButton) _form.Controls.Find("btnKod", true).SingleOrDefault();
+            menu.AddItem(yeniKodEkle).BeginGroup = true;
+            BarButtonItem guncelle = new BarButtonItem
+            {
+                Name = "btnGüncelle",
+                Caption = "Güncelle",
+                ImageOptions = { Image = Isbasatis.Entities.Properties.Resources.refresh }
+            };
+
+            guncelle.ItemClick += Guncelle_Click;
+            menu.AddItem(guncelle);
+            DropDownButton buton = (DropDownButton)_form.Controls.Find("btnKod", true).SingleOrDefault();
             buton.MenuManager = manager;
             buton.DropDownControl = menu;
+
+
+
+        }
+
+        private void Guncelle_Click(object sender, ItemClickEventArgs e)
+        {
+            BarButonSil();
+            BarButonOlustur();
+
+        }
+        private void BarButonSil()
+        {
+            menu.ItemLinks.Clear();
         }
 
         private void YeniKodEkle_Click(object sender, ItemClickEventArgs e)
@@ -68,6 +96,8 @@ namespace Isbasatis.Entities.Tools
             Type tip = Assembly.Load("Isbasatis.BackOffice").GetTypes().SingleOrDefault(c => c.Name == "frmKodlar");
             XtraForm form = (XtraForm)Activator.CreateInstance(tip, _table.ToString());
             form.ShowDialog();
+            BarButonSil();
+            BarButonOlustur();
         }
 
         private void Button_Click(object sender, ItemClickEventArgs e)

@@ -177,7 +177,7 @@
             // 
             this.btnKapat.ImageOptions.ImageIndex = 7;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(208, 29);
+            this.btnKapat.Location = new System.Drawing.Point(550, 29);
             this.btnKapat.Name = "btnKapat";
             this.btnKapat.Size = new System.Drawing.Size(90, 45);
             this.btnKapat.TabIndex = 0;

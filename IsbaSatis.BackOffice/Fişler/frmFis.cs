@@ -115,7 +115,7 @@ namespace IsbaSatis.BackOffice.Fişler
                 frmFislerVeFaturalar form = new frmFislerVeFaturalar(secilen.FisKodu, null);
                 form.ShowDialog();
             }
-            // string secilen = gridFis.GetFocusedRowCellValue(colFisKodu).ToString();
+           // string secilen = gridFis.GetFocusedRowCellValue(colFisKodu).ToString();
 
         }
     }

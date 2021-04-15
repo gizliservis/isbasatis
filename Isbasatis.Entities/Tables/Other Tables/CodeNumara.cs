@@ -71,7 +71,7 @@ namespace Isbasatis.Entities.Tables.Other_Tables
             catch (Exception)
             {
 
-                return "Fi00001";
+                return "00001";
             }
 
         }
