@@ -234,7 +234,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(919, 307);
+            this.gridControl1.Size = new System.Drawing.Size(919, 234);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -557,7 +557,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(919, 507);
+            this.splitContainerControl1.Size = new System.Drawing.Size(919, 434);
             this.splitContainerControl1.SplitterPosition = 190;
             this.splitContainerControl1.TabIndex = 5;
             // 
@@ -613,9 +613,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 566);
-            this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.lblBaslik);
+            this.Controls.Add(this.grpMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmCari";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

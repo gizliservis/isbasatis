@@ -617,10 +617,13 @@ namespace IsbaSatis.BackOffice.Fişler
             if (toggleSwitch1.IsOn == true && txtFisturu.Text == "Cari Devir Fişi")
             {
                 fisAyarlari.KasaHareketi = "Kasa Çıkış";
+                fisAyarlari.BakiyeTuru = "Borç";
+
             }
             else if (toggleSwitch1.IsOn == false && txtFisturu.Text == "Cari Devir Fişi")
             {
                 fisAyarlari.KasaHareketi = "Kasa Giriş";
+                fisAyarlari.BakiyeTuru = "Alacak";
 
             }
 
@@ -684,11 +687,11 @@ namespace IsbaSatis.BackOffice.Fişler
             }
 
            
-            if (fisAyarlari.BakiyeTuru=="Borç")
+           if (fisAyarlari.BakiyeTuru=="Borç" )
             {
                 _fisentity.Borc = txtGenelToplam.Value;
             }
-            else if (fisAyarlari.BakiyeTuru == "Alacak")
+            else if (fisAyarlari.BakiyeTuru == "Alacak" )
           
             {
                 _fisentity.Alacak = txtGenelToplam.Value;

@@ -63,10 +63,24 @@ namespace IsbaSatis.BackOffice.Ödeme_Türü
         {
             if (MessageBox.Show("Seçili Olan Veriyi Silmek İstediğinie Eminmisiniz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-               string secilen = gridOdemeTuru.GetFocusedRowCellValue(colOdemeTuruKodu).ToString();
-                odemeTuruDAL.Delete(context, c => c.OdemeTuruKodu == secilen);
-                odemeTuruDAL.Save(context);
-                listele();
+                int secilen =Convert.ToInt32(gridOdemeTuru.GetFocusedRowCellValue(colId));
+                foreach (var hareket in context.KasaHareketleri.Select(c => c.OdemeTuruId == secilen).ToList())
+                {
+                    if (hareket)
+                    {
+                        MessageBox.Show("Bu Ödeme Türünün Hareketi Bulunmakta Fatura ve Fişlerden Silmeden Ödeme Türünü Silemezsiniz", "Uyarı");
+                        return;
+                    }
+                    else
+                    {
+                        odemeTuruDAL.Delete(context, c => c.Id == secilen);
+                        odemeTuruDAL.Save(context);
+                        listele();
+                    }
+
+                }
+               
+           
             }
         }
 

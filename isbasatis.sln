@@ -25,7 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsbaSatis.LicenseManager.Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsbaSatis.LisansManager.TCPClient", "IsbaSatis.LisansManager.TCPClient\IsbaSatis.LisansManager.TCPClient.csproj", "{CA8E33EB-1B95-4529-A7A8-92F8F2C755A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isbasatis.LicenseManager.API", "Isbasatis.LicenseManager.API\Isbasatis.LicenseManager.API.csproj", "{8EBF2CB0-1BB7-4C52-A63E-F0092BD3C3CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Isbasatis.LicenseManager.API", "Isbasatis.LicenseManager.API\Isbasatis.LicenseManager.API.csproj", "{8EBF2CB0-1BB7-4C52-A63E-F0092BD3C3CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

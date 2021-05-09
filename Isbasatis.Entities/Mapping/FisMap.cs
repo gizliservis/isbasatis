@@ -59,6 +59,7 @@ namespace Isbasatis.Entities.Mapping
             this.Property(p => p.ToplamTutar).HasColumnName("ToplamTutar");
             this.Property(p => p.Aciklama).HasColumnName("Aciklama");
 
+         
             this.HasOptional(c => c.Cari).WithMany(c => c.Fis).HasForeignKey(c => c.CariId);
             this.HasOptional(c => c.Cari).WithMany(c => c.Fis).HasForeignKey(c => c.PlasiyerId);
         }

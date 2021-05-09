@@ -17,20 +17,20 @@ namespace IsbaSatis.BackOffice.Fişler
         FisDAL fisDAL = new FisDAL();
         KasaHareketDAL kasaHareketDAL = new KasaHareketDAL();
         StokHareketDAL stokHareketDAL = new StokHareketDAL();
+        Fis Fis = new Fis();
        
         public frmFis()
         {
             InitializeComponent();
             RolTool.RolleriYukle(this);
-        }
-
-        private void frmFis_Load(object sender, EventArgs e)
-        {
             listele();
         }
+
+     
         private void listele()
         {
-            gridcontFis.DataSource = fisDAL.GetAll(context);
+            gridControl1.DataSource = fisDAL.GetAll(context);
+           
 
         }
 
@@ -57,7 +57,7 @@ namespace IsbaSatis.BackOffice.Fişler
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            gridcontFis.DataSource = fisDAL.GetAll(context);
+            gridControl1.DataSource = fisDAL.GetAll(context);
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace IsbaSatis.BackOffice.Fişler
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            Fis secilen = (Fis)gridFis.GetFocusedRow();
+            Fis secilen = (Fis)gridView1.GetFocusedRow();
             if (!String.IsNullOrEmpty(secilen.FisBaglantiKodu))
             {
                 if (MessageBox.Show($"Bu fis ile bağlantılı olan{secilen.FisBaglantiKodu} kodlu fiş birlikte silinecektir , Eminmisiniz ? ", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -105,7 +105,7 @@ namespace IsbaSatis.BackOffice.Fişler
 
         private void btnDuzenle_Click(object sender, EventArgs e)
         {
-            Fis secilen = (Fis)gridFis.GetFocusedRow();
+            Fis secilen = (Fis)gridView1.GetFocusedRow();
             if (secilen.FisTuru == "Fiş Ödemesi")
             {
                 frmFislerVeFaturalar form = new frmFislerVeFaturalar(secilen.FisBaglantiKodu, null);
