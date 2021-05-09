@@ -44,11 +44,17 @@ namespace IsbaSatis.BackOffice.Fiyat_Değiştir
 
         private void btnDegisiklikleriKaydet_Click(object sender, EventArgs e)
         {
-            stokDAL.Save(context);
+            if (MessageBox.Show("Fiyat Değişikliklerini Kaydetmek İstiyormusunuz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                stokDAL.Save(context);
+                this.Close();
+            }
+           
         }
 
         private void btnCikar_Click(object sender, EventArgs e)
         {
+       
             var secilen = gridView1.GetFocusedRowCellValue(colStokKodu).ToString();
             var result = stokDAL.GetByFilter(context, c => c.StokKodu == secilen);
             context.Entry(result).State = EntityState.Detached;

@@ -21,7 +21,8 @@ namespace IsbaSatis.BackOffice.Kod
     {
         IsbaSatisContext context = new IsbaSatisContext();
         KodDAL kodDal = new KodDAL();
-        private string _tablo;
+        private Isbasatis.Entities.Tables.Kod _entity;
+        private string _tablo; 
         public frmKodlar(string tablo)
         {
             InitializeComponent();
@@ -39,7 +40,7 @@ namespace IsbaSatis.BackOffice.Kod
         {
             context.Kodlar.Local.ForEach(c => c.Tablo = _tablo);
             context.SaveChanges();
-            this.Hide();
+            this.Close();
         }
 
         private void gridView2_ShowingEditor(object sender, CancelEventArgs e)
@@ -56,7 +57,7 @@ namespace IsbaSatis.BackOffice.Kod
             if (context.Kodlar.Local.Any(c=>c.OnEki==row.OnEki))
             {
                 MessageBox.Show("Aynı Ön Ekle Kod Kaydedilemez.");
-                gridView2.CancelUpdateCurrentRow();
+                gridView2.CancelUpdateCurrentRow(); 
             }
         }
 

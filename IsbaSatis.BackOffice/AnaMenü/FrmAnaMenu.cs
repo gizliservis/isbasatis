@@ -47,6 +47,7 @@ namespace IsbaSatis.BackOffice
         public Form1()
         {
             InitializeComponent();
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = "Visual Studio 2013 Light";
             using (var context=new IsbaSatisContext())
             {
                 context.Database.CreateIfNotExists();
@@ -264,7 +265,7 @@ namespace IsbaSatis.BackOffice
         {
             if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.SatisEkrani))
             {
-                Process.Start($"{Application.StartupPath}\\IsbaSatis.FrontOffice.exe");
+               Process.Start($"{Application.StartupPath}\\IsbaSatis.FrontOffice.exe"); 
             }
             else
             {

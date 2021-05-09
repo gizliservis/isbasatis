@@ -44,7 +44,6 @@
             this.colPlasiyerKodu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPlasiyerAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIskontoOrani = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIskontoTutar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colToplamTutar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOdenen = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -116,7 +115,6 @@
             this.colPlasiyerKodu,
             this.colPlasiyerAdi,
             this.colIskontoOrani,
-            this.colIskontoTutar,
             this.colToplamTutar,
             this.colAciklama,
             this.colOdenen,
@@ -140,7 +138,7 @@
             this.colFisKodu.OptionsColumn.AllowEdit = false;
             this.colFisKodu.Visible = true;
             this.colFisKodu.VisibleIndex = 0;
-            this.colFisKodu.Width = 68;
+            this.colFisKodu.Width = 72;
             // 
             // colFisTuru
             // 
@@ -150,7 +148,7 @@
             this.colFisTuru.OptionsColumn.AllowEdit = false;
             this.colFisTuru.Visible = true;
             this.colFisTuru.VisibleIndex = 1;
-            this.colFisTuru.Width = 139;
+            this.colFisTuru.Width = 147;
             // 
             // colCariTuru
             // 
@@ -167,7 +165,7 @@
             this.colCariKodu.OptionsColumn.AllowEdit = false;
             this.colCariKodu.Visible = true;
             this.colCariKodu.VisibleIndex = 2;
-            this.colCariKodu.Width = 83;
+            this.colCariKodu.Width = 88;
             // 
             // colCariAdi
             // 
@@ -177,7 +175,7 @@
             this.colCariAdi.OptionsColumn.AllowEdit = false;
             this.colCariAdi.Visible = true;
             this.colCariAdi.VisibleIndex = 3;
-            this.colCariAdi.Width = 125;
+            this.colCariAdi.Width = 132;
             // 
             // colBelgeNo
             // 
@@ -187,7 +185,7 @@
             this.colBelgeNo.OptionsColumn.AllowEdit = false;
             this.colBelgeNo.Visible = true;
             this.colBelgeNo.VisibleIndex = 4;
-            this.colBelgeNo.Width = 86;
+            this.colBelgeNo.Width = 91;
             // 
             // colTarih
             // 
@@ -199,7 +197,7 @@
             this.colTarih.OptionsColumn.AllowEdit = false;
             this.colTarih.Visible = true;
             this.colTarih.VisibleIndex = 5;
-            this.colTarih.Width = 62;
+            this.colTarih.Width = 65;
             // 
             // colSaat
             // 
@@ -211,7 +209,7 @@
             this.colSaat.OptionsColumn.AllowEdit = false;
             this.colSaat.Visible = true;
             this.colSaat.VisibleIndex = 6;
-            this.colSaat.Width = 64;
+            this.colSaat.Width = 67;
             // 
             // colPlasiyerKodu
             // 
@@ -237,19 +235,7 @@
             this.colIskontoOrani.OptionsColumn.AllowEdit = false;
             this.colIskontoOrani.Visible = true;
             this.colIskontoOrani.VisibleIndex = 7;
-            this.colIskontoOrani.Width = 46;
-            // 
-            // colIskontoTutar
-            // 
-            this.colIskontoTutar.Caption = "İsk. Tutarı";
-            this.colIskontoTutar.DisplayFormat.FormatString = "C2";
-            this.colIskontoTutar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colIskontoTutar.FieldName = "IskontoTutar";
-            this.colIskontoTutar.Name = "colIskontoTutar";
-            this.colIskontoTutar.OptionsColumn.AllowEdit = false;
-            this.colIskontoTutar.Visible = true;
-            this.colIskontoTutar.VisibleIndex = 8;
-            this.colIskontoTutar.Width = 60;
+            this.colIskontoOrani.Width = 83;
             // 
             // colToplamTutar
             // 
@@ -260,8 +246,8 @@
             this.colToplamTutar.Name = "colToplamTutar";
             this.colToplamTutar.OptionsColumn.AllowEdit = false;
             this.colToplamTutar.Visible = true;
-            this.colToplamTutar.VisibleIndex = 10;
-            this.colToplamTutar.Width = 138;
+            this.colToplamTutar.VisibleIndex = 9;
+            this.colToplamTutar.Width = 136;
             // 
             // colAciklama
             // 
@@ -270,8 +256,8 @@
             this.colAciklama.Name = "colAciklama";
             this.colAciklama.OptionsColumn.AllowEdit = false;
             this.colAciklama.Visible = true;
-            this.colAciklama.VisibleIndex = 9;
-            this.colAciklama.Width = 176;
+            this.colAciklama.VisibleIndex = 8;
+            this.colAciklama.Width = 166;
             // 
             // colOdenen
             // 
@@ -565,7 +551,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPlasiyerKodu;
         private DevExpress.XtraGrid.Columns.GridColumn colPlasiyerAdi;
         private DevExpress.XtraGrid.Columns.GridColumn colIskontoOrani;
-        private DevExpress.XtraGrid.Columns.GridColumn colIskontoTutar;
         private DevExpress.XtraGrid.Columns.GridColumn colToplamTutar;
         private DevExpress.XtraGrid.Columns.GridColumn colAciklama;
         private DevExpress.XtraGrid.Columns.GridColumn colOdenen;

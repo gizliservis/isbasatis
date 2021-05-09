@@ -166,7 +166,7 @@
             // 
             this.btnKaydet.ImageOptions.ImageIndex = 3;
             this.btnKaydet.ImageOptions.ImageList = this.ımageList1;
-            this.btnKaydet.Location = new System.Drawing.Point(9, 29);
+            this.btnKaydet.Location = new System.Drawing.Point(2, 29);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(97, 45);
             this.btnKaydet.TabIndex = 0;

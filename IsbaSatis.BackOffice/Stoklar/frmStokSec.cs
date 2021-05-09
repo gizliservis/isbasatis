@@ -19,6 +19,7 @@ namespace IsbaSatis.BackOffice.Stoklar
         IsbaSatisContext context = new IsbaSatisContext();
         public bool secildi = false;
         public List<Isbasatis.Entities.Tables.Stok> secilen = new List<Isbasatis.Entities.Tables.Stok>();
+        public bool kaydedildi = false;
         public frmStokSec(bool coklusecim=false)
            
         {
@@ -46,6 +47,7 @@ namespace IsbaSatis.BackOffice.Stoklar
                     secilen.Add(context.Stoklar.SingleOrDefault(c => c.StokKodu == StokKodu));
                 }
                 secildi = true;
+                kaydedildi = true;
                 this.Close();
             }
             else

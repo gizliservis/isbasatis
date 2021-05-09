@@ -63,8 +63,7 @@
             this.colKdv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBirimFiyati = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIndirimOrani = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIndirimTutari = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colToplamTutar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGenelToplamTutar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepoKodu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepoAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeriNo = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -119,19 +118,18 @@
             this.colBarkod.Name = "colBarkod";
             this.colBarkod.OptionsColumn.AllowEdit = false;
             this.colBarkod.Visible = true;
-            this.colBarkod.VisibleIndex = 0;
-            this.colBarkod.Width = 204;
+            this.colBarkod.VisibleIndex = 1;
+            this.colBarkod.Width = 116;
             // 
             // colUrunAdi
             // 
             this.colUrunAdi.Caption = "Ürün Adı";
-            this.colUrunAdi.FieldName = "KasaGiris";
-            this.colUrunAdi.FieldNameSortGroup = "StokAdi";
+            this.colUrunAdi.FieldName = "StokAdi";
             this.colUrunAdi.Name = "colUrunAdi";
             this.colUrunAdi.OptionsColumn.AllowEdit = false;
             this.colUrunAdi.Visible = true;
-            this.colUrunAdi.VisibleIndex = 1;
-            this.colUrunAdi.Width = 131;
+            this.colUrunAdi.VisibleIndex = 0;
+            this.colUrunAdi.Width = 210;
             // 
             // colMevcutStok
             // 
@@ -140,8 +138,8 @@
             this.colMevcutStok.Name = "colMevcutStok";
             this.colMevcutStok.OptionsColumn.AllowEdit = false;
             this.colMevcutStok.Visible = true;
-            this.colMevcutStok.VisibleIndex = 2;
-            this.colMevcutStok.Width = 185;
+            this.colMevcutStok.VisibleIndex = 4;
+            this.colMevcutStok.Width = 81;
             // 
             // groupControl2
             // 
@@ -149,7 +147,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(514, 190);
+            this.groupControl2.Size = new System.Drawing.Size(514, 167);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Depo İstatistikleri";
             // 
@@ -159,7 +157,7 @@
             this.gridcontIstatistik.Location = new System.Drawing.Point(2, 23);
             this.gridcontIstatistik.MainView = this.gridIstatistik;
             this.gridcontIstatistik.Name = "gridcontIstatistik";
-            this.gridcontIstatistik.Size = new System.Drawing.Size(510, 165);
+            this.gridcontIstatistik.Size = new System.Drawing.Size(510, 142);
             this.gridcontIstatistik.TabIndex = 2;
             this.gridcontIstatistik.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridIstatistik});
@@ -230,16 +228,20 @@
             this.colStokGiris.Caption = "Stok Giriş";
             this.colStokGiris.FieldName = "StokGiris";
             this.colStokGiris.Name = "colStokGiris";
+            this.colStokGiris.OptionsColumn.AllowEdit = false;
             this.colStokGiris.Visible = true;
-            this.colStokGiris.VisibleIndex = 3;
+            this.colStokGiris.VisibleIndex = 2;
+            this.colStokGiris.Width = 59;
             // 
             // colStokCikis
             // 
             this.colStokCikis.Caption = "Stok Çıkış";
             this.colStokCikis.FieldName = "StokCikis";
             this.colStokCikis.Name = "colStokCikis";
+            this.colStokCikis.OptionsColumn.AllowEdit = false;
             this.colStokCikis.Visible = true;
-            this.colStokCikis.VisibleIndex = 4;
+            this.colStokCikis.VisibleIndex = 3;
+            this.colStokCikis.Width = 54;
             // 
             // gridcontDepoStok
             // 
@@ -247,7 +249,7 @@
             this.gridcontDepoStok.Location = new System.Drawing.Point(2, 23);
             this.gridcontDepoStok.MainView = this.gridDepoStok;
             this.gridcontDepoStok.Name = "gridcontDepoStok";
-            this.gridcontDepoStok.Size = new System.Drawing.Size(543, 165);
+            this.gridcontDepoStok.Size = new System.Drawing.Size(543, 142);
             this.gridcontDepoStok.TabIndex = 2;
             this.gridcontDepoStok.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridDepoStok});
@@ -258,9 +260,9 @@
             this.grpMenu.Controls.Add(this.btnAra);
             this.grpMenu.Controls.Add(this.btnGuncelle);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 471);
+            this.grpMenu.Location = new System.Drawing.Point(0, 475);
             this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(1071, 73);
+            this.grpMenu.Size = new System.Drawing.Size(1071, 69);
             this.grpMenu.TabIndex = 11;
             this.grpMenu.Text = "Menü";
             // 
@@ -269,7 +271,7 @@
             this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKapat.ImageOptions.ImageIndex = 3;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(976, 26);
+            this.btnKapat.Location = new System.Drawing.Point(976, 22);
             this.btnKapat.Name = "btnKapat";
             this.btnKapat.Size = new System.Drawing.Size(90, 45);
             this.btnKapat.TabIndex = 0;
@@ -310,7 +312,7 @@
             this.gridcontHareket.Location = new System.Drawing.Point(0, 0);
             this.gridcontHareket.MainView = this.gridHareket;
             this.gridcontHareket.Name = "gridcontHareket";
-            this.gridcontHareket.Size = new System.Drawing.Size(1071, 287);
+            this.gridcontHareket.Size = new System.Drawing.Size(1071, 241);
             this.gridcontHareket.TabIndex = 1;
             this.gridcontHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridHareket});
@@ -334,8 +336,7 @@
             this.colKdv,
             this.colBirimFiyati,
             this.colIndirimOrani,
-            this.colIndirimTutari,
-            this.colToplamTutar,
+            this.colGenelToplamTutar,
             this.colDepoKodu,
             this.colDepoAdi,
             this.colSeriNo,
@@ -359,6 +360,7 @@
             this.colFisKodu.OptionsColumn.AllowEdit = false;
             this.colFisKodu.Visible = true;
             this.colFisKodu.VisibleIndex = 0;
+            this.colFisKodu.Width = 73;
             // 
             // colHareket
             // 
@@ -368,6 +370,7 @@
             this.colHareket.OptionsColumn.AllowEdit = false;
             this.colHareket.Visible = true;
             this.colHareket.VisibleIndex = 1;
+            this.colHareket.Width = 73;
             // 
             // colStokKodu
             // 
@@ -376,7 +379,8 @@
             this.colStokKodu.Name = "colStokKodu";
             this.colStokKodu.OptionsColumn.AllowEdit = false;
             this.colStokKodu.Visible = true;
-            this.colStokKodu.VisibleIndex = 2;
+            this.colStokKodu.VisibleIndex = 5;
+            this.colStokKodu.Width = 59;
             // 
             // colStokAdi
             // 
@@ -385,7 +389,8 @@
             this.colStokAdi.Name = "colStokAdi";
             this.colStokAdi.OptionsColumn.AllowEdit = false;
             this.colStokAdi.Visible = true;
-            this.colStokAdi.VisibleIndex = 3;
+            this.colStokAdi.VisibleIndex = 6;
+            this.colStokAdi.Width = 180;
             // 
             // colBarkodTuru
             // 
@@ -401,7 +406,8 @@
             this.colBarkod1.Name = "colBarkod1";
             this.colBarkod1.OptionsColumn.AllowEdit = false;
             this.colBarkod1.Visible = true;
-            this.colBarkod1.VisibleIndex = 4;
+            this.colBarkod1.VisibleIndex = 7;
+            this.colBarkod1.Width = 66;
             // 
             // colBirimi
             // 
@@ -410,7 +416,8 @@
             this.colBirimi.Name = "colBirimi";
             this.colBirimi.OptionsColumn.AllowEdit = false;
             this.colBirimi.Visible = true;
-            this.colBirimi.VisibleIndex = 5;
+            this.colBirimi.VisibleIndex = 8;
+            this.colBirimi.Width = 44;
             // 
             // colMiktar
             // 
@@ -419,7 +426,8 @@
             this.colMiktar.Name = "colMiktar";
             this.colMiktar.OptionsColumn.AllowEdit = false;
             this.colMiktar.Visible = true;
-            this.colMiktar.VisibleIndex = 6;
+            this.colMiktar.VisibleIndex = 9;
+            this.colMiktar.Width = 54;
             // 
             // colKdv
             // 
@@ -428,7 +436,8 @@
             this.colKdv.Name = "colKdv";
             this.colKdv.OptionsColumn.AllowEdit = false;
             this.colKdv.Visible = true;
-            this.colKdv.VisibleIndex = 7;
+            this.colKdv.VisibleIndex = 10;
+            this.colKdv.Width = 52;
             // 
             // colBirimFiyati
             // 
@@ -437,7 +446,8 @@
             this.colBirimFiyati.Name = "colBirimFiyati";
             this.colBirimFiyati.OptionsColumn.AllowEdit = false;
             this.colBirimFiyati.Visible = true;
-            this.colBirimFiyati.VisibleIndex = 8;
+            this.colBirimFiyati.VisibleIndex = 11;
+            this.colBirimFiyati.Width = 60;
             // 
             // colIndirimOrani
             // 
@@ -448,28 +458,22 @@
             this.colIndirimOrani.Name = "colIndirimOrani";
             this.colIndirimOrani.OptionsColumn.AllowEdit = false;
             this.colIndirimOrani.Visible = true;
-            this.colIndirimOrani.VisibleIndex = 9;
+            this.colIndirimOrani.VisibleIndex = 12;
+            this.colIndirimOrani.Width = 71;
             // 
-            // colIndirimTutari
+            // colGenelToplamTutar
             // 
-            this.colIndirimTutari.Caption = "İndirim Tutarı";
-            this.colIndirimTutari.DisplayFormat.FormatString = "C2";
-            this.colIndirimTutari.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colIndirimTutari.FieldName = "IndirimTutari";
-            this.colIndirimTutari.Name = "colIndirimTutari";
-            this.colIndirimTutari.OptionsColumn.AllowEdit = false;
-            this.colIndirimTutari.Visible = true;
-            this.colIndirimTutari.VisibleIndex = 10;
-            // 
-            // colToplamTutar
-            // 
-            this.colToplamTutar.Caption = "Toplam Tutar";
-            this.colToplamTutar.DisplayFormat.FormatString = "C2";
-            this.colToplamTutar.FieldName = "ToplamTutar";
-            this.colToplamTutar.Name = "colToplamTutar";
-            this.colToplamTutar.OptionsColumn.AllowEdit = false;
-            this.colToplamTutar.Visible = true;
-            this.colToplamTutar.VisibleIndex = 11;
+            this.colGenelToplamTutar.Caption = "Toplam Tutar";
+            this.colGenelToplamTutar.DisplayFormat.FormatString = "C2";
+            this.colGenelToplamTutar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colGenelToplamTutar.FieldName = "GenelToplamTutar";
+            this.colGenelToplamTutar.Name = "colGenelToplamTutar";
+            this.colGenelToplamTutar.OptionsColumn.AllowEdit = false;
+            this.colGenelToplamTutar.UnboundExpression = "[Miktar] * [BirimFiyati] - [Miktar] * [BirimFiyati] * [IndirimOrani] / 100";
+            this.colGenelToplamTutar.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.colGenelToplamTutar.Visible = true;
+            this.colGenelToplamTutar.VisibleIndex = 13;
+            this.colGenelToplamTutar.Width = 113;
             // 
             // colDepoKodu
             // 
@@ -478,7 +482,8 @@
             this.colDepoKodu.Name = "colDepoKodu";
             this.colDepoKodu.OptionsColumn.AllowEdit = false;
             this.colDepoKodu.Visible = true;
-            this.colDepoKodu.VisibleIndex = 12;
+            this.colDepoKodu.VisibleIndex = 3;
+            this.colDepoKodu.Width = 63;
             // 
             // colDepoAdi
             // 
@@ -487,7 +492,8 @@
             this.colDepoAdi.Name = "colDepoAdi";
             this.colDepoAdi.OptionsColumn.AllowEdit = false;
             this.colDepoAdi.Visible = true;
-            this.colDepoAdi.VisibleIndex = 13;
+            this.colDepoAdi.VisibleIndex = 4;
+            this.colDepoAdi.Width = 66;
             // 
             // colSeriNo
             // 
@@ -503,7 +509,8 @@
             this.colTarih.Name = "colTarih";
             this.colTarih.OptionsColumn.AllowEdit = false;
             this.colTarih.Visible = true;
-            this.colTarih.VisibleIndex = 14;
+            this.colTarih.VisibleIndex = 2;
+            this.colTarih.Width = 72;
             // 
             // colAciklama
             // 
@@ -511,8 +518,7 @@
             this.colAciklama.FieldName = "Aciklama";
             this.colAciklama.Name = "colAciklama";
             this.colAciklama.OptionsColumn.AllowEdit = false;
-            this.colAciklama.Visible = true;
-            this.colAciklama.VisibleIndex = 15;
+            this.colAciklama.Width = 62;
             // 
             // splitContainerControl1
             // 
@@ -524,8 +530,8 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1071, 487);
-            this.splitContainerControl1.SplitterPosition = 287;
+            this.splitContainerControl1.Size = new System.Drawing.Size(1071, 418);
+            this.splitContainerControl1.SplitterPosition = 241;
             this.splitContainerControl1.TabIndex = 12;
             // 
             // splitContainerControl2
@@ -537,7 +543,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl2);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1071, 190);
+            this.splitContainerControl2.Size = new System.Drawing.Size(1071, 167);
             this.splitContainerControl2.SplitterPosition = 547;
             this.splitContainerControl2.TabIndex = 0;
             // 
@@ -547,7 +553,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(547, 190);
+            this.groupControl1.Size = new System.Drawing.Size(547, 167);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Depodaki Stok Miktarları";
             // 
@@ -556,9 +562,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 544);
-            this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.lblBaslik);
+            this.Controls.Add(this.grpMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmDepoHareket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -620,8 +626,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colKdv;
         private DevExpress.XtraGrid.Columns.GridColumn colBirimFiyati;
         private DevExpress.XtraGrid.Columns.GridColumn colIndirimOrani;
-        private DevExpress.XtraGrid.Columns.GridColumn colIndirimTutari;
-        private DevExpress.XtraGrid.Columns.GridColumn colToplamTutar;
+        private DevExpress.XtraGrid.Columns.GridColumn colGenelToplamTutar;
         private DevExpress.XtraGrid.Columns.GridColumn colDepoKodu;
         private DevExpress.XtraGrid.Columns.GridColumn colDepoAdi;
         private DevExpress.XtraGrid.Columns.GridColumn colSeriNo;

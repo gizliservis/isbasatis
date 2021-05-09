@@ -127,6 +127,7 @@
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.groupGenelBilgiler = new DevExpress.XtraEditors.GroupControl();
+            this.btnKod = new DevExpress.XtraEditors.DropDownButton();
             this.txtKod = new DevExpress.XtraEditors.TextEdit();
             this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
             this.cmbBarkodTuru = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -184,7 +185,6 @@
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.calcAlisFiyati1 = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
-            this.btnKod = new DevExpress.XtraEditors.DropDownButton();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupGenelBilgiler)).BeginInit();
@@ -322,6 +322,14 @@
             this.groupGenelBilgiler.TabIndex = 2;
             this.groupGenelBilgiler.Text = "Genel Bilgiler";
             // 
+            // btnKod
+            // 
+            this.btnKod.Location = new System.Drawing.Point(372, 47);
+            this.btnKod.Name = "btnKod";
+            this.btnKod.Size = new System.Drawing.Size(108, 23);
+            this.btnKod.TabIndex = 23;
+            this.btnKod.Text = "Kodlar";
+            // 
             // txtKod
             // 
             this.txtKod.Location = new System.Drawing.Point(120, 49);
@@ -394,7 +402,8 @@
             // 
             // toggleDurumu
             // 
-            this.toggleDurumu.Location = new System.Drawing.Point(118, 31);
+            this.toggleDurumu.EditValue = true;
+            this.toggleDurumu.Location = new System.Drawing.Point(120, 25);
             this.toggleDurumu.Name = "toggleDurumu";
             this.toggleDurumu.Properties.OffText = "Pasif";
             this.toggleDurumu.Properties.OnText = "Aktif";
@@ -554,7 +563,7 @@
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl1.Location = new System.Drawing.Point(5, 34);
+            this.labelControl1.Location = new System.Drawing.Point(7, 28);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(107, 15);
             this.labelControl1.TabIndex = 0;
@@ -1034,14 +1043,6 @@
             this.labelControl22.Size = new System.Drawing.Size(109, 15);
             this.labelControl22.TabIndex = 0;
             this.labelControl22.Text = "Alış Fiyatı - 1 :";
-            // 
-            // btnKod
-            // 
-            this.btnKod.Location = new System.Drawing.Point(372, 47);
-            this.btnKod.Name = "btnKod";
-            this.btnKod.Size = new System.Drawing.Size(108, 23);
-            this.btnKod.TabIndex = 23;
-            this.btnKod.Text = "Kodlar";
             // 
             // frmStokIslem
             // 

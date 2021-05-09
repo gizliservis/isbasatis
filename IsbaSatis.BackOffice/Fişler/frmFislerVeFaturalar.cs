@@ -43,7 +43,9 @@ namespace IsbaSatis.BackOffice.Fişler
         public frmFislerVeFaturalar(string fisKodu = null, string fisTuru = null,int? cariId=null)
         {
             InitializeComponent();
-            
+            kodOlustur = new CodeTool(this, CodeTool.Table.Fis, context);
+            kodOlustur.BarButonOlustur();
+
             context.Stoklar.Load();
             context.Depolar.Load();
             context.Kasalar.Load();
@@ -100,6 +102,7 @@ namespace IsbaSatis.BackOffice.Fişler
             txtAdres.DataBindings.Add("Text", _fisentity, "Adres", false, DataSourceUpdateMode.OnPropertyChanged);
             txtVargiDairesi.DataBindings.Add("Text", _fisentity, "VergiDairesi", false, DataSourceUpdateMode.OnPropertyChanged);
             txtVergiNo.DataBindings.Add("Text", _fisentity, "VergiNo", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtIndirimToplam.DataBindings.Add("EditValue", _fisentity, "IskontoTutar", false, DataSourceUpdateMode.OnPropertyChanged);
 
             cmbAy.Month = DateTime.Now.Month;
             for (int i = DateTime.Now.Year - 5; i <= DateTime.Now.Year + 5; i++)
@@ -694,7 +697,7 @@ namespace IsbaSatis.BackOffice.Fişler
 
             _fisentity.ToplamTutar = txtGenelToplam.Value;
             _fisentity.IskontoOrani = txtIskontoOran.Value;
-            _fisentity.IskontoTutar = txtIskontoToplam.Value;
+            _fisentity.IskontoTutar = txtIndirimToplam.Value;
             fisDAL.AddOrUpdate(context, _fisentity);
 
             Fis fisOdeme = new Fis();

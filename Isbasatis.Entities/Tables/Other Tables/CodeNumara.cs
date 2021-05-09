@@ -66,7 +66,7 @@ namespace Isbasatis.Entities.Tables.Other_Tables
                 int Numara = int.Parse((from c in context.Fisler orderby c.Id descending select c).First().FisKodu);
                 Numara++;
                 string num =Numara.ToString().PadLeft(5, '0');
-                return "Fi"+num;
+                return num;
             }
             catch (Exception)
             {

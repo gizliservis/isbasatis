@@ -21,6 +21,7 @@ namespace IsbaSatis.BackOffice.Hızlı_Satış
         IsbaSatisContext context = new IsbaSatisContext();
         HizliSatisGrupDAL hizliSatisGrupDAL = new HizliSatisGrupDAL();
         HizliSatisDAL hizliSatisDAL = new HizliSatisDAL();
+        StokDAL stokDAL = new StokDAL();
         public frmHızliSatis()
         {
             InitializeComponent();
@@ -98,6 +99,10 @@ namespace IsbaSatis.BackOffice.Hızlı_Satış
             }
 
         }
+        void listele()
+        {
+            gridContUrunEkle.DataSource = stokDAL.GetAll(context);
+        }
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
@@ -118,6 +123,10 @@ namespace IsbaSatis.BackOffice.Hızlı_Satış
                         hizliSatisDAL.Save(context);
                     }
 
+                }
+                if (frm.kaydedildi)
+                {
+                    gridContUrunEkle.DataSource = context.HizliSatislar.Local.ToBindingList();
                 }
 
 

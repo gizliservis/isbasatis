@@ -16,7 +16,7 @@ namespace Isbasatis.Entities.Tools
     {
  
         BarManager manager = new BarManager();
-        PopupMenu menu = new PopupMenu();
+        PopupMenu menu;
         private XtraForm _form;
         private IsbaSatisContext _context;
         private Table _table;
@@ -39,7 +39,7 @@ namespace Isbasatis.Entities.Tools
         }
 
         public void BarButonOlustur()
-        {
+        {   
             _context = new IsbaSatisContext();
             foreach (var kod in _context.Kodlar.Where(c => c.Tablo == _table.ToString()).ToList())
             {
@@ -103,14 +103,14 @@ namespace Isbasatis.Entities.Tools
         private void Button_Click(object sender, ItemClickEventArgs e)
         {
             TextEdit text =(TextEdit) _form.Controls.Find("txtKod",true).SingleOrDefault();
-            text.Text = e.Item.Caption;
+            text.Text = e.Item.Caption;  
         }
 
         private string KodOlustur(string kodonEki, int kodsonDeger)
         {
             int sifirsayisi = 12 - (kodonEki.Length + kodsonDeger.ToString().Length);
-            string sifirdizis = new string('0',sifirsayisi);
-            return kodonEki + sifirdizis + kodsonDeger;
+            string sifirdizisi = new string('0',sifirsayisi);
+            return kodonEki + sifirdizisi + kodsonDeger;
         }
         public void KodArttirma()
         {
@@ -120,6 +120,8 @@ namespace Isbasatis.Entities.Tools
             {
                 int id =Convert.ToInt32( buton.Item.Tag.ToString());
                 _context.Kodlar.SingleOrDefault(c => c.Id == id).SonDeger++;
+                _context.SaveChanges();
+                
             }
         }
         //public static string KodOlustur(string OnEki,string Kod)
