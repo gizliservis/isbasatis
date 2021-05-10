@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.ComponentModel;
 
 namespace Isbasatis.Entities.Interfaces
 {
@@ -17,6 +18,7 @@ namespace Isbasatis.Entities.Interfaces
     {
          bool AddOrUpdate(TContext context, TEntity entity);
         void Delete(TContext context, Expression<Func<TEntity, bool>> filter);
-        void Save(TContext context);
+        void Save(TContext context); 
+      
     }
 }

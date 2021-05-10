@@ -2145,7 +2145,7 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1125, 76);
             this.groupControl1.TabIndex = 13;
-            this.groupControl1.Text = "groupControl1";
+            this.groupControl1.Text = "Menü";
             // 
             // frmFislerVeFaturalar
             // 

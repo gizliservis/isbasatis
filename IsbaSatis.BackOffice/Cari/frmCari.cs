@@ -69,7 +69,7 @@ namespace IsbaSatis.BackOffice.Cari
             if (MessageBox.Show("Seçili Olan Veriyi Silmek İstediğinie Eminmisiniz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
-                foreach (var hareket in context.Fisler.Select(c => c.CariId == secilen).ToList())
+                foreach (var hareket in context.fisler.Select(c => c.CariId == secilen).ToList())
                 {
 
                     if (hareket)

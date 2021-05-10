@@ -17,7 +17,7 @@ namespace IsbaSatis.BackOffice.Fişler
         FisDAL fisDAL = new FisDAL();
         KasaHareketDAL kasaHareketDAL = new KasaHareketDAL();
         StokHareketDAL stokHareketDAL = new StokHareketDAL();
-        Fis Fis = new Fis();
+        Fis fis = new Fis();
        
         public frmFis()
         {
@@ -29,9 +29,8 @@ namespace IsbaSatis.BackOffice.Fişler
      
         private void listele()
         {
+            context = new IsbaSatisContext();
             gridControl1.DataSource = fisDAL.GetAll(context);
-           
-
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -57,7 +56,7 @@ namespace IsbaSatis.BackOffice.Fişler
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            gridControl1.DataSource = fisDAL.GetAll(context);
+            Invoke((MethodInvoker)delegate { listele(); });
         }
 
         private void btnKapat_Click(object sender, EventArgs e)

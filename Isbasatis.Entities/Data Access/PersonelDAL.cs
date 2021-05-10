@@ -14,7 +14,7 @@ namespace Isbasatis.Entities.Data_Access
     {
         public object PersonelListele(IsbaSatisContext context)
         {
-            var result = context.Personeller.GroupJoin(context.Fisler, c => c.Id, c => c.PlasiyerId, (personel, fis) => new
+            var result = context.Personeller.GroupJoin(context.fisler, c => c.Id, c => c.PlasiyerId, (personel, fis) => new
             {
                 personel.Id,
                 personel.Calisiyor,
@@ -45,7 +45,7 @@ namespace Isbasatis.Entities.Data_Access
         }
         public object TariheGorePersonelListele(IsbaSatisContext context,int Ay,int Yil)
         {
-            var result = context.Personeller.GroupJoin(context.Fisler, c => c.Id, c => c.PlasiyerId, (personel, fis) => new
+            var result = context.Personeller.GroupJoin(context.fisler, c => c.Id, c => c.PlasiyerId, (personel, fis) => new
             {
                 personel.Id,
                 personel.Calisiyor,
@@ -76,7 +76,7 @@ namespace Isbasatis.Entities.Data_Access
         }
         public object PersonelFisToplam(IsbaSatisContext context,int personelId)
         {
-            var result = (from c in context.Fisler.Where(c => c.PlasiyerId == personelId)
+            var result = (from c in context.fisler.Where(c => c.PlasiyerId == personelId)
                           group c by new { c.FisTuru } into grp
                           select new
                           {

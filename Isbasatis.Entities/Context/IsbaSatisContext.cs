@@ -20,7 +20,7 @@ namespace Isbasatis.Entities.Context
         }
         public DbSet<Stok> Stoklar { get; set; }
         public DbSet<Cari> Cariler { get; set; }
-        public DbSet<Fis> Fisler { get; set; }
+        public DbSet<Fis> fisler { get; set; }
         public DbSet<StokHareket> StokHareketleri { get; set; }
         public DbSet<KasaHareket> KasaHareketleri { get; set; }
         public DbSet<Depo> Depolar { get; set; }

@@ -3,6 +3,7 @@ using Isbasatis.Entities.Interfaces;
 using Isbasatis.Entities.Tools;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
@@ -47,5 +48,7 @@ namespace Isbasatis.Entities.RepoSitories
         {
             context.SaveChanges();
         }
+
+    
     }
 }

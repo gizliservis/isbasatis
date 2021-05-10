@@ -200,6 +200,7 @@
             this.colPersonel,
             this.colCariKodu,
             this.colTarih});
+            this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(799, 177, 252, 266);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -231,8 +232,6 @@
             this.colCariTuru.FieldName = "CariTuru";
             this.colCariTuru.Name = "colCariTuru";
             this.colCariTuru.OptionsColumn.AllowEdit = false;
-            this.colCariTuru.Visible = true;
-            this.colCariTuru.VisibleIndex = 6;
             // 
             // colBelgeNo
             // 
@@ -262,7 +261,7 @@
             this.colIskontoOrani.Name = "colIskontoOrani";
             this.colIskontoOrani.OptionsColumn.AllowEdit = false;
             this.colIskontoOrani.Visible = true;
-            this.colIskontoOrani.VisibleIndex = 7;
+            this.colIskontoOrani.VisibleIndex = 4;
             // 
             // colIskontoTutar
             // 
@@ -270,7 +269,7 @@
             this.colIskontoTutar.Name = "colIskontoTutar";
             this.colIskontoTutar.OptionsColumn.AllowEdit = false;
             this.colIskontoTutar.Visible = true;
-            this.colIskontoTutar.VisibleIndex = 8;
+            this.colIskontoTutar.VisibleIndex = 5;
             // 
             // colAlacak
             // 
@@ -290,7 +289,7 @@
             this.colToplamTutar.Name = "colToplamTutar";
             this.colToplamTutar.OptionsColumn.AllowEdit = false;
             this.colToplamTutar.Visible = true;
-            this.colToplamTutar.VisibleIndex = 9;
+            this.colToplamTutar.VisibleIndex = 6;
             // 
             // colAciklama
             // 
@@ -304,8 +303,6 @@
             this.colCariAdi.FieldName = "Cari.CariAdi";
             this.colCariAdi.Name = "colCariAdi";
             this.colCariAdi.OptionsColumn.AllowEdit = false;
-            this.colCariAdi.Visible = true;
-            this.colCariAdi.VisibleIndex = 4;
             // 
             // colPersonel
             // 
@@ -318,8 +315,7 @@
             this.colCariKodu.Caption = "Car Kodu";
             this.colCariKodu.FieldName = "Cari.CariKodu";
             this.colCariKodu.Name = "colCariKodu";
-            this.colCariKodu.Visible = true;
-            this.colCariKodu.VisibleIndex = 5;
+            this.colCariKodu.OptionsColumn.AllowEdit = false;
             // 
             // colTarih
             // 

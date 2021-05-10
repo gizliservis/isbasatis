@@ -18,7 +18,7 @@ namespace Isbasatis.Entities.Data_Access
 
         public object CariListele(IsbaSatisContext context)
         {
-            var result = context.Cariler.GroupJoin(context.Fisler, c => c.Id, c => c.CariId, (cariler, fisler) => new
+            var result = context.Cariler.GroupJoin(context.fisler, c => c.Id, c => c.CariId, (cariler, fisler) => new
             {
                 cariler.Id,
                 cariler.Durumu,
@@ -57,7 +57,7 @@ namespace Isbasatis.Entities.Data_Access
         }
         public object CariFisAyrinti(IsbaSatisContext context, int cariId)
         {
-            return (from fis in context.Fisler.Where(c => c.CariId == cariId)
+            return (from fis in context.fisler.Where(c => c.CariId == cariId)
                     select new
                     {
                         fis.Id,
@@ -70,12 +70,12 @@ namespace Isbasatis.Entities.Data_Access
                         fis.Aciklama,
                         fis.Alacak,
                         fis.Borc,
-                        Bakiye = context.Fisler.OrderBy(c => c.Tarih).ThenBy(c => c.Id).Where(c => c.CariId == cariId && c.Tarih <= fis.Tarih && c.Id >= fis.Id).Select(c => (decimal?)(c.Alacak ?? 0 - c.Borc ?? 0)).Sum() ?? 0
+                        Bakiye = context.fisler.OrderBy(c => c.Tarih).ThenBy(c => c.Id).Where(c => c.CariId == cariId && c.Tarih <= fis.Tarih && c.Id >= fis.Id).Select(c => (decimal?)(c.Alacak ?? 0 - c.Borc ?? 0)).Sum() ?? 0
                     }).OrderBy(c => c.Tarih).ToList();
         }
         public object CariFisAyrintiGenelToplam(IsbaSatisContext context, int cariId)
         {
-            var result = (from c in context.Fisler.Where(c => c.CariId == cariId)
+            var result = (from c in context.fisler.Where(c => c.CariId == cariId)
                           group c by new
                           {
                               c.FisTuru
@@ -91,8 +91,8 @@ namespace Isbasatis.Entities.Data_Access
         }
         public object CariGenelToplam(IsbaSatisContext context, int cariId)
         {
-            decimal alacak = context.Fisler.Where(c => c.CariId == cariId).Sum(c => c.Alacak) ?? 0;
-            decimal borc = context.Fisler.Where(c => c.CariId == cariId).Sum(c => c.Borc) ?? 0;
+            decimal alacak = context.fisler.Where(c => c.CariId == cariId).Sum(c => c.Alacak) ?? 0;
+            decimal borc = context.fisler.Where(c => c.CariId == cariId).Sum(c => c.Borc) ?? 0;
             List<GenelToplam> genelToplamlar = new List<GenelToplam>()
             {
                 new GenelToplam
@@ -116,8 +116,8 @@ namespace Isbasatis.Entities.Data_Access
         }
         public CariBakiye CariBakiyesi(IsbaSatisContext context, int cariId)
         {
-            decimal alacak = context.Fisler.Where(c => c.CariId == cariId).Sum(c => c.Alacak) ?? 0;
-            decimal borc = context.Fisler.Where(c => c.CariId == cariId).Sum(c => c.Borc) ?? 0;
+            decimal alacak = context.fisler.Where(c => c.CariId == cariId).Sum(c => c.Alacak) ?? 0;
+            decimal borc = context.fisler.Where(c => c.CariId == cariId).Sum(c => c.Borc) ?? 0;
 
             CariBakiye entity = new CariBakiye
             {

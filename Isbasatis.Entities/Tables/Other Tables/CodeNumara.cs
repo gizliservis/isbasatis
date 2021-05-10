@@ -47,7 +47,7 @@ namespace Isbasatis.Entities.Tables.Other_Tables
         {
             try
             {
-                int Numara = int.Parse((from c in context.Fisler orderby c.Id descending select c).First().FisKodu);
+                int Numara = int.Parse((from c in context.fisler orderby c.Id descending select c).First().FisKodu);
                 Numara++;
                 string num = Numara.ToString().PadLeft(7, '0');
                 return num;
@@ -63,7 +63,7 @@ namespace Isbasatis.Entities.Tables.Other_Tables
         {
             try
             {
-                int Numara = int.Parse((from c in context.Fisler orderby c.Id descending select c).First().FisKodu);
+                int Numara = int.Parse((from c in context.fisler orderby c.Id descending select c).First().FisKodu);
                 Numara++;
                 string num =Numara.ToString().PadLeft(5, '0');
                 return num;

@@ -53,7 +53,7 @@ namespace IsbaSatis.BackOffice.Fişler
             {
 
 
-                _fisentity = context.Fisler.SingleOrDefault(c => c.FisKodu == fisKodu);
+                _fisentity = context.fisler.SingleOrDefault(c => c.FisKodu == fisKodu);
                 context.StokHareketleri.Where(c => c.FisKodu == fisKodu).Load();
                 if (String.IsNullOrEmpty(_fisentity.FisBaglantiKodu))
                 {
@@ -102,7 +102,7 @@ namespace IsbaSatis.BackOffice.Fişler
             txtAdres.DataBindings.Add("Text", _fisentity, "Adres", false, DataSourceUpdateMode.OnPropertyChanged);
             txtVargiDairesi.DataBindings.Add("Text", _fisentity, "VergiDairesi", false, DataSourceUpdateMode.OnPropertyChanged);
             txtVergiNo.DataBindings.Add("Text", _fisentity, "VergiNo", false, DataSourceUpdateMode.OnPropertyChanged);
-            txtIndirimToplam.DataBindings.Add("EditValue", _fisentity, "IskontoTutar", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtIskontoToplam.DataBindings.Add("EditValue", _fisentity, "IskontoTutar", false, DataSourceUpdateMode.OnPropertyChanged);
 
             cmbAy.Month = DateTime.Now.Month;
             for (int i = DateTime.Now.Year - 5; i <= DateTime.Now.Year + 5; i++)
@@ -700,7 +700,7 @@ namespace IsbaSatis.BackOffice.Fişler
 
             _fisentity.ToplamTutar = txtGenelToplam.Value;
             _fisentity.IskontoOrani = txtIskontoOran.Value;
-            _fisentity.IskontoTutar = txtIndirimToplam.Value;
+            _fisentity.IskontoTutar = txtIskontoToplam.Value;
             fisDAL.AddOrUpdate(context, _fisentity);
 
             Fis fisOdeme = new Fis();
@@ -714,7 +714,7 @@ namespace IsbaSatis.BackOffice.Fişler
             }
             else
             {
-                fisOdeme = context.Fisler.SingleOrDefault(c => c.FisKodu == _fisentity.FisBaglantiKodu);
+                fisOdeme = context.fisler.SingleOrDefault(c => c.FisKodu == _fisentity.FisBaglantiKodu);
             }
             _fisentity.FisBaglantiKodu = fisOdeme.FisKodu;
           
