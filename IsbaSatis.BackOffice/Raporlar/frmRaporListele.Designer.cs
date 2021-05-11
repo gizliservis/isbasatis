@@ -212,8 +212,7 @@
             // 
             // txtAciklama
             // 
-            this.txtAciklama.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAciklama.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAciklama.Location = new System.Drawing.Point(119, 77);
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Properties.ReadOnly = true;
@@ -222,8 +221,7 @@
             // 
             // txtRaporAdi
             // 
-            this.txtRaporAdi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRaporAdi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRaporAdi.Location = new System.Drawing.Point(119, 26);
             this.txtRaporAdi.Name = "txtRaporAdi";
             this.txtRaporAdi.Properties.ReadOnly = true;
@@ -232,8 +230,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
@@ -246,8 +243,7 @@
             // 
             // txtRaporGrubu
             // 
-            this.txtRaporGrubu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRaporGrubu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRaporGrubu.Location = new System.Drawing.Point(119, 51);
             this.txtRaporGrubu.Name = "txtRaporGrubu";
             this.txtRaporGrubu.Properties.ReadOnly = true;
@@ -256,8 +252,7 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelControl10.Appearance.Options.UseTextOptions = true;
             this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
@@ -270,8 +265,7 @@
             // 
             // labelControl20
             // 
-            this.labelControl20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl20.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelControl20.Appearance.Options.UseTextOptions = true;
             this.labelControl20.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl20.AppearanceHovered.Options.UseTextOptions = true;

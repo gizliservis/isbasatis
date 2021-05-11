@@ -337,6 +337,12 @@
     <Compile Include="Raporlar\frmRaporGoruntule.Designer.cs">
       <DependentUpon>frmRaporGoruntule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\frmRaporlardnm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmRaporlardnm.Designer.cs">
+      <DependentUpon>frmRaporlardnm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\frmRaporListele.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -521,6 +527,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmRaporGoruntule.resx">
       <DependentUpon>frmRaporGoruntule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmRaporlardnm.resx">
+      <DependentUpon>frmRaporlardnm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmRaporListele.resx">
       <DependentUpon>frmRaporListele.cs</DependentUpon>

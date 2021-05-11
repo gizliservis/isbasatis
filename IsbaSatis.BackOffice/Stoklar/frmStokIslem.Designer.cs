@@ -402,7 +402,6 @@
             // 
             // toggleDurumu
             // 
-            this.toggleDurumu.EditValue = true;
             this.toggleDurumu.Location = new System.Drawing.Point(120, 25);
             this.toggleDurumu.Name = "toggleDurumu";
             this.toggleDurumu.Properties.OffText = "Pasif";

@@ -23,32 +23,30 @@ namespace IsbaSatis.BackOffice.Kasalar
         public frmKasa()
         {
             InitializeComponent();
+         
         }
         public void Guncelle()
         {
            gridControl1.DataSource= kasaDAL.KasaListele(context);
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            filterControl1.ApplyFilter();
-        }
+    
 
         private void btnAra_Click(object sender, EventArgs e)
         {
-            splitContainerControl1.PanelVisibility = SplitPanelVisibility.Both;
+            //if (gridView1.OptionsView.ShowAutoFilterRow == true)
+            //{
+            //    gridView1.OptionsView.ShowAutoFilterRow = false;
+            //}
+            //else
+            //{
+            //    gridView1.OptionsView.ShowAutoFilterRow = true;
+            //}
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            filterControl1.FilterString = null;
-            filterControl1.ApplyFilter();
-        }
+     
 
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            splitContainerControl1.PanelVisibility = SplitPanelVisibility.Panel2;
-        }
+     
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
@@ -76,7 +74,7 @@ namespace IsbaSatis.BackOffice.Kasalar
         private void btnDuzenle_Click(object sender, EventArgs e)
         {
             secilen =Convert.ToInt32(layoutView1.GetFocusedRowCellValue(colId));
-            Cari.frmKasaIslem form = new Cari.frmKasaIslem(kasaDAL.GetByFilter(context, c => c.Id == secilen));
+            frmKasaIslem form = new frmKasaIslem(kasaDAL.GetByFilter(context, c => c.Id == secilen));
             form.ShowDialog();
             if (form.Kaydedildi)
             {

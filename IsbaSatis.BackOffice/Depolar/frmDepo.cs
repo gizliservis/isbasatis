@@ -49,24 +49,16 @@ namespace IsbaSatis.BackOffice.Depolar
 
         private void btnAra_Click(object sender, EventArgs e)
         {
-            splitContainerControl1.PanelVisibility = SplitPanelVisibility.Both;
+            if (gridDepo.OptionsView.ShowAutoFilterRow == true)
+            {
+                gridDepo.OptionsView.ShowAutoFilterRow = false;
+            }
+            else
+            {
+                gridDepo.OptionsView.ShowAutoFilterRow = true;
+            }
         }
 
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            splitContainerControl1.PanelVisibility = SplitPanelVisibility.Panel2;
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            filterControl1.ApplyFilter();
-        }
-
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            filterControl1.FilterString = null;
-            filterControl1.ApplyFilter();
-        }
 
         private void btnSil_Click(object sender, EventArgs e)
         {

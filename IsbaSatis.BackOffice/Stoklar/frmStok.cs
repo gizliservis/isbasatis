@@ -48,27 +48,7 @@ namespace IsbaSatis.BackOffice.AnaMenü
             this.Close();
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            filterControl1.ApplyFilter();
-        }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-
-            filterControl1.FilterString = null;
-            filterControl1.ApplyFilter();
-        }
-
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            splitContainerControl1.PanelVisibility = SplitPanelVisibility.Panel2;
-        }
-
-        private void btnAra_Click(object sender, EventArgs e)
-        {
-            splitContainerControl1.PanelVisibility = SplitPanelVisibility.Both;
-        }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
@@ -81,7 +61,7 @@ namespace IsbaSatis.BackOffice.AnaMenü
             {
 
                 secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
-                foreach (var hareket in context.StokHareketleri.Select(c=>c.StokId==secilen).ToList())
+                foreach (var hareket in context.StokHareketleri.Select(c => c.StokId == secilen).ToList())
                 {
                     if (hareket)
                     {
@@ -94,7 +74,7 @@ namespace IsbaSatis.BackOffice.AnaMenü
                         stokDAL.Save(context);
                         GetAll();
                     }
-                
+
                 }
 
             }
@@ -132,9 +112,21 @@ namespace IsbaSatis.BackOffice.AnaMenü
         private void btnStokHareket_Click(object sender, EventArgs e)
         {
             secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
-           
+
             frmStokHareket frm = new frmStokHareket(secilen);
             frm.ShowDialog();
+        }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            if (gridView1.OptionsView.ShowAutoFilterRow == true)
+            {
+                gridView1.OptionsView.ShowAutoFilterRow = false;
+            }
+            else
+            {
+                gridView1.OptionsView.ShowAutoFilterRow = true;
+            }
         }
     }
 }

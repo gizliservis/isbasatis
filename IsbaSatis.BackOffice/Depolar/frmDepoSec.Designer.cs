@@ -52,6 +52,7 @@
             this.lblUyari = new DevExpress.XtraEditors.LabelControl();
             this.btnStokSec = new DevExpress.XtraEditors.SimpleButton();
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
+            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
@@ -64,7 +65,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 56);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1073, 384);
+            this.gridControl1.Size = new System.Drawing.Size(1073, 390);
             this.gridControl1.TabIndex = 13;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -232,12 +233,12 @@
             // 
             // btnKapat
             // 
-            this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKapat.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnKapat.ImageOptions.ImageIndex = 1;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(978, 37);
+            this.btnKapat.Location = new System.Drawing.Point(981, 23);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(90, 45);
+            this.btnKapat.Size = new System.Drawing.Size(90, 56);
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
             // 
@@ -263,27 +264,39 @@
             // 
             // btnStokSec
             // 
-            this.btnStokSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStokSec.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnStokSec.ImageOptions.ImageIndex = 0;
             this.btnStokSec.ImageOptions.ImageList = this.ımageList1;
-            this.btnStokSec.Location = new System.Drawing.Point(882, 37);
+            this.btnStokSec.Location = new System.Drawing.Point(891, 23);
             this.btnStokSec.Name = "btnStokSec";
-            this.btnStokSec.Size = new System.Drawing.Size(90, 45);
+            this.btnStokSec.Size = new System.Drawing.Size(90, 56);
             this.btnStokSec.TabIndex = 0;
             this.btnStokSec.Text = "Seç";
             this.btnStokSec.Click += new System.EventHandler(this.btnStokSec_Click);
             // 
             // grpMenu
             // 
+            this.grpMenu.Controls.Add(this.btnAra);
             this.grpMenu.Controls.Add(this.lblUyari);
             this.grpMenu.Controls.Add(this.btnStokSec);
             this.grpMenu.Controls.Add(this.btnKapat);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 440);
+            this.grpMenu.Location = new System.Drawing.Point(0, 446);
             this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(1073, 87);
+            this.grpMenu.Size = new System.Drawing.Size(1073, 81);
             this.grpMenu.TabIndex = 11;
             this.grpMenu.Text = "Menü";
+            // 
+            // btnAra
+            // 
+            this.btnAra.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAra.ImageOptions.Image")));
+            this.btnAra.Location = new System.Drawing.Point(816, 23);
+            this.btnAra.Name = "btnAra";
+            this.btnAra.Size = new System.Drawing.Size(75, 56);
+            this.btnAra.TabIndex = 2;
+            this.btnAra.Text = "Ara";
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
             // frmDepoSec
             // 
@@ -296,7 +309,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmDepoSec";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDepoSec";
+            this.Text = "Depo Seç";
             this.Load += new System.EventHandler(this.frmDepoSec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -329,5 +342,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colStokGiris;
         private DevExpress.XtraGrid.Columns.GridColumn colStokCikis;
         private DevExpress.XtraGrid.Columns.GridColumn colMevcutStok;
+        private DevExpress.XtraEditors.SimpleButton btnAra;
     }
 }

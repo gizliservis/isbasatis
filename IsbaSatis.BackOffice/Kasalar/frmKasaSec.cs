@@ -46,5 +46,17 @@ namespace IsbaSatis.BackOffice.Kasalar
         {
             this.Close();
         }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            if (gridView1.OptionsView.ShowAutoFilterRow == true)
+            {
+                gridView1.OptionsView.ShowAutoFilterRow = false;
+            }
+            else
+            {
+                gridView1.OptionsView.ShowAutoFilterRow = true;
+            }
+        }
     }
 }

@@ -69,6 +69,7 @@
             this.btnStokSec = new DevExpress.XtraEditors.SimpleButton();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridcontStoklar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridStoklar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
@@ -408,6 +409,7 @@
             // 
             // grpMenu
             // 
+            this.grpMenu.Controls.Add(this.btnAra);
             this.grpMenu.Controls.Add(this.lblUyari);
             this.grpMenu.Controls.Add(this.btnStokSec);
             this.grpMenu.Controls.Add(this.btnKapat);
@@ -433,12 +435,12 @@
             // 
             // btnStokSec
             // 
-            this.btnStokSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStokSec.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnStokSec.ImageOptions.ImageIndex = 0;
             this.btnStokSec.ImageOptions.ImageList = this.ımageList1;
-            this.btnStokSec.Location = new System.Drawing.Point(841, 40);
+            this.btnStokSec.Location = new System.Drawing.Point(850, 23);
             this.btnStokSec.Name = "btnStokSec";
-            this.btnStokSec.Size = new System.Drawing.Size(90, 45);
+            this.btnStokSec.Size = new System.Drawing.Size(90, 62);
             this.btnStokSec.TabIndex = 0;
             this.btnStokSec.Text = "Seç";
             this.btnStokSec.Click += new System.EventHandler(this.btnStokSec_Click);
@@ -452,15 +454,26 @@
             // 
             // btnKapat
             // 
-            this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKapat.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnKapat.ImageOptions.ImageIndex = 1;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(937, 40);
+            this.btnKapat.Location = new System.Drawing.Point(940, 23);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(90, 45);
+            this.btnKapat.Size = new System.Drawing.Size(90, 62);
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
+            // 
+            // btnAra
+            // 
+            this.btnAra.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAra.ImageOptions.Image")));
+            this.btnAra.Location = new System.Drawing.Point(775, 23);
+            this.btnAra.Name = "btnAra";
+            this.btnAra.Size = new System.Drawing.Size(75, 62);
+            this.btnAra.TabIndex = 2;
+            this.btnAra.Text = "Ara";
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
             // frmStokSec
             // 
@@ -525,5 +538,6 @@
         private System.Windows.Forms.ImageList ımageList1;
         private DevExpress.XtraEditors.SimpleButton btnKapat;
         private DevExpress.XtraEditors.LabelControl lblUyari;
+        private DevExpress.XtraEditors.SimpleButton btnAra;
     }
 }

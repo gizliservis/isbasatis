@@ -89,7 +89,7 @@ namespace IsbaSatis.BackOffice.Stok
             calcMaxStokMiktar.DataBindings[0].FormatString = "N3";
 
             txtAciklama.DataBindings.Add("Text", _entity, "Aciklama", false, DataSourceUpdateMode.OnPropertyChanged);
-
+            toggleDurumu.IsOn = true;
 
 
         }

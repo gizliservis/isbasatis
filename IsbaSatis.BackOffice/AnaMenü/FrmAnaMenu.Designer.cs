@@ -521,6 +521,7 @@
             this.barButtonItem42.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.information1;
             this.barButtonItem42.Name = "barButtonItem42";
             this.barButtonItem42.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem42.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem42_ItemClick);
             // 
             // barButtonItem43
             // 

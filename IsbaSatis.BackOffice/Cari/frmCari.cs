@@ -33,26 +33,18 @@ namespace IsbaSatis.BackOffice.Cari
             GetAll();
         }
 
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            splitContainerControl1.PanelVisibility = SplitPanelVisibility.Panel2;
-        }
-
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            filterControl1.FilterString = null;
-            filterControl1.ApplyFilter();
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            filterControl1.ApplyFilter();
-
-        }
+      
 
         private void btnAra_Click(object sender, EventArgs e)
         {
-            splitContainerControl1.PanelVisibility = SplitPanelVisibility.Both;
+            if (gridView1.OptionsView.ShowAutoFilterRow == true)
+            {
+                gridView1.OptionsView.ShowAutoFilterRow = false;
+            }
+            else
+            {
+                gridView1.OptionsView.ShowAutoFilterRow = true;
+            }
         }
         public void GetAll()
         {

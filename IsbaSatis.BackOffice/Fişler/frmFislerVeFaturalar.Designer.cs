@@ -324,7 +324,7 @@
             this.lblBaslik.Name = "lblBaslik";
             this.lblBaslik.Size = new System.Drawing.Size(1125, 52);
             this.lblBaslik.TabIndex = 7;
-            this.lblBaslik.Text = "Fatura Ve Fişler";
+            this.lblBaslik.Text = "Fatura Ve Fiş İşlemleri";
             // 
             // ımageList2
             // 
@@ -1836,7 +1836,7 @@
             this.grpToplam.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpToplam.Location = new System.Drawing.Point(0, 539);
             this.grpToplam.Name = "grpToplam";
-            this.grpToplam.Size = new System.Drawing.Size(1125, 101);
+            this.grpToplam.Size = new System.Drawing.Size(1125, 102);
             this.grpToplam.TabIndex = 8;
             this.grpToplam.Text = "Toplamlar Ve Ek Bilgiler";
             // 
@@ -1876,7 +1876,7 @@
             // 
             this.txtGenelToplam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGenelToplam.Enabled = false;
-            this.txtGenelToplam.Location = new System.Drawing.Point(926, 65);
+            this.txtGenelToplam.Location = new System.Drawing.Point(926, 66);
             this.txtGenelToplam.Name = "txtGenelToplam";
             this.txtGenelToplam.Properties.Appearance.BackColor = System.Drawing.Color.Green;
             this.txtGenelToplam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -1943,7 +1943,7 @@
             // 
             this.txtKdvToplam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKdvToplam.Enabled = false;
-            this.txtKdvToplam.Location = new System.Drawing.Point(926, 23);
+            this.txtKdvToplam.Location = new System.Drawing.Point(926, 24);
             this.txtKdvToplam.Name = "txtKdvToplam";
             this.txtKdvToplam.Properties.Appearance.BackColor = System.Drawing.Color.Green;
             this.txtKdvToplam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -2045,7 +2045,7 @@
             this.labelControl25.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl25.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl25.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl25.Location = new System.Drawing.Point(813, 67);
+            this.labelControl25.Location = new System.Drawing.Point(813, 68);
             this.labelControl25.Name = "labelControl25";
             this.labelControl25.Size = new System.Drawing.Size(107, 27);
             this.labelControl25.TabIndex = 25;
@@ -2058,7 +2058,7 @@
             this.labelControl24.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl24.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl24.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl24.Location = new System.Drawing.Point(813, 25);
+            this.labelControl24.Location = new System.Drawing.Point(813, 26);
             this.labelControl24.Name = "labelControl24";
             this.labelControl24.Size = new System.Drawing.Size(107, 27);
             this.labelControl24.TabIndex = 28;
@@ -2107,7 +2107,7 @@
             this.simpleButton2.ImageOptions.ImageList = this.ımageList1;
             this.simpleButton2.Location = new System.Drawing.Point(836, 23);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(174, 51);
+            this.simpleButton2.Size = new System.Drawing.Size(174, 50);
             this.simpleButton2.TabIndex = 0;
             this.simpleButton2.Text = "İşlem Kaydet";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -2119,7 +2119,7 @@
             this.simpleButton1.ImageOptions.ImageList = this.ımageList1;
             this.simpleButton1.Location = new System.Drawing.Point(1010, 23);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(113, 51);
+            this.simpleButton1.Size = new System.Drawing.Size(113, 50);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "Kapat";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -2141,9 +2141,9 @@
             this.groupControl1.Controls.Add(this.simpleButton2);
             this.groupControl1.Controls.Add(this.simpleButton1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 640);
+            this.groupControl1.Location = new System.Drawing.Point(0, 641);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1125, 76);
+            this.groupControl1.Size = new System.Drawing.Size(1125, 75);
             this.groupControl1.TabIndex = 13;
             this.groupControl1.Text = "Menü";
             // 
@@ -2161,7 +2161,9 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmFislerVeFaturalar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fatura Ve Fiş İşlem Formu";

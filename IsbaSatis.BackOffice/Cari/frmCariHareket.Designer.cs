@@ -95,7 +95,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl2);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1085, 209);
+            this.splitContainerControl2.Size = new System.Drawing.Size(1085, 136);
             this.splitContainerControl2.SplitterPosition = 547;
             this.splitContainerControl2.TabIndex = 0;
             // 
@@ -105,7 +105,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(547, 209);
+            this.groupControl1.Size = new System.Drawing.Size(547, 136);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Fiş Türüne Göre Toplamlar";
             // 
@@ -115,7 +115,7 @@
             this.gridcontFisToplam.Location = new System.Drawing.Point(2, 23);
             this.gridcontFisToplam.MainView = this.gridFisToplam;
             this.gridcontFisToplam.Name = "gridcontFisToplam";
-            this.gridcontFisToplam.Size = new System.Drawing.Size(543, 184);
+            this.gridcontFisToplam.Size = new System.Drawing.Size(543, 111);
             this.gridcontFisToplam.TabIndex = 2;
             this.gridcontFisToplam.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridFisToplam});
@@ -172,7 +172,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(528, 209);
+            this.groupControl2.Size = new System.Drawing.Size(528, 136);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Cari Ekstresi";
             // 
@@ -182,7 +182,7 @@
             this.gridcontBakiye.Location = new System.Drawing.Point(2, 23);
             this.gridcontBakiye.MainView = this.gridBakiye;
             this.gridcontBakiye.Name = "gridcontBakiye";
-            this.gridcontBakiye.Size = new System.Drawing.Size(524, 184);
+            this.gridcontBakiye.Size = new System.Drawing.Size(524, 111);
             this.gridcontBakiye.TabIndex = 2;
             this.gridcontBakiye.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridBakiye});
@@ -305,7 +305,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1085, 506);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1085, 433);
             this.splitContainerControl1.SplitterPosition = 287;
             this.splitContainerControl1.TabIndex = 6;
             // 
@@ -527,9 +527,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1085, 575);
-            this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.lblBaslik);
+            this.Controls.Add(this.grpMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmCariHareket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

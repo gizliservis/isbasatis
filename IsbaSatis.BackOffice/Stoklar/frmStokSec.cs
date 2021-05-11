@@ -61,5 +61,17 @@ namespace IsbaSatis.BackOffice.Stoklar
         {
             gridcontStoklar.DataSource = stokDAL.StokListele(context);
         }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            if (gridStoklar.OptionsView.ShowAutoFilterRow == true)
+            {
+                gridStoklar.OptionsView.ShowAutoFilterRow = false;
+            }
+            else
+            {
+                gridStoklar.OptionsView.ShowAutoFilterRow = true;
+            }
+        }
     }
 }

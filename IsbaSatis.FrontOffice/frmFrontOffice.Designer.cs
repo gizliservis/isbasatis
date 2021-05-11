@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFrontOffice));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions7 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject25 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -64,12 +65,12 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
-            this.ımageList1 = new System.Windows.Forms.ImageList();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
             this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -219,10 +220,10 @@
             this.txtBarkod = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.radialFiyat = new DevExpress.XtraBars.Ribbon.RadialMenu();
+            this.radialFiyat = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
             this.xtraTabControl2 = new DevExpress.XtraTab.XtraTabControl();
-            this.radialYazdir = new DevExpress.XtraBars.Ribbon.RadialMenu();
-            this.barManager2 = new DevExpress.XtraBars.BarManager();
+            this.radialYazdir = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
@@ -1242,7 +1243,6 @@
             // 
             // txtfisKodu
             // 
-            this.txtfisKodu.Enabled = false;
             this.txtfisKodu.Location = new System.Drawing.Point(7, 30);
             this.txtfisKodu.Name = "txtfisKodu";
             this.txtfisKodu.Size = new System.Drawing.Size(368, 20);

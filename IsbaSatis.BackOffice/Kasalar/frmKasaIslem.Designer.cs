@@ -1,4 +1,4 @@
-﻿namespace IsbaSatis.BackOffice.Cari
+﻿namespace IsbaSatis.BackOffice.Kasalar
 {
     partial class frmKasaIslem
     {

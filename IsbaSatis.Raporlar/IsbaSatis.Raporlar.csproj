@@ -69,6 +69,17 @@
       <DependentUpon>rptFatura.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\rptAlisFaturasi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stok\rptAlisFaturasi.Designer.cs">
+      <DependentUpon>rptAlisFaturasi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stok\rptStokDurumu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -90,6 +101,9 @@
       <DependentUpon>rptFatura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Stok\rptAlisFaturasi.resx">
+      <DependentUpon>rptAlisFaturasi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Stok\rptStokDurumu.resx">
       <DependentUpon>rptStokDurumu.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +116,14 @@
       <Project>{cae5e981-a5dc-4ccf-bf38-e9f75030451d}</Project>
       <Name>Isbasatis.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\Isbasatis.Entities.Tables.StokHareket.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

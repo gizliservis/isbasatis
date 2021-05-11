@@ -30,12 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStok));
-            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
+            this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
+            this.grpMenu = new DevExpress.XtraEditors.GroupControl();
+            this.btnHareket = new DevExpress.XtraEditors.SimpleButton();
+            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
+            this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
+            this.btnKopyala = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSil = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -69,46 +74,11 @@
             this.colMevcutStok = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStokCikis = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStokGiris = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
-            this.grpMenu = new DevExpress.XtraEditors.GroupControl();
-            this.btnHareket = new DevExpress.XtraEditors.SimpleButton();
-            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
-            this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
-            this.btnKopyala = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSil = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
-            this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // splitContainerControl1
-            // 
-            resources.ApplyResources(this.splitContainerControl1, "splitContainerControl1");
-            this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Name = "splitContainerControl1";
-            this.splitContainerControl1.Panel1.Controls.Add(this.simpleButton3);
-            this.splitContainerControl1.Panel1.Controls.Add(this.simpleButton2);
-            this.splitContainerControl1.Panel1.Controls.Add(this.simpleButton1);
-            this.splitContainerControl1.Panel1.Controls.Add(this.filterControl1);
-            resources.ApplyResources(this.splitContainerControl1.Panel1, "splitContainerControl1.Panel1");
-            this.splitContainerControl1.Panel2.Controls.Add(this.gridControl1);
-            resources.ApplyResources(this.splitContainerControl1.Panel2, "splitContainerControl1.Panel2");
-            this.splitContainerControl1.SplitterPosition = 148;
-            // 
-            // simpleButton3
-            // 
-            resources.ApplyResources(this.simpleButton3, "simpleButton3");
-            this.simpleButton3.ImageOptions.ImageIndex = ((int)(resources.GetObject("simpleButton3.ImageOptions.ImageIndex")));
-            this.simpleButton3.ImageOptions.ImageList = this.ımageList1;
-            this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // ımageList1
             // 
@@ -126,30 +96,94 @@
             this.ımageList1.Images.SetKeyName(9, "funnel_delete.png");
             this.ımageList1.Images.SetKeyName(10, "StokHareket.png");
             // 
-            // simpleButton2
+            // lblBaslik
             // 
-            resources.ApplyResources(this.simpleButton2, "simpleButton2");
-            this.simpleButton2.ImageOptions.ImageIndex = ((int)(resources.GetObject("simpleButton2.ImageOptions.ImageIndex")));
-            this.simpleButton2.ImageOptions.ImageList = this.ımageList1;
-            this.simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.lblBaslik.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("lblBaslik.Appearance.Font")));
+            this.lblBaslik.Appearance.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblBaslik.Appearance.Options.UseFont = true;
+            this.lblBaslik.Appearance.Options.UseForeColor = true;
+            resources.ApplyResources(this.lblBaslik, "lblBaslik");
+            this.lblBaslik.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lblBaslik.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.lblBaslik.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.Stok_Kartı32x32;
+            this.lblBaslik.Name = "lblBaslik";
             // 
-            // simpleButton1
+            // grpMenu
             // 
-            resources.ApplyResources(this.simpleButton1, "simpleButton1");
-            this.simpleButton1.ImageOptions.ImageIndex = ((int)(resources.GetObject("simpleButton1.ImageOptions.ImageIndex")));
-            this.simpleButton1.ImageOptions.ImageList = this.ımageList1;
-            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.grpMenu.Controls.Add(this.btnAra);
+            this.grpMenu.Controls.Add(this.btnGuncelle);
+            this.grpMenu.Controls.Add(this.btnHareket);
+            this.grpMenu.Controls.Add(this.btnKapat);
+            this.grpMenu.Controls.Add(this.btnKopyala);
+            this.grpMenu.Controls.Add(this.btnSil);
+            this.grpMenu.Controls.Add(this.btnDuzenle);
+            this.grpMenu.Controls.Add(this.btnEkle);
+            resources.ApplyResources(this.grpMenu, "grpMenu");
+            this.grpMenu.Name = "grpMenu";
             // 
-            // filterControl1
+            // btnHareket
             // 
-            this.filterControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.filterControl1, "filterControl1");
-            this.filterControl1.Name = "filterControl1";
-            this.filterControl1.SourceControl = this.gridControl1;
+            resources.ApplyResources(this.btnHareket, "btnHareket");
+            this.btnHareket.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnHareket.ImageOptions.ImageIndex")));
+            this.btnHareket.ImageOptions.ImageList = this.ımageList1;
+            this.btnHareket.Name = "btnHareket";
+            this.btnHareket.Click += new System.EventHandler(this.btnStokHareket_Click);
+            // 
+            // btnKapat
+            // 
+            resources.ApplyResources(this.btnKapat, "btnKapat");
+            this.btnKapat.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnKapat.ImageOptions.ImageIndex")));
+            this.btnKapat.ImageOptions.ImageList = this.ımageList1;
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
+            // 
+            // btnAra
+            // 
+            resources.ApplyResources(this.btnAra, "btnAra");
+            this.btnAra.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnAra.ImageOptions.ImageIndex")));
+            this.btnAra.ImageOptions.ImageList = this.ımageList1;
+            this.btnAra.Name = "btnAra";
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
+            // 
+            // btnGuncelle
+            // 
+            resources.ApplyResources(this.btnGuncelle, "btnGuncelle");
+            this.btnGuncelle.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnGuncelle.ImageOptions.ImageIndex")));
+            this.btnGuncelle.ImageOptions.ImageList = this.ımageList1;
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
+            // btnKopyala
+            // 
+            resources.ApplyResources(this.btnKopyala, "btnKopyala");
+            this.btnKopyala.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnKopyala.ImageOptions.ImageIndex")));
+            this.btnKopyala.ImageOptions.ImageList = this.ımageList1;
+            this.btnKopyala.Name = "btnKopyala";
+            this.btnKopyala.Click += new System.EventHandler(this.btnKopyala_Click);
+            // 
+            // btnSil
+            // 
+            resources.ApplyResources(this.btnSil, "btnSil");
+            this.btnSil.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnSil.ImageOptions.ImageIndex")));
+            this.btnSil.ImageOptions.ImageList = this.ımageList1;
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
+            // btnDuzenle
+            // 
+            resources.ApplyResources(this.btnDuzenle, "btnDuzenle");
+            this.btnDuzenle.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnDuzenle.ImageOptions.ImageIndex")));
+            this.btnDuzenle.ImageOptions.ImageList = this.ımageList1;
+            this.btnDuzenle.Name = "btnDuzenle";
+            this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
+            // 
+            // btnEkle
+            // 
+            resources.ApplyResources(this.btnEkle, "btnEkle");
+            this.btnEkle.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnEkle.ImageOptions.ImageIndex")));
+            this.btnEkle.ImageOptions.ImageList = this.ımageList1;
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // gridControl1
             // 
@@ -433,111 +467,20 @@
             this.colStokGiris.Name = "colStokGiris";
             this.colStokGiris.OptionsColumn.AllowEdit = false;
             // 
-            // lblBaslik
-            // 
-            this.lblBaslik.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("lblBaslik.Appearance.Font")));
-            this.lblBaslik.Appearance.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblBaslik.Appearance.Options.UseFont = true;
-            this.lblBaslik.Appearance.Options.UseForeColor = true;
-            resources.ApplyResources(this.lblBaslik, "lblBaslik");
-            this.lblBaslik.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lblBaslik.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.lblBaslik.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.Stok_Kartı32x32;
-            this.lblBaslik.Name = "lblBaslik";
-            // 
-            // grpMenu
-            // 
-            this.grpMenu.Controls.Add(this.btnHareket);
-            this.grpMenu.Controls.Add(this.btnKapat);
-            this.grpMenu.Controls.Add(this.btnAra);
-            this.grpMenu.Controls.Add(this.btnGuncelle);
-            this.grpMenu.Controls.Add(this.btnKopyala);
-            this.grpMenu.Controls.Add(this.btnSil);
-            this.grpMenu.Controls.Add(this.btnDuzenle);
-            this.grpMenu.Controls.Add(this.btnEkle);
-            resources.ApplyResources(this.grpMenu, "grpMenu");
-            this.grpMenu.Name = "grpMenu";
-            // 
-            // btnHareket
-            // 
-            this.btnHareket.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnHareket.ImageOptions.ImageIndex")));
-            this.btnHareket.ImageOptions.ImageList = this.ımageList1;
-            resources.ApplyResources(this.btnHareket, "btnHareket");
-            this.btnHareket.Name = "btnHareket";
-            this.btnHareket.Click += new System.EventHandler(this.btnStokHareket_Click);
-            // 
-            // btnKapat
-            // 
-            resources.ApplyResources(this.btnKapat, "btnKapat");
-            this.btnKapat.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnKapat.ImageOptions.ImageIndex")));
-            this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
-            // 
-            // btnAra
-            // 
-            this.btnAra.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnAra.ImageOptions.ImageIndex")));
-            this.btnAra.ImageOptions.ImageList = this.ımageList1;
-            resources.ApplyResources(this.btnAra, "btnAra");
-            this.btnAra.Name = "btnAra";
-            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnGuncelle.ImageOptions.ImageIndex")));
-            this.btnGuncelle.ImageOptions.ImageList = this.ımageList1;
-            resources.ApplyResources(this.btnGuncelle, "btnGuncelle");
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
-            // 
-            // btnKopyala
-            // 
-            this.btnKopyala.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnKopyala.ImageOptions.ImageIndex")));
-            this.btnKopyala.ImageOptions.ImageList = this.ımageList1;
-            resources.ApplyResources(this.btnKopyala, "btnKopyala");
-            this.btnKopyala.Name = "btnKopyala";
-            this.btnKopyala.Click += new System.EventHandler(this.btnKopyala_Click);
-            // 
-            // btnSil
-            // 
-            this.btnSil.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnSil.ImageOptions.ImageIndex")));
-            this.btnSil.ImageOptions.ImageList = this.ımageList1;
-            resources.ApplyResources(this.btnSil, "btnSil");
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // btnDuzenle
-            // 
-            this.btnDuzenle.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnDuzenle.ImageOptions.ImageIndex")));
-            this.btnDuzenle.ImageOptions.ImageList = this.ımageList1;
-            resources.ApplyResources(this.btnDuzenle, "btnDuzenle");
-            this.btnDuzenle.Name = "btnDuzenle";
-            this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
-            // 
-            // btnEkle
-            // 
-            this.btnEkle.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnEkle.ImageOptions.ImageIndex")));
-            this.btnEkle.ImageOptions.ImageList = this.ımageList1;
-            resources.ApplyResources(this.btnEkle, "btnEkle");
-            this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
-            // 
             // frmStok
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.splitContainerControl1);
+            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.lblBaslik);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmStok";
             this.Load += new System.EventHandler(this.frmStok_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
-            this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -554,11 +497,7 @@
         private DevExpress.XtraEditors.SimpleButton btnSil;
         private DevExpress.XtraEditors.SimpleButton btnDuzenle;
         private DevExpress.XtraEditors.SimpleButton btnEkle;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.FilterControl filterControl1;
+        private DevExpress.XtraEditors.SimpleButton btnHareket;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
@@ -592,6 +531,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMevcutStok;
         private DevExpress.XtraGrid.Columns.GridColumn colStokCikis;
         private DevExpress.XtraGrid.Columns.GridColumn colStokGiris;
-        private DevExpress.XtraEditors.SimpleButton btnHareket;
     }
 }

@@ -578,10 +578,7 @@ namespace IsbaSatis.FrontOffice
         }
         private void FisKaydet(ReporPrintTool.Belge belge)
         {
-            if (txtfisKodu.Text == "")
-            {
-                txtfisKodu.Text = fisNo.FisKodNumarasi();
-            }
+          
             toplamlar();
             OdenenTutarGuncelle();
        

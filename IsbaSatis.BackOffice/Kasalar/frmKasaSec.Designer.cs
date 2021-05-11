@@ -47,6 +47,7 @@
             this.colKasaGiris = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKasaCikis = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBakiye = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -55,6 +56,7 @@
             // 
             // grpMenu
             // 
+            this.grpMenu.Controls.Add(this.btnAra);
             this.grpMenu.Controls.Add(this.lblUyari);
             this.grpMenu.Controls.Add(this.btnStokSec);
             this.grpMenu.Controls.Add(this.btnKapat);
@@ -80,12 +82,12 @@
             // 
             // btnStokSec
             // 
-            this.btnStokSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStokSec.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnStokSec.ImageOptions.ImageIndex = 0;
             this.btnStokSec.ImageOptions.ImageList = this.ımageList1;
-            this.btnStokSec.Location = new System.Drawing.Point(889, 40);
+            this.btnStokSec.Location = new System.Drawing.Point(898, 23);
             this.btnStokSec.Name = "btnStokSec";
-            this.btnStokSec.Size = new System.Drawing.Size(90, 45);
+            this.btnStokSec.Size = new System.Drawing.Size(90, 62);
             this.btnStokSec.TabIndex = 0;
             this.btnStokSec.Text = "Seç";
             this.btnStokSec.Click += new System.EventHandler(this.btnStokSec_Click);
@@ -99,12 +101,12 @@
             // 
             // btnKapat
             // 
-            this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKapat.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnKapat.ImageOptions.ImageIndex = 1;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(985, 40);
+            this.btnKapat.Location = new System.Drawing.Point(988, 23);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(90, 45);
+            this.btnKapat.Size = new System.Drawing.Size(90, 62);
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
@@ -232,6 +234,17 @@
             this.colBakiye.Visible = true;
             this.colBakiye.VisibleIndex = 7;
             // 
+            // btnAra
+            // 
+            this.btnAra.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAra.ImageOptions.Image")));
+            this.btnAra.Location = new System.Drawing.Point(823, 23);
+            this.btnAra.Name = "btnAra";
+            this.btnAra.Size = new System.Drawing.Size(75, 62);
+            this.btnAra.TabIndex = 2;
+            this.btnAra.Text = "Ara";
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
+            // 
             // frmKasaSec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,7 +256,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmKasaSec";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmKasaSec";
+            this.Text = "Kasa Seçim Ekranı";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmKasaSec_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
@@ -272,5 +285,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colKasaGiris;
         private DevExpress.XtraGrid.Columns.GridColumn colKasaCikis;
         private DevExpress.XtraGrid.Columns.GridColumn colBakiye;
+        private DevExpress.XtraEditors.SimpleButton btnAra;
     }
 }

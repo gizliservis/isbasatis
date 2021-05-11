@@ -40,18 +40,13 @@
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
             this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
-            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
-            this.gridcontDepo = new DevExpress.XtraGrid.GridControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.depoHareketleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridcontDepo = new DevExpress.XtraGrid.GridControl();
             this.gridDepo = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepoKodu = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,20 +61,19 @@
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
-            this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridcontDepo)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridcontDepo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDepo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDuzenle
             // 
+            this.btnDuzenle.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnDuzenle.ImageOptions.ImageIndex = 6;
             this.btnDuzenle.ImageOptions.ImageList = this.ımageList1;
-            this.btnDuzenle.Location = new System.Drawing.Point(103, 26);
+            this.btnDuzenle.Location = new System.Drawing.Point(92, 23);
             this.btnDuzenle.Name = "btnDuzenle";
-            this.btnDuzenle.Size = new System.Drawing.Size(89, 45);
+            this.btnDuzenle.Size = new System.Drawing.Size(89, 51);
             this.btnDuzenle.TabIndex = 0;
             this.btnDuzenle.Text = "Düzenle";
             this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
@@ -101,10 +95,10 @@
             // 
             // grpMenu
             // 
-            this.grpMenu.Controls.Add(this.btnHareket);
-            this.grpMenu.Controls.Add(this.btnKapat);
             this.grpMenu.Controls.Add(this.btnAra);
             this.grpMenu.Controls.Add(this.btnGuncelle);
+            this.grpMenu.Controls.Add(this.btnHareket);
+            this.grpMenu.Controls.Add(this.btnKapat);
             this.grpMenu.Controls.Add(this.btnSil);
             this.grpMenu.Controls.Add(this.btnDuzenle);
             this.grpMenu.Controls.Add(this.btnEkle);
@@ -117,67 +111,72 @@
             // 
             // btnHareket
             // 
+            this.btnHareket.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnHareket.ImageOptions.ImageIndex = 8;
             this.btnHareket.ImageOptions.ImageList = this.ımageList1;
-            this.btnHareket.Location = new System.Drawing.Point(297, 28);
+            this.btnHareket.Location = new System.Drawing.Point(274, 23);
             this.btnHareket.Name = "btnHareket";
-            this.btnHareket.Size = new System.Drawing.Size(97, 45);
+            this.btnHareket.Size = new System.Drawing.Size(97, 51);
             this.btnHareket.TabIndex = 1;
             this.btnHareket.Text = "Depo\r\nHareketleri";
             this.btnHareket.Click += new System.EventHandler(this.btnDepoHareket_Click);
             // 
             // btnKapat
             // 
-            this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKapat.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnKapat.ImageOptions.ImageIndex = 2;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(788, 28);
+            this.btnKapat.Location = new System.Drawing.Point(792, 23);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(90, 45);
+            this.btnKapat.Size = new System.Drawing.Size(90, 51);
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // btnAra
             // 
+            this.btnAra.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnAra.ImageOptions.ImageIndex = 0;
             this.btnAra.ImageOptions.ImageList = this.ımageList1;
-            this.btnAra.Location = new System.Drawing.Point(503, 28);
+            this.btnAra.Location = new System.Drawing.Point(468, 23);
             this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(90, 45);
+            this.btnAra.Size = new System.Drawing.Size(90, 51);
             this.btnAra.TabIndex = 0;
             this.btnAra.Text = "Ara";
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
             // btnGuncelle
             // 
+            this.btnGuncelle.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnGuncelle.ImageOptions.ImageIndex = 1;
             this.btnGuncelle.ImageOptions.ImageList = this.ımageList1;
-            this.btnGuncelle.Location = new System.Drawing.Point(400, 28);
+            this.btnGuncelle.Location = new System.Drawing.Point(371, 23);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(97, 45);
+            this.btnGuncelle.Size = new System.Drawing.Size(97, 51);
             this.btnGuncelle.TabIndex = 0;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnSil
             // 
+            this.btnSil.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSil.ImageOptions.ImageIndex = 9;
             this.btnSil.ImageOptions.ImageList = this.ımageList1;
-            this.btnSil.Location = new System.Drawing.Point(198, 26);
+            this.btnSil.Location = new System.Drawing.Point(181, 23);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(93, 45);
+            this.btnSil.Size = new System.Drawing.Size(93, 51);
             this.btnSil.TabIndex = 0;
             this.btnSil.Text = "Sil";
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnEkle
             // 
+            this.btnEkle.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnEkle.ImageOptions.ImageIndex = 7;
             this.btnEkle.ImageOptions.ImageList = this.ımageList1;
-            this.btnEkle.Location = new System.Drawing.Point(7, 26);
+            this.btnEkle.Location = new System.Drawing.Point(2, 23);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(90, 45);
+            this.btnEkle.Size = new System.Drawing.Size(90, 51);
             this.btnEkle.TabIndex = 0;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
@@ -198,83 +197,6 @@
             this.lblBaslik.Size = new System.Drawing.Size(884, 56);
             this.lblBaslik.TabIndex = 3;
             this.lblBaslik.Text = "Depo Kartları";
-            // 
-            // splitContainerControl1
-            // 
-            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 56);
-            this.splitContainerControl1.Name = "splitContainerControl1";
-            this.splitContainerControl1.Panel1.Controls.Add(this.simpleButton3);
-            this.splitContainerControl1.Panel1.Controls.Add(this.simpleButton2);
-            this.splitContainerControl1.Panel1.Controls.Add(this.simpleButton1);
-            this.splitContainerControl1.Panel1.Controls.Add(this.filterControl1);
-            this.splitContainerControl1.Panel1.Text = "Panel1";
-            this.splitContainerControl1.Panel2.Controls.Add(this.gridcontDepo);
-            this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(884, 516);
-            this.splitContainerControl1.SplitterPosition = 129;
-            this.splitContainerControl1.TabIndex = 5;
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton3.ImageOptions.ImageIndex = 3;
-            this.simpleButton3.ImageOptions.ImageList = this.ımageList1;
-            this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton3.Location = new System.Drawing.Point(842, 92);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(36, 37);
-            this.simpleButton3.TabIndex = 0;
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton2.ImageOptions.ImageIndex = 5;
-            this.simpleButton2.ImageOptions.ImageList = this.ımageList1;
-            this.simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(800, 92);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(36, 37);
-            this.simpleButton2.TabIndex = 0;
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.ImageOptions.ImageIndex = 4;
-            this.simpleButton1.ImageOptions.ImageList = this.ımageList1;
-            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(758, 92);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(36, 37);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // filterControl1
-            // 
-            this.filterControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.filterControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.filterControl1.Location = new System.Drawing.Point(0, 0);
-            this.filterControl1.Name = "filterControl1";
-            this.filterControl1.Size = new System.Drawing.Size(884, 129);
-            this.filterControl1.SortFilterColumns = false;
-            this.filterControl1.SourceControl = this.gridcontDepo;
-            this.filterControl1.TabIndex = 0;
-            this.filterControl1.Text = "filterControl1";
-            // 
-            // gridcontDepo
-            // 
-            this.gridcontDepo.ContextMenuStrip = this.contextMenuStrip1;
-            this.gridcontDepo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridcontDepo.Location = new System.Drawing.Point(0, 0);
-            this.gridcontDepo.MainView = this.gridDepo;
-            this.gridcontDepo.Name = "gridcontDepo";
-            this.gridcontDepo.Size = new System.Drawing.Size(884, 377);
-            this.gridcontDepo.TabIndex = 0;
-            this.gridcontDepo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridDepo});
             // 
             // contextMenuStrip1
             // 
@@ -321,6 +243,18 @@
             this.depoHareketleriToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.depoHareketleriToolStripMenuItem.Text = "Depo Hareketleri";
             this.depoHareketleriToolStripMenuItem.Click += new System.EventHandler(this.depoHareketleriToolStripMenuItem_Click);
+            // 
+            // gridcontDepo
+            // 
+            this.gridcontDepo.ContextMenuStrip = this.contextMenuStrip1;
+            this.gridcontDepo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridcontDepo.Location = new System.Drawing.Point(0, 56);
+            this.gridcontDepo.MainView = this.gridDepo;
+            this.gridcontDepo.Name = "gridcontDepo";
+            this.gridcontDepo.Size = new System.Drawing.Size(884, 440);
+            this.gridcontDepo.TabIndex = 5;
+            this.gridcontDepo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridDepo});
             // 
             // gridDepo
             // 
@@ -445,20 +379,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 572);
+            this.Controls.Add(this.gridcontDepo);
             this.Controls.Add(this.grpMenu);
-            this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.lblBaslik);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmDepo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDepo";
+            this.Text = "Depo Kartları";
             this.Load += new System.EventHandler(this.frmDepo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
-            this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridcontDepo)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridcontDepo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDepo)).EndInit();
             this.ResumeLayout(false);
 
@@ -476,11 +408,12 @@
         private DevExpress.XtraEditors.SimpleButton btnSil;
         private DevExpress.XtraEditors.SimpleButton btnEkle;
         private DevExpress.XtraEditors.LabelControl lblBaslik;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.FilterControl filterControl1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem depoHareketleriToolStripMenuItem;
         private DevExpress.XtraGrid.GridControl gridcontDepo;
         private DevExpress.XtraGrid.Views.Grid.GridView gridDepo;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
@@ -494,11 +427,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn colAdres;
         private DevExpress.XtraGrid.Columns.GridColumn colTelefon;
         private DevExpress.XtraGrid.Columns.GridColumn colAciklama;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem depoHareketleriToolStripMenuItem;
     }
 }

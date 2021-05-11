@@ -12,7 +12,7 @@ using Isbasatis.Entities.Data_Access;
 using Isbasatis.Entities.Context;
 using Isbasatis.Entities.Tables;
 
-namespace IsbaSatis.BackOffice.Cari
+namespace IsbaSatis.BackOffice.Kasalar
 {
     public partial class frmKasaIslem : DevExpress.XtraEditors.XtraForm
     {

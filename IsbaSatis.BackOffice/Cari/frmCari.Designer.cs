@@ -33,10 +33,10 @@
             this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
-            this.btnHareket = new DevExpress.XtraEditors.SimpleButton();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnAra = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
+            this.btnHareket = new DevExpress.XtraEditors.SimpleButton();
             this.btnKopyala = new DevExpress.XtraEditors.SimpleButton();
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
             this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
@@ -75,26 +75,20 @@
             this.colAlacak = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBorc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBakiye = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
-            this.splitContainerControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDuzenle
             // 
+            this.btnDuzenle.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnDuzenle.ImageOptions.ImageIndex = 1;
             this.btnDuzenle.ImageOptions.ImageList = this.ımageList1;
-            this.btnDuzenle.Location = new System.Drawing.Point(103, 26);
+            this.btnDuzenle.Location = new System.Drawing.Point(92, 23);
             this.btnDuzenle.Name = "btnDuzenle";
-            this.btnDuzenle.Size = new System.Drawing.Size(89, 45);
+            this.btnDuzenle.Size = new System.Drawing.Size(89, 48);
             this.btnDuzenle.TabIndex = 0;
             this.btnDuzenle.Text = "Düzenle";
             this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
@@ -117,10 +111,10 @@
             // 
             // grpMenu
             // 
-            this.grpMenu.Controls.Add(this.btnHareket);
             this.grpMenu.Controls.Add(this.btnKapat);
             this.grpMenu.Controls.Add(this.btnAra);
             this.grpMenu.Controls.Add(this.btnGuncelle);
+            this.grpMenu.Controls.Add(this.btnHareket);
             this.grpMenu.Controls.Add(this.btnKopyala);
             this.grpMenu.Controls.Add(this.btnSil);
             this.grpMenu.Controls.Add(this.btnDuzenle);
@@ -132,80 +126,86 @@
             this.grpMenu.TabIndex = 4;
             this.grpMenu.Text = "Menü";
             // 
-            // btnHareket
-            // 
-            this.btnHareket.ImageOptions.ImageIndex = 3;
-            this.btnHareket.ImageOptions.ImageList = this.ımageList1;
-            this.btnHareket.Location = new System.Drawing.Point(388, 26);
-            this.btnHareket.Name = "btnHareket";
-            this.btnHareket.Size = new System.Drawing.Size(97, 45);
-            this.btnHareket.TabIndex = 1;
-            this.btnHareket.Text = "Cari\r\nHareketleri";
-            this.btnHareket.Click += new System.EventHandler(this.btnCariHareketleri_Click);
-            // 
             // btnKapat
             // 
-            this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKapat.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnKapat.ImageOptions.ImageIndex = 6;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(824, 26);
+            this.btnKapat.Location = new System.Drawing.Point(827, 23);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(90, 45);
+            this.btnKapat.Size = new System.Drawing.Size(90, 48);
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // btnAra
             // 
+            this.btnAra.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnAra.ImageOptions.ImageIndex = 10;
             this.btnAra.ImageOptions.ImageList = this.ımageList1;
-            this.btnAra.Location = new System.Drawing.Point(594, 26);
+            this.btnAra.Location = new System.Drawing.Point(554, 23);
             this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(90, 45);
+            this.btnAra.Size = new System.Drawing.Size(90, 48);
             this.btnAra.TabIndex = 0;
             this.btnAra.Text = "Ara";
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
             // btnGuncelle
             // 
+            this.btnGuncelle.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnGuncelle.ImageOptions.ImageIndex = 9;
             this.btnGuncelle.ImageOptions.ImageList = this.ımageList1;
-            this.btnGuncelle.Location = new System.Drawing.Point(491, 26);
+            this.btnGuncelle.Location = new System.Drawing.Point(457, 23);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(97, 45);
+            this.btnGuncelle.Size = new System.Drawing.Size(97, 48);
             this.btnGuncelle.TabIndex = 0;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
+            // btnHareket
+            // 
+            this.btnHareket.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnHareket.ImageOptions.ImageIndex = 3;
+            this.btnHareket.ImageOptions.ImageList = this.ımageList1;
+            this.btnHareket.Location = new System.Drawing.Point(360, 23);
+            this.btnHareket.Name = "btnHareket";
+            this.btnHareket.Size = new System.Drawing.Size(97, 48);
+            this.btnHareket.TabIndex = 1;
+            this.btnHareket.Text = "Cari\r\nHareketleri";
+            this.btnHareket.Click += new System.EventHandler(this.btnCariHareketleri_Click);
+            // 
             // btnKopyala
             // 
+            this.btnKopyala.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnKopyala.ImageOptions.ImageIndex = 4;
             this.btnKopyala.ImageOptions.ImageList = this.ımageList1;
-            this.btnKopyala.Location = new System.Drawing.Point(296, 26);
+            this.btnKopyala.Location = new System.Drawing.Point(274, 23);
             this.btnKopyala.Name = "btnKopyala";
-            this.btnKopyala.Size = new System.Drawing.Size(86, 45);
+            this.btnKopyala.Size = new System.Drawing.Size(86, 48);
             this.btnKopyala.TabIndex = 0;
             this.btnKopyala.Text = "Kopyala";
             this.btnKopyala.Click += new System.EventHandler(this.btnKopyala_Click);
             // 
             // btnSil
             // 
+            this.btnSil.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSil.ImageOptions.ImageIndex = 5;
             this.btnSil.ImageOptions.ImageList = this.ımageList1;
-            this.btnSil.Location = new System.Drawing.Point(198, 26);
+            this.btnSil.Location = new System.Drawing.Point(181, 23);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(93, 45);
+            this.btnSil.Size = new System.Drawing.Size(93, 48);
             this.btnSil.TabIndex = 0;
             this.btnSil.Text = "Sil";
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnEkle
             // 
+            this.btnEkle.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnEkle.ImageOptions.ImageIndex = 2;
             this.btnEkle.ImageOptions.ImageList = this.ımageList1;
-            this.btnEkle.Location = new System.Drawing.Point(7, 26);
+            this.btnEkle.Location = new System.Drawing.Point(2, 23);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(90, 45);
+            this.btnEkle.Size = new System.Drawing.Size(90, 48);
             this.btnEkle.TabIndex = 0;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
@@ -231,11 +231,11 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.Location = new System.Drawing.Point(0, 59);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(919, 234);
-            this.gridControl1.TabIndex = 0;
+            this.gridControl1.Size = new System.Drawing.Size(919, 434);
+            this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -544,89 +544,23 @@
             this.colBakiye.VisibleIndex = 9;
             this.colBakiye.Width = 162;
             // 
-            // splitContainerControl1
-            // 
-            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 59);
-            this.splitContainerControl1.Name = "splitContainerControl1";
-            this.splitContainerControl1.Panel1.Controls.Add(this.simpleButton3);
-            this.splitContainerControl1.Panel1.Controls.Add(this.simpleButton2);
-            this.splitContainerControl1.Panel1.Controls.Add(this.simpleButton1);
-            this.splitContainerControl1.Panel1.Controls.Add(this.filterControl1);
-            this.splitContainerControl1.Panel1.Text = "Panel1";
-            this.splitContainerControl1.Panel2.Controls.Add(this.gridControl1);
-            this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(919, 434);
-            this.splitContainerControl1.SplitterPosition = 190;
-            this.splitContainerControl1.TabIndex = 5;
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton3.ImageOptions.ImageIndex = 6;
-            this.simpleButton3.ImageOptions.ImageList = this.ımageList1;
-            this.simpleButton3.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton3.Location = new System.Drawing.Point(877, 153);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(36, 37);
-            this.simpleButton3.TabIndex = 0;
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton2.ImageOptions.ImageIndex = 8;
-            this.simpleButton2.ImageOptions.ImageList = this.ımageList1;
-            this.simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(835, 153);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(36, 37);
-            this.simpleButton2.TabIndex = 0;
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.ImageOptions.ImageIndex = 7;
-            this.simpleButton1.ImageOptions.ImageList = this.ımageList1;
-            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(793, 153);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(36, 37);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // filterControl1
-            // 
-            this.filterControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.filterControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.filterControl1.Location = new System.Drawing.Point(0, 0);
-            this.filterControl1.Name = "filterControl1";
-            this.filterControl1.Size = new System.Drawing.Size(919, 190);
-            this.filterControl1.SourceControl = this.gridControl1;
-            this.filterControl1.TabIndex = 0;
-            this.filterControl1.Text = "filterControl1";
-            // 
             // frmCari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 566);
-            this.Controls.Add(this.splitContainerControl1);
+            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.lblBaslik);
             this.Controls.Add(this.grpMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmCari";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCari";
+            this.Text = "Cari Kartları";
             this.Load += new System.EventHandler(this.frmCari_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
-            this.splitContainerControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -646,11 +580,6 @@
         private DevExpress.XtraEditors.LabelControl lblBaslik;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.FilterControl filterControl1;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colDurumu;
         private DevExpress.XtraGrid.Columns.GridColumn colCariTuru;
