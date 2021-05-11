@@ -13,29 +13,29 @@ using System.Windows.Forms;
 
 namespace IsbaSatis.BackOffice.Raporlar
 {
-    public partial class frmRaporlardnm : DevExpress.XtraEditors.XtraForm
+    public partial class frmStokHareketRaporu : DevExpress.XtraEditors.XtraForm
     {
+        StokHareketDAL stokHareketDAL = new StokHareketDAL();
         IsbaSatisContext context = new IsbaSatisContext();
-        FisDAL fisDAL = new FisDAL();
-        KasaHareketDAL kasaHareketDAL = new KasaHareketDAL();
-        
-
-        public frmRaporlardnm()
+        public frmStokHareketRaporu()
         {
             InitializeComponent();
             dateBaslangic.DateTime = DateTime.Now;
             dateBitis.DateTime = DateTime.Now;
+            listele(DateTime.Now, DateTime.Now);
         }
-
-        void listele(DateTime baslangic, DateTime bitis )
+        void listele(DateTime baslangic, DateTime bitis)
         {
-            gridControl1.DataSource = kasaHareketDAL.OdemeTuruSatisListele(context, baslangic, bitis);
+            gridControl1.DataSource = stokHareketDAL.StokHareketTarihAraligi(context, baslangic, bitis);
 
         }
         private void BtnHazırla_Click(object sender, EventArgs e)
         {
-          
-            listele(dateBaslangic.DateTime,dateBitis.DateTime);
+            if (dateBaslangic.DateTime > dateBitis.DateTime)
+            {
+                dateBitis.DateTime = dateBaslangic.DateTime;
+            }
+            listele(dateBaslangic.DateTime, dateBitis.DateTime);
         }
     }
 }

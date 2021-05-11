@@ -1,7 +1,7 @@
 ﻿
 namespace IsbaSatis.BackOffice.Raporlar
 {
-    partial class frmRaporlardnm
+    partial class frmSatisRaporu
     {
         /// <summary>
         /// Required designer variable.
@@ -38,14 +38,15 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.BtnHazırla = new DevExpress.XtraEditors.SimpleButton();
-            this.txtFisTur = new DevExpress.XtraEditors.TextEdit();
             this.dateBitis = new DevExpress.XtraEditors.DateEdit();
             this.dateBaslangic = new DevExpress.XtraEditors.DateEdit();
+            this.lblBaslangicTarihi = new DevExpress.XtraEditors.LabelControl();
+            this.lblBitisTarihi = new DevExpress.XtraEditors.LabelControl();
+            this.lblArasinda = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFisTur.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateBitis.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateBitis.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateBaslangic.Properties.CalendarTimeProperties)).BeginInit();
@@ -133,8 +134,10 @@ namespace IsbaSatis.BackOffice.Raporlar
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.lblArasinda);
+            this.panelControl1.Controls.Add(this.lblBitisTarihi);
+            this.panelControl1.Controls.Add(this.lblBaslangicTarihi);
             this.panelControl1.Controls.Add(this.BtnHazırla);
-            this.panelControl1.Controls.Add(this.txtFisTur);
             this.panelControl1.Controls.Add(this.dateBitis);
             this.panelControl1.Controls.Add(this.dateBaslangic);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -145,59 +148,75 @@ namespace IsbaSatis.BackOffice.Raporlar
             // 
             // BtnHazırla
             // 
-            this.BtnHazırla.Location = new System.Drawing.Point(699, 26);
+            this.BtnHazırla.Location = new System.Drawing.Point(794, 36);
             this.BtnHazırla.Name = "BtnHazırla";
-            this.BtnHazırla.Size = new System.Drawing.Size(75, 23);
+            this.BtnHazırla.Size = new System.Drawing.Size(75, 33);
             this.BtnHazırla.TabIndex = 2;
             this.BtnHazırla.Text = "Hazırla";
             this.BtnHazırla.Click += new System.EventHandler(this.BtnHazırla_Click);
             // 
-            // txtFisTur
-            // 
-            this.txtFisTur.EditValue = "";
-            this.txtFisTur.Location = new System.Drawing.Point(561, 23);
-            this.txtFisTur.Name = "txtFisTur";
-            this.txtFisTur.Size = new System.Drawing.Size(100, 20);
-            this.txtFisTur.TabIndex = 1;
-            // 
             // dateBitis
             // 
             this.dateBitis.EditValue = null;
-            this.dateBitis.Location = new System.Drawing.Point(289, 23);
+            this.dateBitis.Location = new System.Drawing.Point(547, 43);
             this.dateBitis.Name = "dateBitis";
             this.dateBitis.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateBitis.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateBitis.Size = new System.Drawing.Size(207, 20);
+            this.dateBitis.Size = new System.Drawing.Size(234, 20);
             this.dateBitis.TabIndex = 0;
             // 
             // dateBaslangic
             // 
             this.dateBaslangic.EditValue = null;
-            this.dateBaslangic.Location = new System.Drawing.Point(50, 23);
+            this.dateBaslangic.Location = new System.Drawing.Point(107, 43);
             this.dateBaslangic.Name = "dateBaslangic";
             this.dateBaslangic.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateBaslangic.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateBaslangic.Size = new System.Drawing.Size(161, 20);
+            this.dateBaslangic.Size = new System.Drawing.Size(234, 20);
             this.dateBaslangic.TabIndex = 0;
             // 
-            // frmRaporlardnm
+            // lblBaslangicTarihi
+            // 
+            this.lblBaslangicTarihi.Location = new System.Drawing.Point(11, 46);
+            this.lblBaslangicTarihi.Name = "lblBaslangicTarihi";
+            this.lblBaslangicTarihi.Size = new System.Drawing.Size(80, 13);
+            this.lblBaslangicTarihi.TabIndex = 3;
+            this.lblBaslangicTarihi.Text = "Başlangıç Tarihi :";
+            // 
+            // lblBitisTarihi
+            // 
+            this.lblBitisTarihi.Location = new System.Drawing.Point(486, 46);
+            this.lblBitisTarihi.Name = "lblBitisTarihi";
+            this.lblBitisTarihi.Size = new System.Drawing.Size(55, 13);
+            this.lblBitisTarihi.TabIndex = 3;
+            this.lblBitisTarihi.Text = "Bitis Tarihi :";
+            // 
+            // lblArasinda
+            // 
+            this.lblArasinda.Location = new System.Drawing.Point(391, 46);
+            this.lblArasinda.Name = "lblArasinda";
+            this.lblArasinda.Size = new System.Drawing.Size(42, 13);
+            this.lblArasinda.TabIndex = 4;
+            this.lblArasinda.Text = "Arasında";
+            // 
+            // frmSatisRaporu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(881, 361);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panelControl1);
-            this.Name = "frmRaporlardnm";
-            this.Text = "frmRaporlardnm";
+            this.Name = "frmSatisRaporu";
+            this.Text = "Satış Raporları";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtFisTur.Properties)).EndInit();
+            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateBitis.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateBitis.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateBaslangic.Properties.CalendarTimeProperties)).EndInit();
@@ -214,11 +233,13 @@ namespace IsbaSatis.BackOffice.Raporlar
         private DevExpress.XtraEditors.DateEdit dateBitis;
         private DevExpress.XtraEditors.DateEdit dateBaslangic;
         private DevExpress.XtraEditors.SimpleButton BtnHazırla;
-        private DevExpress.XtraEditors.TextEdit txtFisTur;
         private DevExpress.XtraGrid.Columns.GridColumn colBakiye;
         private DevExpress.XtraGrid.Columns.GridColumn colKasaGiris;
         private DevExpress.XtraGrid.Columns.GridColumn colOdemeKodu;
         private DevExpress.XtraGrid.Columns.GridColumn colOdemeTuruAdi;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraEditors.LabelControl lblArasinda;
+        private DevExpress.XtraEditors.LabelControl lblBitisTarihi;
+        private DevExpress.XtraEditors.LabelControl lblBaslangicTarihi;
     }
 }

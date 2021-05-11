@@ -443,7 +443,7 @@ namespace IsbaSatis.BackOffice
           
             if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Yedekleme))
             {
-                frmRaporlardnm frm = new frmRaporlardnm();
+                frmStokHareketRaporu frm = new frmStokHareketRaporu();
                 frm.ShowDialog();
             }
             else

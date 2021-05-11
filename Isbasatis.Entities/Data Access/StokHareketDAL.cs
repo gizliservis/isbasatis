@@ -4,6 +4,7 @@ using Isbasatis.Entities.Tables;
 using Isbasatis.Entities.Validations;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -93,6 +94,33 @@ namespace Isbasatis.Entities.Data_Access
     };
             return genelToplamlar;
 
+        }
+        public object StokHareketTarihAraligi(IsbaSatisContext context, DateTime baslangic, DateTime bitis)
+        {
+            return (from stkHareket in context.StokHareketleri.Where(c => DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date)
+                    select new
+                    {
+
+                        stkHareket.Id,
+                        stkHareket.StokId,
+                        stkHareket.FisKodu,
+                        stkHareket.Hareket,
+                        StokAdi = stkHareket.Stok.StokAdi,
+                        StokKodu = stkHareket.Stok.StokKodu,
+                        stkHareket.Miktar,
+                        stkHareket.Kdv,
+                         stkHareket.BirimFiyati,
+                        stkHareket.IndirimOrani,
+                        stkHareket.DepoId,
+                        DepoAdi = stkHareket.Depo.DepoAdi,
+                        DepoKodu = stkHareket.Depo.DepoKodu,
+                        stkHareket.SeriNo,
+                        stkHareket.Tarih,
+                        stkHareket.Aciklama,
+                       Birimi= stkHareket.Stok.Birimi,
+                       Barkod= stkHareket.Stok.Barkod,
+                        GenelToplam = (stkHareket.BirimFiyati * stkHareket.Miktar) - (stkHareket.Miktar * stkHareket.BirimFiyati * stkHareket.IndirimOrani / 100)
+                    }).ToList();
         }
     }
 }

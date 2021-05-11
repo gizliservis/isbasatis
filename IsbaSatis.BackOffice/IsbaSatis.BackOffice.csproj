@@ -337,17 +337,23 @@
     <Compile Include="Raporlar\frmRaporGoruntule.Designer.cs">
       <DependentUpon>frmRaporGoruntule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Raporlar\frmRaporlardnm.cs">
+    <Compile Include="Raporlar\frmSatisRaporu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Raporlar\frmRaporlardnm.Designer.cs">
-      <DependentUpon>frmRaporlardnm.cs</DependentUpon>
+    <Compile Include="Raporlar\frmSatisRaporu.Designer.cs">
+      <DependentUpon>frmSatisRaporu.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\frmRaporListele.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Raporlar\frmRaporListele.Designer.cs">
       <DependentUpon>frmRaporListele.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\frmStokHareketRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmStokHareketRaporu.Designer.cs">
+      <DependentUpon>frmStokHareketRaporu.cs</DependentUpon>
     </Compile>
     <Compile Include="Sms\frmSms.cs">
       <SubType>Form</SubType>
@@ -528,11 +534,14 @@
     <EmbeddedResource Include="Raporlar\frmRaporGoruntule.resx">
       <DependentUpon>frmRaporGoruntule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Raporlar\frmRaporlardnm.resx">
-      <DependentUpon>frmRaporlardnm.cs</DependentUpon>
+    <EmbeddedResource Include="Raporlar\frmSatisRaporu.resx">
+      <DependentUpon>frmSatisRaporu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmRaporListele.resx">
       <DependentUpon>frmRaporListele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmStokHareketRaporu.resx">
+      <DependentUpon>frmStokHareketRaporu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sms\frmSms.resx">
       <DependentUpon>frmSms.cs</DependentUpon>
