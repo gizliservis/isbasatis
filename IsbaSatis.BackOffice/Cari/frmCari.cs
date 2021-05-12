@@ -61,12 +61,12 @@ namespace IsbaSatis.BackOffice.Cari
             if (MessageBox.Show("Seçili Olan Veriyi Silmek İstediğinie Eminmisiniz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
-                foreach (var hareket in context.fisler.Select(c => c.CariId == secilen).ToList())
-                {
 
-                    if (hareket)
+                foreach (var hrkt in context.fisler)
+                {
+                    if (hrkt.CariId == secilen)
                     {
-                        MessageBox.Show("Bu Carinin Hareketi Bulunmakta Fatura ve Fişlerden Silmeden Cariyi Silemezsiniz","Uyarı");
+                        MessageBox.Show("Bu Ürünün Hareketi Bulunmakta Fatura ve Fişlerden Siliniz");
                         return;
                     }
                     else

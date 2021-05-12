@@ -57,13 +57,14 @@ namespace IsbaSatis.BackOffice.AnaMenü
 
         private void btnSil_Click(object sender, EventArgs e)
         {
+           
             if (MessageBox.Show("Seçili Olan Veriyi Silmek İstediğinie Eminmisiniz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-
                 secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
-                foreach (var hareket in context.StokHareketleri.Select(c => c.StokId == secilen).ToList())
+
+                foreach (var hrkt in context.StokHareketleri)
                 {
-                    if (hareket)
+                    if (hrkt.StokId==secilen)
                     {
                         MessageBox.Show("Bu Ürünün Hareketi Bulunmakta Fatura ve Fişlerden Siliniz");
                         return;
@@ -75,7 +76,14 @@ namespace IsbaSatis.BackOffice.AnaMenü
                         GetAll();
                     }
 
+                
+                
                 }
+              
+
+
+
+
 
             }
 

@@ -30,7 +30,7 @@ namespace IsbaSatis.BackOffice.Raporlar
 
         void listele(DateTime baslangic, DateTime bitis )
         {
-            gridControl1.DataSource = kasaHareketDAL.OdemeTuruSatisListele(context, baslangic, bitis);
+            gridControl1.DataSource = kasaHareketDAL.OdemeTuruSatisListele(context,DateTime.Now);
 
         }
         private void BtnHazırla_Click(object sender, EventArgs e)

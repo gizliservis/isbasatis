@@ -57,18 +57,21 @@ namespace IsbaSatis.BackOffice.Fişler
             this.Close();
         }
 
-        private void btnSil_Click(object sender, EventArgs e)
+        private void btnSil_Click(object sender, EventArgs e )
         {
             Fis secilen = (Fis)gridView1.GetFocusedRow();
             if (!String.IsNullOrEmpty(secilen.FisBaglantiKodu))
             {
                 if (MessageBox.Show($"Bu fis ile bağlantılı olan{secilen.FisBaglantiKodu} kodlu fiş birlikte silinecektir , Eminmisiniz ? ", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
+                
                     fisDAL.Delete(context, c => c.FisKodu == secilen.FisBaglantiKodu);
                     fisDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     kasaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     stokHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     fisDAL.Save(context);
+                    kasaHareketDAL.Save(context);
+                    stokHareketDAL.Save(context);
                     listele();
                 }
             }

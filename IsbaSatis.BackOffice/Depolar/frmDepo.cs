@@ -65,11 +65,13 @@ namespace IsbaSatis.BackOffice.Depolar
             if (MessageBox.Show("Seçili Olan Veriyi Silmek İstediğinie Eminmisiniz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Secilen = Convert.ToInt32(gridDepo.GetFocusedRowCellValue(colId));
-                foreach (var hareket in context.StokHareketleri.Select(c => c.DepoId == Secilen).ToList())
+              
+
+                foreach (var hrkt in context.StokHareketleri)
                 {
-                    if (hareket)
+                    if (hrkt.DepoId == Secilen)
                     {
-                        MessageBox.Show("Bu Deponun Hareketi Bulunmakta Fatura ve Fişlerden Silmeden Depoyu Silemezsiniz", "Uyarı");
+                        MessageBox.Show("Bu Ürünün Hareketi Bulunmakta Fatura ve Fişlerden Siliniz");
                         return;
                     }
                     else

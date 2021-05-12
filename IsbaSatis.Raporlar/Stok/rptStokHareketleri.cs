@@ -19,11 +19,11 @@ namespace IsbaSatis.Raporlar.Stok
             ObjectDataSource dataSource = new ObjectDataSource {DataSource=stokHareketDAL.GetAll(context)};
             this.DataSource = dataSource;
             colFisKodu.DataBindings.Add("Text", this.DataSource, "FisKodu");
-            //colHareketi.DataBindings.Add("Text", this.DataSource, "Hareket");
-          //colStokKodu.DataBindings.Add("Text", this.DataSource, "StokKodu");
-          //colBarkod.DataBindings.Add("Text", this.DataSource, "Barkod");
-            //colStokAdi.DataBindings.Add("Text", this.DataSource, "StokAdi");
-            colBirimi.DataBindings.Add("Text", this.DataSource, "Birimi");
+            colHareketi.DataBindings.Add("Text", this.DataSource, "Hareket");
+          colStokKodu.DataBindings.Add("Text", this.DataSource, "Stok.StokKodu");
+          colBarkod.DataBindings.Add("Text", this.DataSource, "Stok.Barkod");
+          colStokAdi.DataBindings.Add("Text", this.DataSource, "Stok.StokAdi");
+            colBirimi.DataBindings.Add("Text", this.DataSource, "Stok.Birimi");
             colKdv.DataBindings.Add("Text", this.DataSource, "Kdv","{0:'%'0}");
             colMiktar.DataBindings.Add("Text", this.DataSource, "Miktar");
             colBirimFiyat.DataBindings.Add("Text", this.DataSource, "BirimFiyati", "{0:C2}");

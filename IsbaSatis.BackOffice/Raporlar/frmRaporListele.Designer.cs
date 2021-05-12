@@ -44,6 +44,8 @@
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.linkrptStokHareketleri = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.linkrptGunlukSatis = new DevExpress.XtraNavBar.NavBarItem();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
             this.txtRaporAdi = new DevExpress.XtraEditors.TextEdit();
@@ -127,13 +129,15 @@
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup1,
             this.navBarGroup2,
-            this.navBarGroup3});
+            this.navBarGroup3,
+            this.navBarGroup4});
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.linkrptStokDurumu,
             this.navBarItem2,
             this.navBarItem3,
             this.navBarItem4,
-            this.linkrptStokHareketleri});
+            this.linkrptStokHareketleri,
+            this.linkrptGunlukSatis});
             this.navBarControl1.Location = new System.Drawing.Point(0, 59);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 204;
@@ -195,6 +199,20 @@
             this.linkrptStokHareketleri.Name = "linkrptStokHareketleri";
             this.linkrptStokHareketleri.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarLink_Click);
             // 
+            // navBarGroup4
+            // 
+            this.navBarGroup4.Caption = "Finans Raporları";
+            this.navBarGroup4.Expanded = true;
+            this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.linkrptGunlukSatis)});
+            this.navBarGroup4.Name = "navBarGroup4";
+            // 
+            // linkrptGunlukSatis
+            // 
+            this.linkrptGunlukSatis.Caption = "Satış Raporu";
+            this.linkrptGunlukSatis.Name = "linkrptGunlukSatis";
+            this.linkrptGunlukSatis.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarLink_Click);
+            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.txtAciklama);
@@ -212,7 +230,6 @@
             // 
             // txtAciklama
             // 
-            this.txtAciklama.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAciklama.Location = new System.Drawing.Point(119, 77);
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Properties.ReadOnly = true;
@@ -221,7 +238,6 @@
             // 
             // txtRaporAdi
             // 
-            this.txtRaporAdi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRaporAdi.Location = new System.Drawing.Point(119, 26);
             this.txtRaporAdi.Name = "txtRaporAdi";
             this.txtRaporAdi.Properties.ReadOnly = true;
@@ -230,7 +246,6 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
@@ -243,7 +258,6 @@
             // 
             // txtRaporGrubu
             // 
-            this.txtRaporGrubu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRaporGrubu.Location = new System.Drawing.Point(119, 51);
             this.txtRaporGrubu.Name = "txtRaporGrubu";
             this.txtRaporGrubu.Properties.ReadOnly = true;
@@ -252,7 +266,6 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelControl10.Appearance.Options.UseTextOptions = true;
             this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
@@ -265,7 +278,6 @@
             // 
             // labelControl20
             // 
-            this.labelControl20.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelControl20.Appearance.Options.UseTextOptions = true;
             this.labelControl20.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl20.AppearanceHovered.Options.UseTextOptions = true;
@@ -338,5 +350,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl20;
         private DevExpress.XtraEditors.FilterControl filterControl1;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup4;
+        private DevExpress.XtraNavBar.NavBarItem linkrptGunlukSatis;
     }
 }

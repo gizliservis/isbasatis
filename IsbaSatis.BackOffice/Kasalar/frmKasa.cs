@@ -87,11 +87,12 @@ namespace IsbaSatis.BackOffice.Kasalar
             if (MessageBox.Show("Seçili Olan Veriyi Silmek İstediğinie Eminmisiniz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 secilen = Convert.ToInt32(layoutView1.GetFocusedRowCellValue(colId));
-                foreach (var hareket in context.KasaHareketleri.Select(c => c.KasaId == secilen).ToList())
+
+                foreach (var hrkt in context.KasaHareketleri)
                 {
-                    if (hareket)
+                    if (hrkt.KasaId == secilen)
                     {
-                        MessageBox.Show("Bu Kasanın Hareketi Bulunmakta Fatura ve Fişlerden Silmeden Cariyi Silemezsiniz", "Uyarı");
+                        MessageBox.Show("Bu Ürünün Hareketi Bulunmakta Fatura ve Fişlerden Siliniz");
                         return;
                     }
                     else

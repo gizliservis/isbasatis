@@ -17,7 +17,7 @@ namespace IsbaSatis.BackOffice.Raporlar
         public frmRaporDuzenle(XtraReport rapor=null)
         {
             InitializeComponent();
-            reportDesigner1.OpenReport(rapor);
+           
         }
 
        

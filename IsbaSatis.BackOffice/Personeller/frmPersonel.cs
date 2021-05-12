@@ -68,10 +68,23 @@ namespace IsbaSatis.BackOffice.Personeller
         {
             secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
             if (MessageBox.Show("Seçili Olan Veriyi Silmek İstediğinie Eminmisiniz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            { 
-                personelDAL.Delete(context, c => c.Id == secilen);
-                personelDAL.Save(context);
-                listele();
+            {
+                foreach (var hrkt in context.fisler)
+                {
+                    if (hrkt.PlasiyerId == secilen)
+                    {
+                        MessageBox.Show("Bu Ürünün Hareketi Bulunmakta Fatura ve Fişlerden Siliniz");
+                        return;
+                    }
+                    else
+                    {
+                        personelDAL.Delete(context, c => c.Id == secilen);
+                        personelDAL.Save(context);
+                        listele();
+                    }
+
+                }
+     
             }
         }
 

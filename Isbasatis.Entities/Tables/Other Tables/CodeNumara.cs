@@ -49,13 +49,14 @@ namespace Isbasatis.Entities.Tables.Other_Tables
             {
                 int Numara = int.Parse((from c in context.fisler orderby c.Id descending select c).First().FisKodu);
                 Numara++;
-                string num = Numara.ToString().PadLeft(7, '0');
+                string fi="fi";
+                string num =fi + Numara.ToString().PadLeft(9, '0');
                 return num;
             }
             catch (Exception)
             {
 
-                return "00000001";
+                return "fi000000001";
             }
 
         }

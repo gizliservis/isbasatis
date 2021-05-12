@@ -124,8 +124,9 @@ namespace Isbasatis.Entities.Tools
                 
             }
         }
-        //public static string KodOlustur(string OnEki,string Kod)
+        //public static string KodfisOlustur(string OnEki, string Kod)
         //{
+
         //    int OnEkiUzunluk = OnEki.Length;
         //    int KodUzunluk = Kod.Length;
         //    int KalanKarakter = 12 - (OnEkiUzunluk + KodUzunluk);

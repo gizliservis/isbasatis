@@ -139,6 +139,7 @@ namespace IsbaSatis.FrontOffice
         private void AcikHesap_Click(object sender, EventArgs e)
         {
             odemeTuruId = -1;
+           
             radialYazdir.ShowPopup(MousePosition);
         }
 
@@ -245,6 +246,7 @@ namespace IsbaSatis.FrontOffice
                     form.ShowDialog();
                     if (form.entity != null)
                     {
+                        txtfisKodu.Text = fisNo.FisKodNumarasi();
                         KasaHareketDAL.AddOrUpdate(context, form.entity);
                         OdenenTutarGuncelle();
                     }
@@ -578,12 +580,13 @@ namespace IsbaSatis.FrontOffice
         }
         private void FisKaydet(ReporPrintTool.Belge belge)
         {
-          
+            
             toplamlar();
             OdenenTutarGuncelle();
        
             string message = null;
             int hata = 0;
+
             if (gridStokHareket.RowCount == 0)
             {
                 message += "Satış Ekranında hiç bir ürün bulunmamaktadır." + System.Environment.NewLine;
@@ -597,6 +600,7 @@ namespace IsbaSatis.FrontOffice
             }
             if (txtfisKodu.Text == "")
             {
+              
                 message += "Fiş Kodu Alanı Boş Geçilemez." + System.Environment.NewLine;
                 hata++;
             }
@@ -668,7 +672,7 @@ namespace IsbaSatis.FrontOffice
             fisDAL.AddOrUpdate(context, _fisentity);
             Fis odemeFisi = _fisentity.Clone();
             odemeFisi.FisTuru = "Fİş Ödemesi";
-            odemeFisi.FisKodu = fisNo.FisKodNumarasi();
+            odemeFisi.FisKodu = txtfisKodu.Text;
             _fisentity.FisBaglantiKodu = odemeFisi.FisKodu;
             odemeFisi.FisBaglantiKodu = _fisentity.FisKodu;
 
