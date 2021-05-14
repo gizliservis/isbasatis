@@ -18,6 +18,7 @@ namespace Isbasatis.Entities.Data_Access
         {
             var tablo = context.Stoklar.GroupJoin(context.StokHareketleri, c => c.Id, c => c.StokId, (Stoklar, StokHareketleri) => new
             {
+                
                 Stoklar.Id,
                 Stoklar.Durumu,
                 Stoklar.StokKodu,

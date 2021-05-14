@@ -33,10 +33,10 @@
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
-            this.btnHareket = new DevExpress.XtraEditors.SimpleButton();
-            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnAra = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
+            this.btnHareket = new DevExpress.XtraEditors.SimpleButton();
+            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnKopyala = new DevExpress.XtraEditors.SimpleButton();
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
             this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
@@ -121,22 +121,6 @@
             resources.ApplyResources(this.grpMenu, "grpMenu");
             this.grpMenu.Name = "grpMenu";
             // 
-            // btnHareket
-            // 
-            resources.ApplyResources(this.btnHareket, "btnHareket");
-            this.btnHareket.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnHareket.ImageOptions.ImageIndex")));
-            this.btnHareket.ImageOptions.ImageList = this.ımageList1;
-            this.btnHareket.Name = "btnHareket";
-            this.btnHareket.Click += new System.EventHandler(this.btnStokHareket_Click);
-            // 
-            // btnKapat
-            // 
-            resources.ApplyResources(this.btnKapat, "btnKapat");
-            this.btnKapat.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnKapat.ImageOptions.ImageIndex")));
-            this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
-            // 
             // btnAra
             // 
             resources.ApplyResources(this.btnAra, "btnAra");
@@ -152,6 +136,22 @@
             this.btnGuncelle.ImageOptions.ImageList = this.ımageList1;
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
+            // btnHareket
+            // 
+            resources.ApplyResources(this.btnHareket, "btnHareket");
+            this.btnHareket.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnHareket.ImageOptions.ImageIndex")));
+            this.btnHareket.ImageOptions.ImageList = this.ımageList1;
+            this.btnHareket.Name = "btnHareket";
+            this.btnHareket.Click += new System.EventHandler(this.btnStokHareket_Click);
+            // 
+            // btnKapat
+            // 
+            resources.ApplyResources(this.btnKapat, "btnKapat");
+            this.btnKapat.ImageOptions.ImageIndex = ((int)(resources.GetObject("btnKapat.ImageOptions.ImageIndex")));
+            this.btnKapat.ImageOptions.ImageList = this.ımageList1;
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // btnKopyala
             // 
@@ -233,6 +233,7 @@
             this.colStokGiris});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowFooter = true;
             // 
             // colId
             // 
@@ -261,6 +262,8 @@
             this.colStokAdi.FieldName = "StokAdi";
             this.colStokAdi.Name = "colStokAdi";
             this.colStokAdi.OptionsColumn.AllowEdit = false;
+            this.colStokAdi.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(((DevExpress.Data.SummaryItemType)(resources.GetObject("colStokAdi.Summary"))), resources.GetString("colStokAdi.Summary1"), resources.GetString("colStokAdi.Summary2"))});
             // 
             // colBarkod
             // 

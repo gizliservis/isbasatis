@@ -61,7 +61,7 @@ namespace Isbasatis.Entities.Mapping
 
          
             this.HasOptional(c => c.Cari).WithMany(c => c.Fis).HasForeignKey(c => c.CariId);
-            this.HasOptional(c => c.Cari).WithMany(c => c.Fis).HasForeignKey(c => c.PlasiyerId);
+            this.HasOptional(c => c.Personel).WithMany(c => c.Fis).HasForeignKey(c => c.PlasiyerId);
         }
 
     }

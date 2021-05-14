@@ -356,7 +356,7 @@ namespace IsbaSatis.BackOffice
         {
             if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.RaporOlustur))
             {
-                frmRaporDuzenle frm = new frmRaporDuzenle();
+                frmRaporDuzenle frm = new frmRaporDuzenle(null);
                 frm.WindowState = FormWindowState.Maximized;
                 frm.Show();
             }

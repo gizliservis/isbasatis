@@ -25,6 +25,7 @@ namespace IsbaSatis.BackOffice.Kasalar
               _kasaId = kasaId;
             var kasaBilgi = context.Kasalar.SingleOrDefault(c => c.Id == kasaId);
             lblBaslik.Text = kasaBilgi.KasaKodu + " - " + kasaBilgi.KasaAdi + " Harketleri";
+            Guncelle();
 
         }
 

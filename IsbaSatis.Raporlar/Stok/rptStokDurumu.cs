@@ -28,7 +28,7 @@ namespace IsbaSatis.Raporlar.Stok
             colSatisKdv.DataBindings.Add("Text", this.DataSource, "SatisKdv");
             colStokGiris.DataBindings.Add("Text", this.DataSource, "StokGiris");
             colStokCikis.DataBindings.Add("Text", this.DataSource, "StokCikis");
-            colMevcutStok.DataBindings.Add("Text", this.DataSource, "MevcutStok");
+            colMevcutStok.DataBindings.Add("Text", this.DataSource, "MevcutStokBakiye");
 
 
         }

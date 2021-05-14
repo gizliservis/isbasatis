@@ -28,7 +28,7 @@ namespace IsbaSatis.Raporlar.Fatura_Ve_Fiş
             lblIkametgah.Text = fisBilgi.Semt + "\\" + fisBilgi.Ilce + "\\" + fisBilgi.Il;
             lblFaturaTarihi.Text = fisBilgi.Tarih.ToString();
 
-            colStokAdi.DataBindings.Add("Text", this.DataSource, "StokAdi");
+            colStokAdi.DataBindings.Add("Text", this.DataSource, "Stok.StokAdi");
             colMiktar.DataBindings.Add("Text", this.DataSource, "Miktar");
             colBirimFiyat.DataBindings.Add("Text", this.DataSource, "BirimFiyati");
 

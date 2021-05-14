@@ -75,6 +75,8 @@
             this.colPersonel = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCariKodu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTarih = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPersonelAdi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPersonelKodu = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
@@ -391,7 +393,9 @@
             this.colCariAdi,
             this.colPersonel,
             this.colCariKodu,
-            this.colTarih});
+            this.colTarih,
+            this.colPersonelAdi,
+            this.colPersonelKodu});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(799, 177, 252, 266);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -431,7 +435,7 @@
             this.colBelgeNo.Name = "colBelgeNo";
             this.colBelgeNo.OptionsColumn.AllowEdit = false;
             this.colBelgeNo.Visible = true;
-            this.colBelgeNo.VisibleIndex = 3;
+            this.colBelgeNo.VisibleIndex = 4;
             // 
             // colCariId
             // 
@@ -449,19 +453,24 @@
             // 
             // colIskontoOrani
             // 
+            this.colIskontoOrani.Caption = "İskonto Oranı";
+            this.colIskontoOrani.DisplayFormat.FormatString = "\'%\'0";
+            this.colIskontoOrani.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colIskontoOrani.FieldName = "IskontoOrani";
             this.colIskontoOrani.Name = "colIskontoOrani";
             this.colIskontoOrani.OptionsColumn.AllowEdit = false;
             this.colIskontoOrani.Visible = true;
-            this.colIskontoOrani.VisibleIndex = 4;
+            this.colIskontoOrani.VisibleIndex = 6;
             // 
             // colIskontoTutar
             // 
+            this.colIskontoTutar.DisplayFormat.FormatString = "C2";
+            this.colIskontoTutar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colIskontoTutar.FieldName = "IskontoTutar";
             this.colIskontoTutar.Name = "colIskontoTutar";
             this.colIskontoTutar.OptionsColumn.AllowEdit = false;
             this.colIskontoTutar.Visible = true;
-            this.colIskontoTutar.VisibleIndex = 5;
+            this.colIskontoTutar.VisibleIndex = 7;
             // 
             // colAlacak
             // 
@@ -477,11 +486,13 @@
             // 
             // colToplamTutar
             // 
+            this.colToplamTutar.DisplayFormat.FormatString = "C2";
+            this.colToplamTutar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colToplamTutar.FieldName = "ToplamTutar";
             this.colToplamTutar.Name = "colToplamTutar";
             this.colToplamTutar.OptionsColumn.AllowEdit = false;
             this.colToplamTutar.Visible = true;
-            this.colToplamTutar.VisibleIndex = 6;
+            this.colToplamTutar.VisibleIndex = 8;
             // 
             // colAciklama
             // 
@@ -495,6 +506,8 @@
             this.colCariAdi.FieldName = "Cari.CariAdi";
             this.colCariAdi.Name = "colCariAdi";
             this.colCariAdi.OptionsColumn.AllowEdit = false;
+            this.colCariAdi.Visible = true;
+            this.colCariAdi.VisibleIndex = 3;
             // 
             // colPersonel
             // 
@@ -512,11 +525,29 @@
             // colTarih
             // 
             this.colTarih.Caption = "Tarih";
+            this.colTarih.DisplayFormat.FormatString = "d";
+            this.colTarih.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colTarih.FieldName = "Tarih";
             this.colTarih.Name = "colTarih";
             this.colTarih.OptionsColumn.AllowEdit = false;
             this.colTarih.Visible = true;
-            this.colTarih.VisibleIndex = 2;
+            this.colTarih.VisibleIndex = 5;
+            // 
+            // colPersonelAdi
+            // 
+            this.colPersonelAdi.Caption = "Personel Adı";
+            this.colPersonelAdi.FieldName = "Personel.PersonelAdi";
+            this.colPersonelAdi.Name = "colPersonelAdi";
+            this.colPersonelAdi.OptionsColumn.AllowEdit = false;
+            this.colPersonelAdi.Visible = true;
+            this.colPersonelAdi.VisibleIndex = 2;
+            // 
+            // colPersonelKodu
+            // 
+            this.colPersonelKodu.Caption = "Personel Kodu";
+            this.colPersonelKodu.FieldName = "Personel.PersonelKodu";
+            this.colPersonelKodu.Name = "colPersonelKodu";
+            this.colPersonelKodu.OptionsColumn.AllowEdit = false;
             // 
             // frmFis
             // 
@@ -591,5 +622,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPersonel;
         private DevExpress.XtraGrid.Columns.GridColumn colCariKodu;
         private DevExpress.XtraGrid.Columns.GridColumn colTarih;
+        private DevExpress.XtraGrid.Columns.GridColumn colPersonelAdi;
+        private DevExpress.XtraGrid.Columns.GridColumn colPersonelKodu;
     }
 }

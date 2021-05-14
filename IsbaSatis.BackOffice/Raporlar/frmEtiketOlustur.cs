@@ -48,8 +48,8 @@ namespace IsbaSatis.BackOffice.Raporlar
             DetailBand detail = new DetailBand();
             detail.MultiColumn.Layout = ColumnLayout.AcrossThenDown;
             detail.MultiColumn.Mode = MultiColumnMode.UseColumnWidth;
-            detail.MultiColumn.ColumnWidth = mmToPixel(Convert.ToInt32(txtUzunluk.Value));
-            detail.Height = mmToPixel(Convert.ToInt32(txtGenislik.Value));
+            detail.MultiColumn.ColumnWidth = mmToPixel(Convert.ToInt32(txtGenislik.Value));
+            detail.Height = mmToPixel(Convert.ToInt32(txtUzunluk.Value));
             
             detail.MultiColumn.ColumnSpacing = mmToPixel(Convert.ToInt32(txtAraBosluk.Value));
             rapor.Bands.Add(detail);

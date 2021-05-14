@@ -1389,7 +1389,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.xtraTabControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(676, 675);
-            this.splitContainerControl1.SplitterPosition = 333;
+            this.splitContainerControl1.SplitterPosition = 255;
             this.splitContainerControl1.TabIndex = 1;
             // 
             // navigationFrame1
@@ -1403,7 +1403,7 @@
             this.navOdeme,
             this.navStokHareket});
             this.navigationFrame1.SelectedPage = this.navStokHareket;
-            this.navigationFrame1.Size = new System.Drawing.Size(676, 236);
+            this.navigationFrame1.Size = new System.Drawing.Size(676, 158);
             this.navigationFrame1.TabIndex = 0;
             this.navigationFrame1.Text = "navigationFrame1";
             // 
@@ -1412,7 +1412,7 @@
             this.navOdeme.Controls.Add(this.gridcontKasaHareket);
             this.navOdeme.Controls.Add(this.groupControl6);
             this.navOdeme.Name = "navOdeme";
-            this.navOdeme.Size = new System.Drawing.Size(676, 236);
+            this.navOdeme.Size = new System.Drawing.Size(676, 158);
             // 
             // gridcontKasaHareket
             // 
@@ -1423,7 +1423,7 @@
             this.gridcontKasaHareket.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoKasa,
             this.repoKHSil});
-            this.gridcontKasaHareket.Size = new System.Drawing.Size(676, 157);
+            this.gridcontKasaHareket.Size = new System.Drawing.Size(676, 79);
             this.gridcontKasaHareket.TabIndex = 4;
             this.gridcontKasaHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridKasaHareket});
@@ -1601,7 +1601,7 @@
             this.groupControl6.Controls.Add(this.labelControl18);
             this.groupControl6.Controls.Add(this.txtOdenenTutar);
             this.groupControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl6.Location = new System.Drawing.Point(0, 157);
+            this.groupControl6.Location = new System.Drawing.Point(0, 79);
             this.groupControl6.Name = "groupControl6";
             this.groupControl6.Size = new System.Drawing.Size(676, 79);
             this.groupControl6.TabIndex = 5;
@@ -1685,7 +1685,7 @@
             // 
             this.navStokHareket.Controls.Add(this.gridcontStokHareket);
             this.navStokHareket.Name = "navStokHareket";
-            this.navStokHareket.Size = new System.Drawing.Size(676, 236);
+            this.navStokHareket.Size = new System.Drawing.Size(676, 158);
             // 
             // gridcontStokHareket
             // 
@@ -1698,7 +1698,7 @@
             this.repoBirimFiyat,
             this.repoDepo,
             this.repoSeriNo});
-            this.gridcontStokHareket.Size = new System.Drawing.Size(676, 236);
+            this.gridcontStokHareket.Size = new System.Drawing.Size(676, 158);
             this.gridcontStokHareket.TabIndex = 4;
             this.gridcontStokHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridStokHareket});
@@ -1771,7 +1771,7 @@
             this.colStokAdi.OptionsColumn.AllowEdit = false;
             this.colStokAdi.Visible = true;
             this.colStokAdi.VisibleIndex = 1;
-            this.colStokAdi.Width = 126;
+            this.colStokAdi.Width = 191;
             // 
             // colBarkodTuru
             // 
@@ -1788,7 +1788,7 @@
             this.colBarkod.OptionsColumn.AllowEdit = false;
             this.colBarkod.Visible = true;
             this.colBarkod.VisibleIndex = 2;
-            this.colBarkod.Width = 70;
+            this.colBarkod.Width = 98;
             // 
             // colBirimi
             // 
@@ -1797,8 +1797,8 @@
             this.colBirimi.Name = "colBirimi";
             this.colBirimi.OptionsColumn.AllowEdit = false;
             this.colBirimi.Visible = true;
-            this.colBirimi.VisibleIndex = 4;
-            this.colBirimi.Width = 37;
+            this.colBirimi.VisibleIndex = 3;
+            this.colBirimi.Width = 53;
             // 
             // colMiktar
             // 
@@ -1808,8 +1808,8 @@
             this.colMiktar.FieldName = "Miktar";
             this.colMiktar.Name = "colMiktar";
             this.colMiktar.Visible = true;
-            this.colMiktar.VisibleIndex = 5;
-            this.colMiktar.Width = 35;
+            this.colMiktar.VisibleIndex = 4;
+            this.colMiktar.Width = 64;
             // 
             // colKdv
             // 
@@ -1820,8 +1820,8 @@
             this.colKdv.Name = "colKdv";
             this.colKdv.OptionsColumn.AllowEdit = false;
             this.colKdv.Visible = true;
-            this.colKdv.VisibleIndex = 7;
-            this.colKdv.Width = 29;
+            this.colKdv.VisibleIndex = 6;
+            this.colKdv.Width = 47;
             // 
             // colBirimFiyati
             // 
@@ -1832,8 +1832,8 @@
             this.colBirimFiyati.FieldName = "BirimFiyati";
             this.colBirimFiyati.Name = "colBirimFiyati";
             this.colBirimFiyati.Visible = true;
-            this.colBirimFiyati.VisibleIndex = 6;
-            this.colBirimFiyati.Width = 82;
+            this.colBirimFiyati.VisibleIndex = 5;
+            this.colBirimFiyati.Width = 67;
             // 
             // repoBirimFiyat
             // 
@@ -1851,9 +1851,7 @@
             this.colIndirimOrani.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colIndirimOrani.FieldName = "IndirimOrani";
             this.colIndirimOrani.Name = "colIndirimOrani";
-            this.colIndirimOrani.Visible = true;
-            this.colIndirimOrani.VisibleIndex = 8;
-            this.colIndirimOrani.Width = 33;
+            this.colIndirimOrani.Width = 49;
             // 
             // colDepoKodu
             // 
@@ -1869,9 +1867,7 @@
             this.colDepoAdi.FieldName = "Depo.DepoAdi";
             this.colDepoAdi.Name = "colDepoAdi";
             this.colDepoAdi.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.colDepoAdi.Visible = true;
-            this.colDepoAdi.VisibleIndex = 3;
-            this.colDepoAdi.Width = 81;
+            this.colDepoAdi.Width = 74;
             // 
             // repoDepo
             // 
@@ -1923,7 +1919,7 @@
             this.colSil.Name = "colSil";
             this.colSil.Visible = true;
             this.colSil.VisibleIndex = 0;
-            this.colSil.Width = 42;
+            this.colSil.Width = 60;
             // 
             // repoSil
             // 
@@ -1948,8 +1944,8 @@
             this.colToplamTutar.UnboundExpression = "[BirimFiyati] * [Miktar] - [BirimFiyati] * [Miktar] / 100 * [IndirimOrani]";
             this.colToplamTutar.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colToplamTutar.Visible = true;
-            this.colToplamTutar.VisibleIndex = 11;
-            this.colToplamTutar.Width = 58;
+            this.colToplamTutar.VisibleIndex = 7;
+            this.colToplamTutar.Width = 71;
             // 
             // colIndirimTutari
             // 
@@ -1963,9 +1959,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colIndirimTutari", "SUM={0:C2}")});
             this.colIndirimTutari.UnboundExpression = "[colToplamTutar] / 100 * [IndirimOrani]";
             this.colIndirimTutari.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.colIndirimTutari.Visible = true;
-            this.colIndirimTutari.VisibleIndex = 9;
-            this.colIndirimTutari.Width = 30;
+            this.colIndirimTutari.Width = 49;
             // 
             // colKdvToplam
             // 
@@ -1977,9 +1971,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colKdvToplam", "SUM={0:0.##}")});
             this.colKdvToplam.UnboundExpression = "[colToplamTutar] / 100 * [Kdv]";
             this.colKdvToplam.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.colKdvToplam.Visible = true;
-            this.colKdvToplam.VisibleIndex = 10;
-            this.colKdvToplam.Width = 28;
+            this.colKdvToplam.Width = 59;
             // 
             // colStokId
             // 
@@ -2107,7 +2099,7 @@
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.Size = new System.Drawing.Size(676, 332);
+            this.xtraTabControl1.Size = new System.Drawing.Size(676, 410);
             this.xtraTabControl1.TabIndex = 0;
             // 
             // radialFiyat

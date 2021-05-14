@@ -280,6 +280,7 @@
             this.colBakiye});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowFooter = true;
             // 
             // colId
             // 
@@ -323,6 +324,8 @@
             this.colCariAdi.FieldName = "CariAdi";
             this.colCariAdi.Name = "colCariAdi";
             this.colCariAdi.OptionsColumn.AllowEdit = false;
+            this.colCariAdi.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "CariAdi", "Cari Sayısı : {0}")});
             this.colCariAdi.Visible = true;
             this.colCariAdi.VisibleIndex = 3;
             this.colCariAdi.Width = 143;

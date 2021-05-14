@@ -20,6 +20,7 @@ using IsbaSatis.BackOffice.Kasalar;
 using Isbasatis.Entities.Tables.Other_Tables;
 using Isbasatis.Entities.Tools;
 using IsbaSatis.BackOffice.Personeller;
+using IsbaSatis.Raporlar.Fatura_Ve_Fiş;
 
 namespace IsbaSatis.BackOffice.Fişler
 {
@@ -49,6 +50,7 @@ namespace IsbaSatis.BackOffice.Fişler
             context.Stoklar.Load();
             context.Depolar.Load();
             context.Kasalar.Load();
+            //context.Cariler.Load();
             if (fisKodu != null)
             {
 
@@ -103,6 +105,7 @@ namespace IsbaSatis.BackOffice.Fişler
             txtVargiDairesi.DataBindings.Add("Text", _fisentity, "VergiDairesi", false, DataSourceUpdateMode.OnPropertyChanged);
             txtVergiNo.DataBindings.Add("Text", _fisentity, "VergiNo", false, DataSourceUpdateMode.OnPropertyChanged);
             txtIskontoToplam.DataBindings.Add("EditValue", _fisentity, "IskontoTutar", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtIskontoOran.DataBindings.Add("EditValue", _fisentity, "IskontoOrani", false, DataSourceUpdateMode.OnPropertyChanged);
 
             cmbAy.Month = DateTime.Now.Month;
             for (int i = DateTime.Now.Year - 5; i <= DateTime.Now.Year + 5; i++)
@@ -473,8 +476,8 @@ namespace IsbaSatis.BackOffice.Fişler
             {
                 Isbasatis.Entities.Tables.Cari entity = frm.secilen.FirstOrDefault();
                 entityBakiye =this.cariDAL.CariBakiyesi(context, entity.Id);
-                _cariId = entity.Id;
-                _fisentity.CariId = entity.Id;
+               _cariId = entity.Id;
+                _fisentity.CariId = _cariId;
                 lblCariKodu.Text = entity.CariKodu;
                 lblCariAdi.Text = entity.CariAdi;
                 txtFaturaUnvani.Text = entity.FaturaUnvani;
@@ -747,7 +750,13 @@ namespace IsbaSatis.BackOffice.Fişler
             fisDAL.AddOrUpdate(context, fisOdeme);
             kodOlustur.KodArttirma();
             context.SaveChanges();
-            
+            if (MessageBox.Show("Faturayı Yazırmak İstermisiniz ?","Uyarı",MessageBoxButtons.YesNo)==DialogResult.Yes)
+            {
+                ReporPrintTool yazdir = new ReporPrintTool();
+                rptFatura fatura = new rptFatura(txtKod.Text);
+                yazdir.RoporYazdir(fatura, ReporPrintTool.Belge.Fatura);
+            }
+
             this.Close();
 
 
@@ -796,6 +805,13 @@ namespace IsbaSatis.BackOffice.Fişler
                 toplamlar();
 
             }
+        }
+
+        private void btnFaturaYazdir_Click(object sender, EventArgs e)
+        {
+            ReporPrintTool yazdir = new ReporPrintTool();
+            rptFatura fatura = new rptFatura(txtKod.Text);
+            yazdir.RoporYazdir(fatura,ReporPrintTool.Belge.Fatura);
         }
     }
 }

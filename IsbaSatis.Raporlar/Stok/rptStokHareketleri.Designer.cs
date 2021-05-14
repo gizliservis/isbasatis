@@ -37,6 +37,10 @@
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.colFisKodu = new DevExpress.XtraReports.UI.XRTableCell();
+            this.colHareketi = new DevExpress.XtraReports.UI.XRTableCell();
+            this.colStokKodu = new DevExpress.XtraReports.UI.XRTableCell();
+            this.colBarkod = new DevExpress.XtraReports.UI.XRTableCell();
+            this.colStokAdi = new DevExpress.XtraReports.UI.XRTableCell();
             this.colBirimi = new DevExpress.XtraReports.UI.XRTableCell();
             this.colKdv = new DevExpress.XtraReports.UI.XRTableCell();
             this.colMiktar = new DevExpress.XtraReports.UI.XRTableCell();
@@ -50,6 +54,10 @@
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell13 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -62,14 +70,7 @@
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             this.lblToplamTutar = new DevExpress.XtraReports.UI.XRLabel();
             this.lblIndirimTutar = new DevExpress.XtraReports.UI.XRLabel();
-            this.colHareketi = new DevExpress.XtraReports.UI.XRTableCell();
-            this.colStokKodu = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.colStokAdi = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.colBarkod = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell13 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.colTarih = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -130,7 +131,7 @@
             this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(1012.499F, 21.40748F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(1020F, 21.40748F);
             this.xrTable1.StylePriority.UseBorderDashStyle = false;
             this.xrTable1.StylePriority.UseBorders = false;
             this.xrTable1.StylePriority.UseTextAlignment = false;
@@ -141,6 +142,7 @@
             this.xrTableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.colFisKodu,
             this.colHareketi,
+            this.colTarih,
             this.colStokKodu,
             this.colBarkod,
             this.colStokAdi,
@@ -160,6 +162,34 @@
             this.colFisKodu.Name = "colFisKodu";
             this.colFisKodu.Text = "Fiş Kodu";
             this.colFisKodu.Weight = 0.53125004912720819D;
+            // 
+            // colHareketi
+            // 
+            this.colHareketi.Multiline = true;
+            this.colHareketi.Name = "colHareketi";
+            this.colHareketi.Text = "colHareketi";
+            this.colHareketi.Weight = 0.67708344046522839D;
+            // 
+            // colStokKodu
+            // 
+            this.colStokKodu.Multiline = true;
+            this.colStokKodu.Name = "colStokKodu";
+            this.colStokKodu.Text = "colStokKodu";
+            this.colStokKodu.Weight = 0.82291660292148139D;
+            // 
+            // colBarkod
+            // 
+            this.colBarkod.Multiline = true;
+            this.colBarkod.Name = "colBarkod";
+            this.colBarkod.Text = "colBarkod";
+            this.colBarkod.Weight = 0.82291660292148139D;
+            // 
+            // colStokAdi
+            // 
+            this.colStokAdi.Multiline = true;
+            this.colStokAdi.Name = "colStokAdi";
+            this.colStokAdi.Text = "colStokAdi";
+            this.colStokAdi.Weight = 2.7604108722230745D;
             // 
             // colBirimi
             // 
@@ -291,6 +321,34 @@
             this.xrTableCell1.Text = "Fiş Kodu";
             this.xrTableCell1.Weight = 0.677083364171306D;
             // 
+            // xrTableCell2
+            // 
+            this.xrTableCell2.Multiline = true;
+            this.xrTableCell2.Name = "xrTableCell2";
+            this.xrTableCell2.Text = "Hareket";
+            this.xrTableCell2.Weight = 0.6770837074939684D;
+            // 
+            // xrTableCell5
+            // 
+            this.xrTableCell5.Multiline = true;
+            this.xrTableCell5.Name = "xrTableCell5";
+            this.xrTableCell5.Text = "Stok Kodu";
+            this.xrTableCell5.Weight = 0.67708309568495817D;
+            // 
+            // xrTableCell13
+            // 
+            this.xrTableCell13.Multiline = true;
+            this.xrTableCell13.Name = "xrTableCell13";
+            this.xrTableCell13.Text = "Barkod";
+            this.xrTableCell13.Weight = 0.82291634139562575D;
+            // 
+            // xrTableCell12
+            // 
+            this.xrTableCell12.Multiline = true;
+            this.xrTableCell12.Name = "xrTableCell12";
+            this.xrTableCell12.Text = "Stok Adı";
+            this.xrTableCell12.Weight = 2.6145770454266413D;
+            // 
             // xrTableCell6
             // 
             this.xrTableCell6.Multiline = true;
@@ -398,61 +456,12 @@
             this.lblIndirimTutar.Text = "lblIndirimTutar";
             this.lblIndirimTutar.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // colHareketi
+            // colTarih
             // 
-            this.colHareketi.Multiline = true;
-            this.colHareketi.Name = "colHareketi";
-            this.colHareketi.Text = "colHareketi";
-            this.colHareketi.Weight = 0.67708344046522839D;
-            // 
-            // colStokKodu
-            // 
-            this.colStokKodu.Multiline = true;
-            this.colStokKodu.Name = "colStokKodu";
-            this.colStokKodu.Text = "colStokKodu";
-            this.colStokKodu.Weight = 0.82291660292148139D;
-            // 
-            // xrTableCell2
-            // 
-            this.xrTableCell2.Multiline = true;
-            this.xrTableCell2.Name = "xrTableCell2";
-            this.xrTableCell2.Text = "Hareket";
-            this.xrTableCell2.Weight = 0.6770837074939684D;
-            // 
-            // xrTableCell5
-            // 
-            this.xrTableCell5.Multiline = true;
-            this.xrTableCell5.Name = "xrTableCell5";
-            this.xrTableCell5.Text = "Stok Kodu";
-            this.xrTableCell5.Weight = 0.67708309568495817D;
-            // 
-            // colStokAdi
-            // 
-            this.colStokAdi.Multiline = true;
-            this.colStokAdi.Name = "colStokAdi";
-            this.colStokAdi.Text = "colStokAdi";
-            this.colStokAdi.Weight = 2.7604108722230745D;
-            // 
-            // xrTableCell12
-            // 
-            this.xrTableCell12.Multiline = true;
-            this.xrTableCell12.Name = "xrTableCell12";
-            this.xrTableCell12.Text = "Stok Adı";
-            this.xrTableCell12.Weight = 2.6145770454266413D;
-            // 
-            // colBarkod
-            // 
-            this.colBarkod.Multiline = true;
-            this.colBarkod.Name = "colBarkod";
-            this.colBarkod.Text = "colBarkod";
-            this.colBarkod.Weight = 0.82291660292148139D;
-            // 
-            // xrTableCell13
-            // 
-            this.xrTableCell13.Multiline = true;
-            this.xrTableCell13.Name = "xrTableCell13";
-            this.xrTableCell13.Text = "Barkod";
-            this.xrTableCell13.Weight = 0.82291634139562575D;
+            this.colTarih.Multiline = true;
+            this.colTarih.Name = "colTarih";
+            this.colTarih.Text = "colTarih";
+            this.colTarih.Weight = 0.67708344046522839D;
             // 
             // rptStokHareketleri
             // 
@@ -522,5 +531,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell12;
         private DevExpress.XtraReports.UI.XRTableCell colBarkod;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell13;
+        private DevExpress.XtraReports.UI.XRTableCell colTarih;
     }
 }
