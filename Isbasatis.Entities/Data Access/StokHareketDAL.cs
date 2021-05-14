@@ -122,5 +122,59 @@ namespace Isbasatis.Entities.Data_Access
                         GenelToplam = (stkHareket.BirimFiyati * stkHareket.Miktar) - (stkHareket.Miktar * stkHareket.BirimFiyati * stkHareket.IndirimOrani / 100)
                     }).ToList();
         }
+        public object StokHareketStokGrubu(IsbaSatisContext context, DateTime baslangic, DateTime bitis, string grup)
+        {
+            return (from stkHareket in context.StokHareketleri.Where(c => DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date && c.Stok.StokGrubu == grup)
+                    select new
+                    {
+
+                        stkHareket.Id,
+                        stkHareket.StokId,
+                        stkHareket.FisKodu,
+                        stkHareket.Hareket,
+                        StokAdi = stkHareket.Stok.StokAdi,
+                        StokKodu = stkHareket.Stok.StokKodu,
+                        stkHareket.Miktar,
+                        stkHareket.Kdv,
+                        stkHareket.BirimFiyati,
+                        stkHareket.IndirimOrani,
+                        stkHareket.DepoId,
+                        DepoAdi = stkHareket.Depo.DepoAdi,
+                        DepoKodu = stkHareket.Depo.DepoKodu,
+                        stkHareket.SeriNo,
+                        stkHareket.Tarih,
+                        stkHareket.Aciklama,
+                        Birimi = stkHareket.Stok.Birimi,
+                        Barkod = stkHareket.Stok.Barkod,
+                        GenelToplam = (stkHareket.BirimFiyati * stkHareket.Miktar) - (stkHareket.Miktar * stkHareket.BirimFiyati * stkHareket.IndirimOrani / 100)
+                    }).ToList();
+        }
+        public object StokHareketStokBazli(IsbaSatisContext context, DateTime baslangic, DateTime bitis, string stok)
+        {
+            return (from stkHareket in context.StokHareketleri.Where(c => DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date && c.Stok.StokAdi == stok)
+                    select new
+                    {
+
+                        stkHareket.Id,
+                        stkHareket.StokId,
+                        stkHareket.FisKodu,
+                        stkHareket.Hareket,
+                        StokAdi = stkHareket.Stok.StokAdi,
+                        StokKodu = stkHareket.Stok.StokKodu,
+                        stkHareket.Miktar,
+                        stkHareket.Kdv,
+                        stkHareket.BirimFiyati,
+                        stkHareket.IndirimOrani,
+                        stkHareket.DepoId,
+                        DepoAdi = stkHareket.Depo.DepoAdi,
+                        DepoKodu = stkHareket.Depo.DepoKodu,
+                        stkHareket.SeriNo,
+                        stkHareket.Tarih,
+                        stkHareket.Aciklama,
+                        Birimi = stkHareket.Stok.Birimi,
+                        Barkod = stkHareket.Stok.Barkod,
+                        GenelToplam = (stkHareket.BirimFiyati * stkHareket.Miktar) - (stkHareket.Miktar * stkHareket.BirimFiyati * stkHareket.IndirimOrani / 100)
+                    }).ToList();
+        }
     }
 }

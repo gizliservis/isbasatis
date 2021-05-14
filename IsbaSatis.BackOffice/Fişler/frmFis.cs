@@ -62,7 +62,7 @@ namespace IsbaSatis.BackOffice.Fişler
             Fis secilen = (Fis)gridView1.GetFocusedRow();
             if (!String.IsNullOrEmpty(secilen.FisBaglantiKodu))
             {
-                if (MessageBox.Show($"Bu fis ile bağlantılı olan{secilen.FisBaglantiKodu} kodlu fiş birlikte silinecektir , Eminmisiniz ? ", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show($"fis ile bağlantılı olan{secilen.FisBaglantiKodu} kodlu fiş birlikte silinecektir , Eminmisiniz ? ", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                 
                     fisDAL.Delete(context, c => c.FisKodu == secilen.FisBaglantiKodu);
@@ -84,6 +84,8 @@ namespace IsbaSatis.BackOffice.Fişler
                     kasaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     stokHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     fisDAL.Save(context);
+                    kasaHareketDAL.Save(context);
+                    stokHareketDAL.Save(context);
                     listele();
                 }
             }

@@ -11,13 +11,13 @@ namespace IsbaSatis.Raporlar.Satis
 {
     public partial class rptGunlukSatis : DevExpress.XtraReports.UI.XtraReport
     {
-        public rptGunlukSatis()
+        public rptGunlukSatis(DateTime giris)
         {
             InitializeComponent();
             IsbaSatisContext context = new IsbaSatisContext();
             KasaHareketDAL kasaHareketDAL = new KasaHareketDAL();
 
-            ObjectDataSource kasaDatasource = new ObjectDataSource { DataSource = kasaHareketDAL.OdemeTuruSatisListele(context,DateTime.Now) };
+            ObjectDataSource kasaDatasource = new ObjectDataSource { DataSource = kasaHareketDAL.OdemeTuruSatisListele(context,giris) };
             this.DataSource = kasaDatasource;
             colOdemeTuru.DataBindings.Add("Text", this.DataSource, "OdemeTuruAdi");
 

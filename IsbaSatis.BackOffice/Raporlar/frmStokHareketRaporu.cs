@@ -22,11 +22,11 @@ namespace IsbaSatis.BackOffice.Raporlar
             InitializeComponent();
             dateBaslangic.DateTime = DateTime.Now;
             dateBitis.DateTime = DateTime.Now;
-            listele(DateTime.Now, DateTime.Now);
+          //  listele(DateTime.Now, DateTime.Now);
         }
-        void listele(DateTime baslangic, DateTime bitis)
+        void listele(DateTime baslangic, DateTime bitis,string grup)
         {
-            gridControl1.DataSource = stokHareketDAL.StokHareketTarihAraligi(context, baslangic, bitis);
+           // gridControl1.DataSource = stokHareketDAL.StokHareketTarihAraligi(context, baslangic, bitis,grup);
 
         }
         private void BtnHazırla_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace IsbaSatis.BackOffice.Raporlar
             {
                 dateBitis.DateTime = dateBaslangic.DateTime;
             }
-            listele(dateBaslangic.DateTime, dateBitis.DateTime);
+          //  listele(dateBaslangic.DateTime, dateBitis.DateTime,);
         }
     }
 }

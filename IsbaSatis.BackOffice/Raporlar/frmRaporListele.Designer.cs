@@ -43,25 +43,37 @@
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.linkrptStokHareketleri = new DevExpress.XtraNavBar.NavBarItem();
+            this.rptStokHareketleri = new DevExpress.XtraNavBar.NavBarItem();
+            this.rptGrupStokHareketleri = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.linkrptGunlukSatis = new DevExpress.XtraNavBar.NavBarItem();
+            this.rptGunlukSatis = new DevExpress.XtraNavBar.NavBarItem();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.lblGenel = new DevExpress.XtraEditors.LabelControl();
+            this.lblBitis = new DevExpress.XtraEditors.LabelControl();
+            this.lblBaslangic = new DevExpress.XtraEditors.LabelControl();
+            this.dateBitis = new DevExpress.XtraEditors.DateEdit();
+            this.dateBaslangic = new DevExpress.XtraEditors.DateEdit();
             this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
             this.txtRaporAdi = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtRaporGrubu = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
+            this.txtGrup = new DevExpress.XtraEditors.ButtonEdit();
             this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBitis.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBitis.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBaslangic.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBaslangic.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRaporAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRaporGrubu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGrup.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBaslik
@@ -74,10 +86,10 @@
             this.lblBaslik.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.lblBaslik.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblBaslik.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.lblBaslik.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.chart_area;
+            this.lblBaslik.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lblBaslik.ImageOptions.Image")));
             this.lblBaslik.Location = new System.Drawing.Point(0, 0);
             this.lblBaslik.Name = "lblBaslik";
-            this.lblBaslik.Size = new System.Drawing.Size(1033, 59);
+            this.lblBaslik.Size = new System.Drawing.Size(1063, 59);
             this.lblBaslik.TabIndex = 4;
             this.lblBaslik.Text = "Rapor Listesi";
             // 
@@ -95,7 +107,7 @@
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grpMenu.Location = new System.Drawing.Point(0, 465);
             this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(1033, 73);
+            this.grpMenu.Size = new System.Drawing.Size(1063, 73);
             this.grpMenu.TabIndex = 5;
             this.grpMenu.Text = "Menü";
             // 
@@ -104,7 +116,7 @@
             this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKapat.ImageOptions.ImageIndex = 0;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(938, 26);
+            this.btnKapat.Location = new System.Drawing.Point(968, 26);
             this.btnKapat.Name = "btnKapat";
             this.btnKapat.Size = new System.Drawing.Size(90, 45);
             this.btnKapat.TabIndex = 0;
@@ -136,8 +148,9 @@
             this.navBarItem2,
             this.navBarItem3,
             this.navBarItem4,
-            this.linkrptStokHareketleri,
-            this.linkrptGunlukSatis});
+            this.rptStokHareketleri,
+            this.rptGunlukSatis,
+            this.rptGrupStokHareketleri});
             this.navBarControl1.Location = new System.Drawing.Point(0, 59);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 204;
@@ -190,50 +203,111 @@
             this.navBarGroup3.Caption = "Stok Hareket Raporları";
             this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.linkrptStokHareketleri)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.rptStokHareketleri),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.rptGrupStokHareketleri)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
-            // linkrptStokHareketleri
+            // rptStokHareketleri
             // 
-            this.linkrptStokHareketleri.Caption = "Stok Hareket Raporu";
-            this.linkrptStokHareketleri.Name = "linkrptStokHareketleri";
-            this.linkrptStokHareketleri.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarLink_Click);
+            this.rptStokHareketleri.Caption = "Hareket Raporu Tarih Aralığı";
+            this.rptStokHareketleri.Name = "rptStokHareketleri";
+            this.rptStokHareketleri.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.rptStokHareketleri_LinkClicked);
+            // 
+            // rptGrupStokHareketleri
+            // 
+            this.rptGrupStokHareketleri.Caption = "Grup Bazlı Hareketler";
+            this.rptGrupStokHareketleri.Name = "rptGrupStokHareketleri";
+            this.rptGrupStokHareketleri.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.rptGrupStokHareketleri_LinkClicked);
             // 
             // navBarGroup4
             // 
             this.navBarGroup4.Caption = "Finans Raporları";
             this.navBarGroup4.Expanded = true;
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.linkrptGunlukSatis)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.rptGunlukSatis)});
             this.navBarGroup4.Name = "navBarGroup4";
             // 
-            // linkrptGunlukSatis
+            // rptGunlukSatis
             // 
-            this.linkrptGunlukSatis.Caption = "Satış Raporu";
-            this.linkrptGunlukSatis.Name = "linkrptGunlukSatis";
-            this.linkrptGunlukSatis.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarLink_Click);
+            this.rptGunlukSatis.Caption = "Satış Raporu Günlük";
+            this.rptGunlukSatis.Name = "rptGunlukSatis";
+            this.rptGunlukSatis.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.rptGunlukSatis_LinkClicked);
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.lblGenel);
+            this.groupControl1.Controls.Add(this.lblBitis);
+            this.groupControl1.Controls.Add(this.lblBaslangic);
+            this.groupControl1.Controls.Add(this.dateBitis);
+            this.groupControl1.Controls.Add(this.dateBaslangic);
             this.groupControl1.Controls.Add(this.txtAciklama);
             this.groupControl1.Controls.Add(this.txtRaporAdi);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.txtRaporGrubu);
             this.groupControl1.Controls.Add(this.labelControl10);
             this.groupControl1.Controls.Add(this.labelControl20);
+            this.groupControl1.Controls.Add(this.txtGrup);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(204, 59);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(829, 166);
+            this.groupControl1.Size = new System.Drawing.Size(859, 166);
             this.groupControl1.TabIndex = 7;
             this.groupControl1.Text = "Rapor Bilgileri";
+            // 
+            // lblGenel
+            // 
+            this.lblGenel.Location = new System.Drawing.Point(734, 116);
+            this.lblGenel.Name = "lblGenel";
+            this.lblGenel.Size = new System.Drawing.Size(63, 13);
+            this.lblGenel.TabIndex = 13;
+            this.lblGenel.Text = "labelControl3";
+            // 
+            // lblBitis
+            // 
+            this.lblBitis.Location = new System.Drawing.Point(734, 74);
+            this.lblBitis.Name = "lblBitis";
+            this.lblBitis.Size = new System.Drawing.Size(48, 13);
+            this.lblBitis.TabIndex = 12;
+            this.lblBitis.Text = "Bitiş Tarihi";
+            // 
+            // lblBaslangic
+            // 
+            this.lblBaslangic.Location = new System.Drawing.Point(718, 31);
+            this.lblBaslangic.Name = "lblBaslangic";
+            this.lblBaslangic.Size = new System.Drawing.Size(73, 13);
+            this.lblBaslangic.TabIndex = 12;
+            this.lblBaslangic.Text = "Başlangıç Tarihi";
+            // 
+            // dateBitis
+            // 
+            this.dateBitis.EditValue = null;
+            this.dateBitis.Location = new System.Drawing.Point(654, 93);
+            this.dateBitis.Name = "dateBitis";
+            this.dateBitis.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateBitis.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateBitis.Size = new System.Drawing.Size(200, 20);
+            this.dateBitis.TabIndex = 10;
+            // 
+            // dateBaslangic
+            // 
+            this.dateBaslangic.EditValue = null;
+            this.dateBaslangic.Location = new System.Drawing.Point(654, 48);
+            this.dateBaslangic.Name = "dateBaslangic";
+            this.dateBaslangic.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateBaslangic.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateBaslangic.Size = new System.Drawing.Size(200, 20);
+            this.dateBaslangic.TabIndex = 10;
             // 
             // txtAciklama
             // 
             this.txtAciklama.Location = new System.Drawing.Point(119, 77);
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Properties.ReadOnly = true;
-            this.txtAciklama.Size = new System.Drawing.Size(704, 80);
+            this.txtAciklama.Size = new System.Drawing.Size(489, 80);
             this.txtAciklama.TabIndex = 9;
             // 
             // txtRaporAdi
@@ -241,7 +315,7 @@
             this.txtRaporAdi.Location = new System.Drawing.Point(119, 26);
             this.txtRaporAdi.Name = "txtRaporAdi";
             this.txtRaporAdi.Properties.ReadOnly = true;
-            this.txtRaporAdi.Size = new System.Drawing.Size(704, 20);
+            this.txtRaporAdi.Size = new System.Drawing.Size(489, 20);
             this.txtRaporAdi.TabIndex = 8;
             // 
             // labelControl1
@@ -261,7 +335,7 @@
             this.txtRaporGrubu.Location = new System.Drawing.Point(119, 51);
             this.txtRaporGrubu.Name = "txtRaporGrubu";
             this.txtRaporGrubu.Properties.ReadOnly = true;
-            this.txtRaporGrubu.Size = new System.Drawing.Size(704, 20);
+            this.txtRaporGrubu.Size = new System.Drawing.Size(489, 20);
             this.txtRaporGrubu.TabIndex = 8;
             // 
             // labelControl10
@@ -290,13 +364,24 @@
             this.labelControl20.TabIndex = 7;
             this.labelControl20.Text = "Açıklama :";
             // 
+            // txtGrup
+            // 
+            this.txtGrup.Location = new System.Drawing.Point(654, 135);
+            this.txtGrup.Name = "txtGrup";
+            this.txtGrup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtGrup.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.txtGrup.Size = new System.Drawing.Size(200, 20);
+            this.txtGrup.TabIndex = 11;
+            this.txtGrup.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtGrup_ButtonClick);
+            // 
             // filterControl1
             // 
             this.filterControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.filterControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.filterControl1.Location = new System.Drawing.Point(204, 225);
             this.filterControl1.Name = "filterControl1";
-            this.filterControl1.Size = new System.Drawing.Size(829, 240);
+            this.filterControl1.Size = new System.Drawing.Size(859, 240);
             this.filterControl1.TabIndex = 8;
             this.filterControl1.Text = "filterControl1";
             // 
@@ -304,7 +389,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1033, 538);
+            this.ClientSize = new System.Drawing.Size(1063, 538);
             this.Controls.Add(this.filterControl1);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.navBarControl1);
@@ -319,9 +404,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBitis.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBitis.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBaslangic.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBaslangic.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRaporAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRaporGrubu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGrup.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -341,7 +432,7 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem4;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
-        private DevExpress.XtraNavBar.NavBarItem linkrptStokHareketleri;
+        private DevExpress.XtraNavBar.NavBarItem rptStokHareketleri;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.MemoEdit txtAciklama;
         private DevExpress.XtraEditors.TextEdit txtRaporAdi;
@@ -351,6 +442,13 @@
         private DevExpress.XtraEditors.LabelControl labelControl20;
         private DevExpress.XtraEditors.FilterControl filterControl1;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup4;
-        private DevExpress.XtraNavBar.NavBarItem linkrptGunlukSatis;
+        private DevExpress.XtraNavBar.NavBarItem rptGunlukSatis;
+        private DevExpress.XtraEditors.DateEdit dateBitis;
+        private DevExpress.XtraEditors.DateEdit dateBaslangic;
+        private DevExpress.XtraEditors.ButtonEdit txtGrup;
+        private DevExpress.XtraEditors.LabelControl lblGenel;
+        private DevExpress.XtraEditors.LabelControl lblBitis;
+        private DevExpress.XtraEditors.LabelControl lblBaslangic;
+        private DevExpress.XtraNavBar.NavBarItem rptGrupStokHareketleri;
     }
 }

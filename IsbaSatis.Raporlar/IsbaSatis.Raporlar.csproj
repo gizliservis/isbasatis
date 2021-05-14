@@ -85,6 +85,12 @@
     <Compile Include="Satis\rptGunlukSatis.Designer.cs">
       <DependentUpon>rptGunlukSatis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stok\rptGrupStokHareketleri.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stok\rptGrupStokHareketleri.Designer.cs">
+      <DependentUpon>rptGrupStokHareketleri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stok\rptStokDurumu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Satis\rptGunlukSatis.resx">
       <DependentUpon>rptGunlukSatis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\rptGrupStokHareketleri.resx">
+      <DependentUpon>rptGrupStokHareketleri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stok\rptStokDurumu.resx">
       <DependentUpon>rptStokDurumu.cs</DependentUpon>
