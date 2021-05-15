@@ -1,7 +1,7 @@
 ﻿
 namespace IsbaSatis.Raporlar.Stok
 {
-    partial class rptGrupStokHareketleri
+    partial class rptSokBazliHareket
     {
         /// <summary>
         /// Required designer variable.
@@ -31,8 +31,10 @@ namespace IsbaSatis.Raporlar.Stok
         {
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.xrPageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.colHareketi = new DevExpress.XtraReports.UI.XRTableCell();
@@ -46,7 +48,6 @@ namespace IsbaSatis.Raporlar.Stok
             this.colIndirimOrani = new DevExpress.XtraReports.UI.XRTableCell();
             this.colIndirimTutar = new DevExpress.XtraReports.UI.XRTableCell();
             this.colTutar = new DevExpress.XtraReports.UI.XRTableCell();
-            this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
             this.Hareket = new DevExpress.XtraReports.UI.XRTableCell();
@@ -60,14 +61,13 @@ namespace IsbaSatis.Raporlar.Stok
             this.xrTableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
-            this.lblToplamTutar = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lblIndirimTutar = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblToplamTutar = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblIndirimTutar = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrPageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -75,7 +75,7 @@ namespace IsbaSatis.Raporlar.Stok
             // TopMargin
             // 
             this.TopMargin.Dpi = 254F;
-            this.TopMargin.HeightF = 254F;
+            this.TopMargin.HeightF = 127F;
             this.TopMargin.Name = "TopMargin";
             // 
             // BottomMargin
@@ -86,32 +86,52 @@ namespace IsbaSatis.Raporlar.Stok
             this.BottomMargin.HeightF = 254F;
             this.BottomMargin.Name = "BottomMargin";
             // 
-            // xrPageInfo2
-            // 
-            this.xrPageInfo2.Dpi = 254F;
-            this.xrPageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(920.7487F, 0F);
-            this.xrPageInfo2.Name = "xrPageInfo2";
-            this.xrPageInfo2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrPageInfo2.SizeF = new System.Drawing.SizeF(253.9999F, 58.42F);
-            // 
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable1});
             this.Detail.Dpi = 254F;
-            this.Detail.HeightF = 74.08334F;
+            this.Detail.HeightF = 74.18911F;
             this.Detail.HierarchyPrintOptions.Indent = 50.8F;
             this.Detail.Name = "Detail";
+            // 
+            // PageHeader
+            // 
+            this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrTable2});
+            this.PageHeader.Dpi = 254F;
+            this.PageHeader.HeightF = 68.36857F;
+            this.PageHeader.Name = "PageHeader";
+            // 
+            // ReportHeader
+            // 
+            this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrPageInfo1,
+            this.xrLabel1});
+            this.ReportHeader.Dpi = 254F;
+            this.ReportHeader.HeightF = 119.1683F;
+            this.ReportHeader.Name = "ReportHeader";
+            // 
+            // GroupFooter1
+            // 
+            this.GroupFooter1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel5,
+            this.xrLabel6,
+            this.lblToplamTutar,
+            this.lblIndirimTutar});
+            this.GroupFooter1.Dpi = 254F;
+            this.GroupFooter1.HeightF = 187.8542F;
+            this.GroupFooter1.Name = "GroupFooter1";
             // 
             // xrTable1
             // 
             this.xrTable1.Dpi = 254F;
-            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(10.16669F, 10.58333F);
+            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 10.58333F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(2070.833F, 63.5F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(2028.5F, 63.5F);
             // 
             // xrTableRow1
             // 
@@ -309,23 +329,17 @@ namespace IsbaSatis.Raporlar.Stok
             this.colTutar.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.colTutar.Weight = 0.74022937355522966D;
             // 
-            // PageHeader
-            // 
-            this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrTable2});
-            this.PageHeader.Dpi = 254F;
-            this.PageHeader.HeightF = 63.5F;
-            this.PageHeader.Name = "PageHeader";
-            // 
             // xrTable2
             // 
+            this.xrTable2.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Dot;
             this.xrTable2.Dpi = 254F;
             this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow2});
-            this.xrTable2.SizeF = new System.Drawing.SizeF(2081F, 63.5F);
+            this.xrTable2.SizeF = new System.Drawing.SizeF(2039F, 63.5F);
+            this.xrTable2.StylePriority.UseBorderDashStyle = false;
             // 
             // xrTableRow2
             // 
@@ -543,92 +557,11 @@ namespace IsbaSatis.Raporlar.Stok
             this.xrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell11.Weight = 0.945466642968582D;
             // 
-            // ReportHeader
-            // 
-            this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrPageInfo1,
-            this.xrLabel1});
-            this.ReportHeader.Dpi = 254F;
-            this.ReportHeader.HeightF = 162.8542F;
-            this.ReportHeader.Name = "ReportHeader";
-            // 
-            // xrPageInfo1
-            // 
-            this.xrPageInfo1.Dpi = 254F;
-            this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 63.39414F);
-            this.xrPageInfo1.Name = "xrPageInfo1";
-            this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
-            this.xrPageInfo1.SizeF = new System.Drawing.SizeF(254F, 58.42F);
-            // 
-            // xrLabel1
-            // 
-            this.xrLabel1.Dpi = 254F;
-            this.xrLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(681.1388F, 13.12331F);
-            this.xrLabel1.Multiline = true;
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(957.7917F, 58.42F);
-            this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "Stok Grubu Hareket Raporu";
-            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // GroupFooter1
-            // 
-            this.GroupFooter1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.lblToplamTutar,
-            this.xrLabel6,
-            this.lblIndirimTutar,
-            this.xrLabel5});
-            this.GroupFooter1.Dpi = 254F;
-            this.GroupFooter1.HeightF = 145.25F;
-            this.GroupFooter1.Name = "GroupFooter1";
-            // 
-            // lblToplamTutar
-            // 
-            this.lblToplamTutar.Dpi = 254F;
-            this.lblToplamTutar.LocationFloat = new DevExpress.Utils.PointFloat(1827F, 71.22579F);
-            this.lblToplamTutar.Multiline = true;
-            this.lblToplamTutar.Name = "lblToplamTutar";
-            this.lblToplamTutar.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.lblToplamTutar.SizeF = new System.Drawing.SizeF(254F, 58.41999F);
-            this.lblToplamTutar.StylePriority.UseTextAlignment = false;
-            this.lblToplamTutar.Text = "lblToplamTutar";
-            this.lblToplamTutar.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel6
-            // 
-            this.xrLabel6.BorderColor = System.Drawing.Color.Black;
-            this.xrLabel6.Dpi = 254F;
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(1457.154F, 71.22578F);
-            this.xrLabel6.Multiline = true;
-            this.xrLabel6.Name = "xrLabel6";
-            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(362.4794F, 58.41999F);
-            this.xrLabel6.StylePriority.UseBorderColor = false;
-            this.xrLabel6.StylePriority.UseTextAlignment = false;
-            this.xrLabel6.Text = "Toplam Tutar :";
-            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            // 
-            // lblIndirimTutar
-            // 
-            this.lblIndirimTutar.Dpi = 254F;
-            this.lblIndirimTutar.LocationFloat = new DevExpress.Utils.PointFloat(1827F, 12.80582F);
-            this.lblIndirimTutar.Multiline = true;
-            this.lblIndirimTutar.Name = "lblIndirimTutar";
-            this.lblIndirimTutar.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.lblIndirimTutar.SizeF = new System.Drawing.SizeF(254F, 58.42001F);
-            this.lblIndirimTutar.StylePriority.UseTextAlignment = false;
-            this.lblIndirimTutar.Text = "lblIndirimTutar";
-            this.lblIndirimTutar.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
             // xrLabel5
             // 
             this.xrLabel5.BorderColor = System.Drawing.Color.Black;
             this.xrLabel5.Dpi = 254F;
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(1457.154F, 12.80582F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(1415.154F, 49.84749F);
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
@@ -638,7 +571,76 @@ namespace IsbaSatis.Raporlar.Stok
             this.xrLabel5.Text = "İndirim Tutar Toplamı :";
             this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
-            // rptGrupStokHareketleri
+            // xrLabel6
+            // 
+            this.xrLabel6.BorderColor = System.Drawing.Color.Black;
+            this.xrLabel6.Dpi = 254F;
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(1415.154F, 108.2675F);
+            this.xrLabel6.Multiline = true;
+            this.xrLabel6.Name = "xrLabel6";
+            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel6.SizeF = new System.Drawing.SizeF(362.4794F, 58.41999F);
+            this.xrLabel6.StylePriority.UseBorderColor = false;
+            this.xrLabel6.StylePriority.UseTextAlignment = false;
+            this.xrLabel6.Text = "Toplam Tutar :";
+            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // lblToplamTutar
+            // 
+            this.lblToplamTutar.Dpi = 254F;
+            this.lblToplamTutar.LocationFloat = new DevExpress.Utils.PointFloat(1785F, 108.2675F);
+            this.lblToplamTutar.Multiline = true;
+            this.lblToplamTutar.Name = "lblToplamTutar";
+            this.lblToplamTutar.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.lblToplamTutar.SizeF = new System.Drawing.SizeF(254F, 58.41999F);
+            this.lblToplamTutar.StylePriority.UseTextAlignment = false;
+            this.lblToplamTutar.Text = "lblToplamTutar";
+            this.lblToplamTutar.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // lblIndirimTutar
+            // 
+            this.lblIndirimTutar.Dpi = 254F;
+            this.lblIndirimTutar.LocationFloat = new DevExpress.Utils.PointFloat(1785F, 49.84749F);
+            this.lblIndirimTutar.Multiline = true;
+            this.lblIndirimTutar.Name = "lblIndirimTutar";
+            this.lblIndirimTutar.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.lblIndirimTutar.SizeF = new System.Drawing.SizeF(254F, 58.42001F);
+            this.lblIndirimTutar.StylePriority.UseTextAlignment = false;
+            this.lblIndirimTutar.Text = "lblIndirimTutar";
+            this.lblIndirimTutar.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrPageInfo2
+            // 
+            this.xrPageInfo2.Dpi = 254F;
+            this.xrPageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(796.3945F, 0F);
+            this.xrPageInfo2.Name = "xrPageInfo2";
+            this.xrPageInfo2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrPageInfo2.SizeF = new System.Drawing.SizeF(253.9999F, 58.42F);
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.Dpi = 254F;
+            this.xrLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(506.5137F, 0F);
+            this.xrLabel1.Multiline = true;
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(957.7917F, 58.42F);
+            this.xrLabel1.StylePriority.UseFont = false;
+            this.xrLabel1.StylePriority.UseTextAlignment = false;
+            this.xrLabel1.Text = "Stok Bazlı Hareket Raporu";
+            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrPageInfo1
+            // 
+            this.xrPageInfo1.Dpi = 254F;
+            this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 50.16498F);
+            this.xrPageInfo1.Name = "xrPageInfo1";
+            this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
+            this.xrPageInfo1.SizeF = new System.Drawing.SizeF(254F, 58.42F);
+            // 
+            // rptSokBazliHareket
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.TopMargin,
@@ -649,7 +651,7 @@ namespace IsbaSatis.Raporlar.Stok
             this.GroupFooter1});
             this.Dpi = 254F;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(11, 8, 254, 254);
+            this.Margins = new System.Drawing.Printing.Margins(45, 16, 127, 254);
             this.PageHeight = 2970;
             this.PageWidth = 2100;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
@@ -667,6 +669,9 @@ namespace IsbaSatis.Raporlar.Stok
         private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
         private DevExpress.XtraReports.UI.DetailBand Detail;
+        private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;
+        private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
+        private DevExpress.XtraReports.UI.GroupFooterBand GroupFooter1;
         private DevExpress.XtraReports.UI.XRTable xrTable1;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow1;
         private DevExpress.XtraReports.UI.XRTableCell colHareketi;
@@ -680,7 +685,6 @@ namespace IsbaSatis.Raporlar.Stok
         private DevExpress.XtraReports.UI.XRTableCell colIndirimOrani;
         private DevExpress.XtraReports.UI.XRTableCell colIndirimTutar;
         private DevExpress.XtraReports.UI.XRTableCell colTutar;
-        private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;
         private DevExpress.XtraReports.UI.XRTable xrTable2;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow2;
         private DevExpress.XtraReports.UI.XRTableCell Hareket;
@@ -694,14 +698,12 @@ namespace IsbaSatis.Raporlar.Stok
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell9;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell10;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell11;
-        private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel5;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel6;
+        private DevExpress.XtraReports.UI.XRLabel lblToplamTutar;
+        private DevExpress.XtraReports.UI.XRLabel lblIndirimTutar;
+        private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo2;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
         private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo1;
-        private DevExpress.XtraReports.UI.GroupFooterBand GroupFooter1;
-        private DevExpress.XtraReports.UI.XRLabel lblToplamTutar;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel6;
-        private DevExpress.XtraReports.UI.XRLabel lblIndirimTutar;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel5;
-        private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo2;
     }
 }

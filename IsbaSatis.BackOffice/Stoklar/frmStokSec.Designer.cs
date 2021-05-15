@@ -65,11 +65,11 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
+            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
             this.lblUyari = new DevExpress.XtraEditors.LabelControl();
             this.btnStokSec = new DevExpress.XtraEditors.SimpleButton();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridcontStoklar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridStoklar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
@@ -99,7 +99,7 @@
             this.gridcontStoklar.Location = new System.Drawing.Point(0, 51);
             this.gridcontStoklar.MainView = this.gridStoklar;
             this.gridcontStoklar.Name = "gridcontStoklar";
-            this.gridcontStoklar.Size = new System.Drawing.Size(1032, 422);
+            this.gridcontStoklar.Size = new System.Drawing.Size(1032, 335);
             this.gridcontStoklar.TabIndex = 3;
             this.gridcontStoklar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridStoklar});
@@ -420,6 +420,17 @@
             this.grpMenu.TabIndex = 4;
             this.grpMenu.Text = "Menü";
             // 
+            // btnAra
+            // 
+            this.btnAra.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAra.ImageOptions.Image")));
+            this.btnAra.Location = new System.Drawing.Point(775, 23);
+            this.btnAra.Name = "btnAra";
+            this.btnAra.Size = new System.Drawing.Size(75, 62);
+            this.btnAra.TabIndex = 2;
+            this.btnAra.Text = "Ara";
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
+            // 
             // lblUyari
             // 
             this.lblUyari.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
@@ -464,24 +475,13 @@
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
-            // btnAra
-            // 
-            this.btnAra.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAra.ImageOptions.Image")));
-            this.btnAra.Location = new System.Drawing.Point(775, 23);
-            this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(75, 62);
-            this.btnAra.TabIndex = 2;
-            this.btnAra.Text = "Ara";
-            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
-            // 
             // frmStokSec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 473);
-            this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.gridcontStoklar);
+            this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.lblBaslik);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmStokSec";

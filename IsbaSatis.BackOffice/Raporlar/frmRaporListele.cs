@@ -14,6 +14,7 @@ using DevExpress.XtraNavBar;
 using DevExpress.XtraReports.UI;
 using IsbaSatis.Raporlar.Satis;
 using IsbaSatis.BackOffice.Tanım;
+using IsbaSatis.BackOffice.Stoklar;
 
 namespace IsbaSatis.BackOffice.Raporlar
 {
@@ -22,6 +23,7 @@ namespace IsbaSatis.BackOffice.Raporlar
         rptStokHareketleri rapor;
         rptGunlukSatis gunlukSatis;
         rptGrupStokHareketleri rptGrupStok;
+        rptSokBazliHareket rptSokBazli;
         public frmRaporListele()
         {
             InitializeComponent();
@@ -84,6 +86,13 @@ namespace IsbaSatis.BackOffice.Raporlar
                 form.Show();
 
             }
+            else if (txtRaporAdi.Text == "Stok Bazlı Hareketler")
+            {
+                rptSokBazli = new rptSokBazliHareket(dateBaslangic.DateTime, dateBitis.DateTime, txtGrup.Text);
+                frmRaporGoruntule form = new frmRaporGoruntule(rptSokBazli);
+                form.WindowState = FormWindowState.Maximized;
+                form.Show();
+            }
             else
             {
                 MessageBox.Show("Helal Keke");
@@ -116,7 +125,7 @@ namespace IsbaSatis.BackOffice.Raporlar
 
         private void txtGrup_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            if (txtRaporAdi.Text== "Grup Bazlı Hareketler")
+            if (txtRaporAdi.Text == "Grup Bazlı Hareketler")
             {
                 switch (e.Button.Index)
                 {
@@ -132,6 +141,17 @@ namespace IsbaSatis.BackOffice.Raporlar
                         txtGrup.Text = null;
                         break;
                 }
+            }
+            if (txtRaporAdi.Text == "Stok Bazlı Hareketler")
+            {
+                frmStokSec frm = new frmStokSec();
+                frm.ShowDialog();
+                if (frm.secildi)
+                {
+                    Isbasatis.Entities.Tables.Stok entity = frm.secilen.FirstOrDefault();
+                    txtGrup.Text = entity.StokAdi;
+                }
+
             }
 
         }
@@ -150,6 +170,24 @@ namespace IsbaSatis.BackOffice.Raporlar
             lblBitis.Visible = true;
             txtGrup.Visible = true;
             lblGenel.Visible = true;
+            lblGenel.Text = "Stok Grubu";
+        }
+
+        private void rptStokBazliHareket_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            var buton = sender as NavBarItem;
+            txtRaporAdi.Text = e.Link.Caption;
+            txtRaporGrubu.Text = e.Link.Group.Caption;
+            txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
+            dateBaslangic.Visible = true;
+            dateBitis.Visible = true;
+            dateBaslangic.DateTime = DateTime.Now;
+            dateBitis.DateTime = DateTime.Now;
+            lblBaslangic.Visible = true;
+            lblBitis.Visible = true;
+            txtGrup.Visible = true;
+            lblGenel.Visible = true;
+            lblGenel.Text = "Stok İsmi";
         }
     }
 }

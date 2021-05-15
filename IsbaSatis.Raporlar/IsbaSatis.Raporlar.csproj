@@ -91,6 +91,12 @@
     <Compile Include="Stok\rptGrupStokHareketleri.Designer.cs">
       <DependentUpon>rptGrupStokHareketleri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stok\rptSokBazliHareket.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stok\rptSokBazliHareket.Designer.cs">
+      <DependentUpon>rptSokBazliHareket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stok\rptStokDurumu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Stok\rptGrupStokHareketleri.resx">
       <DependentUpon>rptGrupStokHareketleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\rptSokBazliHareket.resx">
+      <DependentUpon>rptSokBazliHareket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stok\rptStokDurumu.resx">
       <DependentUpon>rptStokDurumu.cs</DependentUpon>

@@ -173,7 +173,8 @@ namespace Isbasatis.Entities.Data_Access
                         stkHareket.Aciklama,
                         Birimi = stkHareket.Stok.Birimi,
                         Barkod = stkHareket.Stok.Barkod,
-                        GenelToplam = (stkHareket.BirimFiyati * stkHareket.Miktar) - (stkHareket.Miktar * stkHareket.BirimFiyati * stkHareket.IndirimOrani / 100)
+                        GenelToplam =(stkHareket.BirimFiyati * stkHareket.Miktar) - (stkHareket.Miktar * stkHareket.BirimFiyati * stkHareket.IndirimOrani / 100),
+                        
                     }).ToList();
         }
     }

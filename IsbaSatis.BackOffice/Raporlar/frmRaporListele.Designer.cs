@@ -61,6 +61,7 @@
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.txtGrup = new DevExpress.XtraEditors.ButtonEdit();
             this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
+            this.rptStokBazliHareket = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
@@ -150,7 +151,8 @@
             this.navBarItem4,
             this.rptStokHareketleri,
             this.rptGunlukSatis,
-            this.rptGrupStokHareketleri});
+            this.rptGrupStokHareketleri,
+            this.rptStokBazliHareket});
             this.navBarControl1.Location = new System.Drawing.Point(0, 59);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 204;
@@ -204,7 +206,8 @@
             this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.rptStokHareketleri),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.rptGrupStokHareketleri)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.rptGrupStokHareketleri),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.rptStokBazliHareket)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // rptStokHareketleri
@@ -385,6 +388,12 @@
             this.filterControl1.TabIndex = 8;
             this.filterControl1.Text = "filterControl1";
             // 
+            // rptStokBazliHareket
+            // 
+            this.rptStokBazliHareket.Caption = "Stok Bazlı Hareketler";
+            this.rptStokBazliHareket.Name = "rptStokBazliHareket";
+            this.rptStokBazliHareket.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.rptStokBazliHareket_LinkClicked);
+            // 
             // frmRaporListele
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,5 +459,6 @@
         private DevExpress.XtraEditors.LabelControl lblBitis;
         private DevExpress.XtraEditors.LabelControl lblBaslangic;
         private DevExpress.XtraNavBar.NavBarItem rptGrupStokHareketleri;
+        private DevExpress.XtraNavBar.NavBarItem rptStokBazliHareket;
     }
 }
