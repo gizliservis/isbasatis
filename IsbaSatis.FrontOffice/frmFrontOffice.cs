@@ -58,11 +58,11 @@ namespace IsbaSatis.FrontOffice
             context.Stoklar.Load();
             context.Depolar.Load();
             //context.Kasalar.Load();
-           //context.Cariler.Load();
+            //context.Cariler.Load();
             gridcontStokHareket.DataSource = context.StokHareketleri.Local.ToBindingList();
             gridcontKasaHareket.DataSource = context.KasaHareketleri.Local.ToBindingList();
             gridLookUpEdit1.Properties.DataSource = Doviz.DovizKuruCek();
-            
+            KodUret();
             txtIslem.Text = "SATIŞ";
             toplamlar();
             foreach (var hizliSatisGrup in context.hizliSatisGruplari.ToList())
@@ -70,6 +70,7 @@ namespace IsbaSatis.FrontOffice
                 XtraTabPage page = new XtraTabPage { Name = hizliSatisGrup.Id.ToString(), Text = hizliSatisGrup.GrupAdi };
                 FlowLayoutPanel panel = new FlowLayoutPanel();
                 panel.Dock = DockStyle.Fill;
+                panel.AutoScroll = true;
                 page.Controls.Add(panel);
                 foreach (var hizlisatis in context.HizliSatislar.Where(c => c.GrupId == hizliSatisGrup.Id).ToList())
                 {
@@ -77,9 +78,11 @@ namespace IsbaSatis.FrontOffice
                     {
                         Name = hizlisatis.Barkod,
                         Text = hizlisatis.UrunAdi,
-                        Height = 120,
-                        Width = 120
+                        Height = 95,
+                        Width = 95
+                       
                     };
+                    buton.Appearance.TextOptions.WordWrap = WordWrap.Wrap;
                     buton.Click += HizliSatis_Click;
                     panel.Controls.Add(buton);
                 }
@@ -99,7 +102,7 @@ namespace IsbaSatis.FrontOffice
                 var buton = new SimpleButton
                 {
                     Name = item.OdemeTuruKodu,
-                    Tag=item.Id,
+                    Tag = item.Id,
                     Text = item.OdemeTuruAdi,
                     Height = 43,
                     Width = 120,
@@ -136,10 +139,29 @@ namespace IsbaSatis.FrontOffice
 
         }
 
+        void KodUret()
+        {
+            Random rastgele = new Random();
+            int[] sayiUret = new int[6];
+            sayiUret[0] = rastgele.Next(1, 9);
+            sayiUret[1] = rastgele.Next(1, 9);
+            sayiUret[2] = rastgele.Next(33, 46);
+            sayiUret[3] = rastgele.Next(65, 91);
+            sayiUret[4] = rastgele.Next(65, 91);
+            sayiUret[5] = rastgele.Next(65, 91);
+            char[] harfUret = new char[4];
+            harfUret[0] = Convert.ToChar(sayiUret[2]);
+            harfUret[1] = Convert.ToChar(sayiUret[3]);
+            harfUret[2] = Convert.ToChar(sayiUret[4]);
+            harfUret[3] = Convert.ToChar(sayiUret[5]);
+            string olusturulanSifre;
+            olusturulanSifre = harfUret[1].ToString().ToUpper() + sayiUret[0].ToString() + harfUret[0].ToString() + sayiUret[1].ToString() + harfUret[2].ToString().ToLower() + harfUret[3].ToString().ToUpper();
+            txtfisKodu.Text = olusturulanSifre;
+        }
         private void AcikHesap_Click(object sender, EventArgs e)
         {
             odemeTuruId = -1;
-           
+
             radialYazdir.ShowPopup(MousePosition);
         }
 
@@ -149,12 +171,12 @@ namespace IsbaSatis.FrontOffice
             if (buton.Name == "Yok")
             {
                 _fisentity.PlasiyerId = null;
-            
+
             }
             else
             {
-                _fisentity.PlasiyerId =Convert.ToInt32(buton.Tag);
-           
+                _fisentity.PlasiyerId = Convert.ToInt32(buton.Tag);
+
             }
 
         }
@@ -162,6 +184,7 @@ namespace IsbaSatis.FrontOffice
         {
             var buton = sender as SimpleButton;
             BekleyenSatisYukle(Convert.ToInt32(buton.Name));
+            KodUret();
 
         }
         private void BekleyenSatisYukle(int id)
@@ -175,24 +198,24 @@ namespace IsbaSatis.FrontOffice
             }
             FisTemizle();
             var SatisBilgisi = _bekleyenSatis.SingleOrDefault(c => c.Id == id);
-            _fisentity.CariId = SatisBilgisi.BekeleyenFis.CariId;   
+            _fisentity.CariId = SatisBilgisi.BekeleyenFis.CariId;
             var cariBilgi = context.Cariler.SingleOrDefault(c => c.Id == _fisentity.CariId);
 
-            if (cariBilgi!=null)
+            if (cariBilgi != null)
             {
-                entityBakiye = cariDAL.CariBakiyesi(context,Convert.ToInt32(SatisBilgisi.BekeleyenFis.CariId));
+                entityBakiye = cariDAL.CariBakiyesi(context, Convert.ToInt32(SatisBilgisi.BekeleyenFis.CariId));
                 lblCariKodu.Text = cariBilgi.CariKodu;
-                lblCariAdi.Text = cariBilgi.CariAdi;    
+                lblCariAdi.Text = cariBilgi.CariAdi;
                 lblAlcak.Text = entityBakiye.Alcak.ToString("C2");
                 lblBorc.Text = entityBakiye.Borc.ToString("C2");
                 lblBakiye.Text = entityBakiye.Bakiye.ToString("C2");
             }
-            
+
             _fisentity.PlasiyerId = SatisBilgisi.BekeleyenFis.PlasiyerId;
             var personelBilgi = context.Personeller.SingleOrDefault(c => c.Id == _fisentity.PlasiyerId);
-            if (personelBilgi!=null)
+            if (personelBilgi != null)
             {
-                var buton = (CheckButton)flowPersonel.Controls.Find(personelBilgi.PersonelKodu,false).SingleOrDefault();
+                var buton = (CheckButton)flowPersonel.Controls.Find(personelBilgi.PersonelKodu, false).SingleOrDefault();
                 buton.Checked = true;
 
             }
@@ -214,6 +237,8 @@ namespace IsbaSatis.FrontOffice
             txtGenelToplam.Value = Convert.ToDecimal(SatisBilgisi.BekeleyenFis.ToplamTutar);
             txtIskontoOran.Value = Convert.ToDecimal(SatisBilgisi.BekeleyenFis.IskontoOrani);
             txtIskontoToplam.Value = Convert.ToDecimal(SatisBilgisi.BekeleyenFis.IskontoTutar);
+
+
 
             foreach (var item in SatisBilgisi.StokHareketi)
             {
@@ -246,7 +271,7 @@ namespace IsbaSatis.FrontOffice
                     form.ShowDialog();
                     if (form.entity != null)
                     {
-                        txtfisKodu.Text = fisNo.FisKodNumarasi();
+
                         KasaHareketDAL.AddOrUpdate(context, form.entity);
                         OdenenTutarGuncelle();
                     }
@@ -254,7 +279,7 @@ namespace IsbaSatis.FrontOffice
             }
             else
             {
-                odemeTuruId =Convert.ToInt32(buton.Tag);
+                odemeTuruId = Convert.ToInt32(buton.Tag);
                 TekParca = true;
                 radialYazdir.ShowPopup(MousePosition);
 
@@ -331,8 +356,8 @@ namespace IsbaSatis.FrontOffice
             StokHareket stokHareket = new StokHareket();
             IndirimDAL indirimDAL = new IndirimDAL();
             stokHareket.StokId = entity.Id;
-           
-            stokHareket.DepoId =Convert.ToInt32(SettingsTool.AyarOku(SettingsTool.Ayarlar.SatisAyarlari_VarsayilanDepo));
+
+            stokHareket.DepoId = Convert.ToInt32(SettingsTool.AyarOku(SettingsTool.Ayarlar.SatisAyarlari_VarsayilanDepo));
             stokHareket.BirimFiyati = _fisentity.FisTuru == "Alış Faturası" ? entity.AlisFiyati1 : entity.SatisFiyati1;
             stokHareket.Miktar = txtMiktar.Value;
             stokHareket.Tarih = DateTime.Now;
@@ -352,9 +377,9 @@ namespace IsbaSatis.FrontOffice
             }
         }
 
-       
 
-     
+
+
         private void CariTemizle()
         {
             lblCariKodu.Text = "--Cari Bilgisi Görüntülenemiyor--";
@@ -438,10 +463,11 @@ namespace IsbaSatis.FrontOffice
             {
                 if (MessageBox.Show("Mevcut Satışı Silmek İstediğinize Eminmisiniz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    
+
                     FisTemizle();
 
                     context.StokHareketleri.Local.Clear();
+                    KodUret();
                 }
             }
             else
@@ -516,7 +542,7 @@ namespace IsbaSatis.FrontOffice
 
         private void gridStokHareket_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            if (gridStokHareket.FocusedColumn == colMiktar) 
+            if (gridStokHareket.FocusedColumn == colMiktar)
             {
                 txtMiktar.Value = 0;
 
@@ -580,10 +606,10 @@ namespace IsbaSatis.FrontOffice
         }
         private void FisKaydet(ReporPrintTool.Belge belge)
         {
-            
+
             toplamlar();
             OdenenTutarGuncelle();
-       
+
             string message = null;
             int hata = 0;
 
@@ -600,11 +626,11 @@ namespace IsbaSatis.FrontOffice
             }
             if (txtfisKodu.Text == "")
             {
-              
+
                 message += "Fiş Kodu Alanı Boş Geçilemez." + System.Environment.NewLine;
                 hata++;
             }
-       
+
             if (txtOdemesiGereken.Value != 0 && String.IsNullOrEmpty(lblCariKodu.Text) && TekParca == false)
             {
                 message += "Ödenmesi Gereken Tutar Ödenmemiş Görünüyor.Ödenmeyen Kısmı Hesaba Aktarmak İçin Cari Seçmeniz Gerekiyor." + System.Environment.NewLine;
@@ -613,7 +639,7 @@ namespace IsbaSatis.FrontOffice
             }
             if (!String.IsNullOrEmpty(lblCariKodu.Text) && (entityBakiye.Bakiye - txtOdemesiGereken.Value) < 0 && ((entityBakiye.Bakiye - txtOdemesiGereken.Value) * -1) > entityBakiye.RiskLimiti)
             {
-                if (lblRiskLimiti.Text!="")
+                if (lblRiskLimiti.Text != "")
                 {
                     message += "Cari Risk Limiti Aşılıyor. Satış Yapılamaz." + System.Environment.NewLine;
                     hata++;
@@ -638,6 +664,7 @@ namespace IsbaSatis.FrontOffice
             foreach (var stokVeri in context.StokHareketleri.Local.ToList())
             {
                 stokVeri.Tarih = DateTime.Now;
+                stokVeri.ToplamTutar = Convert.ToDecimal(colToplamTutar.SummaryItem.SummaryValue);
                 stokVeri.FisKodu = txtfisKodu.Text;
                 stokVeri.Hareket = txtIslem.Text == "İADE" ? "Stok Griş" : "Stok Çıkış";
 
@@ -648,7 +675,7 @@ namespace IsbaSatis.FrontOffice
                 KasaVeri.FisKodu = txtfisKodu.Text;
                 KasaVeri.Hareket = txtIslem.Text == "İADE" ? "Kasa Çıkış" : "Kasa Giriş";
                 KasaVeri.CariId = _cariId;
-                
+
 
 
             }
@@ -677,20 +704,20 @@ namespace IsbaSatis.FrontOffice
             odemeFisi.FisBaglantiKodu = _fisentity.FisKodu;
 
             odemeFisi.ToplamTutar = TekParca ? txtGenelToplam.Value : txtOdenenTutar.Value;
-            if (txtIslem.Text=="SATIŞ")
+            if (txtIslem.Text == "SATIŞ")
             {
                 _fisentity.Borc = txtGenelToplam.Value;
-                odemeFisi.Alacak= TekParca ? txtGenelToplam.Value : txtOdenenTutar.Value;
+                odemeFisi.Alacak = TekParca ? txtGenelToplam.Value : txtOdenenTutar.Value;
                 odemeFisi.Borc = null;
                 _fisentity.Alacak = null;
             }
 
-            int kasaId =Convert.ToInt32(SettingsTool.AyarOku(SettingsTool.Ayarlar.SatisAyarlari_VarsayilanKasa));
+            int kasaId = Convert.ToInt32(SettingsTool.AyarOku(SettingsTool.Ayarlar.SatisAyarlari_VarsayilanKasa));
             if (!chkOdemeBol.Checked && odemeTuruId != -1)
             {
                 KasaHareketDAL.AddOrUpdate(context, new KasaHareket
                 {
-                    CariId = _cariId,  
+                    CariId = _cariId,
                     FisKodu = txtfisKodu.Text,
                     Hareket = txtIslem.Text == "İADE" ? "Kasa Çıkış" : "Kasa Giriş",
                     KasaId = kasaId,
@@ -726,13 +753,14 @@ namespace IsbaSatis.FrontOffice
 
             }
             FisTemizle();
+            KodUret();
             TekParca = false;
 
         }
         private void FisTemizle()
         {
             txtfisKodu.Text = null;
-            
+
             var cikarilacakKayit = context.ChangeTracker.Entries()
                 .Where(c => c.Entity is KasaHareket || c.Entity is StokHareket || c.Entity is Fis).ToList();
             foreach (var kayit in cikarilacakKayit)
@@ -792,10 +820,6 @@ namespace IsbaSatis.FrontOffice
         }
         private void SatisBeklet()
         {
-            if (txtfisKodu.Text == "")
-            {
-                txtfisKodu.Text = fisNo.FisKodNumarasi();
-            }
             int BekleyenId;
             BekleyenSatis satis;
             if (cagirilanSatisId != -1)
@@ -853,6 +877,7 @@ namespace IsbaSatis.FrontOffice
 
             cagirilanSatisId = -1;
             FisTemizle();
+            KodUret();
 
         }
 
@@ -866,7 +891,7 @@ namespace IsbaSatis.FrontOffice
 
         private void frmFrontOffice_Load(object sender, EventArgs e)
         {
-      
+
         }
 
         private void barbtnBelgesiz_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -884,6 +909,11 @@ namespace IsbaSatis.FrontOffice
                 context.ChangeTracker.DetectChanges();
 
             }
+        }
+
+        private void txtIndirimToplam_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -149,6 +149,7 @@
     <Compile Include="Tools\ConnectionTool.cs" />
     <Compile Include="Tools\ConverterTool.cs" />
     <Compile Include="Tools\ExchangeTool.cs" />
+    <Compile Include="Tools\OtomatikFisKodu.cs" />
     <Compile Include="Tools\ReportPrintTool.cs" />
     <Compile Include="Tools\RolTool.cs" />
     <Compile Include="Tools\SettingsTool.cs" />
