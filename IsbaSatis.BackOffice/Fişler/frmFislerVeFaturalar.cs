@@ -682,6 +682,7 @@ namespace IsbaSatis.BackOffice.Fişler
                     : Convert.ToDateTime(stokVeri.Tarih);
                 stokVeri.FisKodu = txtKod.Text;
                 stokVeri.Hareket = fisAyarlari.StokHareketi;
+                stokVeri.ToplamTutar = Convert.ToDecimal(colToplamTutar.SummaryItem.SummaryValue);
 
             }
             foreach (var itemHareket in context.PersonelHareketleri.Local.ToList())

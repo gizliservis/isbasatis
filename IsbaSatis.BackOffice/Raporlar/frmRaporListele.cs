@@ -24,6 +24,7 @@ namespace IsbaSatis.BackOffice.Raporlar
         rptGunlukSatis gunlukSatis;
         rptGrupStokHareketleri rptGrupStok;
         rptSokBazliHareket rptSokBazli;
+        rptStokDurumu stokDurumu;
         public frmRaporListele()
         {
             InitializeComponent();
@@ -33,14 +34,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             lblBitis.Visible = false;
             txtGrup.Visible = false;
             lblGenel.Visible = false;
-        }
-
-        private void navBarLink_Click(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-
-
-
-
         }
         private void rptStokHareketleri_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
@@ -90,6 +83,13 @@ namespace IsbaSatis.BackOffice.Raporlar
             {
                 rptSokBazli = new rptSokBazliHareket(dateBaslangic.DateTime, dateBitis.DateTime, txtGrup.Text);
                 frmRaporGoruntule form = new frmRaporGoruntule(rptSokBazli);
+                form.WindowState = FormWindowState.Maximized;
+                form.Show();
+            }
+            else if (txtRaporAdi.Text== "Genel Stok Bakiye Durum Raporu")
+            {
+                stokDurumu = new rptStokDurumu();
+                frmRaporGoruntule form = new frmRaporGoruntule(stokDurumu);
                 form.WindowState = FormWindowState.Maximized;
                 form.Show();
             }
@@ -188,6 +188,24 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtGrup.Visible = true;
             lblGenel.Visible = true;
             lblGenel.Text = "Stok İsmi";
+        }
+
+        private void rptStokDurumu_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            var buton = sender as NavBarItem;
+            txtRaporAdi.Text = e.Link.Caption;
+            txtRaporGrubu.Text = e.Link.Group.Caption;
+            txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
+            dateBaslangic.Visible = false;
+            dateBitis.Visible = false;
+            dateBaslangic.DateTime = DateTime.Now;
+            dateBitis.DateTime = DateTime.Now;
+            lblBaslangic.Visible = true;
+            lblBitis.Visible = false;
+            txtGrup.Visible = false;
+            lblGenel.Visible = false;
+
+
         }
     }
 }

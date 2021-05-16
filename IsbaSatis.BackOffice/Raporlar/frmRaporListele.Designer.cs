@@ -37,7 +37,7 @@
             this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.linkrptStokDurumu = new DevExpress.XtraNavBar.NavBarItem();
+            this.rptStokDurumu = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
@@ -45,6 +45,7 @@
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.rptStokHareketleri = new DevExpress.XtraNavBar.NavBarItem();
             this.rptGrupStokHareketleri = new DevExpress.XtraNavBar.NavBarItem();
+            this.rptStokBazliHareket = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.rptGunlukSatis = new DevExpress.XtraNavBar.NavBarItem();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -61,7 +62,6 @@
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.txtGrup = new DevExpress.XtraEditors.ButtonEdit();
             this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
-            this.rptStokBazliHareket = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
@@ -145,7 +145,7 @@
             this.navBarGroup3,
             this.navBarGroup4});
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
-            this.linkrptStokDurumu,
+            this.rptStokDurumu,
             this.navBarItem2,
             this.navBarItem3,
             this.navBarItem4,
@@ -165,17 +165,17 @@
             this.navBarGroup1.Caption = "Stok Raporları";
             this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.linkrptStokDurumu),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.rptStokDurumu),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
-            // linkrptStokDurumu
+            // rptStokDurumu
             // 
-            this.linkrptStokDurumu.Caption = "Genel Stok Durum Raporu";
-            this.linkrptStokDurumu.Name = "linkrptStokDurumu";
-            this.linkrptStokDurumu.Tag = "Bu rapor stok giriş ve çıkş hareketlerini gösterir";
-            this.linkrptStokDurumu.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarLink_Click);
+            this.rptStokDurumu.Caption = "Genel Stok Bakiye Durum Raporu";
+            this.rptStokDurumu.Name = "rptStokDurumu";
+            this.rptStokDurumu.Tag = "Bu rapor stok giriş ve çıkş hareketlerini gösterir";
+            this.rptStokDurumu.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.rptStokDurumu_LinkClicked);
             // 
             // navBarItem2
             // 
@@ -221,6 +221,12 @@
             this.rptGrupStokHareketleri.Caption = "Grup Bazlı Hareketler";
             this.rptGrupStokHareketleri.Name = "rptGrupStokHareketleri";
             this.rptGrupStokHareketleri.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.rptGrupStokHareketleri_LinkClicked);
+            // 
+            // rptStokBazliHareket
+            // 
+            this.rptStokBazliHareket.Caption = "Stok Bazlı Hareketler";
+            this.rptStokBazliHareket.Name = "rptStokBazliHareket";
+            this.rptStokBazliHareket.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.rptStokBazliHareket_LinkClicked);
             // 
             // navBarGroup4
             // 
@@ -388,12 +394,6 @@
             this.filterControl1.TabIndex = 8;
             this.filterControl1.Text = "filterControl1";
             // 
-            // rptStokBazliHareket
-            // 
-            this.rptStokBazliHareket.Caption = "Stok Bazlı Hareketler";
-            this.rptStokBazliHareket.Name = "rptStokBazliHareket";
-            this.rptStokBazliHareket.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.rptStokBazliHareket_LinkClicked);
-            // 
             // frmRaporListele
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -435,7 +435,7 @@
         private DevExpress.XtraEditors.SimpleButton btnEkle;
         private DevExpress.XtraNavBar.NavBarControl navBarControl1;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
-        private DevExpress.XtraNavBar.NavBarItem linkrptStokDurumu;
+        private DevExpress.XtraNavBar.NavBarItem rptStokDurumu;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem3;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;

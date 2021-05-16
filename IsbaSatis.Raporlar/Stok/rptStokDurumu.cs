@@ -22,7 +22,7 @@ namespace IsbaSatis.Raporlar.Stok
             colStokKodu.DataBindings.Add("Text", this.DataSource, "StokKodu");
             colBarkod.DataBindings.Add("Text", this.DataSource, "Barkod");
             colStokAdi.DataBindings.Add("Text", this.DataSource, "StokAdi");
-            colBirimi.DataBindings.Add("Text", this.DataSource, "StokKodu");
+            colBirimi.DataBindings.Add("Text", this.DataSource, "Birimi");
             colStokGrubu.DataBindings.Add("Text", this.DataSource, "Barkod");
             colStokAltGrubu.DataBindings.Add("Text", this.DataSource, "StokAltGrubu");
             colSatisKdv.DataBindings.Add("Text", this.DataSource, "SatisKdv");

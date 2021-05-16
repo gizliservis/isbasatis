@@ -383,11 +383,11 @@
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Mevcut Stok";
-            this.gridColumn1.FieldName = "MevcutStok";
+            this.gridColumn1.FieldName = "MevcutStokBakiye";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 13;
+            this.gridColumn1.VisibleIndex = 15;
             // 
             // gridColumn2
             // 
@@ -405,7 +405,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 15;
+            this.gridColumn3.VisibleIndex = 13;
             // 
             // grpMenu
             // 
