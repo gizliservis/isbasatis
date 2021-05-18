@@ -11,7 +11,28 @@ namespace Isbasatis.Entities.Tables
     {
         public Fis Clone()
         {
-            return (Fis)this.MemberwiseClone();
+            Fis yeniFis = new Fis();
+            yeniFis.FisKodu = this.FisKodu;
+            yeniFis.FisBaglantiKodu = this.FisBaglantiKodu;
+            yeniFis.FisTuru = this.FisTuru;
+            yeniFis.CariId = this.CariId;
+            yeniFis.FaturaUnvani = this.FaturaUnvani;
+            yeniFis.CepTelefonu = this.CepTelefonu;
+            yeniFis.Il = this.Il;
+            yeniFis.Ilce = this.Ilce;
+            yeniFis.Semt = this.Semt;
+            yeniFis.Adres = this.Adres;
+            yeniFis.VergiDairesi = this.VergiDairesi;
+            yeniFis.VergiNo = this.VergiNo;
+            yeniFis.Tarih = this.Tarih;
+            yeniFis.PlasiyerId = this.PlasiyerId;
+            yeniFis.IskontoTutar = this.IskontoTutar;
+            yeniFis.IskontoOrani = this.IskontoOrani;
+            yeniFis.Alacak = this.Alacak;
+            yeniFis.Borc = this.Borc;
+            yeniFis.ToplamTutar = this.ToplamTutar;
+            yeniFis.Aciklama = this.Aciklama;
+            return yeniFis;
         }
         public int Id { get; set; }
         public string FisKodu { get; set; }

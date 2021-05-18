@@ -67,7 +67,7 @@ namespace IsbaSatis.BackOffice.Fişler
                 
                     fisDAL.Delete(context, c => c.FisKodu == secilen.FisBaglantiKodu);
                     fisDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
-                    kasaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
+                    kasaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisBaglantiKodu);
                     stokHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     fisDAL.Save(context);
                     kasaHareketDAL.Save(context);
@@ -81,7 +81,7 @@ namespace IsbaSatis.BackOffice.Fişler
                 {
                     //  string secilen = gridFis.GetFocusedRowCellValue(colFisKodu).ToString();
                     fisDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
-                    kasaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
+                    kasaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisBaglantiKodu);
                     stokHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     fisDAL.Save(context);
                     kasaHareketDAL.Save(context);
@@ -115,6 +115,20 @@ namespace IsbaSatis.BackOffice.Fişler
             }
            // string secilen = gridFis.GetFocusedRowCellValue(colFisKodu).ToString();
 
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            Fis secilen = (Fis)gridView1.GetFocusedRow();
+            if (!secilen.FisTuru.Contains("Sipariş Fişi"))
+            {
+                MessageBox.Show("Faturalandırmak İstediğiniz Fiş Sipariş Fişi Değildir");
+            }
+            else
+            {
+                frmFislerVeFaturalar form = new frmFislerVeFaturalar(secilen.FisKodu, null,siparisFaturalandir:true);
+                form.ShowDialog();
+            }
         }
     }
 }

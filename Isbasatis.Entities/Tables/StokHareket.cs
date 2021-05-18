@@ -23,6 +23,7 @@ namespace Isbasatis.Entities.Tables
        
         public string SeriNo { get; set; }
         public Nullable<DateTime> Tarih { get; set; }
+        public bool Siparis { get; set; }
         public string Aciklama { get; set; }
         public virtual Stok Stok { get; set; }
         public virtual Depo Depo { get; set; }

@@ -77,6 +77,7 @@
             this.colTarih = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPersonelAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPersonelKodu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
@@ -307,6 +308,7 @@
             // 
             // grpMenu
             // 
+            this.grpMenu.Controls.Add(this.simpleButton1);
             this.grpMenu.Controls.Add(this.btnAra);
             this.grpMenu.Controls.Add(this.btnGuncelle);
             this.grpMenu.Controls.Add(this.btnSil);
@@ -549,6 +551,18 @@
             this.colPersonelKodu.Name = "colPersonelKodu";
             this.colPersonelKodu.OptionsColumn.AllowEdit = false;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.simpleButton1.ImageOptions.ImageIndex = 0;
+            this.simpleButton1.ImageOptions.ImageList = this.ımageList1;
+            this.simpleButton1.Location = new System.Drawing.Point(463, 23);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(104, 51);
+            this.simpleButton1.TabIndex = 2;
+            this.simpleButton1.Text = "Siparişi\r\nFaturalandır";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // frmFis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -624,5 +638,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTarih;
         private DevExpress.XtraGrid.Columns.GridColumn colPersonelAdi;
         private DevExpress.XtraGrid.Columns.GridColumn colPersonelKodu;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
