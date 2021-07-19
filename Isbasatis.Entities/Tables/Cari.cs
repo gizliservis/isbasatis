@@ -40,6 +40,7 @@ namespace Isbasatis.Entities.Tables
         public string Aciklama { get; set; }
         public virtual ICollection<KasaHareket> KasaHareket { get; set; }
         public virtual ICollection<Fis> Fis { get; set; }
+        public virtual ICollection<BankaHareket> BankaHareket { get; set; }
 
     }
 }

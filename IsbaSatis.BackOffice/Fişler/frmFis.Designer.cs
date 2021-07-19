@@ -47,12 +47,16 @@
             this.barSayimFazlasiFisi = new DevExpress.XtraBars.BarButtonItem();
             this.barSayimEksigifisi = new DevExpress.XtraBars.BarButtonItem();
             this.barStokDevirFisi = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barFatura = new DevExpress.XtraBars.BarSubItem();
+            this.barNakitIslemler = new DevExpress.XtraBars.BarSubItem();
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnAra = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
             this.btnEkle = new DevExpress.XtraEditors.DropDownButton();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
@@ -77,7 +81,6 @@
             this.colTarih = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPersonelAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPersonelKodu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
@@ -118,8 +121,11 @@
             this.barCariDevirFisi,
             this.barSayimFazlasiFisi,
             this.barSayimEksigifisi,
-            this.barStokDevirFisi});
-            this.barManager1.MaxItemId = 11;
+            this.barStokDevirFisi,
+            this.barSubItem1,
+            this.barFatura,
+            this.barNakitIslemler});
+            this.barManager1.MaxItemId = 15;
             // 
             // barDockControlTop
             // 
@@ -241,6 +247,41 @@
             this.barStokDevirFisi.Name = "barStokDevirFisi";
             this.barStokDevirFisi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
             // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "Stok Fişleri";
+            this.barSubItem1.Id = 12;
+            this.barSubItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.LargeImage")));
+            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barStokDevirFisi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSayimEksigifisi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSayimFazlasiFisi)});
+            this.barSubItem1.Name = "barSubItem1";
+            // 
+            // barFatura
+            // 
+            this.barFatura.Caption = "Fatura Fişleri";
+            this.barFatura.Id = 13;
+            this.barFatura.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barFatura.ImageOptions.LargeImage")));
+            this.barFatura.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barAlisFaturasi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSatisFaturasi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barToptanSatisFaturasi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSatisIadeFaturasi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barAlisIadeFaturasi)});
+            this.barFatura.Name = "barFatura";
+            // 
+            // barNakitIslemler
+            // 
+            this.barNakitIslemler.Caption = "Nakit Kart Fişleri";
+            this.barNakitIslemler.Id = 14;
+            this.barNakitIslemler.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barNakitIslemler.ImageOptions.LargeImage")));
+            this.barNakitIslemler.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barTahsilatFisi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barOdemeFisi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barCariDevirFisi)});
+            this.barNakitIslemler.Name = "barNakitIslemler";
+            // 
             // lblBaslik
             // 
             this.lblBaslik.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
@@ -322,6 +363,18 @@
             this.grpMenu.TabIndex = 7;
             this.grpMenu.Text = "Menü";
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.simpleButton1.ImageOptions.ImageIndex = 0;
+            this.simpleButton1.ImageOptions.ImageList = this.ımageList1;
+            this.simpleButton1.Location = new System.Drawing.Point(463, 23);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(104, 51);
+            this.simpleButton1.TabIndex = 2;
+            this.simpleButton1.Text = "Siparişi\r\nFaturalandır";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // btnDuzenle
             // 
             this.btnDuzenle.Dock = System.Windows.Forms.DockStyle.Left;
@@ -350,17 +403,9 @@
             // popupMenu1
             // 
             this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barAlisFaturasi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSatisFaturasi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barToptanSatisFaturasi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSatisIadeFaturasi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barAlisIadeFaturasi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barTahsilatFisi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barOdemeFisi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barCariDevirFisi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSayimFazlasiFisi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSayimEksigifisi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStokDevirFisi)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barFatura),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barNakitIslemler)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
@@ -551,18 +596,6 @@
             this.colPersonelKodu.Name = "colPersonelKodu";
             this.colPersonelKodu.OptionsColumn.AllowEdit = false;
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton1.ImageOptions.ImageIndex = 0;
-            this.simpleButton1.ImageOptions.ImageList = this.ımageList1;
-            this.simpleButton1.Location = new System.Drawing.Point(463, 23);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(104, 51);
-            this.simpleButton1.TabIndex = 2;
-            this.simpleButton1.Text = "Siparişi\r\nFaturalandır";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
             // frmFis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -639,5 +672,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPersonelAdi;
         private DevExpress.XtraGrid.Columns.GridColumn colPersonelKodu;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraBars.BarSubItem barFatura;
+        private DevExpress.XtraBars.BarSubItem barNakitIslemler;
     }
 }

@@ -38,6 +38,7 @@ using Isbasatis.Entities.Tools;
 using IsbaSatis.BackOffice.Kod;
 using Isbasatis.LicenseManager.LicenseInformations;
 using Isbasatis.LicenseManger.LicenseInformations.Manager;
+using IsbaSatis.BackOffice.Bankalar;
 
 namespace IsbaSatis.BackOffice
 {
@@ -504,12 +505,19 @@ namespace IsbaSatis.BackOffice
 
         private void barButtonItem45_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmBankaIslemleri islem = new frmBankaIslemleri(null);
+            islem.ShowDialog();
         }
-
-        private void barButtonItem42_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        frmBanka banka;
+        private void barButtonItem7_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+            if (banka==null||banka.IsDisposed)
+            {
+                banka = new frmBanka();
+                banka.MdiParent = this;
+                banka.Show();
+            }
+             
         }
     }
 }

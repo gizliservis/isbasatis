@@ -38,6 +38,7 @@ namespace IsbaSatis.BackOffice.Fişler
         StokHareket _stokhareketentity = new StokHareket();
         CariBakiye entityBakiye = new CariBakiye();
         CodeNumara odemefis = new CodeNumara();
+
         private Nullable<int> _cariId;
 
 

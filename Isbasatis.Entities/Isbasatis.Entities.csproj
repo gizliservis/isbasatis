@@ -73,6 +73,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\IsbaSatisContext.cs" />
+    <Compile Include="Data Access\BankaDAL.cs" />
+    <Compile Include="Data Access\BankaHareketDAL.cs" />
     <Compile Include="Data Access\CariDAL.cs" />
     <Compile Include="Data Access\DepoDAL.cs" />
     <Compile Include="Data Access\FisDAL.cs" />
@@ -88,6 +90,8 @@
     <Compile Include="Data Access\PersonelDAL.cs" />
     <Compile Include="Extensions\FluentValidation\RuleBuilderExtensions.cs" />
     <Compile Include="Extensions\FluentValidation\UniqueValidator.cs" />
+    <Compile Include="Mapping\BankaHareketMap.cs" />
+    <Compile Include="Mapping\BankaMap.cs" />
     <Compile Include="Mapping\KodMap.cs" />
     <Compile Include="Mapping\KullaniciMap.cs" />
     <Compile Include="Mapping\KullaniciRolMap.cs" />
@@ -96,6 +100,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Tables\Banka.cs" />
+    <Compile Include="Tables\BankaHareket.cs" />
     <Compile Include="Tables\Kod.cs" />
     <Compile Include="Tables\Kullanici.cs" />
     <Compile Include="Tables\KullaniciRol.cs" />
@@ -154,6 +160,8 @@
     <Compile Include="Tools\RolTool.cs" />
     <Compile Include="Tools\SettingsTool.cs" />
     <Compile Include="Tools\ValidatorTool.cs" />
+    <Compile Include="Validations\BankaHareketValidator.cs" />
+    <Compile Include="Validations\BankaValidator.cs" />
     <Compile Include="Validations\CariValidator.cs" />
     <Compile Include="Validations\DepoValidator.cs" />
     <Compile Include="Validations\FisValidator.cs" />

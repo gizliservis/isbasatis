@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Isbasatis.Entities.Tables
 {
-    public class Fis :IEntity
+    public class Fis : IEntity
     {
         public Fis Clone()
         {
