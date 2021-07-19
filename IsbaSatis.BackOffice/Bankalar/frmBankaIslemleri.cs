@@ -72,23 +72,7 @@ namespace IsbaSatis.BackOffice.Bankalar
         {
             if (cmbIslemTuru.SelectedIndex == 0)
             {
-                bankaEntity.FisKodu = txtFisKodu.Text;
-                bankaEntity.BankaId = Convert.ToInt32(_bankaId);
-                bankaEntity.CariId = _cariId;
-                bankaEntity.Hareket = "Banka Giriş";
-                bankaEntity.Tarih = DateTime.Now;
-                bankaEntity.Tutar = txtTutar.Value;
-                _fisEntity.FisKodu = txtFisKodu.Text;
-                _fisEntity.FisTuru = cmbIslemTuru.Text;
-                _fisEntity.Tarih = DateTime.Now;
-                _fisEntity.CariId = _cariId;
-                _fisEntity.Aciklama = txtAciklama.Text;
-                _fisEntity.Alacak = txtTutar.Value;
-                _fisEntity.ToplamTutar = txtTutar.Value;
-                bankaHareketDAL.AddOrUpdate(context, bankaEntity);
-                fisDAL.AddOrUpdate(context, _fisEntity);
-                bankaHareketDAL.Save(context);
-                fisDAL.Save(context);
+    
 
             }
           
