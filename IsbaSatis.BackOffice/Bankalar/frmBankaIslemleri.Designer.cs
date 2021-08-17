@@ -46,6 +46,8 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTarih = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtFisKodu.Properties)).BeginInit();
@@ -56,13 +58,17 @@ namespace IsbaSatis.BackOffice.Bankalar
             ((System.ComponentModel.ISupportInitialize)(this.btnBankaAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTarih.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTarih.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.txtTarih);
             this.groupControl1.Controls.Add(this.txtFisKodu);
             this.groupControl1.Controls.Add(this.txtAciklama);
             this.groupControl1.Controls.Add(this.txtTutar);
+            this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl3);
@@ -75,7 +81,7 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(275, 240);
+            this.groupControl1.Size = new System.Drawing.Size(275, 268);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "İşlem";
             // 
@@ -88,7 +94,7 @@ namespace IsbaSatis.BackOffice.Bankalar
             // 
             // txtAciklama
             // 
-            this.txtAciklama.Location = new System.Drawing.Point(72, 157);
+            this.txtAciklama.Location = new System.Drawing.Point(72, 185);
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(198, 77);
             this.txtAciklama.TabIndex = 4;
@@ -112,7 +118,7 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.labelControl5.Appearance.Options.UseTextOptions = true;
             this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.Location = new System.Drawing.Point(3, 158);
+            this.labelControl5.Location = new System.Drawing.Point(3, 187);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(63, 13);
             this.labelControl5.TabIndex = 2;
@@ -180,7 +186,7 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.cmbIslemTuru.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbIslemTuru.Properties.Items.AddRange(new object[] {
-            "Gelen Havale",
+            "Gelen Hav",
             "Giden Havale",
             "Gelen EFT",
             "Giden EFT",
@@ -214,9 +220,9 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.groupControl2.Controls.Add(this.btnKapat);
             this.groupControl2.Controls.Add(this.btnKaydet);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(0, 240);
+            this.groupControl2.Location = new System.Drawing.Point(0, 268);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(275, 88);
+            this.groupControl2.Size = new System.Drawing.Size(275, 65);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Menü";
             // 
@@ -226,9 +232,10 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.btnKapat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKapat.ImageOptions.Image")));
             this.btnKapat.Location = new System.Drawing.Point(199, 23);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(74, 63);
+            this.btnKapat.Size = new System.Drawing.Size(74, 40);
             this.btnKapat.TabIndex = 1;
             this.btnKapat.Text = "Kapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // btnKaydet
             // 
@@ -236,16 +243,39 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.btnKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKaydet.ImageOptions.Image")));
             this.btnKaydet.Location = new System.Drawing.Point(2, 23);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(79, 63);
+            this.btnKaydet.Size = new System.Drawing.Size(79, 40);
             this.btnKaydet.TabIndex = 0;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Options.UseTextOptions = true;
+            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl7.Location = new System.Drawing.Point(3, 160);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(63, 13);
+            this.labelControl7.TabIndex = 2;
+            this.labelControl7.Text = "Tarih :";
+            // 
+            // txtTarih
+            // 
+            this.txtTarih.EditValue = null;
+            this.txtTarih.Location = new System.Drawing.Point(72, 157);
+            this.txtTarih.Name = "txtTarih";
+            this.txtTarih.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtTarih.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtTarih.Size = new System.Drawing.Size(198, 20);
+            this.txtTarih.TabIndex = 6;
             // 
             // frmBankaIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(275, 328);
+            this.ClientSize = new System.Drawing.Size(275, 333);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -263,6 +293,8 @@ namespace IsbaSatis.BackOffice.Bankalar
             ((System.ComponentModel.ISupportInitialize)(this.btnBankaAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtTarih.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTarih.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -285,5 +317,7 @@ namespace IsbaSatis.BackOffice.Bankalar
         private DevExpress.XtraEditors.SimpleButton btnKaydet;
         private DevExpress.XtraEditors.TextEdit txtFisKodu;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.DateEdit txtTarih;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
     }
 }
