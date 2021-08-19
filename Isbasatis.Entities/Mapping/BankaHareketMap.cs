@@ -16,7 +16,7 @@ namespace Isbasatis.Entities.Mapping
             this.HasKey(p => p.Id);
             this.Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             this.Property(p => p.FisKodu).HasMaxLength(12);
-            this.Property(p => p.Hareket).HasMaxLength(10);
+            this.Property(p => p.Hareket).HasMaxLength(30);
             this.Property(p => p.Tutar).HasPrecision(12, 2);
             this.Property(p => p.Aciklama).HasMaxLength(200);
 

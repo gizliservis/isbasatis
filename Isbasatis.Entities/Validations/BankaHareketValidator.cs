@@ -12,7 +12,9 @@ namespace Isbasatis.Entities.Validations
     {
         public BankaHareketValidator()
         {
-            //RuleFor(p => p.Hareket).NotEmpty().WithMessage("Hesap Kodu Alanı Boş Geçilemez !!!");
+            RuleFor(p => p.Hareket).NotEmpty().WithMessage("İşlem Türü Alanı Boş Geçilemez !!!");
+            RuleFor(p => p.FisKodu).NotEmpty().WithMessage("Fiş Kodu Alanı Boş Geçilemez!!!");
+
         }
     }
 }

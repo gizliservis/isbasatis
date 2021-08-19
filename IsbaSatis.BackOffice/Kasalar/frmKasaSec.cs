@@ -20,6 +20,7 @@ namespace IsbaSatis.BackOffice.Kasalar
         IsbaSatisContext context = new IsbaSatisContext();
         public Kasa entity = new Kasa();
         public bool secildi = false;
+        public List<Isbasatis.Entities.Tables.Kasa> secilen = new List<Isbasatis.Entities.Tables.Kasa>();
         public frmKasaSec()
         {
             InitializeComponent();
@@ -34,10 +35,20 @@ namespace IsbaSatis.BackOffice.Kasalar
         {
             if (gridView1.GetSelectedRows().Length != 0)
             {
-                string kasakodu = gridView1.GetFocusedRowCellValue(colKasaKodu).ToString();
-                entity = context.Kasalar.SingleOrDefault(c => c.KasaKodu == kasakodu);
+
+                foreach (var row in gridView1.GetSelectedRows())
+                {
+                    string Kasakodu = gridView1.GetRowCellValue(row, colKasaKodu).ToString();
+                    secilen.Add(context.Kasalar.SingleOrDefault(c => c.KasaKodu == Kasakodu));
+
+                }
                 secildi = true;
                 this.Close();
+            }
+            
+            else
+            {
+                MessageBox.Show("Seçilen Bir Cari Bulunamadı");
             }
 
         }

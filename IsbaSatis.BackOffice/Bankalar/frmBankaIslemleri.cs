@@ -3,6 +3,7 @@ using Isbasatis.Entities.Context;
 using Isbasatis.Entities.Data_Access;
 using Isbasatis.Entities.Tables;
 using IsbaSatis.BackOffice.Cari;
+using IsbaSatis.BackOffice.Kasalar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,10 +23,12 @@ namespace IsbaSatis.BackOffice.Bankalar
         Fis _fisEntity = new Fis();
         BankaHareket bankaEntity = new BankaHareket();
         BankaHareketDAL bankaHareketDAL = new BankaHareketDAL();
+        KasaHareket kasahareketEntity = new KasaHareket();
+        KasaHareketDAL kasaHareketDAL = new KasaHareketDAL();
         FisDAL fisDAL = new FisDAL();
         private Nullable<int> _cariId;
         private Nullable<int> _bankaId;
-        private string  _cariTuru;
+        private string _cariTuru;
         private string _faturaUnvan;
         private string _cepTelefonu;
         private string _il;
@@ -34,6 +37,12 @@ namespace IsbaSatis.BackOffice.Bankalar
         private string _adres;
         private string _vergiDairesi;
         private string _vergiNo;
+        private string _kasaKodu;
+        private int __kasaId;
+        private string __kasaAdi;
+        private string __yetkiliKodu;
+        private string __yetkiliAdi;
+        private string __aciklama;
 
 
 
@@ -65,27 +74,67 @@ namespace IsbaSatis.BackOffice.Bankalar
 
         private void btnCariAdi_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            frmCariSec frm = new frmCariSec();
-            frm.ShowDialog();
-            if (frm.secildi)
-            {
-                Isbasatis.Entities.Tables.Cari entity = frm.secilen.FirstOrDefault();
+            if (cmbIslemTuru.Text == "Bankaya Yatırılan Nakit")
+            {//kasa secimi eklenecek 
+                frmKasaSec kfrm = new frmKasaSec();
+                kfrm.ShowDialog();
+                if (kfrm.secildi)
+                {
+                    Isbasatis.Entities.Tables.Kasa entity = kfrm.secilen.FirstOrDefault();
 
-                _cariId = entity.Id;
-                _cariTuru = entity.CariTuru;
-                _faturaUnvan = entity.FaturaUnvani;
-                _cepTelefonu = entity.CepTelefonu;
-                _il = entity.Il;
-                _ilce = entity.Ilce;
-                _semt = entity.Semt;
-                _vergiDairesi = entity.VergiDairesi;
-                _vergiNo = entity.VergiNo;
-                _adres = entity.Adres;
-
-                _fisEntity.CariId = _cariId;
-                btnCariAdi.Text = entity.CariAdi;
-
+                    __kasaId = entity.Id;
+                    _kasaKodu = entity.KasaKodu;
+                    __kasaAdi = entity.KasaAdi;
+                    __yetkiliAdi = entity.YetkiliAdi;
+                    __yetkiliKodu = entity.YetkiliKodu;
+                    __aciklama = entity.Aciklama;
+                    btnCariAdi.Text = entity.KasaAdi;
+                    lblCariAdi.Text = "Kasa Adı";
+                }
             }
+            else if (cmbIslemTuru.Text == "Bankadan Çekilen Nakit")
+            {
+                frmKasaSec kfrm = new frmKasaSec();
+                kfrm.ShowDialog();
+                if (kfrm.secildi)
+                {
+                    Isbasatis.Entities.Tables.Kasa entity = kfrm.secilen.FirstOrDefault();
+
+                    __kasaId = entity.Id;
+                    _kasaKodu = entity.KasaKodu;
+                    __kasaAdi = entity.KasaAdi;
+                    __yetkiliAdi = entity.YetkiliAdi;
+                    __yetkiliKodu = entity.YetkiliKodu;
+                    __aciklama = entity.Aciklama;
+                    btnCariAdi.Text = entity.KasaAdi;
+                    lblCariAdi.Text = "Kasa Adı";
+                }
+            }
+            else
+            {
+                frmCariSec frm = new frmCariSec();
+                frm.ShowDialog();
+                if (frm.secildi)
+                {
+                    Isbasatis.Entities.Tables.Cari entity = frm.secilen.FirstOrDefault();
+
+                    _cariId = entity.Id;
+                    _cariTuru = entity.CariTuru;
+                    _faturaUnvan = entity.FaturaUnvani;
+                    _cepTelefonu = entity.CepTelefonu;
+                    _il = entity.Il;
+                    _ilce = entity.Ilce;
+                    _semt = entity.Semt;
+                    _vergiDairesi = entity.VergiDairesi;
+                    _vergiNo = entity.VergiNo;
+                    _adres = entity.Adres;
+
+                    _fisEntity.CariId = _cariId;
+                    btnCariAdi.Text = entity.CariAdi;
+                    lblCariAdi.Text = "Cari Adı";
+                }
+            }
+
         }
 
         private void btnBankaAdi_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -97,7 +146,7 @@ namespace IsbaSatis.BackOffice.Bankalar
                 Isbasatis.Entities.Tables.Banka entity = frm.secilen.FirstOrDefault();
                 _bankaId = entity.Id;
 
-                bankaEntity.BankaId = Convert.ToInt32(_bankaId) ;
+                bankaEntity.BankaId = Convert.ToInt32(_bankaId);
                 btnBankaAdi.Text = entity.HesapIsmi;
 
             }
@@ -107,43 +156,260 @@ namespace IsbaSatis.BackOffice.Bankalar
         {
             if (cmbIslemTuru.SelectedIndex == 0)
             {
-                _fisEntity.FisKodu = txtFisKodu.Text;
-                _fisEntity.FisTuru = cmbIslemTuru.Text;
-                _fisEntity.CariId = _cariId;
-                _fisEntity.FaturaUnvani = _faturaUnvan;
-                _fisEntity.CariTuru = _cariTuru;
-                _fisEntity.CepTelefonu = _cepTelefonu;
-                _fisEntity.Il = _il;
-                _fisEntity.Ilce = _ilce;
-                _fisEntity.Semt = _semt;
-                _fisEntity.Adres = _adres;
-                _fisEntity.VergiDairesi = _vergiDairesi;
-                _fisEntity.VergiNo = _vergiNo;
-                _fisEntity.Alacak = txtTutar.Value;
-                _fisEntity.ToplamTutar = txtTutar.Value;
-                _fisEntity.Tarih = txtTarih.DateTime;
-                _fisEntity.Aciklama = txtAciklama.Text;
-                bankaEntity.FisKodu = txtFisKodu.Text;
-                bankaEntity.Hareket = cmbIslemTuru.Text;
-                bankaEntity.BankaId = Convert.ToInt32(_bankaId);
-                bankaEntity.CariId = _cariId;
-                bankaEntity.Tarih = txtTarih.DateTime;
-                bankaEntity.Tutar = txtTutar.Value;
-                bankaEntity.Aciklama = txtAciklama.Text;
-                bankaHareketDAL.AddOrUpdate(context, bankaEntity);
-                fisDAL.AddOrUpdate(context,_fisEntity);
-                context.BankaHareketleri.Load();
-                context.fisler.Load();
-                context.SaveChanges();
-                temizle();
+                try
+                {
+                    _fisEntity.FisKodu = txtFisKodu.Text;
+                    _fisEntity.FisTuru = cmbIslemTuru.Text;
+                    _fisEntity.CariId = _cariId;
+                    _fisEntity.FaturaUnvani = _faturaUnvan;
+                    _fisEntity.CariTuru = _cariTuru;
+                    _fisEntity.CepTelefonu = _cepTelefonu;
+                    _fisEntity.Il = _il;
+                    _fisEntity.Ilce = _ilce;
+                    _fisEntity.Semt = _semt;
+                    _fisEntity.Adres = _adres;
+                    _fisEntity.VergiDairesi = _vergiDairesi;
+                    _fisEntity.VergiNo = _vergiNo;
+                    _fisEntity.Alacak = txtTutar.Value;
+                    _fisEntity.ToplamTutar = txtTutar.Value;
+                    _fisEntity.Tarih = txtTarih.DateTime;
+                    _fisEntity.Aciklama = txtAciklama.Text;
+                    bankaEntity.FisKodu = txtFisKodu.Text;
+                    bankaEntity.Hareket = "Banka Giriş";
+                    bankaEntity.BankaId = Convert.ToInt32(_bankaId);
+                    bankaEntity.CariId = _cariId;
+                    bankaEntity.Tarih = txtTarih.DateTime;
+                    bankaEntity.Tutar = txtTutar.Value;
+                    bankaEntity.Aciklama = txtAciklama.Text;
+                    bankaHareketDAL.AddOrUpdate(context, bankaEntity);
+                    fisDAL.AddOrUpdate(context, _fisEntity);
+                    context.BankaHareketleri.Load();
+                    context.fisler.Load();
+                    context.SaveChanges();
+                    temizle();
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Bilgileri Kontrol Ediniz");
+                }
+
 
             }
-          
+            else if (cmbIslemTuru.SelectedIndex == 1)
+            {
+                try
+                {
+                    _fisEntity.FisKodu = txtFisKodu.Text;
+                    _fisEntity.FisTuru = cmbIslemTuru.Text;
+                    _fisEntity.CariId = _cariId;
+                    _fisEntity.FaturaUnvani = _faturaUnvan;
+                    _fisEntity.CariTuru = _cariTuru;
+                    _fisEntity.CepTelefonu = _cepTelefonu;
+                    _fisEntity.Il = _il;
+                    _fisEntity.Ilce = _ilce;
+                    _fisEntity.Semt = _semt;
+                    _fisEntity.Adres = _adres;
+                    _fisEntity.VergiDairesi = _vergiDairesi;
+                    _fisEntity.VergiNo = _vergiNo;
+                    _fisEntity.Borc = txtTutar.Value;
+                    _fisEntity.ToplamTutar = txtTutar.Value;
+                    _fisEntity.Tarih = txtTarih.DateTime;
+                    _fisEntity.Aciklama = txtAciklama.Text;
+                    bankaEntity.FisKodu = txtFisKodu.Text;
+                    bankaEntity.Hareket = "Banka Çıkış";
+                    bankaEntity.BankaId = Convert.ToInt32(_bankaId);
+                    bankaEntity.CariId = _cariId;
+                    bankaEntity.Tarih = txtTarih.DateTime;
+                    bankaEntity.Tutar = txtTutar.Value;
+                    bankaEntity.Aciklama = txtAciklama.Text;
+                    bankaHareketDAL.AddOrUpdate(context, bankaEntity);
+                    fisDAL.AddOrUpdate(context, _fisEntity);
+                    context.BankaHareketleri.Load();
+                    context.fisler.Load();
+                    context.SaveChanges();
+                    temizle();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Bilgileri Kontrol Ediniz");
+                }
+
+            }
+            else if (cmbIslemTuru.SelectedIndex == 2)
+            {
+                try
+                {
+                    _fisEntity.FisKodu = txtFisKodu.Text;
+                    _fisEntity.FisTuru = cmbIslemTuru.Text;
+                    _fisEntity.CariId = _cariId;
+                    _fisEntity.FaturaUnvani = _faturaUnvan;
+                    _fisEntity.CariTuru = _cariTuru;
+                    _fisEntity.CepTelefonu = _cepTelefonu;
+                    _fisEntity.Il = _il;
+                    _fisEntity.Ilce = _ilce;
+                    _fisEntity.Semt = _semt;
+                    _fisEntity.Adres = _adres;
+                    _fisEntity.VergiDairesi = _vergiDairesi;
+                    _fisEntity.VergiNo = _vergiNo;
+                    _fisEntity.Alacak = txtTutar.Value;
+                    _fisEntity.ToplamTutar = txtTutar.Value;
+                    _fisEntity.Tarih = txtTarih.DateTime;
+                    _fisEntity.Aciklama = txtAciklama.Text;
+                    bankaEntity.FisKodu = txtFisKodu.Text;
+                    bankaEntity.Hareket = "Banka Giriş";
+                    bankaEntity.BankaId = Convert.ToInt32(_bankaId);
+                    bankaEntity.CariId = _cariId;
+                    bankaEntity.Tarih = txtTarih.DateTime;
+                    bankaEntity.Tutar = txtTutar.Value;
+                    bankaEntity.Aciklama = txtAciklama.Text;
+                    bankaHareketDAL.AddOrUpdate(context, bankaEntity);
+                    fisDAL.AddOrUpdate(context, _fisEntity);
+                    context.BankaHareketleri.Load();
+                    context.fisler.Load();
+                    context.SaveChanges();
+                    temizle();
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Bilgileri Kontrol Ediniz");
+                }
+            }
+            else if (cmbIslemTuru.SelectedIndex == 3)
+            {
+                try
+                {
+                    _fisEntity.FisKodu = txtFisKodu.Text;
+                    _fisEntity.FisTuru = cmbIslemTuru.Text;
+                    _fisEntity.CariId = _cariId;
+                    _fisEntity.FaturaUnvani = _faturaUnvan;
+                    _fisEntity.CariTuru = _cariTuru;
+                    _fisEntity.CepTelefonu = _cepTelefonu;
+                    _fisEntity.Il = _il;
+                    _fisEntity.Ilce = _ilce;
+                    _fisEntity.Semt = _semt;
+                    _fisEntity.Adres = _adres;
+                    _fisEntity.VergiDairesi = _vergiDairesi;
+                    _fisEntity.VergiNo = _vergiNo;
+                    _fisEntity.Borc = txtTutar.Value;
+                    _fisEntity.ToplamTutar = txtTutar.Value;
+                    _fisEntity.Tarih = txtTarih.DateTime;
+                    _fisEntity.Aciklama = txtAciklama.Text;
+                    bankaEntity.FisKodu = txtFisKodu.Text;
+                    bankaEntity.Hareket = "Banka Çıkış";
+                    bankaEntity.BankaId = Convert.ToInt32(_bankaId);
+                    bankaEntity.CariId = _cariId;
+                    bankaEntity.Tarih = txtTarih.DateTime;
+                    bankaEntity.Tutar = txtTutar.Value;
+                    bankaEntity.Aciklama = txtAciklama.Text;
+                    bankaHareketDAL.AddOrUpdate(context, bankaEntity);
+                    fisDAL.AddOrUpdate(context, _fisEntity);
+                    context.BankaHareketleri.Load();
+                    context.fisler.Load();
+                    context.SaveChanges();
+                    temizle();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Bilgileri Kontrol Ediniz");
+
+                }
+
+            }
+            else if (cmbIslemTuru.SelectedIndex == 4)
+            {
+                try
+                {
+                    _fisEntity.FisKodu = txtFisKodu.Text;
+                    _fisEntity.FisTuru = cmbIslemTuru.Text;
+                    _fisEntity.Alacak = txtTutar.Value;
+                    _fisEntity.ToplamTutar = txtTutar.Value;
+                    kasahareketEntity.FisKodu = txtFisKodu.Text;
+                    kasahareketEntity.Hareket = "Kasa Çıkış";
+                    kasahareketEntity.KasaId = __kasaId;
+                    kasahareketEntity.OdemeTuruId = 1;
+                    kasahareketEntity.Tarih = txtTarih.DateTime;
+                    kasahareketEntity.Tutar = txtTutar.Value;
+                    bankaEntity.FisKodu = txtFisKodu.Text;
+                    bankaEntity.Hareket = "Banka Giriş";
+                    bankaEntity.Tarih = txtTarih.DateTime;
+                    bankaEntity.Tutar = txtTutar.Value;
+                    bankaEntity.Aciklama = txtAciklama.Text;
+                    kasaHareketDAL.AddOrUpdate(context, kasahareketEntity);
+                    bankaHareketDAL.AddOrUpdate(context, bankaEntity);
+                    fisDAL.AddOrUpdate(context, _fisEntity);
+                    context.KasaHareketleri.Load();
+                    context.BankaHareketleri.Load();
+                    context.fisler.Load();
+                    context.SaveChanges();
+                    temizle();
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Bilgileri Kontrol Ediniz");
+                }
+
+            }
+            else if (cmbIslemTuru.SelectedIndex == 5)
+            {
+                try
+                {
+                    _fisEntity.FisKodu = txtFisKodu.Text;
+                    _fisEntity.FisTuru = cmbIslemTuru.Text;
+                    _fisEntity.Borc = txtTutar.Value;
+                    _fisEntity.ToplamTutar = txtTutar.Value;
+                    kasahareketEntity.FisKodu = txtFisKodu.Text;
+                    kasahareketEntity.Hareket = "Kasa Giriş";
+                    kasahareketEntity.KasaId = __kasaId;
+                    kasahareketEntity.Tarih = txtTarih.DateTime;
+                    kasahareketEntity.OdemeTuruId = 1;
+                    kasahareketEntity.Tutar = txtTutar.Value;
+                    bankaEntity.FisKodu = txtFisKodu.Text;
+                    bankaEntity.Hareket = "Banka Çıkış";
+                    bankaEntity.Tarih = txtTarih.DateTime;
+                    bankaEntity.Tutar = txtTutar.Value;
+                    bankaEntity.Aciklama = txtAciklama.Text;
+                    kasaHareketDAL.AddOrUpdate(context, kasahareketEntity);
+                    bankaHareketDAL.AddOrUpdate(context, bankaEntity);
+                    fisDAL.AddOrUpdate(context, _fisEntity);
+                    context.KasaHareketleri.Load();
+                    context.BankaHareketleri.Load();
+                    context.fisler.Load();
+                    context.SaveChanges();
+                    temizle();
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Bilgileri Kontrol Ediniz");
+                }
+
+            }
+
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbIslemTuru_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbIslemTuru.SelectedIndex == 4)
+            {
+                lblCariAdi.Text = "Kasa Adı :";
+
+            }
+            else if (cmbIslemTuru.SelectedIndex == 5)
+            {
+                lblCariAdi.Text = "Kasa Adı :";
+            }
+            else
+            {
+                lblCariAdi.Text = "Cari Adı :";
+            }
         }
     }
 }
