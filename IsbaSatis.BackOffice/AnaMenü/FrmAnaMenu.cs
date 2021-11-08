@@ -39,6 +39,7 @@ using IsbaSatis.BackOffice.Kod;
 using Isbasatis.LicenseManager.LicenseInformations;
 using Isbasatis.LicenseManger.LicenseInformations.Manager;
 using IsbaSatis.BackOffice.Bankalar;
+using DevExpress.XtraReports.UI;
 
 namespace IsbaSatis.BackOffice
 {
@@ -49,7 +50,7 @@ namespace IsbaSatis.BackOffice
         {
             InitializeComponent();
 
-            DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = "Visual Studio 2013 Light";
+           
             using (var context = new IsbaSatisContext())
             {
                 context.Database.CreateIfNotExists();
@@ -518,6 +519,14 @@ namespace IsbaSatis.BackOffice
                 banka.Show();
             }
              
+        }
+
+        private void barButtonItem42_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            rptFatura fatura = new rptFatura("dnmfis000036");
+            ReportDesignTool designTool = new ReportDesignTool(fatura);
+            designTool.ShowDesigner();
+
         }
     }
 }

@@ -3,6 +3,7 @@ using Isbasatis.Entities.Context;
 using Isbasatis.Entities.Data_Access;
 using Isbasatis.Entities.Tables;
 using Isbasatis.Entities.Tools;
+using IsbaSatis.BackOffice.Bankalar;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -107,6 +108,12 @@ namespace IsbaSatis.BackOffice.Fişler
             {
                 frmFislerVeFaturalar form = new frmFislerVeFaturalar(secilen.FisBaglantiKodu, null);
                 form.ShowDialog();
+            }
+            else if (secilen.FisTuru=="Giden Havale")
+            {
+                BankaHareket bnk = new BankaHareket();
+                frmBankaIslemleri frm = new frmBankaIslemleri(bnk.FisKodu);
+                frm.ShowDialog();
             }
             else
             {

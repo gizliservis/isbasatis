@@ -14,6 +14,7 @@ using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Data.Entity;
 using DevExpress.XtraGrid;
 using DevExpress.DataProcessing;
+using DevExpress.Utils.Extensions;
 
 namespace IsbaSatis.BackOffice.Kod
 {
