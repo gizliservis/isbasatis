@@ -99,7 +99,7 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoSeriNoo});
-            this.gridControl1.Size = new System.Drawing.Size(1055, 320);
+            this.gridControl1.Size = new System.Drawing.Size(1055, 321);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -124,7 +124,12 @@
             this.colTutar,
             this.colAciklama});
             this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Tutar", this.colTutar, "")});
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsPrint.PrintHorzLines = false;
+            this.gridView1.OptionsPrint.PrintVertLines = false;
+            this.gridView1.OptionsView.ShowFooter = true;
             // 
             // colId
             // 
@@ -195,7 +200,7 @@
             this.colCariKodu.Name = "colCariKodu";
             this.colCariKodu.OptionsColumn.AllowEdit = false;
             this.colCariKodu.Visible = true;
-            this.colCariKodu.VisibleIndex = 4;
+            this.colCariKodu.VisibleIndex = 5;
             // 
             // colCariAdi
             // 
@@ -203,8 +208,9 @@
             this.colCariAdi.FieldName = "Cari.CariAdi";
             this.colCariAdi.Name = "colCariAdi";
             this.colCariAdi.OptionsColumn.AllowEdit = false;
+            this.colCariAdi.OptionsFilter.AllowFilter = false;
             this.colCariAdi.Visible = true;
-            this.colCariAdi.VisibleIndex = 5;
+            this.colCariAdi.VisibleIndex = 4;
             // 
             // colTarih
             // 
@@ -221,6 +227,8 @@
             this.colTutar.FieldName = "Tutar";
             this.colTutar.Name = "colTutar";
             this.colTutar.OptionsColumn.AllowEdit = false;
+            this.colTutar.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Tutar", "SUM={0:0.##}")});
             this.colTutar.Visible = true;
             this.colTutar.VisibleIndex = 9;
             // 
@@ -240,7 +248,7 @@
             this.grpMenu.Controls.Add(this.btnAra);
             this.grpMenu.Controls.Add(this.btnGuncelle);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 444);
+            this.grpMenu.Location = new System.Drawing.Point(0, 518);
             this.grpMenu.Name = "grpMenu";
             this.grpMenu.Size = new System.Drawing.Size(1055, 77);
             this.grpMenu.TabIndex = 9;
@@ -370,7 +378,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1055, 479);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1055, 476);
             this.splitContainerControl1.SplitterPosition = 149;
             this.splitContainerControl1.TabIndex = 10;
             // 
@@ -378,10 +386,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1055, 521);
-            this.Controls.Add(this.grpMenu);
+            this.ClientSize = new System.Drawing.Size(1055, 595);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.lblBaslik);
+            this.Controls.Add(this.grpMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmKasaHareketler";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

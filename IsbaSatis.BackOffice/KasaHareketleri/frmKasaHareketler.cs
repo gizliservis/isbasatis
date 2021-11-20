@@ -26,6 +26,7 @@ namespace IsbaSatis.BackOffice.KasaHareketleri
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
+           // gridView1.ShowPrintPreview();
             listele();
         }
         private void listele()

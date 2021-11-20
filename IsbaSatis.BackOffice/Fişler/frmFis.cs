@@ -19,7 +19,7 @@ namespace IsbaSatis.BackOffice.Fişler
         KasaHareketDAL kasaHareketDAL = new KasaHareketDAL();
         StokHareketDAL stokHareketDAL = new StokHareketDAL();
         Fis fis = new Fis();
-       
+
         public frmFis()
         {
             InitializeComponent();
@@ -27,14 +27,14 @@ namespace IsbaSatis.BackOffice.Fişler
             listele();
         }
 
-     
+
         private void listele()
         {
 
             gridControl1.DataSource = fisDAL.GetAll(context);
         }
 
-  
+
 
         private void btnAra_Click(object sender, EventArgs e)
         {
@@ -58,14 +58,14 @@ namespace IsbaSatis.BackOffice.Fişler
             this.Close();
         }
 
-        private void btnSil_Click(object sender, EventArgs e )
+        private void btnSil_Click(object sender, EventArgs e)
         {
             Fis secilen = (Fis)gridView1.GetFocusedRow();
             if (!String.IsNullOrEmpty(secilen.FisBaglantiKodu))
             {
                 if (MessageBox.Show($"fis ile bağlantılı olan{secilen.FisBaglantiKodu} kodlu fiş birlikte silinecektir , Eminmisiniz ? ", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                
+
                     fisDAL.Delete(context, c => c.FisKodu == secilen.FisBaglantiKodu);
                     fisDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     kasaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisBaglantiKodu);
@@ -104,23 +104,25 @@ namespace IsbaSatis.BackOffice.Fişler
         private void btnDuzenle_Click(object sender, EventArgs e)
         {
             Fis secilen = (Fis)gridView1.GetFocusedRow();
+            if (secilen.FisTuru == "Gelen Hav")
+            {
+                //BankaHareket bnk = new BankaHareket();
+            
+                frmBankaIslemleri frm = new frmBankaIslemleri(secilen.FisKodu);
+                frm.ShowDialog();
+            }
             if (secilen.FisTuru == "Fiş Ödemesi")
             {
                 frmFislerVeFaturalar form = new frmFislerVeFaturalar(secilen.FisBaglantiKodu, null);
                 form.ShowDialog();
             }
-            else if (secilen.FisTuru=="Giden Havale")
-            {
-                BankaHareket bnk = new BankaHareket();
-                frmBankaIslemleri frm = new frmBankaIslemleri(bnk.FisKodu);
-                frm.ShowDialog();
-            }
+
             else
             {
                 frmFislerVeFaturalar form = new frmFislerVeFaturalar(secilen.FisKodu, null);
                 form.ShowDialog();
             }
-           // string secilen = gridFis.GetFocusedRowCellValue(colFisKodu).ToString();
+            // string secilen = gridFis.GetFocusedRowCellValue(colFisKodu).ToString();
 
         }
 
@@ -133,7 +135,7 @@ namespace IsbaSatis.BackOffice.Fişler
             }
             else
             {
-                frmFislerVeFaturalar form = new frmFislerVeFaturalar(secilen.FisKodu, null,siparisFaturalandir:true);
+                frmFislerVeFaturalar form = new frmFislerVeFaturalar(secilen.FisKodu, null, siparisFaturalandir: true);
                 form.ShowDialog();
             }
         }

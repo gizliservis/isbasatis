@@ -59,5 +59,8 @@ namespace Isbasatis.Entities.Tables
         public string FisBaglantiKodu { get; set; }
         public virtual Cari Cari { get; set; }
         public virtual Personel Personel { get; set; }
+        public int? BankaId { get; set; }
+        public virtual Banka banka { get; set; }
+
     }
 }

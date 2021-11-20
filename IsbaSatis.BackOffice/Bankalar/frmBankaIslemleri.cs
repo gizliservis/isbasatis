@@ -26,6 +26,7 @@ namespace IsbaSatis.BackOffice.Bankalar
         KasaHareket kasahareketEntity = new KasaHareket();
         KasaHareketDAL kasaHareketDAL = new KasaHareketDAL();
         FisDAL fisDAL = new FisDAL();
+        BankaHareket _bankaHareket = new BankaHareket();
         private Nullable<int> _cariId;
         private Nullable<int> _bankaId;
         private string _cariTuru;
@@ -46,18 +47,29 @@ namespace IsbaSatis.BackOffice.Bankalar
 
 
 
-        public frmBankaIslemleri(string fisKodu)
+        public frmBankaIslemleri(string fisKodu=null)
         {
             InitializeComponent();
             if (fisKodu != null)
             {
                 _fisEntity = context.fisler.SingleOrDefault(c => c.FisKodu == fisKodu);
+                context.Bankalar.Load();
+                context.Cariler.Load();
+                cmbIslemTuru.SelectedIndex = 0;
+                txtTutar.Value = 0;
+                txtTarih.DateTime = DateTime.Now;
+                var cariBilgi = context.Cariler.SingleOrDefault(c => c.Id == _fisEntity.CariId);
+                var banka = context.Bankalar.SingleOrDefault(c => c.Id == _fisEntity.BankaId);
+                btnCariAdi.Text = cariBilgi.CariAdi;
+                btnBankaAdi.Text = banka.Bankasi;
+                txtFisKodu.DataBindings.Add("Text", _fisEntity, "FisKodu", false, DataSourceUpdateMode.OnPropertyChanged);
+                cmbIslemTuru.DataBindings.Add("Text", _fisEntity, "Fisturu", false, DataSourceUpdateMode.OnPropertyChanged);
+                txtTutar.DataBindings.Add("Text", _fisEntity, "ToplamTutar", false, DataSourceUpdateMode.OnPropertyChanged);
+                txtTarih.DataBindings.Add("EditValue", _fisEntity, "Tarih", false, DataSourceUpdateMode.OnPropertyChanged);
+                txtAciklama.DataBindings.Add("Text", _fisEntity, "Aciklama", false, DataSourceUpdateMode.OnPropertyChanged);
             }
-            context.Bankalar.Load();
-            context.Cariler.Load();
-            cmbIslemTuru.SelectedIndex = 0;
-            txtTutar.Value = 0;
-            txtTarih.DateTime = DateTime.Now;
+      
+           
 
         }
         void temizle()
@@ -174,6 +186,7 @@ namespace IsbaSatis.BackOffice.Bankalar
                     _fisEntity.ToplamTutar = txtTutar.Value;
                     _fisEntity.Tarih = txtTarih.DateTime;
                     _fisEntity.Aciklama = txtAciklama.Text;
+                    _fisEntity.BankaId = Convert.ToInt32(_bankaId);
                     bankaEntity.FisKodu = txtFisKodu.Text;
                     bankaEntity.Hareket = "Banka Giriş";
                     bankaEntity.BankaId = Convert.ToInt32(_bankaId);

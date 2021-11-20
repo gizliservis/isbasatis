@@ -19,6 +19,7 @@ namespace Isbasatis.Entities.Tables
         public string YetkiliAdi { get; set; }
         public string YetkiliTelefonu { get; set; }
         public virtual ICollection<BankaHareket> BankaHareket { get; set; }
+        public virtual ICollection<Fis> Fis { get; set; }
 
     }
 }
