@@ -113,6 +113,16 @@ namespace IsbaSatis.BackOffice.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap Banka_Kartı32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Banka_Kartı32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap Banka32x32 {
             get {
                 object obj = ResourceManager.GetObject("Banka32x32", resourceCulture);

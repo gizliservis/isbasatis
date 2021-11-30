@@ -14,6 +14,8 @@ namespace Isbasatis.Entities.Validations
         {
             RuleFor(p => p.Hareket).NotEmpty().WithMessage("İşlem Türü Alanı Boş Geçilemez !!!");
             RuleFor(p => p.FisKodu).NotEmpty().WithMessage("Fiş Kodu Alanı Boş Geçilemez!!!");
+            RuleFor(p => p.Banka.Bankasi).NotEmpty().WithMessage("Banka Adı Boş Geçilemez");
+            RuleFor(p => p.Tarih).NotEmpty().WithMessage("Tarih Alanı Boş Geçilemez");
 
         }
     }

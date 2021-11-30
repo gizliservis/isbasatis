@@ -528,5 +528,11 @@ namespace IsbaSatis.BackOffice
             designTool.ShowDesigner();
 
         }
+
+        private void barbtnBankaİslemleri_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmBankaIslemleri islem = new frmBankaIslemleri(null);
+            islem.ShowDialog();
+        }
     }
 }

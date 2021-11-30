@@ -40,12 +40,12 @@ namespace Isbasatis.LicenseManager.LicenseCreator
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtLicenseCount = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.toggleSwitch1 = new DevExpress.XtraEditors.ToggleSwitch();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLicenseCount.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUserName
@@ -185,21 +185,25 @@ namespace Isbasatis.LicenseManager.LicenseCreator
             this.labelControl4.TabIndex = 6;
             this.labelControl4.Text = "Online Kontrol :";
             // 
-            // toggleSwitch1
+            // comboBoxEdit1
             // 
-            this.toggleSwitch1.Location = new System.Drawing.Point(98, 171);
-            this.toggleSwitch1.Name = "toggleSwitch1";
-            this.toggleSwitch1.Properties.OffText = "Hayır";
-            this.toggleSwitch1.Properties.OnText = "Evet";
-            this.toggleSwitch1.Size = new System.Drawing.Size(95, 18);
-            this.toggleSwitch1.TabIndex = 11;
+            this.comboBoxEdit1.Location = new System.Drawing.Point(98, 173);
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
+            "Kontrol Yok",
+            "Opsiyonel",
+            "Zorunlu"});
+            this.comboBoxEdit1.Size = new System.Drawing.Size(310, 20);
+            this.comboBoxEdit1.TabIndex = 11;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(420, 402);
-            this.Controls.Add(this.toggleSwitch1);
+            this.Controls.Add(this.comboBoxEdit1);
             this.Controls.Add(this.txtLicenseCount);
             this.Controls.Add(this.checkButton2);
             this.Controls.Add(this.checkButton1);
@@ -217,7 +221,7 @@ namespace Isbasatis.LicenseManager.LicenseCreator
             ((System.ComponentModel.ISupportInitialize)(this.txtCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLicenseCount.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toggleSwitch1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -234,7 +238,7 @@ namespace Isbasatis.LicenseManager.LicenseCreator
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SpinEdit txtLicenseCount;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.ToggleSwitch toggleSwitch1;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
     }
 }
 

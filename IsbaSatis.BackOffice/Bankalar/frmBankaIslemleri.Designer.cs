@@ -209,7 +209,7 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.cmbIslemTuru.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbIslemTuru.Properties.Items.AddRange(new object[] {
-            "Gelen Hav",
+            "Gelen Havale",
             "Giden Havale",
             "Gelen EFT",
             "Giden EFT",
@@ -254,9 +254,9 @@ namespace IsbaSatis.BackOffice.Bankalar
             // 
             this.btnKapat.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnKapat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKapat.ImageOptions.Image")));
-            this.btnKapat.Location = new System.Drawing.Point(199, 23);
+            this.btnKapat.Location = new System.Drawing.Point(199, 22);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(74, 40);
+            this.btnKapat.Size = new System.Drawing.Size(74, 41);
             this.btnKapat.TabIndex = 1;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
@@ -265,9 +265,9 @@ namespace IsbaSatis.BackOffice.Bankalar
             // 
             this.btnKaydet.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKaydet.ImageOptions.Image")));
-            this.btnKaydet.Location = new System.Drawing.Point(2, 23);
+            this.btnKaydet.Location = new System.Drawing.Point(2, 22);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(79, 40);
+            this.btnKaydet.Size = new System.Drawing.Size(79, 41);
             this.btnKaydet.TabIndex = 0;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);

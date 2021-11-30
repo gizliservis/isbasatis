@@ -13,8 +13,9 @@ namespace Isbasatis.LicenseManager.API.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     LicenseType = table.Column<int>(type: "int", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Company = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    OnlineLisans = table.Column<int>(type: "int", nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Company = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     LicenseCount = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -27,8 +28,8 @@ namespace Isbasatis.LicenseManager.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ModuleTypeEnum = table.Column<int>(type: "int", nullable: false),
-                    LicenseId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    LicenseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ModuleTypeEnum = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -38,7 +39,7 @@ namespace Isbasatis.LicenseManager.API.Migrations
                         column: x => x.LicenseId,
                         principalTable: "Licenses",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -46,9 +47,9 @@ namespace Isbasatis.LicenseManager.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    LicenseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     InfoType = table.Column<int>(type: "int", nullable: false),
-                    Info = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LicenseId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    Info = table.Column<string>(type: "nvarchar(32)", maxLength: 32, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -58,7 +59,7 @@ namespace Isbasatis.LicenseManager.API.Migrations
                         column: x => x.LicenseId,
                         principalTable: "Licenses",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Isbasatis.LicenseManger.LicenseInformations.Manager;
 using License = Isbasatis.LicenseManager.LicenseInformations.Tables.License;
+using Isbasatis.LicenseManager.LicenseInformations.Tools;
 
 namespace Isbasatis.LicenseManager.LicenseCreator
 {
@@ -42,7 +43,7 @@ namespace Isbasatis.LicenseManager.LicenseCreator
             lisans.Id = Guid.NewGuid();
             lisans.UserName = txtUserName.Text;
             lisans.Company = txtCompany.Text;
-            lisans.OnlineLisans = toggleSwitch1.IsOn;
+            lisans.OnlineLisans = (OnlineLicenseControl)comboBoxEdit1.SelectedIndex;
             if (checkButton1.Checked)
             {
                 lisans.LicenseCount = 1;
@@ -66,32 +67,32 @@ namespace Isbasatis.LicenseManager.LicenseCreator
             lisans.SystemInfos.Add(new SystemInfo
             {
                 InfoType = SystemInfoEnum.BaseBoard,
-                Info = JsonConvert.SerializeObject(info.GetBaseBoardInfo())
+                Info = Md5Hash.HashMd5(JsonConvert.SerializeObject(info.GetBaseBoardInfo()))
             });
             lisans.SystemInfos.Add(new SystemInfo
             {
                 InfoType = SystemInfoEnum.Bios,
-                Info = JsonConvert.SerializeObject(info.GetBiosInfo())
+                Info = Md5Hash.HashMd5(JsonConvert.SerializeObject(info.GetBiosInfo()))
             });
             lisans.SystemInfos.Add(new SystemInfo
             {
                 InfoType = SystemInfoEnum.Cpu,
-                Info = JsonConvert.SerializeObject(info.GetCpuInfo())
+                Info = Md5Hash.HashMd5(JsonConvert.SerializeObject(info.GetCpuInfo()))
             });
             lisans.SystemInfos.Add(new SystemInfo
             {
                 InfoType = SystemInfoEnum.Network,
-                Info = JsonConvert.SerializeObject(info.GetNetworkList().FirstOrDefault())
+                Info = Md5Hash.HashMd5(JsonConvert.SerializeObject(info.GetNetworkList().FirstOrDefault()))
             });
             lisans.SystemInfos.Add(new SystemInfo
             {
                 InfoType = SystemInfoEnum.DiskDrive,
-                Info = JsonConvert.SerializeObject(drive)
+                Info = Md5Hash.HashMd5(JsonConvert.SerializeObject(drive))
             });
             lisans.SystemInfos.Add(new SystemInfo
             {
                 InfoType = SystemInfoEnum.OperatingSystem,
-                Info = JsonConvert.SerializeObject(info.GetOSInfo())
+                Info = Md5Hash.HashMd5(JsonConvert.SerializeObject(info.GetOSInfo()))
             });
             var json = JsonConvert.SerializeObject(lisans);
             XtraSaveFileDialog dialog = new XtraSaveFileDialog();

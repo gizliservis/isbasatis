@@ -379,7 +379,7 @@
             this.navFisBilgi.Name = "navFisBilgi";
             this.navFisBilgi.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.navFisBilgi.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
-            this.navFisBilgi.Size = new System.Drawing.Size(1021, 163);
+            this.navFisBilgi.Size = new System.Drawing.Size(1049, 180);
             // 
             // btnKod
             // 
@@ -409,7 +409,7 @@
             this.toggleSwitch1.Properties.Appearance.Options.UseBackColor = true;
             this.toggleSwitch1.Properties.OffText = "Alacak";
             this.toggleSwitch1.Properties.OnText = "Borç";
-            this.toggleSwitch1.Size = new System.Drawing.Size(130, 18);
+            this.toggleSwitch1.Size = new System.Drawing.Size(130, 24);
             this.toggleSwitch1.TabIndex = 14;
             this.toggleSwitch1.Toggled += new System.EventHandler(this.toggleSwitch1_Toggled);
             // 
@@ -958,7 +958,7 @@
             this.navSatisEkrani.Name = "navSatisEkrani";
             this.navSatisEkrani.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.navSatisEkrani.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
-            this.navSatisEkrani.Size = new System.Drawing.Size(1021, 196);
+            this.navSatisEkrani.Size = new System.Drawing.Size(1049, 213);
             // 
             // gridcontStokHareket
             // 
@@ -971,7 +971,7 @@
             this.repoBirimFiyat,
             this.repoDepo,
             this.repoSeriNo});
-            this.gridcontStokHareket.Size = new System.Drawing.Size(1021, 145);
+            this.gridcontStokHareket.Size = new System.Drawing.Size(1049, 162);
             this.gridcontStokHareket.TabIndex = 1;
             this.gridcontStokHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridStokHareket});
@@ -1279,7 +1279,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1021, 51);
+            this.panelControl1.Size = new System.Drawing.Size(1049, 51);
             this.panelControl1.TabIndex = 2;
             // 
             // txtMiktar
@@ -2108,9 +2108,9 @@
             this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Right;
             this.simpleButton2.ImageOptions.ImageIndex = 2;
             this.simpleButton2.ImageOptions.ImageList = this.ımageList1;
-            this.simpleButton2.Location = new System.Drawing.Point(836, 23);
+            this.simpleButton2.Location = new System.Drawing.Point(836, 22);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(174, 50);
+            this.simpleButton2.Size = new System.Drawing.Size(174, 51);
             this.simpleButton2.TabIndex = 0;
             this.simpleButton2.Text = "İşlem Kaydet";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -2120,9 +2120,9 @@
             this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Right;
             this.simpleButton1.ImageOptions.ImageIndex = 0;
             this.simpleButton1.ImageOptions.ImageList = this.ımageList1;
-            this.simpleButton1.Location = new System.Drawing.Point(1010, 23);
+            this.simpleButton1.Location = new System.Drawing.Point(1010, 22);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(113, 50);
+            this.simpleButton1.Size = new System.Drawing.Size(113, 51);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "Kapat";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -2157,9 +2157,9 @@
             this.btnFaturaYazdir.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.printer__1_;
             this.btnFaturaYazdir.ImageOptions.ImageIndex = 2;
             this.btnFaturaYazdir.ImageOptions.ImageList = this.ımageList1;
-            this.btnFaturaYazdir.Location = new System.Drawing.Point(2, 23);
+            this.btnFaturaYazdir.Location = new System.Drawing.Point(2, 22);
             this.btnFaturaYazdir.Name = "btnFaturaYazdir";
-            this.btnFaturaYazdir.Size = new System.Drawing.Size(174, 50);
+            this.btnFaturaYazdir.Size = new System.Drawing.Size(174, 51);
             this.btnFaturaYazdir.TabIndex = 1;
             this.btnFaturaYazdir.Text = "Fatura Yazdır";
             this.btnFaturaYazdir.Click += new System.EventHandler(this.btnFaturaYazdir_Click);
@@ -2178,7 +2178,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmFislerVeFaturalar";

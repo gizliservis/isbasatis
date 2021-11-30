@@ -50,6 +50,7 @@
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barFatura = new DevExpress.XtraBars.BarSubItem();
             this.barNakitIslemler = new DevExpress.XtraBars.BarSubItem();
+            this.barBankaIslem = new DevExpress.XtraBars.BarButtonItem();
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnAra = new DevExpress.XtraEditors.SimpleButton();
@@ -124,8 +125,9 @@
             this.barStokDevirFisi,
             this.barSubItem1,
             this.barFatura,
-            this.barNakitIslemler});
-            this.barManager1.MaxItemId = 15;
+            this.barNakitIslemler,
+            this.barBankaIslem});
+            this.barManager1.MaxItemId = 16;
             // 
             // barDockControlTop
             // 
@@ -282,6 +284,14 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barCariDevirFisi)});
             this.barNakitIslemler.Name = "barNakitIslemler";
             // 
+            // barBankaIslem
+            // 
+            this.barBankaIslem.Caption = "Banka İşlemleri";
+            this.barBankaIslem.Id = 15;
+            this.barBankaIslem.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.Banka_Kartı32x32;
+            this.barBankaIslem.Name = "barBankaIslem";
+            this.barBankaIslem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBankaIslem_ItemClick);
+            // 
             // lblBaslik
             // 
             this.lblBaslik.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
@@ -304,9 +314,9 @@
             this.btnKapat.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnKapat.ImageOptions.ImageIndex = 2;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(1006, 23);
+            this.btnKapat.Location = new System.Drawing.Point(1006, 22);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(90, 51);
+            this.btnKapat.Size = new System.Drawing.Size(90, 52);
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
@@ -316,9 +326,9 @@
             this.btnAra.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnAra.ImageOptions.ImageIndex = 0;
             this.btnAra.ImageOptions.ImageList = this.ımageList1;
-            this.btnAra.Location = new System.Drawing.Point(373, 23);
+            this.btnAra.Location = new System.Drawing.Point(373, 22);
             this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(90, 51);
+            this.btnAra.Size = new System.Drawing.Size(90, 52);
             this.btnAra.TabIndex = 0;
             this.btnAra.Text = "Ara";
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
@@ -328,9 +338,9 @@
             this.btnGuncelle.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnGuncelle.ImageOptions.ImageIndex = 1;
             this.btnGuncelle.ImageOptions.ImageList = this.ımageList1;
-            this.btnGuncelle.Location = new System.Drawing.Point(276, 23);
+            this.btnGuncelle.Location = new System.Drawing.Point(276, 22);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(97, 51);
+            this.btnGuncelle.Size = new System.Drawing.Size(97, 52);
             this.btnGuncelle.TabIndex = 0;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
@@ -340,9 +350,9 @@
             this.btnSil.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSil.ImageOptions.ImageIndex = 7;
             this.btnSil.ImageOptions.ImageList = this.ımageList1;
-            this.btnSil.Location = new System.Drawing.Point(183, 23);
+            this.btnSil.Location = new System.Drawing.Point(183, 22);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(93, 51);
+            this.btnSil.Size = new System.Drawing.Size(93, 52);
             this.btnSil.TabIndex = 0;
             this.btnSil.Text = "Sil";
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
@@ -368,9 +378,9 @@
             this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Left;
             this.simpleButton1.ImageOptions.ImageIndex = 0;
             this.simpleButton1.ImageOptions.ImageList = this.ımageList1;
-            this.simpleButton1.Location = new System.Drawing.Point(463, 23);
+            this.simpleButton1.Location = new System.Drawing.Point(463, 22);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(104, 51);
+            this.simpleButton1.Size = new System.Drawing.Size(104, 52);
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "Siparişi\r\nFaturalandır";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -380,9 +390,9 @@
             this.btnDuzenle.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnDuzenle.ImageOptions.ImageIndex = 8;
             this.btnDuzenle.ImageOptions.ImageList = this.ımageList1;
-            this.btnDuzenle.Location = new System.Drawing.Point(94, 23);
+            this.btnDuzenle.Location = new System.Drawing.Point(94, 22);
             this.btnDuzenle.Name = "btnDuzenle";
-            this.btnDuzenle.Size = new System.Drawing.Size(89, 51);
+            this.btnDuzenle.Size = new System.Drawing.Size(89, 52);
             this.btnDuzenle.TabIndex = 0;
             this.btnDuzenle.Text = "Düzenle";
             this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
@@ -394,9 +404,9 @@
             this.btnEkle.DropDownControl = this.popupMenu1;
             this.btnEkle.ImageOptions.ImageIndex = 6;
             this.btnEkle.ImageOptions.ImageList = this.ımageList1;
-            this.btnEkle.Location = new System.Drawing.Point(2, 23);
+            this.btnEkle.Location = new System.Drawing.Point(2, 22);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(92, 51);
+            this.btnEkle.Size = new System.Drawing.Size(92, 52);
             this.btnEkle.TabIndex = 1;
             this.btnEkle.Text = "Ekle";
             // 
@@ -405,19 +415,28 @@
             this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
             new DevExpress.XtraBars.LinkPersistInfo(this.barFatura),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barNakitIslemler)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barNakitIslemler),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barBankaIslem)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.EmbeddedNavigator.Buttons.Append.Visible = false;
+            this.gridControl1.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
+            this.gridControl1.EmbeddedNavigator.Buttons.Edit.Visible = false;
+            this.gridControl1.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
+            this.gridControl1.EmbeddedNavigator.Buttons.Remove.Visible = false;
+            this.gridControl1.EmbeddedNavigator.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.gridControl1.EmbeddedNavigator.TextStringFormat = "Sayfa {0} of {1}";
             this.gridControl1.Location = new System.Drawing.Point(0, 50);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1098, 439);
             this.gridControl1.TabIndex = 13;
+            this.gridControl1.UseEmbeddedNavigator = true;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -675,5 +694,6 @@
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.BarSubItem barFatura;
         private DevExpress.XtraBars.BarSubItem barNakitIslemler;
+        private DevExpress.XtraBars.BarButtonItem barBankaIslem;
     }
 }

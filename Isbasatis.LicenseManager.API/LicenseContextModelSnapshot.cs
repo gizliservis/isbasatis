@@ -19,14 +19,16 @@ namespace Isbasatis.LicenseManager.API.Migrations
                 .HasAnnotation("ProductVersion", "5.0.3")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Isbasatis.LicenseManager.API.Data.Tables.License", b =>
+            modelBuilder.Entity("Isbasatis.LicenseManager.LicenseInformations.Tables.License", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Company")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("LicenseCount")
                         .HasColumnType("int");
@@ -34,21 +36,26 @@ namespace Isbasatis.LicenseManager.API.Migrations
                     b.Property<int>("LicenseType")
                         .HasColumnType("int");
 
+                    b.Property<int>("OnlineLisans")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Licenses");
                 });
 
-            modelBuilder.Entity("Isbasatis.LicenseManager.API.Data.Tables.Module", b =>
+            modelBuilder.Entity("Isbasatis.LicenseManager.LicenseInformations.Tables.Module", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("LicenseId")
+                    b.Property<Guid>("LicenseId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("ModuleTypeEnum")
@@ -61,19 +68,21 @@ namespace Isbasatis.LicenseManager.API.Migrations
                     b.ToTable("modules");
                 });
 
-            modelBuilder.Entity("Isbasatis.LicenseManager.API.Data.Tables.SystemInfo", b =>
+            modelBuilder.Entity("Isbasatis.LicenseManager.LicenseInformations.Tables.SystemInfo", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Info")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("nvarchar(32)");
 
                     b.Property<int>("InfoType")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("LicenseId")
+                    b.Property<Guid>("LicenseId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -83,21 +92,25 @@ namespace Isbasatis.LicenseManager.API.Migrations
                     b.ToTable("systemInfos");
                 });
 
-            modelBuilder.Entity("Isbasatis.LicenseManager.API.Data.Tables.Module", b =>
+            modelBuilder.Entity("Isbasatis.LicenseManager.LicenseInformations.Tables.Module", b =>
                 {
-                    b.HasOne("Isbasatis.LicenseManager.API.Data.Tables.License", null)
+                    b.HasOne("Isbasatis.LicenseManager.LicenseInformations.Tables.License", null)
                         .WithMany("Modules")
-                        .HasForeignKey("LicenseId");
+                        .HasForeignKey("LicenseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("Isbasatis.LicenseManager.API.Data.Tables.SystemInfo", b =>
+            modelBuilder.Entity("Isbasatis.LicenseManager.LicenseInformations.Tables.SystemInfo", b =>
                 {
-                    b.HasOne("Isbasatis.LicenseManager.API.Data.Tables.License", null)
+                    b.HasOne("Isbasatis.LicenseManager.LicenseInformations.Tables.License", null)
                         .WithMany("SystemInfos")
-                        .HasForeignKey("LicenseId");
+                        .HasForeignKey("LicenseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("Isbasatis.LicenseManager.API.Data.Tables.License", b =>
+            modelBuilder.Entity("Isbasatis.LicenseManager.LicenseInformations.Tables.License", b =>
                 {
                     b.Navigation("Modules");
 
