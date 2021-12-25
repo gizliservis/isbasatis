@@ -103,7 +103,7 @@
             // welcomeWizardPage1
             // 
             this.welcomeWizardPage1.Name = "welcomeWizardPage1";
-            this.welcomeWizardPage1.Size = new System.Drawing.Size(952, 454);
+            this.welcomeWizardPage1.Size = new System.Drawing.Size(952, 453);
             this.welcomeWizardPage1.Text = "İndirim Sihirbazına Hoşgeldiniz";
             // 
             // wizardPage1
@@ -113,7 +113,7 @@
             this.wizardPage1.Controls.Add(this.btnBelirliTarih);
             this.wizardPage1.Controls.Add(this.btnSuresiz);
             this.wizardPage1.Name = "wizardPage1";
-            this.wizardPage1.Size = new System.Drawing.Size(952, 454);
+            this.wizardPage1.Size = new System.Drawing.Size(952, 453);
             this.wizardPage1.Text = "İndirim Türünü Seçiniz";
             // 
             // groupControl2
@@ -128,9 +128,9 @@
             // txtAciklama
             // 
             this.txtAciklama.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAciklama.Location = new System.Drawing.Point(2, 23);
+            this.txtAciklama.Location = new System.Drawing.Point(2, 22);
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(468, 283);
+            this.txtAciklama.Size = new System.Drawing.Size(468, 284);
             this.txtAciklama.TabIndex = 20;
             // 
             // groupControl1
@@ -153,7 +153,7 @@
             this.dateBitis.CalendarTimeProperties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateBitis.Location = new System.Drawing.Point(236, 54);
             this.dateBitis.Name = "dateBitis";
-            this.dateBitis.Size = new System.Drawing.Size(225, 235);
+            this.dateBitis.Size = new System.Drawing.Size(225, 227);
             this.dateBitis.TabIndex = 26;
             // 
             // dateBaslangic
@@ -164,7 +164,7 @@
             this.dateBaslangic.CalendarTimeProperties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateBaslangic.Location = new System.Drawing.Point(5, 54);
             this.dateBaslangic.Name = "dateBaslangic";
-            this.dateBaslangic.Size = new System.Drawing.Size(225, 235);
+            this.dateBaslangic.Size = new System.Drawing.Size(225, 227);
             this.dateBaslangic.TabIndex = 26;
             // 
             // labelControl1
@@ -226,14 +226,14 @@
             // completionWizardPage1
             // 
             this.completionWizardPage1.Name = "completionWizardPage1";
-            this.completionWizardPage1.Size = new System.Drawing.Size(952, 454);
+            this.completionWizardPage1.Size = new System.Drawing.Size(952, 453);
             // 
             // wizardPage2
             // 
             this.wizardPage2.Controls.Add(this.gridContIndirimler);
             this.wizardPage2.Controls.Add(this.grpMenu);
             this.wizardPage2.Name = "wizardPage2";
-            this.wizardPage2.Size = new System.Drawing.Size(952, 454);
+            this.wizardPage2.Size = new System.Drawing.Size(952, 453);
             this.wizardPage2.Text = "Lütfen İndirim Yapcağınız Ürünleri Seçiniz";
             // 
             // gridContIndirimler
@@ -242,7 +242,7 @@
             this.gridContIndirimler.Location = new System.Drawing.Point(0, 0);
             this.gridContIndirimler.MainView = this.gridIndirimler;
             this.gridContIndirimler.Name = "gridContIndirimler";
-            this.gridContIndirimler.Size = new System.Drawing.Size(952, 381);
+            this.gridContIndirimler.Size = new System.Drawing.Size(952, 380);
             this.gridContIndirimler.TabIndex = 6;
             this.gridContIndirimler.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridIndirimler});
@@ -352,7 +352,7 @@
             this.grpMenu.Controls.Add(this.btnCikar);
             this.grpMenu.Controls.Add(this.btnEkle);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 381);
+            this.grpMenu.Location = new System.Drawing.Point(0, 380);
             this.grpMenu.Name = "grpMenu";
             this.grpMenu.Size = new System.Drawing.Size(952, 73);
             this.grpMenu.TabIndex = 7;

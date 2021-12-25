@@ -68,9 +68,9 @@ namespace IsbaSatis.BackOffice.İndirim
 
                 secilen.Durumu = false;
 
-                btnPasifYap.Text = "Pasif Yap";
-                gridIndirim.SetFocusedRowCellValue(colDurumu, false);
-                btnPasifYap.ImageOptions.ImageIndex = 7;
+                btnPasifYap.Text = "Aktif Yap";
+                gridIndirim.SetFocusedRowCellValue(colDurumu, true);
+                btnPasifYap.ImageOptions.ImageIndex = 6;
                 indirimDAL.Save(context);
                 listele();
 
@@ -78,9 +78,9 @@ namespace IsbaSatis.BackOffice.İndirim
             else
             {
                 secilen.Durumu = true;
-                btnPasifYap.Text = "Aktif Yap";
-                gridIndirim.SetFocusedRowCellValue(colDurumu, true);
-                btnPasifYap.ImageOptions.ImageIndex = 6;
+                btnPasifYap.Text = "Pasif Yap";
+                gridIndirim.SetFocusedRowCellValue(colDurumu, false);
+                btnPasifYap.ImageOptions.ImageIndex = 7;
                 indirimDAL.Save(context);
                 listele();
             }

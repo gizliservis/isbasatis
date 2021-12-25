@@ -86,11 +86,11 @@
             this.btnDuzenle.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnDuzenle.ImageOptions.ImageIndex = 1;
             this.btnDuzenle.ImageOptions.ImageList = this.ımageList1;
-            this.btnDuzenle.Location = new System.Drawing.Point(92, 23);
+            this.btnDuzenle.Location = new System.Drawing.Point(92, 22);
             this.btnDuzenle.Name = "btnDuzenle";
-            this.btnDuzenle.Size = new System.Drawing.Size(89, 48);
+            this.btnDuzenle.Size = new System.Drawing.Size(89, 49);
             this.btnDuzenle.TabIndex = 0;
-            this.btnDuzenle.Text = "Düzenle";
+            this.btnDuzenle.Text = "Düzenle[F7]";
             this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
             // 
             // ımageList1
@@ -131,9 +131,9 @@
             this.btnKapat.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnKapat.ImageOptions.ImageIndex = 6;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(827, 23);
+            this.btnKapat.Location = new System.Drawing.Point(827, 22);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(90, 48);
+            this.btnKapat.Size = new System.Drawing.Size(90, 49);
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
@@ -143,11 +143,11 @@
             this.btnAra.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnAra.ImageOptions.ImageIndex = 10;
             this.btnAra.ImageOptions.ImageList = this.ımageList1;
-            this.btnAra.Location = new System.Drawing.Point(554, 23);
+            this.btnAra.Location = new System.Drawing.Point(577, 22);
             this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(90, 48);
+            this.btnAra.Size = new System.Drawing.Size(90, 49);
             this.btnAra.TabIndex = 0;
-            this.btnAra.Text = "Ara";
+            this.btnAra.Text = "Ara[F8]";
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
             // btnGuncelle
@@ -155,11 +155,11 @@
             this.btnGuncelle.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnGuncelle.ImageOptions.ImageIndex = 9;
             this.btnGuncelle.ImageOptions.ImageList = this.ımageList1;
-            this.btnGuncelle.Location = new System.Drawing.Point(457, 23);
+            this.btnGuncelle.Location = new System.Drawing.Point(472, 22);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(97, 48);
+            this.btnGuncelle.Size = new System.Drawing.Size(105, 49);
             this.btnGuncelle.TabIndex = 0;
-            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.Text = "Güncelle[F5]";
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnHareket
@@ -167,9 +167,9 @@
             this.btnHareket.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnHareket.ImageOptions.ImageIndex = 3;
             this.btnHareket.ImageOptions.ImageList = this.ımageList1;
-            this.btnHareket.Location = new System.Drawing.Point(360, 23);
+            this.btnHareket.Location = new System.Drawing.Point(375, 22);
             this.btnHareket.Name = "btnHareket";
-            this.btnHareket.Size = new System.Drawing.Size(97, 48);
+            this.btnHareket.Size = new System.Drawing.Size(97, 49);
             this.btnHareket.TabIndex = 1;
             this.btnHareket.Text = "Cari\r\nHareketleri";
             this.btnHareket.Click += new System.EventHandler(this.btnCariHareketleri_Click);
@@ -179,11 +179,11 @@
             this.btnKopyala.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnKopyala.ImageOptions.ImageIndex = 4;
             this.btnKopyala.ImageOptions.ImageList = this.ımageList1;
-            this.btnKopyala.Location = new System.Drawing.Point(274, 23);
+            this.btnKopyala.Location = new System.Drawing.Point(274, 22);
             this.btnKopyala.Name = "btnKopyala";
-            this.btnKopyala.Size = new System.Drawing.Size(86, 48);
+            this.btnKopyala.Size = new System.Drawing.Size(101, 49);
             this.btnKopyala.TabIndex = 0;
-            this.btnKopyala.Text = "Kopyala";
+            this.btnKopyala.Text = "Kopyala[F4]";
             this.btnKopyala.Click += new System.EventHandler(this.btnKopyala_Click);
             // 
             // btnSil
@@ -191,11 +191,11 @@
             this.btnSil.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSil.ImageOptions.ImageIndex = 5;
             this.btnSil.ImageOptions.ImageList = this.ımageList1;
-            this.btnSil.Location = new System.Drawing.Point(181, 23);
+            this.btnSil.Location = new System.Drawing.Point(181, 22);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(93, 48);
+            this.btnSil.Size = new System.Drawing.Size(93, 49);
             this.btnSil.TabIndex = 0;
-            this.btnSil.Text = "Sil";
+            this.btnSil.Text = "Sil[DEL]";
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnEkle
@@ -203,11 +203,11 @@
             this.btnEkle.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnEkle.ImageOptions.ImageIndex = 2;
             this.btnEkle.ImageOptions.ImageList = this.ımageList1;
-            this.btnEkle.Location = new System.Drawing.Point(2, 23);
+            this.btnEkle.Location = new System.Drawing.Point(2, 22);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(90, 48);
+            this.btnEkle.Size = new System.Drawing.Size(90, 49);
             this.btnEkle.TabIndex = 0;
-            this.btnEkle.Text = "Ekle";
+            this.btnEkle.Text = "Ekle[F2]";
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // lblBaslik
@@ -238,6 +238,7 @@
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridControl1_KeyDown);
             // 
             // gridView1
             // 

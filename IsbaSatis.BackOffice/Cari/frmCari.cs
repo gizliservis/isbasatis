@@ -118,5 +118,72 @@ namespace IsbaSatis.BackOffice.Cari
         {
             GetAll();
         }
+
+        private void gridControl1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                frmCariIslem form = new frmCariIslem(new Isbasatis.Entities.Tables.Cari());
+                form.ShowDialog();
+                GetAll();
+            }
+            if (e.KeyCode == Keys.F7)
+            {
+                secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
+                Cari.frmCariIslem form = new Cari.frmCariIslem(cariDAL.GetByFilter(context, c => c.Id == secilen));
+                form.ShowDialog();
+            }
+            if (e.KeyCode == Keys.Delete)
+            {
+
+                if (MessageBox.Show("Seçili Olan Veriyi Silmek İstediğinie Eminmisiniz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
+
+                    foreach (var hrkt in context.fisler)
+                    {
+                        if (hrkt.CariId == secilen)
+                        {
+                            MessageBox.Show("Bu Ürünün Hareketi Bulunmakta Fatura ve Fişlerden Siliniz");
+                            return;
+                        }
+                        else
+                        {
+                            cariDAL.Delete(context, c => c.Id == secilen);
+                            cariDAL.Save(context);
+                            GetAll();
+                        }
+
+                    }
+
+
+
+                }
+            }
+            if (e.KeyCode == Keys.F4)
+            {
+                secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
+                Isbasatis.Entities.Tables.Cari carientity = new Isbasatis.Entities.Tables.Cari();
+                carientity = cariDAL.GetByFilter(context, c => c.Id == secilen);
+                Cari.frmCariIslem form = new Cari.frmCariIslem(carientity, true);
+                form.ShowDialog();
+                GetAll();
+            }
+            if (e.KeyCode == Keys.F5)
+            {
+                GetAll();
+            }
+            if (e.KeyCode == Keys.F8)
+            {
+                if (gridView1.OptionsView.ShowAutoFilterRow == true)
+                {
+                    gridView1.OptionsView.ShowAutoFilterRow = false;
+                }
+                else
+                {
+                    gridView1.OptionsView.ShowAutoFilterRow = true;
+                }
+            }
+        }
     }
 }

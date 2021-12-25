@@ -50,7 +50,7 @@ namespace IsbaSatis.BackOffice
         {
             InitializeComponent();
 
-           
+
             using (var context = new IsbaSatisContext())
             {
                 context.Database.CreateIfNotExists();
@@ -79,7 +79,7 @@ namespace IsbaSatis.BackOffice
         private void Form1_Load(object sender, EventArgs e)
         {
             RolTool.RolleriYukle(ribbonControl1);
-            if (anaMenuBilgi == null|| anaMenuBilgi.IsDisposed)
+            if (anaMenuBilgi == null || anaMenuBilgi.IsDisposed)
             {
                 anaMenuBilgi = new frmAnaMenuBilgi();
                 anaMenuBilgi.MdiParent = this;
@@ -95,7 +95,7 @@ namespace IsbaSatis.BackOffice
             if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Stok))
             {
 
-                if (stok == null|| stok.IsDisposed)
+                if (stok == null || stok.IsDisposed)
                 {
                     stok = new frmStok();
                     stok.MdiParent = this;
@@ -144,7 +144,7 @@ namespace IsbaSatis.BackOffice
 
             if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.StokHareketleri))
             {
-                
+
                 if (hareketleri == null || hareketleri.IsDisposed)
                 {
                     hareketleri = new frmStokHareketleri();
@@ -165,7 +165,7 @@ namespace IsbaSatis.BackOffice
         {
             if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Kasalar))
             {
-               
+
                 if (kasa == null || kasa.IsDisposed)
                 {
                     kasa = new frmKasa();
@@ -185,7 +185,7 @@ namespace IsbaSatis.BackOffice
         {
             if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Depolar))
             {
-              
+
                 if (depo == null || depo.IsDisposed)
                 {
                     depo = new frmDepo();
@@ -339,13 +339,13 @@ namespace IsbaSatis.BackOffice
         {
             if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Raporlar))
             {
-                if (rprliste==null||rprliste.IsDisposed)
+                if (rprliste == null || rprliste.IsDisposed)
                 {
                     rprliste = new frmRaporListele();
                     rprliste.MdiParent = this;
                     rprliste.Show();
                 }
-          
+
             }
             else
             {
@@ -442,7 +442,7 @@ namespace IsbaSatis.BackOffice
 
         private void barButtonItem40_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-          
+
             if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Yedekleme))
             {
                 frmStokHareketRaporu frm = new frmStokHareketRaporu();
@@ -506,19 +506,17 @@ namespace IsbaSatis.BackOffice
 
         private void barButtonItem45_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmBankaIslemleri islem = new frmBankaIslemleri(null);
-            islem.ShowDialog();
         }
         frmBanka banka;
         private void barButtonItem7_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (banka==null||banka.IsDisposed)
+            if (banka == null || banka.IsDisposed)
             {
                 banka = new frmBanka();
                 banka.MdiParent = this;
                 banka.Show();
             }
-             
+
         }
 
         private void barButtonItem42_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

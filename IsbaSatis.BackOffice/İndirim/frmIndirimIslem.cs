@@ -75,7 +75,7 @@ namespace IsbaSatis.BackOffice.İndirim
                     itemIndirim.IndirimTuru = "Süresiz";
 
                 }
-                else
+                else 
                 {
                     itemIndirim.BaslangicTarihi = dateBaslangic.DateTime;
                     itemIndirim.BitisTarihi = dateBitis.DateTime;

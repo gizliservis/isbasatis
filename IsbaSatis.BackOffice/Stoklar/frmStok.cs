@@ -136,5 +136,73 @@ namespace IsbaSatis.BackOffice.AnaMenü
                 gridView1.OptionsView.ShowAutoFilterRow = true;
             }
         }
+
+        private void frmStok_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void gridControl1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                Stok.frmStokIslem form = new Stok.frmStokIslem(new Isbasatis.Entities.Tables.Stok());
+                form.ShowDialog();
+                GetAll();
+            }
+            if (e.KeyCode == Keys.F7)
+            {
+                secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
+                frmStokIslem form = new frmStokIslem(stokDAL.GetByFilter(context, c => c.Id == secilen));
+                form.ShowDialog();
+            }
+            if (e.KeyCode == Keys.Delete)
+            {
+                if (MessageBox.Show("Seçili Olan Veriyi Silmek İstediğinie Eminmisiniz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
+
+                    foreach (var hrkt in context.StokHareketleri)
+                    {
+                        if (hrkt.StokId == secilen)
+                        {
+                            MessageBox.Show("Bu Ürünün Hareketi Bulunmakta Fatura ve Fişlerden Siliniz");
+                            return;
+                        }
+                        else
+                        {
+                            stokDAL.Delete(context, c => c.Id == secilen);
+                            stokDAL.Save(context);
+                            GetAll();
+                        }
+                    }
+                }
+            }
+            if (e.KeyCode == Keys.F4)
+            {
+                secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
+                Isbasatis.Entities.Tables.Stok stokentity = new Isbasatis.Entities.Tables.Stok();
+                stokentity = stokDAL.GetByFilter(context, c => c.Id == secilen);
+                stokentity.Id = -1;
+                stokentity.StokKodu = null;
+                Stok.frmStokIslem form = new Stok.frmStokIslem(stokentity);
+                form.ShowDialog();
+            }
+            if (e.KeyCode == Keys.F5)
+            {
+                GetAll();
+            }
+            if (e.KeyCode == Keys.F8)
+            {
+                if (gridView1.OptionsView.ShowAutoFilterRow == true)
+                {
+                    gridView1.OptionsView.ShowAutoFilterRow = false;
+                }
+                else
+                {
+                    gridView1.OptionsView.ShowAutoFilterRow = true;
+                }
+            }
+        }
     }
 }

@@ -155,7 +155,7 @@
             // 
             this.navigationPage1.Caption = "Genel Ayarlar";
             this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(690, 280);
+            this.navigationPage1.Size = new System.Drawing.Size(718, 290);
             // 
             // navigationPage2
             // 
@@ -173,7 +173,7 @@
             this.navigationPage2.Controls.Add(this.gridLookUpEdit1);
             this.navigationPage2.Controls.Add(this.lblCariKodu);
             this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(690, 280);
+            this.navigationPage2.Size = new System.Drawing.Size(718, 290);
             // 
             // cmbBilgiFisiYazici
             // 
