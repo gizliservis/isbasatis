@@ -136,7 +136,7 @@ namespace IsbaSatis.BackOffice.Cari
             if (e.KeyCode == Keys.Delete)
             {
 
-                if (MessageBox.Show("Seçili Olan Veriyi Silmek İstediğinie Eminmisiniz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Seçili Olan Veriyi Silmek İstediğinie Eminmisiniz!", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
 
