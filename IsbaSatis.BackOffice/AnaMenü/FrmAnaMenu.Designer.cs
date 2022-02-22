@@ -86,6 +86,10 @@
             this.repositoryItemHypertextLabel1 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.barbtnBankaİslemleri = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -107,8 +111,6 @@
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.barbtnBankaİslemleri = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -174,9 +176,11 @@
             this.barEditItem1,
             this.barStaticItem1,
             this.barStaticItem2,
-            this.barbtnBankaİslemleri});
+            this.barbtnBankaİslemleri,
+            this.barButtonItem8,
+            this.barButtonItem9});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 56;
+            this.ribbonControl1.MaxItemId = 58;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -246,7 +250,7 @@
             // 
             // btnStokHareketleri
             // 
-            this.btnStokHareketleri.Caption = "Stok Hareketleri";
+            this.btnStokHareketleri.Caption = "Stok\r\nHareketleri";
             this.btnStokHareketleri.Id = 8;
             this.btnStokHareketleri.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.Stok_Hareket32x32;
             this.btnStokHareketleri.Name = "btnStokHareketleri";
@@ -254,7 +258,7 @@
             // 
             // btnKasaHareketleri
             // 
-            this.btnKasaHareketleri.Caption = "Kasa Hareketleri";
+            this.btnKasaHareketleri.Caption = "Kasa\r\nHareketleri";
             this.btnKasaHareketleri.Id = 9;
             this.btnKasaHareketleri.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.Kasa_Hareket32x32;
             this.btnKasaHareketleri.Name = "btnKasaHareketleri";
@@ -626,6 +630,32 @@
             this.barStaticItem2.Id = 54;
             this.barStaticItem2.Name = "barStaticItem2";
             // 
+            // barbtnBankaİslemleri
+            // 
+            this.barbtnBankaİslemleri.Caption = "Banka İşlemleri";
+            this.barbtnBankaİslemleri.Id = 55;
+            this.barbtnBankaİslemleri.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.Banka_Kartı32x32;
+            this.barbtnBankaİslemleri.Name = "barbtnBankaİslemleri";
+            this.barbtnBankaİslemleri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnBankaİslemleri_ItemClick);
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "barButtonItem8";
+            this.barButtonItem8.Id = 56;
+            this.barButtonItem8.Name = "barButtonItem8";
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "Etiket\r\nBasma";
+            this.barButtonItem9.Id = 57;
+            this.barButtonItem9.Name = "barButtonItem9";
+            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick_1);
+            // 
+            // ribbonPageCategory1
+            // 
+            this.ribbonPageCategory1.Name = "ribbonPageCategory1";
+            this.ribbonPageCategory1.Text = "ribbonPageCategory1";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -680,6 +710,7 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.btnOzgunRapor);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnRapor);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnRaporOlustur);
+            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem9);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Raporlar";
             // 
@@ -796,19 +827,6 @@
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "ribbonPage5";
             // 
-            // barbtnBankaİslemleri
-            // 
-            this.barbtnBankaİslemleri.Caption = "Banka İşlemleri";
-            this.barbtnBankaİslemleri.Id = 55;
-            this.barbtnBankaİslemleri.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.Banka_Kartı32x32;
-            this.barbtnBankaİslemleri.Name = "barbtnBankaİslemleri";
-            this.barbtnBankaİslemleri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnBankaİslemleri_ItemClick);
-            // 
-            // ribbonPageCategory1
-            // 
-            this.ribbonPageCategory1.Name = "ribbonPageCategory1";
-            this.ribbonPageCategory1.Text = "ribbonPageCategory1";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -839,7 +857,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem btnStoklar;
-        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraBars.BarButtonItem btnCari;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
@@ -914,6 +931,9 @@
         private DevExpress.XtraBars.BarStaticItem barStaticItem2;
         private DevExpress.XtraBars.BarButtonItem barbtnBankaİslemleri;
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        public DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
     }
 }
 

@@ -746,7 +746,7 @@ namespace IsbaSatis.BackOffice.Fişler
                     fisOdeme = _fisentity.Clone();
                     fisOdeme.FisTuru = "Fiş Ödemesi";
                     fisOdeme.Id = -1;
-                    fisOdeme.FisKodu = odemefis.OdemeKodNumarasi();
+                    fisOdeme.FisKodu = kodOlustur.YeniFisOdemeKoduOlustur();
                     fisOdeme.FisBaglantiKodu = _fisentity.FisKodu;
 
                 }
@@ -782,7 +782,7 @@ namespace IsbaSatis.BackOffice.Fişler
             }
             kodOlustur.KodArttirma();
             context.SaveChanges();
-            if (MessageBox.Show("Faturayı Yazırmak İstermisiniz ?","Uyarı",MessageBoxButtons.YesNo)==DialogResult.Yes)
+            if (MessageBox.Show("Faturayı Yazdırmak İstermisiniz ?","Uyarı",MessageBoxButtons.YesNo)==DialogResult.Yes)
             {
                 ReporPrintTool yazdir = new ReporPrintTool();
                 rptFatura fatura = new rptFatura(txtKod.Text);

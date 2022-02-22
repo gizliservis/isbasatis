@@ -17,5 +17,12 @@ namespace IsbaSatis.BackOffice.AnaMenü
         {
             InitializeComponent();
         }
+
+        private void tileItem1_ItemClick(object sender, TileItemEventArgs e)
+        {
+            frmStok frmStok = new frmStok();
+            frmStok.MdiParent = this;
+            frmStok.Show();
+        }
     }
 }

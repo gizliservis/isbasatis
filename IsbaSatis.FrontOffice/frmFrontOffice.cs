@@ -40,6 +40,7 @@ namespace IsbaSatis.FrontOffice
         ExchangeTool Doviz = new ExchangeTool();
         Fis _fisentity = new Fis();
         StokHareket _stokhareketentity = new StokHareket();
+        CodeTool fisKoduOlustur;
         CariBakiye entityBakiye = new CariBakiye();
         private decimal eskifiyat = 0;
         private bool TekParca = false;
@@ -55,6 +56,7 @@ namespace IsbaSatis.FrontOffice
             InitializeComponent();
             frmKullaniciGiris form = new frmKullaniciGiris();
             form.ShowDialog();
+            fisKoduOlustur = new CodeTool(this, CodeTool.Table.Fis,context);
             context.Stoklar.Load();
             context.Depolar.Load();
             //context.Kasalar.Load();
@@ -65,6 +67,8 @@ namespace IsbaSatis.FrontOffice
             KodUret();
             txtIslem.Text = "SATIŞ";
             toplamlar();
+            fisKoduOlustur.BarButonOlustur();
+
             foreach (var hizliSatisGrup in context.hizliSatisGruplari.ToList())
             {
                 XtraTabPage page = new XtraTabPage { Name = hizliSatisGrup.Id.ToString(), Text = hizliSatisGrup.GrupAdi };
@@ -156,7 +160,7 @@ namespace IsbaSatis.FrontOffice
             harfUret[3] = Convert.ToChar(sayiUret[5]);
             string olusturulanSifre;
             olusturulanSifre = harfUret[1].ToString().ToUpper() + sayiUret[0].ToString() + harfUret[0].ToString() + sayiUret[1].ToString() + harfUret[2].ToString().ToLower() + harfUret[3].ToString().ToUpper();
-            txtfisKodu.Text = olusturulanSifre;
+            txtKod.Text = olusturulanSifre;
         }
         private void AcikHesap_Click(object sender, EventArgs e)
         {
@@ -624,7 +628,7 @@ namespace IsbaSatis.FrontOffice
                 message += "Herhangi bir Ödeme bulunamadı" + System.Environment.NewLine;
                 hata++;
             }
-            if (txtfisKodu.Text == "")
+            if (txtKod.Text == "")
             {
 
                 message += "Fiş Kodu Alanı Boş Geçilemez." + System.Environment.NewLine;
@@ -665,21 +669,21 @@ namespace IsbaSatis.FrontOffice
             {
                 stokVeri.Tarih = DateTime.Now;
                 stokVeri.ToplamTutar = Convert.ToDecimal(colToplamTutar.SummaryItem.SummaryValue);
-                stokVeri.FisKodu = txtfisKodu.Text;
+                stokVeri.FisKodu = txtKod.Text;
                 stokVeri.Hareket = txtIslem.Text == "İADE" ? "Stok Griş" : "Stok Çıkış";
 
             }
             foreach (var KasaVeri in context.KasaHareketleri.Local.ToList())
             {
                 KasaVeri.Tarih = DateTime.Now;
-                KasaVeri.FisKodu = txtfisKodu.Text;
+                KasaVeri.FisKodu = txtKod.Text;
                 KasaVeri.Hareket = txtIslem.Text == "İADE" ? "Kasa Çıkış" : "Kasa Giriş";
                 KasaVeri.CariId = _cariId;
 
 
 
             }
-            _fisentity.FisKodu = txtfisKodu.Text;
+            _fisentity.FisKodu = txtKod.Text;
             _fisentity.BelgeNo = txtBelgeNo.Text;
             _fisentity.Aciklama = txtAciklama.Text;
             _fisentity.FaturaUnvani = txtFaturaUnvani.Text;
@@ -699,7 +703,7 @@ namespace IsbaSatis.FrontOffice
             fisDAL.AddOrUpdate(context, _fisentity);
             Fis odemeFisi = _fisentity.Clone();
             odemeFisi.FisTuru = "Fİş Ödemesi";
-            odemeFisi.FisKodu = txtfisKodu.Text;
+            odemeFisi.FisKodu = fisKoduOlustur.YeniFisOdemeKoduOlustur();
             _fisentity.FisBaglantiKodu = odemeFisi.FisKodu;
             odemeFisi.FisBaglantiKodu = _fisentity.FisKodu;
 
@@ -711,6 +715,14 @@ namespace IsbaSatis.FrontOffice
                 odemeFisi.Borc = null;
                 _fisentity.Alacak = null;
             }
+            else
+            {
+                _fisentity.Alacak = txtGenelToplam.Value;
+                odemeFisi.Borc = TekParca ? txtGenelToplam.Value : txtOdenenTutar.Value;
+                odemeFisi.Alacak = null;
+                _fisentity.Borc = null;
+            }
+            fisDAL.AddOrUpdate(context, odemeFisi);
 
             int kasaId = Convert.ToInt32(SettingsTool.AyarOku(SettingsTool.Ayarlar.SatisAyarlari_VarsayilanKasa));
             if (!chkOdemeBol.Checked && odemeTuruId != -1)
@@ -718,7 +730,7 @@ namespace IsbaSatis.FrontOffice
                 KasaHareketDAL.AddOrUpdate(context, new KasaHareket
                 {
                     CariId = _cariId,
-                    FisKodu = txtfisKodu.Text,
+                    FisKodu = txtKod.Text,
                     Hareket = txtIslem.Text == "İADE" ? "Kasa Çıkış" : "Kasa Giriş",
                     KasaId = kasaId,
                     OdemeTuruId = odemeTuruId,
@@ -734,12 +746,12 @@ namespace IsbaSatis.FrontOffice
             {
                 case ReporPrintTool.Belge.BilgiFisi:
                     ReporPrintTool yazdirBilgiFisi = new ReporPrintTool();
-                    rptBilgiFisi bilgiFisi = new rptBilgiFisi(txtfisKodu.Text);
+                    rptBilgiFisi bilgiFisi = new rptBilgiFisi(txtKod.Text);
                     yazdirBilgiFisi.RoporYazdir(bilgiFisi, belge);
                     break;
                 case ReporPrintTool.Belge.Fatura:
                     ReporPrintTool yazdir = new ReporPrintTool();
-                    rptFatura fatura = new rptFatura(txtfisKodu.Text);
+                    rptFatura fatura = new rptFatura(txtKod.Text);
                     yazdir.RoporYazdir(fatura, belge);
                     break;
 
@@ -759,7 +771,7 @@ namespace IsbaSatis.FrontOffice
         }
         private void FisTemizle()
         {
-            txtfisKodu.Text = null;
+            txtKod.Text = null;
 
             var cikarilacakKayit = context.ChangeTracker.Entries()
                 .Where(c => c.Entity is KasaHareket || c.Entity is StokHareket || c.Entity is Fis).ToList();
@@ -827,7 +839,7 @@ namespace IsbaSatis.FrontOffice
                 BekleyenId = cagirilanSatisId;
                 satis = _bekleyenSatis.SingleOrDefault(c => c.Id == BekleyenId);
                 var buton = (SimpleButton)flowBekleyen.Controls.Find(Convert.ToString(BekleyenId), false).SingleOrDefault();
-                buton.Text = txtfisKodu.Text + "\n" + txtIslem.Text + "\n" + context.StokHareketleri.Local.Count + " adet ürün eklendi" + "\n" + txtGenelToplam.Value.ToString("C2");
+                buton.Text = txtKod.Text + "\n" + txtIslem.Text + "\n" + context.StokHareketleri.Local.Count + " adet ürün eklendi" + "\n" + txtGenelToplam.Value.ToString("C2");
 
             }
             else
@@ -839,7 +851,7 @@ namespace IsbaSatis.FrontOffice
                 SimpleButton BekleyenButon = new SimpleButton
                 {
                     Name = BekleyenSatisId.ToString(),
-                    Text = txtfisKodu.Text + "\n" + txtIslem.Text + "\n" + context.StokHareketleri.Local.Count + " adet ürün eklendi" + "\n" + txtGenelToplam.Value.ToString("C2"),
+                    Text = txtKod.Text + "\n" + txtIslem.Text + "\n" + context.StokHareketleri.Local.Count + " adet ürün eklendi" + "\n" + txtGenelToplam.Value.ToString("C2"),
                     Height = 150,
                     Width = flowBekleyen.Width - 5
                 };

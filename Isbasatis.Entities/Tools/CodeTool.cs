@@ -112,6 +112,17 @@ namespace Isbasatis.Entities.Tools
             string sifirdizisi = new string('0',sifirsayisi);
             return kodonEki + sifirdizisi + kodsonDeger;
         }
+        public string YeniFisOdemeKoduOlustur()
+        {
+            var kod = _context.Kodlar.SingleOrDefault(c => c.OnEki == "FÖ" && c.Tablo == "Fis");
+            string onEki = kod.OnEki;
+            string sonDeger = kod.SonDeger.ToString();
+            int sifirsayisi = 12 - (onEki.Length + sonDeger.Length);
+            string sifirdizisi = new string('0', sifirsayisi);
+            kod.SonDeger++;
+            _context.SaveChanges();
+            return onEki + sifirdizisi + sonDeger;
+        }
         public void KodArttirma()
         {
             TextEdit text = (TextEdit)_form.Controls.Find("txtKod", true).SingleOrDefault();

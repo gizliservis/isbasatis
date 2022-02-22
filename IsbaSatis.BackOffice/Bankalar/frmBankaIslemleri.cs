@@ -354,8 +354,8 @@ namespace IsbaSatis.BackOffice.Bankalar
             }
             else if (cmbIslemTuru.SelectedIndex == 4)
             {
-                //try
-                // {
+                try
+                {
                 _fisEntity.FisKodu = txtFisKodu.Text;
                 _fisEntity.FisTuru = cmbIslemTuru.Text;
                 _fisEntity.Alacak = txtTutar.Value;
@@ -381,12 +381,12 @@ namespace IsbaSatis.BackOffice.Bankalar
                 context.fisler.Load();
                 context.SaveChanges();
                 temizle();
-                //   }
-                // catch (Exception)
-                // {
+                  }
+                 catch (Exception)
+                 {
 
-                // MessageBox.Show("Bilgileri Kontrol Ediniz");
-                // }
+                 MessageBox.Show("Bilgileri Kontrol Ediniz");
+                 }
 
             }
             else if (cmbIslemTuru.SelectedIndex == 5)

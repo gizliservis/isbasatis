@@ -398,6 +398,12 @@
     <Compile Include="Stok Hareketleri\frmStokHareketleri.Designer.cs">
       <DependentUpon>frmStokHareketleri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stoklar\frmEtiketBasim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stoklar\frmEtiketBasim.Designer.cs">
+      <DependentUpon>frmEtiketBasim.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stoklar\frmStok.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -594,6 +600,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Stok Hareketleri\frmStokHareketleri.resx">
       <DependentUpon>frmStokHareketleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stoklar\frmEtiketBasim.resx">
+      <DependentUpon>frmEtiketBasim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stoklar\frmStok.resx">
       <DependentUpon>frmStok.cs</DependentUpon>

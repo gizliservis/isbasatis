@@ -121,7 +121,7 @@
             this.lblAlcak = new DevExpress.XtraEditors.LabelControl();
             this.txtAdres = new DevExpress.XtraEditors.MemoEdit();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.txtfisKodu = new DevExpress.XtraEditors.TextEdit();
+            this.txtKod = new DevExpress.XtraEditors.TextEdit();
             this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
             this.txtBelgeNo = new DevExpress.XtraEditors.TextEdit();
             this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
@@ -229,6 +229,7 @@
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
+            this.btnKod = new DevExpress.XtraEditors.DropDownButton();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
             this.navigationPane1.SuspendLayout();
             this.navigationPage1.SuspendLayout();
@@ -259,7 +260,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAdres.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtfisKodu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKod.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBelgeNo.Properties)).BeginInit();
             this.navigationPage3.SuspendLayout();
@@ -347,7 +348,7 @@
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.navigationPage1.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
-            this.navigationPage1.Size = new System.Drawing.Size(183, 700);
+            this.navigationPage1.Size = new System.Drawing.Size(183, 692);
             // 
             // groupControl2
             // 
@@ -370,7 +371,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 256);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(183, 444);
+            this.groupControl2.Size = new System.Drawing.Size(183, 436);
             this.groupControl2.TabIndex = 36;
             this.groupControl2.Text = "Ödeme ve  Para Üstü";
             // 
@@ -795,7 +796,7 @@
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.navigationPage2.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
-            this.navigationPage2.Size = new System.Drawing.Size(183, 700);
+            this.navigationPage2.Size = new System.Drawing.Size(183, 692);
             // 
             // groupControl3
             // 
@@ -1032,7 +1033,8 @@
             // 
             // groupControl4
             // 
-            this.groupControl4.Controls.Add(this.txtfisKodu);
+            this.groupControl4.Controls.Add(this.btnKod);
+            this.groupControl4.Controls.Add(this.txtKod);
             this.groupControl4.Controls.Add(this.txtAciklama);
             this.groupControl4.Controls.Add(this.txtBelgeNo);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1042,12 +1044,12 @@
             this.groupControl4.TabIndex = 1;
             this.groupControl4.Text = "Fiş Bilgileri";
             // 
-            // txtfisKodu
+            // txtKod
             // 
-            this.txtfisKodu.Location = new System.Drawing.Point(7, 30);
-            this.txtfisKodu.Name = "txtfisKodu";
-            this.txtfisKodu.Size = new System.Drawing.Size(171, 20);
-            this.txtfisKodu.TabIndex = 24;
+            this.txtKod.Location = new System.Drawing.Point(7, 30);
+            this.txtKod.Name = "txtKod";
+            this.txtKod.Size = new System.Drawing.Size(91, 20);
+            this.txtKod.TabIndex = 24;
             // 
             // txtAciklama
             // 
@@ -1074,7 +1076,7 @@
             this.navigationPage3.Name = "navigationPage3";
             this.navigationPage3.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.navigationPage3.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
-            this.navigationPage3.Size = new System.Drawing.Size(183, 700);
+            this.navigationPage3.Size = new System.Drawing.Size(183, 692);
             // 
             // groupControl7
             // 
@@ -2189,6 +2191,14 @@
             this.barDockControl4.Manager = this.barManager2;
             this.barDockControl4.Size = new System.Drawing.Size(0, 756);
             // 
+            // btnKod
+            // 
+            this.btnKod.Location = new System.Drawing.Point(101, 28);
+            this.btnKod.Name = "btnKod";
+            this.btnKod.Size = new System.Drawing.Size(79, 23);
+            this.btnKod.TabIndex = 25;
+            this.btnKod.Text = "Kodlar";
+            // 
             // frmFrontOffice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2240,7 +2250,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAdres.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtfisKodu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBelgeNo.Properties)).EndInit();
             this.navigationPage3.ResumeLayout(false);
@@ -2437,7 +2447,7 @@
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage5;
         private DevExpress.XtraEditors.SimpleButton btnBeklet;
         private System.Windows.Forms.FlowLayoutPanel flowBekleyen;
-        private DevExpress.XtraEditors.TextEdit txtfisKodu;
+        private DevExpress.XtraEditors.TextEdit txtKod;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl lblRiskLimiti;
         private DevExpress.XtraEditors.LabelControl lblCariAdi;
@@ -2456,6 +2466,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.GroupControl groupControl8;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
+        private DevExpress.XtraEditors.DropDownButton btnKod;
     }
 }
 

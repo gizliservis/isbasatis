@@ -150,13 +150,13 @@
             // welcomeWizardPage3
             // 
             this.welcomeWizardPage3.Name = "welcomeWizardPage3";
-            this.welcomeWizardPage3.Size = new System.Drawing.Size(934, 375);
+            this.welcomeWizardPage3.Size = new System.Drawing.Size(934, 374);
             this.welcomeWizardPage3.Text = "Basım Sihirbazına Hoşgeldiniz";
             // 
             // completionWizardPage2
             // 
             this.completionWizardPage2.Name = "completionWizardPage2";
-            this.completionWizardPage2.Size = new System.Drawing.Size(934, 375);
+            this.completionWizardPage2.Size = new System.Drawing.Size(934, 374);
             this.completionWizardPage2.Text = "Etiket Basma Sihirbazını Tamamla";
             // 
             // wizardPage2
@@ -176,7 +176,7 @@
             this.wizardPage2.Controls.Add(this.txtYatayUzunluk);
             this.wizardPage2.Controls.Add(this.txtDikeyUzunluk);
             this.wizardPage2.Name = "wizardPage2";
-            this.wizardPage2.Size = new System.Drawing.Size(934, 375);
+            this.wizardPage2.Size = new System.Drawing.Size(934, 374);
             this.wizardPage2.Text = "Sayfa Özelliklerini Belirtin";
             // 
             // chkRulo
@@ -184,7 +184,7 @@
             this.chkRulo.Location = new System.Drawing.Point(582, 185);
             this.chkRulo.Name = "chkRulo";
             this.chkRulo.Properties.Caption = "Rulo Kağıt";
-            this.chkRulo.Size = new System.Drawing.Size(75, 20);
+            this.chkRulo.Size = new System.Drawing.Size(75, 19);
             this.chkRulo.TabIndex = 6;
             // 
             // labelControl5
@@ -353,7 +353,7 @@
             this.wizardPage3.Controls.Add(this.txtAraBosluk);
             this.wizardPage3.Controls.Add(this.txtAltBosluk);
             this.wizardPage3.Name = "wizardPage3";
-            this.wizardPage3.Size = new System.Drawing.Size(934, 375);
+            this.wizardPage3.Size = new System.Drawing.Size(934, 374);
             this.wizardPage3.Text = "Etiket Özelliklerini Belirtin";
             // 
             // labelControl6
@@ -468,7 +468,7 @@
             this.wizardPage4.Controls.Add(this.gridControl1);
             this.wizardPage4.Controls.Add(this.grpMenu);
             this.wizardPage4.Name = "wizardPage4";
-            this.wizardPage4.Size = new System.Drawing.Size(934, 375);
+            this.wizardPage4.Size = new System.Drawing.Size(934, 374);
             this.wizardPage4.Text = "Ürünleri Seçiniz";
             // 
             // gridControl1
@@ -477,7 +477,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(934, 296);
+            this.gridControl1.Size = new System.Drawing.Size(934, 295);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -541,7 +541,7 @@
             this.grpMenu.Controls.Add(this.btnSil);
             this.grpMenu.Controls.Add(this.btnEkle);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 296);
+            this.grpMenu.Location = new System.Drawing.Point(0, 295);
             this.grpMenu.Name = "grpMenu";
             this.grpMenu.Size = new System.Drawing.Size(934, 79);
             this.grpMenu.TabIndex = 7;
