@@ -986,6 +986,12 @@
   <ItemGroup>
     <None Include="Resources\Banka_Kartı32x32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contract %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contract.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

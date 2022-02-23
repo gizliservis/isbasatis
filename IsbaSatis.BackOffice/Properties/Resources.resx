@@ -130,6 +130,9 @@
   <data name="books_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\books_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Cari Ekle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cari Ekle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="table2_new" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\table2_new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,9 +208,6 @@
   <data name="address_book" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\address_book.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="note" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\note.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BankaEFT32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BankaEFT32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -216,9 +216,6 @@
   </data>
   <data name="mobilephone3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mobilephone3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="factory" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\factory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sayım Eksiği.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sayım Eksiği.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,6 +235,9 @@
   <data name="hareket1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hareket1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Banka_Kartı32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Banka_Kartı32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="information1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\information1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -247,14 +247,17 @@
   <data name="Siparis_Bekleyen32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Siparis_Bekleyen32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Alım İade.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Alım İade.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="factory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\factory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wallet_closed2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wallet_closed2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="data_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\data_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Alım İade.fw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Alım İade.fw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wallet_closed1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wallet_closed1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,14 +268,14 @@
   <data name="pEkle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pEkle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Banka32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Banka32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="unlimited" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unlimited.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BankaEFT32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BankaEFT32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Hareketler" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hareketler.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -361,8 +364,8 @@
   <data name="Düzenle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Düzenle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BankaEFT32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BankaEFT32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="barcode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\barcode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -373,8 +376,8 @@
   <data name="sort_descending1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sort_descending1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cari Ekle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cari Ekle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="note" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\note.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wallet_closed_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wallet_closed_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -394,7 +397,10 @@
   <data name="note_information" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\note_information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Banka_Kartı32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Banka_Kartı32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="contract (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contract (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contract" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contract.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -85,7 +85,6 @@ namespace IsbaSatis.BackOffice.Fişler
                     fisDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     kasaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     stokHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
-                    stokHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     bankaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     fisDAL.Save(context);
                     kasaHareketDAL.Save(context);
