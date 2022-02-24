@@ -20,10 +20,12 @@ namespace IsbaSatis.BackOffice.Cari
         IsbaSatisContext context = new IsbaSatisContext();
         CariDAL cariDAL = new CariDAL();
         Nullable<int> secilen=null;
+        private ExportTool export;
         public frmCari()
         {
             InitializeComponent();
             RolTool.RolleriYukle(this);
+            export = new ExportTool(this,gridView1,dropDownButton1);
         }
 
         private void btnEkle_Click(object sender, EventArgs e)

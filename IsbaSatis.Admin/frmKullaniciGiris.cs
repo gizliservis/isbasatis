@@ -79,7 +79,7 @@ namespace IsbaSatis.Admin
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }

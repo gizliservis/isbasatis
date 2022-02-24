@@ -75,6 +75,7 @@
             this.colAlacak = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBorc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBakiye = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -226,7 +227,6 @@
             this.lblBaslik.Size = new System.Drawing.Size(919, 59);
             this.lblBaslik.TabIndex = 3;
             this.lblBaslik.Text = "Cari Kartları";
-            this.lblBaslik.Click += new System.EventHandler(this.btnCariHareketleri_Click);
             // 
             // gridControl1
             // 
@@ -548,11 +548,21 @@
             this.colBakiye.VisibleIndex = 9;
             this.colBakiye.Width = 162;
             // 
+            // dropDownButton1
+            // 
+            this.dropDownButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dropDownButton1.Location = new System.Drawing.Point(784, 12);
+            this.dropDownButton1.Name = "dropDownButton1";
+            this.dropDownButton1.Size = new System.Drawing.Size(135, 23);
+            this.dropDownButton1.TabIndex = 6;
+            this.dropDownButton1.Text = "Dışarı Çıkart";
+            // 
             // frmCari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 566);
+            this.Controls.Add(this.dropDownButton1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.lblBaslik);
             this.Controls.Add(this.grpMenu);
@@ -616,5 +626,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colAlacak;
         private DevExpress.XtraGrid.Columns.GridColumn colBorc;
         private DevExpress.XtraGrid.Columns.GridColumn colBakiye;
+        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
     }
 }

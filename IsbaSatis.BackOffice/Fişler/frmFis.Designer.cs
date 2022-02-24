@@ -82,6 +82,16 @@
             this.colTarih = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPersonelAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPersonelKodu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.barBtnSiparis = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.BarBtnIrsaliye = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
@@ -103,6 +113,7 @@
             this.ımageList1.Images.SetKeyName(6, "note_add.png");
             this.ımageList1.Images.SetKeyName(7, "note_delete.png");
             this.ımageList1.Images.SetKeyName(8, "note_edit.png");
+            this.ımageList1.Images.SetKeyName(9, "scroll.png");
             // 
             // barManager1
             // 
@@ -126,8 +137,18 @@
             this.barSubItem1,
             this.barFatura,
             this.barNakitIslemler,
-            this.barBankaIslem});
-            this.barManager1.MaxItemId = 16;
+            this.barBankaIslem,
+            this.barBtnSiparis,
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.BarBtnIrsaliye,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.barSubItem2,
+            this.barButtonItem6,
+            this.barButtonItem7});
+            this.barManager1.MaxItemId = 26;
             // 
             // barDockControlTop
             // 
@@ -376,13 +397,13 @@
             // simpleButton1
             // 
             this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton1.ImageOptions.ImageIndex = 0;
+            this.simpleButton1.ImageOptions.ImageIndex = 9;
             this.simpleButton1.ImageOptions.ImageList = this.ımageList1;
             this.simpleButton1.Location = new System.Drawing.Point(463, 22);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(104, 52);
             this.simpleButton1.TabIndex = 2;
-            this.simpleButton1.Text = "Siparişi\r\nFaturalandır";
+            this.simpleButton1.Text = "Belgeyi\r\nFaturalandır";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btnDuzenle
@@ -416,7 +437,10 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1),
             new DevExpress.XtraBars.LinkPersistInfo(this.barFatura),
             new DevExpress.XtraBars.LinkPersistInfo(this.barNakitIslemler),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barBankaIslem)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barBankaIslem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barBtnSiparis),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BarBtnIrsaliye),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
@@ -615,6 +639,85 @@
             this.colPersonelKodu.Name = "colPersonelKodu";
             this.colPersonelKodu.OptionsColumn.AllowEdit = false;
             // 
+            // barBtnSiparis
+            // 
+            this.barBtnSiparis.Caption = "Sipariş Fişleri";
+            this.barBtnSiparis.Id = 16;
+            this.barBtnSiparis.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
+            this.barBtnSiparis.Name = "barBtnSiparis";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Sipariş Fişi(Alınan)";
+            this.barButtonItem1.Id = 17;
+            this.barButtonItem1.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.packing;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Sipariş Fişi(Verilen)";
+            this.barButtonItem2.Id = 18;
+            this.barButtonItem2.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.packing__1_;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "İrsaliye Fişleri";
+            this.barButtonItem3.Id = 19;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // BarBtnIrsaliye
+            // 
+            this.BarBtnIrsaliye.Caption = "İrsaliye Fişleri";
+            this.BarBtnIrsaliye.Id = 20;
+            this.BarBtnIrsaliye.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5)});
+            this.BarBtnIrsaliye.Name = "BarBtnIrsaliye";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "İrsaliye Fişi(Alınan)";
+            this.barButtonItem4.Id = 21;
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "İrsaliye Fişi(Verilen)";
+            this.barButtonItem5.Id = 22;
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "Teklif Fişleri";
+            this.barSubItem2.Id = 23;
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7)});
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Teklif Fişi(Alınan)";
+            this.barButtonItem6.Id = 24;
+            this.barButtonItem6.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.contract__1_;
+            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Teklif Fişi(Verilen)";
+            this.barButtonItem7.Id = 25;
+            this.barButtonItem7.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.contract;
+            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
             // frmFis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -695,5 +798,15 @@
         private DevExpress.XtraBars.BarSubItem barFatura;
         private DevExpress.XtraBars.BarSubItem barNakitIslemler;
         private DevExpress.XtraBars.BarButtonItem barBankaIslem;
+        private DevExpress.XtraBars.BarSubItem barBtnSiparis;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarSubItem BarBtnIrsaliye;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
     }
 }

@@ -31,7 +31,7 @@ namespace IsbaSatis.FrontOffice
     public partial class frmFrontOffice : DevExpress.XtraEditors.XtraForm
     {
 
-        IsbaSatisContext context = new IsbaSatisContext();
+        IsbaSatisContext context;
         FisDAL fisDAL = new FisDAL();
         CodeNumara fisNo = new CodeNumara();
         StokHareketDAL stokHareketDAL = new StokHareketDAL();
@@ -56,6 +56,7 @@ namespace IsbaSatis.FrontOffice
             InitializeComponent();
             frmKullaniciGiris form = new frmKullaniciGiris();
             form.ShowDialog();
+            context = new IsbaSatisContext();
             fisKoduOlustur = new CodeTool(this, CodeTool.Table.Fis,context);
             context.Stoklar.Load();
             context.Depolar.Load();
@@ -68,6 +69,7 @@ namespace IsbaSatis.FrontOffice
             txtIslem.Text = "SATIŞ";
             toplamlar();
             fisKoduOlustur.BarButonOlustur();
+            txtBarkod.Focus();
 
             foreach (var hizliSatisGrup in context.hizliSatisGruplari.ToList())
             {
@@ -903,7 +905,7 @@ namespace IsbaSatis.FrontOffice
 
         private void frmFrontOffice_Load(object sender, EventArgs e)
         {
-
+            txtBarkod.Focus();
         }
 
         private void barbtnBelgesiz_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

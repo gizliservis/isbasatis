@@ -135,9 +135,12 @@ namespace IsbaSatis.BackOffice.Fişler
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             Fis secilen = (Fis)gridView1.GetFocusedRow();
-            if (!secilen.FisTuru.Contains("Sipariş Fişi"))
+            if (!secilen.FisTuru.Contains("Sipariş Fişi") && !secilen.FisTuru.Contains("İrsaliye Fişi") && !secilen.FisTuru.Contains("Teklif Fişi"))
             {
-                MessageBox.Show("Faturalandırmak İstediğiniz Fiş Sipariş Fişi Değildir");
+                MessageBox.Show("Faturalandırmak İstediğiniz Fiş \n " +
+                    "Sipariş Fişi,\n" +
+                    " İrsaliye Fişi Veya \n " +
+                    "Teklif Fişi Değildir","!!!!hata",MessageBoxButtons.OK);
             }
             else
             {

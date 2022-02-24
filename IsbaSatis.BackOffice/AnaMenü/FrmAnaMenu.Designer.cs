@@ -824,7 +824,7 @@
             this.ribbonPageGroup17.ItemLinks.Add(this.btnTeklifAlinan);
             this.ribbonPageGroup17.ItemLinks.Add(this.btnTeklifVerilen);
             this.ribbonPageGroup17.Name = "ribbonPageGroup17";
-            this.ribbonPageGroup17.Text = "ribbonPageGroup17";
+            this.ribbonPageGroup17.Text = "Teklifler";
             // 
             // ribbonPage3
             // 

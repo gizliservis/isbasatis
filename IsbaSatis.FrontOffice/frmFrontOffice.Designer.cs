@@ -121,6 +121,7 @@
             this.lblAlcak = new DevExpress.XtraEditors.LabelControl();
             this.txtAdres = new DevExpress.XtraEditors.MemoEdit();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.btnKod = new DevExpress.XtraEditors.DropDownButton();
             this.txtKod = new DevExpress.XtraEditors.TextEdit();
             this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
             this.txtBelgeNo = new DevExpress.XtraEditors.TextEdit();
@@ -229,7 +230,6 @@
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
-            this.btnKod = new DevExpress.XtraEditors.DropDownButton();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
             this.navigationPane1.SuspendLayout();
             this.navigationPage1.SuspendLayout();
@@ -312,6 +312,7 @@
             this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
             this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.ımageList1.Images.SetKeyName(0, "delete.png");
+            this.ımageList1.Images.SetKeyName(1, "element_copy.png");
             // 
             // navigationPane1
             // 
@@ -348,7 +349,7 @@
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.navigationPage1.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
-            this.navigationPage1.Size = new System.Drawing.Size(183, 692);
+            this.navigationPage1.Size = new System.Drawing.Size(211, 709);
             // 
             // groupControl2
             // 
@@ -371,7 +372,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 256);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(183, 436);
+            this.groupControl2.Size = new System.Drawing.Size(211, 453);
             this.groupControl2.TabIndex = 36;
             this.groupControl2.Text = "Ödeme ve  Para Üstü";
             // 
@@ -537,7 +538,7 @@
             this.txtOdenen.Properties.Mask.EditMask = "C2";
             this.txtOdenen.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtOdenen.Properties.NullText = "₺0,00";
-            this.txtOdenen.Size = new System.Drawing.Size(104, 42);
+            this.txtOdenen.Size = new System.Drawing.Size(104, 40);
             this.txtOdenen.TabIndex = 39;
             this.txtOdenen.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtOdenen_ButtonClick);
             // 
@@ -574,7 +575,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 169);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(183, 87);
+            this.groupControl1.Size = new System.Drawing.Size(211, 87);
             this.groupControl1.TabIndex = 35;
             this.groupControl1.Text = "İskonto Bilgileri";
             // 
@@ -657,7 +658,7 @@
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl5.Location = new System.Drawing.Point(0, 0);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(183, 169);
+            this.groupControl5.Size = new System.Drawing.Size(211, 169);
             this.groupControl5.TabIndex = 5;
             this.groupControl5.Text = "Genel Bilgiler";
             this.groupControl5.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl5_Paint);
@@ -796,7 +797,7 @@
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.navigationPage2.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
-            this.navigationPage2.Size = new System.Drawing.Size(183, 692);
+            this.navigationPage2.Size = new System.Drawing.Size(211, 709);
             // 
             // groupControl3
             // 
@@ -823,7 +824,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl3.Location = new System.Drawing.Point(0, 140);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(183, 468);
+            this.groupControl3.Size = new System.Drawing.Size(211, 468);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "Cari Bilgileri";
             // 
@@ -1040,9 +1041,17 @@
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl4.Location = new System.Drawing.Point(0, 0);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(183, 140);
+            this.groupControl4.Size = new System.Drawing.Size(211, 140);
             this.groupControl4.TabIndex = 1;
             this.groupControl4.Text = "Fiş Bilgileri";
+            // 
+            // btnKod
+            // 
+            this.btnKod.Location = new System.Drawing.Point(101, 28);
+            this.btnKod.Name = "btnKod";
+            this.btnKod.Size = new System.Drawing.Size(79, 23);
+            this.btnKod.TabIndex = 25;
+            this.btnKod.Text = "Kodlar";
             // 
             // txtKod
             // 
@@ -1076,7 +1085,7 @@
             this.navigationPage3.Name = "navigationPage3";
             this.navigationPage3.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.navigationPage3.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
-            this.navigationPage3.Size = new System.Drawing.Size(183, 692);
+            this.navigationPage3.Size = new System.Drawing.Size(211, 709);
             // 
             // groupControl7
             // 
@@ -1086,7 +1095,7 @@
             this.groupControl7.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl7.Location = new System.Drawing.Point(0, 258);
             this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(183, 76);
+            this.groupControl7.Size = new System.Drawing.Size(211, 76);
             this.groupControl7.TabIndex = 38;
             this.groupControl7.Text = "Döviz Kurları";
             // 
@@ -1286,7 +1295,7 @@
             this.groupControl8.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl8.Location = new System.Drawing.Point(0, 0);
             this.groupControl8.Name = "groupControl8";
-            this.groupControl8.Size = new System.Drawing.Size(183, 258);
+            this.groupControl8.Size = new System.Drawing.Size(211, 258);
             this.groupControl8.TabIndex = 3;
             this.groupControl8.Text = "Menü";
             // 
@@ -1325,6 +1334,9 @@
             // 
             // chkOdemeBol
             // 
+            this.chkOdemeBol.ImageOptions.ImageIndex = 1;
+            this.chkOdemeBol.ImageOptions.ImageList = this.ımageList1;
+            this.chkOdemeBol.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.chkOdemeBol.Location = new System.Drawing.Point(9, 102);
             this.chkOdemeBol.Name = "chkOdemeBol";
             this.chkOdemeBol.Size = new System.Drawing.Size(80, 70);
@@ -1351,14 +1363,14 @@
             this.navigationPage4.Name = "navigationPage4";
             this.navigationPage4.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.navigationPage4.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
-            this.navigationPage4.Size = new System.Drawing.Size(183, 700);
+            this.navigationPage4.Size = new System.Drawing.Size(211, 709);
             // 
             // flowPersonel
             // 
             this.flowPersonel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowPersonel.Location = new System.Drawing.Point(0, 0);
             this.flowPersonel.Name = "flowPersonel";
-            this.flowPersonel.Size = new System.Drawing.Size(183, 700);
+            this.flowPersonel.Size = new System.Drawing.Size(211, 709);
             this.flowPersonel.TabIndex = 1;
             // 
             // navigationPage5
@@ -1367,14 +1379,14 @@
             this.navigationPage5.Controls.Add(this.flowBekleyen);
             this.navigationPage5.ImageOptions.Image = global::IsbaSatis.FrontOffice.Properties.Resources.Bekleyen_Satış_fw;
             this.navigationPage5.Name = "navigationPage5";
-            this.navigationPage5.Size = new System.Drawing.Size(183, 700);
+            this.navigationPage5.Size = new System.Drawing.Size(211, 709);
             // 
             // flowBekleyen
             // 
             this.flowBekleyen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowBekleyen.Location = new System.Drawing.Point(0, 0);
             this.flowBekleyen.Name = "flowBekleyen";
-            this.flowBekleyen.Size = new System.Drawing.Size(183, 700);
+            this.flowBekleyen.Size = new System.Drawing.Size(211, 709);
             this.flowBekleyen.TabIndex = 0;
             // 
             // btnUrunBu
@@ -2113,7 +2125,7 @@
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.Size = new System.Drawing.Size(1097, 312);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1097, 316);
             this.xtraTabControl1.TabIndex = 0;
             // 
             // radialFiyat
@@ -2190,14 +2202,6 @@
             this.barDockControl4.Location = new System.Drawing.Point(1384, 0);
             this.barDockControl4.Manager = this.barManager2;
             this.barDockControl4.Size = new System.Drawing.Size(0, 756);
-            // 
-            // btnKod
-            // 
-            this.btnKod.Location = new System.Drawing.Point(101, 28);
-            this.btnKod.Name = "btnKod";
-            this.btnKod.Size = new System.Drawing.Size(79, 23);
-            this.btnKod.TabIndex = 25;
-            this.btnKod.Text = "Kodlar";
             // 
             // frmFrontOffice
             // 

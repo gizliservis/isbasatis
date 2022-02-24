@@ -40,6 +40,7 @@
     <Reference Include="DevExpress.Utils.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -159,6 +160,7 @@
     <Compile Include="Tools\ConnectionTool.cs" />
     <Compile Include="Tools\ConverterTool.cs" />
     <Compile Include="Tools\ExchangeTool.cs" />
+    <Compile Include="Tools\ExportTool.cs" />
     <Compile Include="Tools\OtomatikFisKodu.cs" />
     <Compile Include="Tools\ReportPrintTool.cs" />
     <Compile Include="Tools\RolTool.cs" />
@@ -208,6 +210,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HTML.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MHT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RTF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TXT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XLS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XLSX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\word.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\csv.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
