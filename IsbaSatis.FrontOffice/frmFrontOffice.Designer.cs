@@ -349,7 +349,7 @@
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.navigationPage1.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
-            this.navigationPage1.Size = new System.Drawing.Size(211, 709);
+            this.navigationPage1.Size = new System.Drawing.Size(183, 692);
             // 
             // groupControl2
             // 
@@ -372,7 +372,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 256);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(211, 453);
+            this.groupControl2.Size = new System.Drawing.Size(183, 436);
             this.groupControl2.TabIndex = 36;
             this.groupControl2.Text = "Ödeme ve  Para Üstü";
             // 
@@ -538,7 +538,7 @@
             this.txtOdenen.Properties.Mask.EditMask = "C2";
             this.txtOdenen.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtOdenen.Properties.NullText = "₺0,00";
-            this.txtOdenen.Size = new System.Drawing.Size(104, 40);
+            this.txtOdenen.Size = new System.Drawing.Size(104, 42);
             this.txtOdenen.TabIndex = 39;
             this.txtOdenen.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtOdenen_ButtonClick);
             // 
@@ -575,7 +575,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 169);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(211, 87);
+            this.groupControl1.Size = new System.Drawing.Size(183, 87);
             this.groupControl1.TabIndex = 35;
             this.groupControl1.Text = "İskonto Bilgileri";
             // 
@@ -658,7 +658,7 @@
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl5.Location = new System.Drawing.Point(0, 0);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(211, 169);
+            this.groupControl5.Size = new System.Drawing.Size(183, 169);
             this.groupControl5.TabIndex = 5;
             this.groupControl5.Text = "Genel Bilgiler";
             this.groupControl5.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl5_Paint);
@@ -2125,7 +2125,7 @@
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.Size = new System.Drawing.Size(1097, 316);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1097, 312);
             this.xtraTabControl1.TabIndex = 0;
             // 
             // radialFiyat

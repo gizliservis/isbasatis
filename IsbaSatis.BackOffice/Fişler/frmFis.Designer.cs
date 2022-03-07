@@ -51,6 +51,16 @@
             this.barFatura = new DevExpress.XtraBars.BarSubItem();
             this.barNakitIslemler = new DevExpress.XtraBars.BarSubItem();
             this.barBankaIslem = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnSiparis = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.BarBtnIrsaliye = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnAra = new DevExpress.XtraEditors.SimpleButton();
@@ -82,16 +92,6 @@
             this.colTarih = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPersonelAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPersonelKodu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barBtnSiparis = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.BarBtnIrsaliye = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
@@ -313,6 +313,85 @@
             this.barBankaIslem.Name = "barBankaIslem";
             this.barBankaIslem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBankaIslem_ItemClick);
             // 
+            // barBtnSiparis
+            // 
+            this.barBtnSiparis.Caption = "Sipariş Fişleri";
+            this.barBtnSiparis.Id = 16;
+            this.barBtnSiparis.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
+            this.barBtnSiparis.Name = "barBtnSiparis";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Sipariş Fişi(Alınan)";
+            this.barButtonItem1.Id = 17;
+            this.barButtonItem1.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.packing;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Sipariş Fişi(Verilen)";
+            this.barButtonItem2.Id = 18;
+            this.barButtonItem2.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.packing__1_;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "İrsaliye Fişleri";
+            this.barButtonItem3.Id = 19;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // BarBtnIrsaliye
+            // 
+            this.BarBtnIrsaliye.Caption = "İrsaliye Fişleri";
+            this.BarBtnIrsaliye.Id = 20;
+            this.BarBtnIrsaliye.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5)});
+            this.BarBtnIrsaliye.Name = "BarBtnIrsaliye";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "İrsaliye Fişi(Alınan)";
+            this.barButtonItem4.Id = 21;
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "İrsaliye Fişi(Verilen)";
+            this.barButtonItem5.Id = 22;
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "Teklif Fişleri";
+            this.barSubItem2.Id = 23;
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7)});
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Teklif Fişi(Alınan)";
+            this.barButtonItem6.Id = 24;
+            this.barButtonItem6.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.contract__1_;
+            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Teklif Fişi(Verilen)";
+            this.barButtonItem7.Id = 25;
+            this.barButtonItem7.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.contract;
+            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
             // lblBaslik
             // 
             this.lblBaslik.Appearance.Font = new System.Drawing.Font("Tahoma", 18F);
@@ -335,9 +414,9 @@
             this.btnKapat.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnKapat.ImageOptions.ImageIndex = 2;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(1006, 22);
+            this.btnKapat.Location = new System.Drawing.Point(1006, 23);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(90, 52);
+            this.btnKapat.Size = new System.Drawing.Size(90, 51);
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
@@ -347,9 +426,9 @@
             this.btnAra.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnAra.ImageOptions.ImageIndex = 0;
             this.btnAra.ImageOptions.ImageList = this.ımageList1;
-            this.btnAra.Location = new System.Drawing.Point(373, 22);
+            this.btnAra.Location = new System.Drawing.Point(373, 23);
             this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(90, 52);
+            this.btnAra.Size = new System.Drawing.Size(90, 51);
             this.btnAra.TabIndex = 0;
             this.btnAra.Text = "Ara";
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
@@ -359,9 +438,9 @@
             this.btnGuncelle.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnGuncelle.ImageOptions.ImageIndex = 1;
             this.btnGuncelle.ImageOptions.ImageList = this.ımageList1;
-            this.btnGuncelle.Location = new System.Drawing.Point(276, 22);
+            this.btnGuncelle.Location = new System.Drawing.Point(276, 23);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(97, 52);
+            this.btnGuncelle.Size = new System.Drawing.Size(97, 51);
             this.btnGuncelle.TabIndex = 0;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
@@ -371,9 +450,9 @@
             this.btnSil.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSil.ImageOptions.ImageIndex = 7;
             this.btnSil.ImageOptions.ImageList = this.ımageList1;
-            this.btnSil.Location = new System.Drawing.Point(183, 22);
+            this.btnSil.Location = new System.Drawing.Point(183, 23);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(93, 52);
+            this.btnSil.Size = new System.Drawing.Size(93, 51);
             this.btnSil.TabIndex = 0;
             this.btnSil.Text = "Sil";
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
@@ -399,9 +478,9 @@
             this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Left;
             this.simpleButton1.ImageOptions.ImageIndex = 9;
             this.simpleButton1.ImageOptions.ImageList = this.ımageList1;
-            this.simpleButton1.Location = new System.Drawing.Point(463, 22);
+            this.simpleButton1.Location = new System.Drawing.Point(463, 23);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(104, 52);
+            this.simpleButton1.Size = new System.Drawing.Size(104, 51);
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "Belgeyi\r\nFaturalandır";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -411,9 +490,9 @@
             this.btnDuzenle.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnDuzenle.ImageOptions.ImageIndex = 8;
             this.btnDuzenle.ImageOptions.ImageList = this.ımageList1;
-            this.btnDuzenle.Location = new System.Drawing.Point(94, 22);
+            this.btnDuzenle.Location = new System.Drawing.Point(94, 23);
             this.btnDuzenle.Name = "btnDuzenle";
-            this.btnDuzenle.Size = new System.Drawing.Size(89, 52);
+            this.btnDuzenle.Size = new System.Drawing.Size(89, 51);
             this.btnDuzenle.TabIndex = 0;
             this.btnDuzenle.Text = "Düzenle";
             this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
@@ -425,9 +504,9 @@
             this.btnEkle.DropDownControl = this.popupMenu1;
             this.btnEkle.ImageOptions.ImageIndex = 6;
             this.btnEkle.ImageOptions.ImageList = this.ımageList1;
-            this.btnEkle.Location = new System.Drawing.Point(2, 22);
+            this.btnEkle.Location = new System.Drawing.Point(2, 23);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(92, 52);
+            this.btnEkle.Size = new System.Drawing.Size(92, 51);
             this.btnEkle.TabIndex = 1;
             this.btnEkle.Text = "Ekle";
             // 
@@ -638,85 +717,6 @@
             this.colPersonelKodu.FieldName = "Personel.PersonelKodu";
             this.colPersonelKodu.Name = "colPersonelKodu";
             this.colPersonelKodu.OptionsColumn.AllowEdit = false;
-            // 
-            // barBtnSiparis
-            // 
-            this.barBtnSiparis.Caption = "Sipariş Fişleri";
-            this.barBtnSiparis.Id = 16;
-            this.barBtnSiparis.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
-            this.barBtnSiparis.Name = "barBtnSiparis";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Sipariş Fişi(Alınan)";
-            this.barButtonItem1.Id = 17;
-            this.barButtonItem1.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.packing;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Sipariş Fişi(Verilen)";
-            this.barButtonItem2.Id = 18;
-            this.barButtonItem2.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.packing__1_;
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "İrsaliye Fişleri";
-            this.barButtonItem3.Id = 19;
-            this.barButtonItem3.Name = "barButtonItem3";
-            // 
-            // BarBtnIrsaliye
-            // 
-            this.BarBtnIrsaliye.Caption = "İrsaliye Fişleri";
-            this.BarBtnIrsaliye.Id = 20;
-            this.BarBtnIrsaliye.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5)});
-            this.BarBtnIrsaliye.Name = "BarBtnIrsaliye";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "İrsaliye Fişi(Alınan)";
-            this.barButtonItem4.Id = 21;
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
-            // 
-            // barButtonItem5
-            // 
-            this.barButtonItem5.Caption = "İrsaliye Fişi(Verilen)";
-            this.barButtonItem5.Id = 22;
-            this.barButtonItem5.Name = "barButtonItem5";
-            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
-            // 
-            // barSubItem2
-            // 
-            this.barSubItem2.Caption = "Teklif Fişleri";
-            this.barSubItem2.Id = 23;
-            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7)});
-            this.barSubItem2.Name = "barSubItem2";
-            // 
-            // barButtonItem6
-            // 
-            this.barButtonItem6.Caption = "Teklif Fişi(Alınan)";
-            this.barButtonItem6.Id = 24;
-            this.barButtonItem6.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.contract__1_;
-            this.barButtonItem6.Name = "barButtonItem6";
-            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
-            // 
-            // barButtonItem7
-            // 
-            this.barButtonItem7.Caption = "Teklif Fişi(Verilen)";
-            this.barButtonItem7.Id = 25;
-            this.barButtonItem7.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.contract;
-            this.barButtonItem7.Name = "barButtonItem7";
-            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
             // 
             // frmFis
             // 

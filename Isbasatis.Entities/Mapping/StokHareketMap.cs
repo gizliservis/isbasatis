@@ -15,7 +15,8 @@ namespace Isbasatis.Entities.Mapping
         {
             this.HasKey(p => p.Id);
             this.Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            this.Property(p => p.FisKodu).HasMaxLength(12);
+            this.Property(p => p.FisKodu).HasMaxLength(14);
+            this.Property(p => p.FisBaglantiKodu).HasMaxLength(14);
             this.Property(p => p.Hareket).HasMaxLength(10);
             this.Property(p => p.Miktar).HasPrecision(12,3);
             this.Property(p => p.BirimFiyati).HasPrecision(12,2);
@@ -29,6 +30,7 @@ namespace Isbasatis.Entities.Mapping
             this.ToTable("StokHareketleri");
             this.Property(p => p.Id).HasColumnName("Id");
             this.Property(p => p.FisKodu).HasColumnName("FisKodu");
+            this.Property(p => p.FisBaglantiKodu).HasColumnName("FisBaglantiKodu");
             this.Property(p => p.Hareket).HasColumnName("Hareket");
             this.Property(p => p.StokId).HasColumnName("StokId");
             this.Property(p => p.Kdv).HasColumnName("Kdv");

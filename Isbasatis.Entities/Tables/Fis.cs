@@ -57,6 +57,8 @@ namespace Isbasatis.Entities.Tables
         public decimal? ToplamTutar { get; set; }
         public string Aciklama { get; set; }
         public string FisBaglantiKodu { get; set; }
+        public bool DepoIrsaliye { get; set; }
+        public string DepoAdi { get; set; }
         public virtual Cari Cari { get; set; }
         public virtual Personel Personel { get; set; }
         public int? BankaId { get; set; }

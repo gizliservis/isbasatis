@@ -10,8 +10,29 @@ namespace Isbasatis.Entities.Tables
 {
    public class StokHareket : IEntity
     {
+        public StokHareket clone()
+        {
+            StokHareket yeniHareket = new StokHareket();
+           yeniHareket.FisKodu = this.FisKodu;
+           yeniHareket.Hareket = this.Hareket;
+           yeniHareket.StokId = this.StokId;
+           yeniHareket.Miktar = this.Miktar;
+           yeniHareket.Kdv = this.Kdv;
+           yeniHareket.BirimFiyati = this.BirimFiyati;
+           yeniHareket.IndirimOrani = this.IndirimOrani;
+           yeniHareket.ToplamTutar = this.ToplamTutar;
+           yeniHareket.DepoId = this.DepoId;
+           yeniHareket.SeriNo = this.SeriNo;
+           yeniHareket.Tarih = this.Tarih;
+           yeniHareket.Siparis = this.Siparis;
+           yeniHareket.Aciklama = this.Aciklama;
+           yeniHareket.Irsaliye = this.Irsaliye;
+           yeniHareket.Teklif = this.Teklif;
+            return yeniHareket;
+        }
         public int Id { get; set; }
         public string FisKodu { get; set; }
+        public string FisBaglantiKodu { get; set; }
         public string Hareket { get; set; }
         public int StokId { get; set; }
         public Nullable<decimal> Miktar { get; set; }

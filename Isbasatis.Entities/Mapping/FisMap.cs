@@ -16,8 +16,9 @@ namespace Isbasatis.Entities.Mapping
             this.HasKey(p => p.Id);
             this.Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             this.Property(p => p.FisKodu).HasMaxLength(12);
-            this.Property(p => p.FisBaglantiKodu).HasMaxLength(12);
+            this.Property(p => p.FisBaglantiKodu).HasMaxLength(14);
             this.Property(p => p.FisTuru).HasMaxLength(30);
+            this.Property(p => p.DepoAdi).HasMaxLength(30);
 
             this.Property(p => p.FaturaUnvani).HasMaxLength(50);
             this.Property(p => p.CepTelefonu).HasMaxLength(20);
@@ -35,7 +36,7 @@ namespace Isbasatis.Entities.Mapping
             this.Property(p => p.ToplamTutar).HasPrecision(12, 2);
             this.Property(p => p.Aciklama).HasMaxLength(200);
 
-            this.ToTable("fisler");
+            this.ToTable("Fisler");
             this.Property(p => p.Id).HasColumnName("Id");
             this.Property(p => p.FisKodu).HasColumnName("FisKodu");
             this.Property(p => p.FisBaglantiKodu).HasColumnName("FisBaglantiKodu");
@@ -54,6 +55,7 @@ namespace Isbasatis.Entities.Mapping
             this.Property(p => p.PlasiyerId).HasColumnName("PlasiyerId");
             this.Property(p => p.IskontoOrani).HasColumnName("IskontoOrani");
             this.Property(p => p.IskontoTutar).HasColumnName("IskontoTutar");
+            this.Property(p => p.DepoAdi).HasColumnName("DepoAdi");
             this.Property(p => p.Alacak).HasColumnName("Alacak");
             this.Property(p => p.Borc).HasColumnName("Borc");
             this.Property(p => p.ToplamTutar).HasColumnName("ToplamTutar");

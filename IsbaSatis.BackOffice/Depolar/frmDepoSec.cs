@@ -18,10 +18,10 @@ namespace IsbaSatis.BackOffice.Depolar
     {
         IsbaSatisContext context = new IsbaSatisContext();
         DepoDAL depoDAL = new DepoDAL();
-        private int _stokId;
+        private  int _stokId;
         public Depo entity = new Depo();
         public bool secildi = false;
-        public frmDepoSec(int stokId)
+        public frmDepoSec( int stokId)
         {
             InitializeComponent();
             _stokId = stokId;

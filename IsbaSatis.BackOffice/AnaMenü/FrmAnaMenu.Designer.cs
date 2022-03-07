@@ -117,6 +117,7 @@
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.btnDepoIrsaliyesi = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -188,9 +189,10 @@
             this.btnIrsaliyeAlinan,
             this.btnIrsaliyeVerilen,
             this.btnTeklifAlinan,
-            this.btnTeklifVerilen});
+            this.btnTeklifVerilen,
+            this.btnDepoIrsaliyesi});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 62;
+            this.ribbonControl1.MaxItemId = 63;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
@@ -816,6 +818,7 @@
             // 
             this.ribbonPageGroup16.ItemLinks.Add(this.btnIrsaliyeAlinan);
             this.ribbonPageGroup16.ItemLinks.Add(this.btnIrsaliyeVerilen);
+            this.ribbonPageGroup16.ItemLinks.Add(this.btnDepoIrsaliyesi);
             this.ribbonPageGroup16.Name = "ribbonPageGroup16";
             this.ribbonPageGroup16.Text = "İrsaliyeler";
             // 
@@ -882,6 +885,13 @@
             // 
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "ribbonPage5";
+            // 
+            // btnDepoIrsaliyesi
+            // 
+            this.btnDepoIrsaliyesi.Caption = "Depo İrsaliyesi";
+            this.btnDepoIrsaliyesi.Id = 62;
+            this.btnDepoIrsaliyesi.Name = "btnDepoIrsaliyesi";
+            this.btnDepoIrsaliyesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
             // 
             // Form1
             // 
@@ -996,6 +1006,7 @@
         private DevExpress.XtraBars.BarButtonItem btnTeklifVerilen;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
+        private DevExpress.XtraBars.BarButtonItem btnDepoIrsaliyesi;
     }
 }
 
