@@ -15,12 +15,12 @@ namespace Isbasatis.Entities.Mapping
         {
             this.HasKey(p => p.Id);
             this.Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            this.Property(p => p.StokKodu).HasMaxLength(12);
-            this.Property(p => p.StokAdi).HasMaxLength(50);
-            this.Property(p => p.Barkod).HasMaxLength(20);
+            this.Property(p => p.StokKodu).HasMaxLength(35);
+            this.Property(p => p.StokAdi).HasMaxLength(150);
+            this.Property(p => p.Barkod).HasMaxLength(150);
             this.Property(p => p.BarkodTuru).HasMaxLength(15);
             this.Property(p => p.Birimi).HasMaxLength(15);
-            this.Property(p => p.StokGrubu).HasMaxLength(30);
+            this.Property(p => p.StokGrubu).HasMaxLength(50);
             this.Property(p => p.StokAltGrubu).HasMaxLength(30);
             this.Property(p => p.Marka).HasMaxLength(30);
             this.Property(p => p.Modeli).HasMaxLength(30);

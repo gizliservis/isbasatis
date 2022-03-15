@@ -15,7 +15,7 @@ namespace Isbasatis.Entities.Validations
         public StokValidator()
         {
             RuleFor(p => p.StokKodu).NotEmpty().WithMessage("Stok Kodu Alanı Boş Geçilemez.");
-            RuleFor(p => p.StokAdi).NotEmpty().WithMessage("Stok Adı Alanı Boş Geçilemez.").Length(5,50).WithMessage("Stok Adı Alanı 5 ile 50 Karekter Arasında Olabilir.");
+            RuleFor(p => p.StokAdi).NotEmpty().WithMessage("Stok Adı Alanı Boş Geçilemez.").Length(5,150).WithMessage("Stok Adı Alanı 5 ile 50 Karekter Arasında Olabilir.");
             RuleFor(p => p.Barkod).NotEmpty().WithMessage("Barkod Alanı Boş Geçilemez");
             RuleFor(p => p.AlisFiyati1).GreaterThanOrEqualTo(0).WithMessage("Alış Fiyatı - 1 Alanı 0'dan Küçük Olamaz.");
             RuleFor(p => p.AlisFiyati2).GreaterThanOrEqualTo(0).WithMessage("Alış Fiyatı - 2 Alanı 0'dan Küçük Olamaz.");

@@ -16,8 +16,8 @@ namespace Isbasatis.Entities.Mapping
         {
             this.HasKey(p => p.Id);
             this.Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            this.Property(p => p.Barkod).HasMaxLength(20);
-            this.Property(p => p.UrunAdi).HasMaxLength(50);
+            this.Property(p => p.Barkod).HasMaxLength(150);
+            this.Property(p => p.UrunAdi).HasMaxLength(150);
             
 
             ToTable("HizliSatislar");

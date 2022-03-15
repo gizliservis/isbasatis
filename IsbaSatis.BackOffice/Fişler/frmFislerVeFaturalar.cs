@@ -925,13 +925,16 @@ namespace IsbaSatis.BackOffice.Fişler
                 //  context.SaveChanges();
             }
 
-
-            if (MessageBox.Show("Faturayı Yazdırmak İstermisiniz ?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (txtFisturu.Text== "Alış Faturası" && txtFisturu.Text== "Satış Faturası" && txtFisturu.Text == "Toptan Satış Faturası" &&txtFisturu.Text== "Alış İade Faturası"&& txtFisturu.Text == "Satış İade Faturası")
             {
-                ReporPrintTool yazdir = new ReporPrintTool();
-                rptFatura fatura = new rptFatura(txtKod.Text);
-                yazdir.RoporYazdir(fatura, ReporPrintTool.Belge.Fatura);
+                if (MessageBox.Show("Faturayı Yazdırmak İstermisiniz ?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    ReporPrintTool yazdir = new ReporPrintTool();
+                    rptFatura fatura = new rptFatura(txtKod.Text);
+                    yazdir.RoporYazdir(fatura, ReporPrintTool.Belge.Fatura);
+                }
             }
+          
 
             this.Close();
 
@@ -985,6 +988,7 @@ namespace IsbaSatis.BackOffice.Fişler
 
         private void btnFaturaYazdir_Click(object sender, EventArgs e)
         {
+
             ReporPrintTool yazdir = new ReporPrintTool();
             rptFatura fatura = new rptFatura(txtKod.Text);
             yazdir.RoporYazdir(fatura, ReporPrintTool.Belge.Fatura);
