@@ -365,6 +365,9 @@ namespace IsbaSatis.FrontOffice
 
             stokHareket.DepoId = Convert.ToInt32(SettingsTool.AyarOku(SettingsTool.Ayarlar.SatisAyarlari_VarsayilanDepo));
             stokHareket.BirimFiyati = _fisentity.FisTuru == "Alış Faturası" ? entity.AlisFiyati1 : entity.SatisFiyati1;
+            stokHareket.AlisFiyati = entity.AlisFiyati1;
+            stokHareket.AlisFiyati2 = entity.AlisFiyati2;
+            stokHareket.AlisFiyati3 = entity.AlisFiyati3;
             stokHareket.Miktar = txtMiktar.Value;
             stokHareket.Tarih = DateTime.Now;
             stokHareket.IndirimOrani = indirimDAL.StokIndirimi(context, entity.StokKodu);

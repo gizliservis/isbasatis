@@ -39,7 +39,7 @@ namespace Isbasatis.Entities.Data_Access
         }
         public object DepoStokListele(IsbaSatisContext context, int depoId)
         {
-            var tablo = context.Stoklar.GroupJoin(context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye==false && c.Teklif==false  && c.DepoId == depoId), c => c.Id, c => c.StokId, (Stoklar, StokHareketleri) => new
+            var tablo = context.Stoklar.GroupJoin(context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.DepoId == depoId), c => c.Id, c => c.StokId, (Stoklar, StokHareketleri) => new
             {
 
 
@@ -121,9 +121,9 @@ namespace Isbasatis.Entities.Data_Access
                         Barkod = stkHareket.Stok.Barkod,
                         indirimTutar = (stkHareket.BirimFiyati * stkHareket.IndirimOrani) / 100,
                         stkHareket.ToplamTutar,
-                        stokIndToplam = context.StokHareketleri.Where(c => c.Siparis == false && c.Hareket != null && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date ).Sum(c => c.BirimFiyati * c.IndirimOrani / 100),
-                        stokGiris = context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Giriş" && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date ).Sum(c => c.ToplamTutar),
-                        stokCikis = context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Çıkış" && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date ).Sum(c => c.ToplamTutar),
+                        stokIndToplam = context.StokHareketleri.Where(c => c.Siparis == false && c.Hareket != null && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date).Sum(c => c.BirimFiyati * c.IndirimOrani / 100),
+                        stokGiris = context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Giriş" && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date).Sum(c => c.ToplamTutar),
+                        stokCikis = context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Çıkış" && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date).Sum(c => c.ToplamTutar),
                         genelTutar = ((context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Giriş" && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date).Sum(c => c.ToplamTutar)) -
                         (context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Çıkış" && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date).Sum(c => c.ToplamTutar)))
                     }).ToList();
@@ -184,15 +184,49 @@ namespace Isbasatis.Entities.Data_Access
                         stkHareket.Aciklama,
                         Birimi = stkHareket.Stok.Birimi,
                         Barkod = stkHareket.Stok.Barkod,
-                        indirimTutar=(stkHareket.BirimFiyati*stkHareket.IndirimOrani)/100,
+                        indirimTutar = (stkHareket.BirimFiyati * stkHareket.IndirimOrani) / 100,
                         stkHareket.ToplamTutar,
-                        stokIndToplam=context.StokHareketleri.Where(c=> c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket!=null && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date && c.Stok.StokAdi == stok).Sum(c=>c.BirimFiyati*c.IndirimOrani/100),
-                        stokGiris = context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Giriş"&&DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date && c.Stok.StokAdi == stok).Sum(c => c.ToplamTutar),
-                        stokCikis=context.StokHareketleri.Where(c=> c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket=="Stok Çıkış"&& DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date && c.Stok.StokAdi == stok).Sum(c=>c.ToplamTutar),
-                        genelTutar= ((context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Giriş"&& DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date && c.Stok.StokAdi == stok).Sum(c => c.ToplamTutar))-
-                        (context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Çıkış"&& DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date && c.Stok.StokAdi == stok).Sum(c => c.ToplamTutar)))
-                        
+                        stokIndToplam = context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket != null && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date && c.Stok.StokAdi == stok).Sum(c => c.BirimFiyati * c.IndirimOrani / 100),
+                        stokGiris = context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Giriş" && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date && c.Stok.StokAdi == stok).Sum(c => c.ToplamTutar),
+                        stokCikis = context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Çıkış" && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date && c.Stok.StokAdi == stok).Sum(c => c.ToplamTutar),
+                        genelTutar = ((context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Giriş" && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date && c.Stok.StokAdi == stok).Sum(c => c.ToplamTutar)) -
+                        (context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Çıkış" && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date && c.Stok.StokAdi == stok).Sum(c => c.ToplamTutar)))
+
                     }).ToList();
+        }
+        public object StokKarZarar(IsbaSatisContext context, DateTime baslangic, DateTime bitis)
+        {
+            var result = context.StokHareketleri.Where(c => c.Hareket == "Stok Çıkış"
+            && c.Siparis == false
+            && c.Irsaliye == false && c.Teklif == false && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date).Join(context.Stoklar,
+                hrk => hrk.StokId,
+                stk => stk.Id,
+                (hrk, stk) => new
+                {
+                    hrk.Id,
+                    hrk.FisKodu,
+                    hrk.Hareket,
+                    hrk.StokId,
+                    hrk.Miktar,
+                    hrk.Kdv,
+                    hrk.BirimFiyati,
+                    hrk.Tarih,
+                    hrk.DepoId,
+                    hrk.IndirimOrani,
+                    hrk.Aciklama,
+                    IndirimTutari = (hrk.BirimFiyati * hrk.IndirimOrani) / 100,
+                    StokKodu = hrk.Stok.StokKodu,
+                    DepoAdi = hrk.Depo.DepoAdi,
+                    Birimi = hrk.Stok.Birimi,
+                    StokAdi = hrk.Stok.StokAdi,
+                    Barkod = hrk.Stok.Barkod,
+                    AlisFiyati = hrk.AlisFiyati,
+                    SatisToplam = hrk.ToplamTutar,
+                    AlisToplam = (hrk.AlisFiyati* hrk.Miktar),
+                    KarZarar = hrk.ToplamTutar - (hrk.AlisFiyati * hrk.Miktar)
+
+                }).ToList();
+            return result;
         }
     }
 }

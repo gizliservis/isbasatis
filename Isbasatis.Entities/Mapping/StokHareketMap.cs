@@ -20,6 +20,9 @@ namespace Isbasatis.Entities.Mapping
             this.Property(p => p.Hareket).HasMaxLength(10);
             this.Property(p => p.Miktar).HasPrecision(12,3);
             this.Property(p => p.BirimFiyati).HasPrecision(12,2);
+            this.Property(p => p.AlisFiyati).HasPrecision(12,2);
+            this.Property(p => p.AlisFiyati2).HasPrecision(12,2);
+            this.Property(p => p.AlisFiyati3).HasPrecision(12,2);
             this.Property(p => p.IndirimOrani).HasPrecision(5, 2);
             this.Property(p => p.ToplamTutar).HasPrecision(12, 2);
             this.Property(p => p.SeriNo).HasMaxLength(200);
@@ -35,6 +38,9 @@ namespace Isbasatis.Entities.Mapping
             this.Property(p => p.StokId).HasColumnName("StokId");
             this.Property(p => p.Kdv).HasColumnName("Kdv");
             this.Property(p => p.BirimFiyati).HasColumnName("BirimFiyati");
+            this.Property(p => p.AlisFiyati).HasColumnName("AlisFiyati");
+            this.Property(p => p.AlisFiyati2).HasColumnName("AlisFiyati2");
+            this.Property(p => p.AlisFiyati3).HasColumnName("AlisFiyati3");
             this.Property(p => p.IndirimOrani).HasColumnName("IndirimOrani");
             this.Property(p => p.ToplamTutar).HasColumnName("ToplamTutar");
             this.Property(p => p.DepoId).HasColumnName("DepoId");

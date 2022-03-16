@@ -61,7 +61,7 @@ namespace IsbaSatis.BackOffice.Fişler
                     _fisentity.FisTuru = "Satış Faturası";
                 }
                 context.StokHareketleri.Where(c => c.FisKodu == fisKodu).Load();
-                if (String.IsNullOrEmpty(_fisentity.DepoAdi)&&String.IsNullOrEmpty(_fisentity.FisBaglantiKodu))
+                if (String.IsNullOrEmpty(_fisentity.DepoAdi) && String.IsNullOrEmpty(_fisentity.FisBaglantiKodu))
                 {
                     context.KasaHareketleri.Where(c => c.FisKodu == fisKodu).Load();
                 }
@@ -98,7 +98,7 @@ namespace IsbaSatis.BackOffice.Fişler
                 _fisentity.FisTuru = fisTuru;
                 _fisentity.Tarih = DateTime.Now;
             }
-            if (_fisentity.FisTuru=="Depo İrsaliyesi" && _fisentity.DepoIrsaliye==true)
+            if (_fisentity.FisTuru == "Depo İrsaliyesi" && _fisentity.DepoIrsaliye == true)
             {
                 simpleButton2.Enabled = false;
             }
@@ -500,6 +500,9 @@ namespace IsbaSatis.BackOffice.Fişler
             stokHareket.StokId = entity.Id;
             stokHareket.DepoId = Convert.ToInt32(SettingsTool.AyarOku(SettingsTool.Ayarlar.SatisAyarlari_VarsayilanDepo));
             stokHareket.BirimFiyati = new[] { "Alış Faturası", "Alış İade Faturası" }.Contains(txtFisturu.Text) ? entity.AlisFiyati1 : entity.SatisFiyati1;
+            stokHareket.AlisFiyati = entity.AlisFiyati1;
+            stokHareket.AlisFiyati2 = entity.AlisFiyati2;
+            stokHareket.AlisFiyati3 = entity.AlisFiyati3;
             stokHareket.Miktar = txtMiktar.Value;
             stokHareket.Tarih = DateTime.Now;
             stokHareket.IndirimOrani = indirimDAL.StokIndirimi(context, entity.StokKodu);
@@ -764,7 +767,7 @@ namespace IsbaSatis.BackOffice.Fişler
                     return;
                 }
             }
-            
+
             foreach (var stokVeri in context.StokHareketleri.Local.ToList())
             {
                 stokVeri.Tarih = stokVeri.Tarih == null
@@ -804,7 +807,7 @@ namespace IsbaSatis.BackOffice.Fişler
                 _fisentity.Alacak = txtGenelToplam.Value;
             }
 
-            if (txtFisturu.Text=="Depo İrsaliyesi")
+            if (txtFisturu.Text == "Depo İrsaliyesi")
             {
                 _fisentity.DepoIrsaliye = true;
                 _fisentity.DepoAdi = txtDepoAdi.Text;
@@ -866,7 +869,7 @@ namespace IsbaSatis.BackOffice.Fişler
             {
                 StokHareket stkhrk = new StokHareket();
 
-                if (String.IsNullOrEmpty(_fisentity.FisBaglantiKodu) )
+                if (String.IsNullOrEmpty(_fisentity.FisBaglantiKodu))
                 {
                     foreach (var stok in context.StokHareketleri.Local.ToList())
                     {
@@ -893,18 +896,18 @@ namespace IsbaSatis.BackOffice.Fişler
                 {
                     foreach (var item in context.fisler.Local.ToList())
                     {
-                      
-                         stkhrk = context.StokHareketleri.SingleOrDefault(c=>c.FisBaglantiKodu == item.FisKodu);
+
+                        stkhrk = context.StokHareketleri.SingleOrDefault(c => c.FisBaglantiKodu == item.FisKodu);
                         _fisentity.FisKodu = stkhrk.FisBaglantiKodu;
                         stokHareketDAL.AddOrUpdate(context, stkhrk);
                         context.SaveChanges();
                     }
-                        
-                   
-                  
+
+
+
                 }
 
-               
+
 
 
                 //foreach (var stokVeri in context.StokHareketleri.Local.ToList())
@@ -925,7 +928,7 @@ namespace IsbaSatis.BackOffice.Fişler
                 //  context.SaveChanges();
             }
 
-            if (txtFisturu.Text== "Alış Faturası" && txtFisturu.Text== "Satış Faturası" && txtFisturu.Text == "Toptan Satış Faturası" &&txtFisturu.Text== "Alış İade Faturası"&& txtFisturu.Text == "Satış İade Faturası")
+            if (txtFisturu.Text == "Alış Faturası" && txtFisturu.Text == "Satış Faturası" && txtFisturu.Text == "Toptan Satış Faturası" && txtFisturu.Text == "Alış İade Faturası" && txtFisturu.Text == "Satış İade Faturası")
             {
                 if (MessageBox.Show("Faturayı Yazdırmak İstermisiniz ?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -934,7 +937,7 @@ namespace IsbaSatis.BackOffice.Fişler
                     yazdir.RoporYazdir(fatura, ReporPrintTool.Belge.Fatura);
                 }
             }
-          
+
 
             this.Close();
 

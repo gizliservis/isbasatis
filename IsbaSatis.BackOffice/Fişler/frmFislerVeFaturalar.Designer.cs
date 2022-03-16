@@ -172,6 +172,7 @@
             this.colKdvToplam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStokId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepoId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAlisFiyati = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtMiktar = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
@@ -245,6 +246,8 @@
             this.radialFiyat = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnFaturaYazdir = new DevExpress.XtraEditors.SimpleButton();
+            this.colAlisFiyati2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAlisFiyati3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.navPlasiyerBilgi)).BeginInit();
             this.navPlasiyerBilgi.SuspendLayout();
             this.navFisBilgi.SuspendLayout();
@@ -1054,7 +1057,10 @@
             this.colIndirimTutari,
             this.colKdvToplam,
             this.colStokId,
-            this.colDepoId});
+            this.colDepoId,
+            this.colAlisFiyati,
+            this.colAlisFiyati2,
+            this.colAlisFiyati3});
             this.gridStokHareket.GridControl = this.gridcontStokHareket;
             this.gridStokHareket.Name = "gridStokHareket";
             this.gridStokHareket.OptionsView.ShowGroupPanel = false;
@@ -1322,9 +1328,15 @@
             this.colDepoId.Name = "colDepoId";
             this.colDepoId.OptionsColumn.AllowEdit = false;
             this.colDepoId.OptionsColumn.ShowInCustomizationForm = false;
-            this.colDepoId.Visible = true;
-            this.colDepoId.VisibleIndex = 12;
             this.colDepoId.Width = 121;
+            // 
+            // colAlisFiyati
+            // 
+            this.colAlisFiyati.Caption = "Alış Fiyatı";
+            this.colAlisFiyati.FieldName = "AlisFiyati";
+            this.colAlisFiyati.Name = "colAlisFiyati";
+            this.colAlisFiyati.OptionsColumn.AllowEdit = false;
+            this.colAlisFiyati.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // panelControl1
             // 
@@ -2221,6 +2233,22 @@
             this.btnFaturaYazdir.Text = "Fatura Yazdır";
             this.btnFaturaYazdir.Click += new System.EventHandler(this.btnFaturaYazdir_Click);
             // 
+            // colAlisFiyati2
+            // 
+            this.colAlisFiyati2.Caption = "Alış Fiyatı 2";
+            this.colAlisFiyati2.FieldName = "AlisFiyati2";
+            this.colAlisFiyati2.Name = "colAlisFiyati2";
+            this.colAlisFiyati2.OptionsColumn.AllowEdit = false;
+            this.colAlisFiyati2.OptionsColumn.ShowInCustomizationForm = false;
+            // 
+            // colAlisFiyati3
+            // 
+            this.colAlisFiyati3.Caption = "Aliş Fiyatı 3";
+            this.colAlisFiyati3.FieldName = "AlisFiyati3";
+            this.colAlisFiyati3.Name = "colAlisFiyati3";
+            this.colAlisFiyati3.OptionsColumn.AllowEdit = false;
+            this.colAlisFiyati3.OptionsColumn.ShowInCustomizationForm = false;
+            // 
             // frmFislerVeFaturalar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2484,5 +2512,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl29;
         private DevExpress.XtraEditors.ButtonEdit txtDepoAdi;
         private DevExpress.XtraEditors.PanelControl panelDepoTransfer;
+        private DevExpress.XtraGrid.Columns.GridColumn colAlisFiyati;
+        private DevExpress.XtraGrid.Columns.GridColumn colAlisFiyati2;
+        private DevExpress.XtraGrid.Columns.GridColumn colAlisFiyati3;
     }
 }

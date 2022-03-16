@@ -38,6 +38,9 @@ namespace Isbasatis.Entities.Tables
         public Nullable<decimal> Miktar { get; set; }
         public int Kdv { get; set; }
         public Nullable<decimal> BirimFiyati { get; set; }
+        public Nullable<decimal> AlisFiyati { get; set; }
+        public Nullable<decimal> AlisFiyati2 { get; set; }
+        public Nullable<decimal> AlisFiyati3 { get; set; }
         public Nullable<decimal> IndirimOrani { get; set; }
         public Nullable<decimal> ToplamTutar { get; set; }
         public int DepoId { get; set; }
