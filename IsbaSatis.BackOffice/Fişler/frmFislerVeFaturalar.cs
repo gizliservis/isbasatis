@@ -500,9 +500,10 @@ namespace IsbaSatis.BackOffice.Fişler
             stokHareket.StokId = entity.Id;
             stokHareket.DepoId = Convert.ToInt32(SettingsTool.AyarOku(SettingsTool.Ayarlar.SatisAyarlari_VarsayilanDepo));
             stokHareket.BirimFiyati = new[] { "Alış Faturası", "Alış İade Faturası" }.Contains(txtFisturu.Text) ? entity.AlisFiyati1 : entity.SatisFiyati1;
-            stokHareket.AlisFiyati = entity.AlisFiyati1;
             stokHareket.AlisFiyati2 = entity.AlisFiyati2;
             stokHareket.AlisFiyati3 = entity.AlisFiyati3;
+            stokHareket.AlisFiyati = entity.AlisFiyati1;
+
             stokHareket.Miktar = txtMiktar.Value;
             stokHareket.Tarih = DateTime.Now;
             stokHareket.IndirimOrani = indirimDAL.StokIndirimi(context, entity.StokKodu);

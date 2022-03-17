@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using Isbasatis.Entities.Context;
 using Isbasatis.Entities.Data_Access;
+using Isbasatis.Entities.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,12 +18,14 @@ namespace IsbaSatis.BackOffice.Raporlar
     {
         StokHareketDAL stokHareketDAL = new StokHareketDAL();
         IsbaSatisContext context = new IsbaSatisContext();
+        private ExportTool export;
         public frmStokHareketRaporu()
         {
             InitializeComponent();
             dateBaslangic.DateTime = DateTime.Now;
             dateBitis.DateTime = DateTime.Now;
-          //  listele(DateTime.Now, DateTime.Now);
+            export = new ExportTool(this, gridView1, dropDownButton1);
+            //  listele(DateTime.Now, DateTime.Now);
         }
         void listele(DateTime baslangic, DateTime bitis)
         {
@@ -36,6 +39,11 @@ namespace IsbaSatis.BackOffice.Raporlar
                 dateBitis.DateTime = dateBaslangic.DateTime;
             }
            listele(dateBaslangic.DateTime, dateBitis.DateTime);
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

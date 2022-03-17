@@ -30,6 +30,7 @@ namespace IsbaSatis.BackOffice.Raporlar
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             this.lblArasinda = new DevExpress.XtraEditors.LabelControl();
             this.lblBitisTarihi = new DevExpress.XtraEditors.LabelControl();
             this.lblBaslangicTarihi = new DevExpress.XtraEditors.LabelControl();
@@ -60,6 +61,16 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colAlisToplam = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKarZarar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAlisFiyati1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKarZarar2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKarZarar3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAlisFiyati2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAlisFiyati3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAlisToplam2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colALisToplam3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCariAdi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCariGrubu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCariKodu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCariId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateBitis.Properties.CalendarTimeProperties)).BeginInit();
@@ -72,6 +83,7 @@ namespace IsbaSatis.BackOffice.Raporlar
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.dropDownButton1);
             this.panelControl1.Controls.Add(this.lblArasinda);
             this.panelControl1.Controls.Add(this.lblBitisTarihi);
             this.panelControl1.Controls.Add(this.lblBaslangicTarihi);
@@ -81,8 +93,17 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1134, 85);
+            this.panelControl1.Size = new System.Drawing.Size(1567, 85);
             this.panelControl1.TabIndex = 4;
+            // 
+            // dropDownButton1
+            // 
+            this.dropDownButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dropDownButton1.Location = new System.Drawing.Point(1396, 36);
+            this.dropDownButton1.Name = "dropDownButton1";
+            this.dropDownButton1.Size = new System.Drawing.Size(135, 23);
+            this.dropDownButton1.TabIndex = 7;
+            this.dropDownButton1.Text = "Dışarı Çıkart";
             // 
             // lblArasinda
             // 
@@ -147,15 +168,20 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.gridControl1.Location = new System.Drawing.Point(0, 85);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1134, 383);
+            this.gridControl1.Size = new System.Drawing.Size(1567, 548);
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
             this.gridView1.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.DarkTurquoise;
             this.gridView1.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
+            this.gridView1.Appearance.FooterPanel.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gridView1.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridView1.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridView1.Appearance.HeaderPanel.BackColor = System.Drawing.Color.DarkTurquoise;
             this.gridView1.Appearance.HeaderPanel.Options.UseBackColor = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -180,13 +206,29 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colAciklama,
             this.colAlisToplam,
             this.colKarZarar,
-            this.colAlisFiyati1});
-            this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(697, 233, 252, 266);
+            this.colAlisFiyati1,
+            this.colKarZarar2,
+            this.colKarZarar3,
+            this.colAlisFiyati2,
+            this.colAlisFiyati3,
+            this.colAlisToplam2,
+            this.colALisToplam3,
+            this.colCariAdi,
+            this.colCariGrubu,
+            this.colCariKodu,
+            this.colCariId});
+            this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(2115, 189, 252, 266);
             this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KarZarar", this.colKarZarar, "{0:C2})"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KarZarar2", this.colKarZarar2, "{0:C2})"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KarZarar3", this.colKarZarar3, "{0:C2})")});
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
+            this.gridView1.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.OptionsView.ShowGroupedColumns = true;
             // 
             // colId
             // 
@@ -203,7 +245,7 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colFisKodu.OptionsColumn.AllowEdit = false;
             this.colFisKodu.Visible = true;
             this.colFisKodu.VisibleIndex = 0;
-            this.colFisKodu.Width = 56;
+            this.colFisKodu.Width = 115;
             // 
             // colHareket
             // 
@@ -211,9 +253,7 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colHareket.FieldName = "Hareket";
             this.colHareket.Name = "colHareket";
             this.colHareket.OptionsColumn.AllowEdit = false;
-            this.colHareket.Visible = true;
-            this.colHareket.VisibleIndex = 1;
-            this.colHareket.Width = 53;
+            this.colHareket.Width = 84;
             // 
             // colStokKodu
             // 
@@ -222,8 +262,8 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colStokKodu.Name = "colStokKodu";
             this.colStokKodu.OptionsColumn.AllowEdit = false;
             this.colStokKodu.Visible = true;
-            this.colStokKodu.VisibleIndex = 2;
-            this.colStokKodu.Width = 104;
+            this.colStokKodu.VisibleIndex = 1;
+            this.colStokKodu.Width = 208;
             // 
             // colStokAdi
             // 
@@ -232,8 +272,8 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colStokAdi.Name = "colStokAdi";
             this.colStokAdi.OptionsColumn.AllowEdit = false;
             this.colStokAdi.Visible = true;
-            this.colStokAdi.VisibleIndex = 3;
-            this.colStokAdi.Width = 178;
+            this.colStokAdi.VisibleIndex = 2;
+            this.colStokAdi.Width = 351;
             // 
             // colBarkod
             // 
@@ -249,8 +289,8 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colBirimi.Name = "colBirimi";
             this.colBirimi.OptionsColumn.AllowEdit = false;
             this.colBirimi.Visible = true;
-            this.colBirimi.VisibleIndex = 5;
-            this.colBirimi.Width = 41;
+            this.colBirimi.VisibleIndex = 4;
+            this.colBirimi.Width = 80;
             // 
             // colMiktar
             // 
@@ -261,8 +301,8 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colMiktar.Name = "colMiktar";
             this.colMiktar.OptionsColumn.AllowEdit = false;
             this.colMiktar.Visible = true;
-            this.colMiktar.VisibleIndex = 6;
-            this.colMiktar.Width = 47;
+            this.colMiktar.VisibleIndex = 5;
+            this.colMiktar.Width = 84;
             // 
             // colKdv
             // 
@@ -273,20 +313,20 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colKdv.Name = "colKdv";
             this.colKdv.OptionsColumn.AllowEdit = false;
             this.colKdv.Visible = true;
-            this.colKdv.VisibleIndex = 8;
-            this.colKdv.Width = 59;
+            this.colKdv.VisibleIndex = 6;
+            this.colKdv.Width = 60;
             // 
             // colBirimFiyati
             // 
-            this.colBirimFiyati.Caption = "Satış Birim Fiyat";
+            this.colBirimFiyati.Caption = "Satış B. F.";
             this.colBirimFiyati.DisplayFormat.FormatString = "C2";
             this.colBirimFiyati.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colBirimFiyati.FieldName = "BirimFiyati";
             this.colBirimFiyati.Name = "colBirimFiyati";
             this.colBirimFiyati.OptionsColumn.AllowEdit = false;
             this.colBirimFiyati.Visible = true;
-            this.colBirimFiyati.VisibleIndex = 14;
-            this.colBirimFiyati.Width = 83;
+            this.colBirimFiyati.VisibleIndex = 10;
+            this.colBirimFiyati.Width = 116;
             // 
             // colIndirimOrani
             // 
@@ -296,9 +336,7 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colIndirimOrani.FieldName = "IndirimOrani";
             this.colIndirimOrani.Name = "colIndirimOrani";
             this.colIndirimOrani.OptionsColumn.AllowEdit = false;
-            this.colIndirimOrani.Visible = true;
-            this.colIndirimOrani.VisibleIndex = 10;
-            this.colIndirimOrani.Width = 40;
+            this.colIndirimOrani.Width = 47;
             // 
             // colIndirimTutari
             // 
@@ -311,8 +349,8 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colIndirimTutari.UnboundExpression = "[BirimFiyati] * [Miktar] * [IndirimOrani] / 100";
             this.colIndirimTutari.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colIndirimTutari.Visible = true;
-            this.colIndirimTutari.VisibleIndex = 11;
-            this.colIndirimTutari.Width = 59;
+            this.colIndirimTutari.VisibleIndex = 7;
+            this.colIndirimTutari.Width = 69;
             // 
             // colDepoKodu
             // 
@@ -330,12 +368,12 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colDepoAdi.Name = "colDepoAdi";
             this.colDepoAdi.OptionsColumn.AllowEdit = false;
             this.colDepoAdi.Visible = true;
-            this.colDepoAdi.VisibleIndex = 4;
-            this.colDepoAdi.Width = 53;
+            this.colDepoAdi.VisibleIndex = 3;
+            this.colDepoAdi.Width = 99;
             // 
             // colSatisToplam
             // 
-            this.colSatisToplam.Caption = "Toplam";
+            this.colSatisToplam.Caption = "S. Toplam";
             this.colSatisToplam.DisplayFormat.FormatString = "C2";
             this.colSatisToplam.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSatisToplam.FieldName = "SatisToplam";
@@ -343,7 +381,7 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colSatisToplam.OptionsColumn.AllowEdit = false;
             this.colSatisToplam.Visible = true;
             this.colSatisToplam.VisibleIndex = 12;
-            this.colSatisToplam.Width = 49;
+            this.colSatisToplam.Width = 93;
             // 
             // colSeriNo
             // 
@@ -363,8 +401,8 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colTarih.Name = "colTarih";
             this.colTarih.OptionsColumn.AllowEdit = false;
             this.colTarih.Visible = true;
-            this.colTarih.VisibleIndex = 9;
-            this.colTarih.Width = 53;
+            this.colTarih.VisibleIndex = 8;
+            this.colTarih.Width = 90;
             // 
             // colSaat
             // 
@@ -394,40 +432,134 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colAlisToplam.Name = "colAlisToplam";
             this.colAlisToplam.OptionsColumn.AllowEdit = false;
             this.colAlisToplam.Visible = true;
-            this.colAlisToplam.VisibleIndex = 13;
-            this.colAlisToplam.Width = 68;
+            this.colAlisToplam.VisibleIndex = 11;
+            this.colAlisToplam.Width = 169;
             // 
             // colKarZarar
             // 
-            this.colKarZarar.Caption = "Kar / Zarar";
+            this.colKarZarar.Caption = "K/Z";
             this.colKarZarar.DisplayFormat.FormatString = "C2";
             this.colKarZarar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colKarZarar.FieldName = "KarZarar";
             this.colKarZarar.Name = "colKarZarar";
             this.colKarZarar.OptionsColumn.AllowEdit = false;
             this.colKarZarar.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KarZarar", "Toplam Kar ={0:C2}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, DevExpress.Data.SummaryMode.Mixed, "KarZarar", "{0:C2}")});
             this.colKarZarar.Visible = true;
-            this.colKarZarar.VisibleIndex = 15;
-            this.colKarZarar.Width = 107;
+            this.colKarZarar.VisibleIndex = 13;
+            this.colKarZarar.Width = 154;
             // 
             // colAlisFiyati1
             // 
-            this.colAlisFiyati1.Caption = "Alış Fiyatı 1";
+            this.colAlisFiyati1.Caption = "Alış F. 1";
             this.colAlisFiyati1.DisplayFormat.FormatString = "C2";
             this.colAlisFiyati1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colAlisFiyati1.FieldName = "AlisFiyati";
             this.colAlisFiyati1.Name = "colAlisFiyati1";
             this.colAlisFiyati1.OptionsColumn.AllowEdit = false;
             this.colAlisFiyati1.Visible = true;
-            this.colAlisFiyati1.VisibleIndex = 7;
-            this.colAlisFiyati1.Width = 65;
+            this.colAlisFiyati1.VisibleIndex = 9;
+            this.colAlisFiyati1.Width = 112;
+            // 
+            // colKarZarar2
+            // 
+            this.colKarZarar2.Caption = "K/Z 2";
+            this.colKarZarar2.DisplayFormat.FormatString = "C2";
+            this.colKarZarar2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colKarZarar2.FieldName = "KarZarar2";
+            this.colKarZarar2.GroupFormat.FormatString = "C2";
+            this.colKarZarar2.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colKarZarar2.Name = "colKarZarar2";
+            this.colKarZarar2.OptionsColumn.AllowEdit = false;
+            this.colKarZarar2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KarZarar2", "{0:C2}")});
+            this.colKarZarar2.Width = 52;
+            // 
+            // colKarZarar3
+            // 
+            this.colKarZarar3.Caption = "K/Z 3";
+            this.colKarZarar3.DisplayFormat.FormatString = "C2";
+            this.colKarZarar3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colKarZarar3.FieldName = "KarZarar3";
+            this.colKarZarar3.Name = "colKarZarar3";
+            this.colKarZarar3.OptionsColumn.AllowEdit = false;
+            this.colKarZarar3.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KarZarar3", "{0:C2}")});
+            this.colKarZarar3.Width = 121;
+            // 
+            // colAlisFiyati2
+            // 
+            this.colAlisFiyati2.Caption = "Alış F. 2";
+            this.colAlisFiyati2.DisplayFormat.FormatString = "C2";
+            this.colAlisFiyati2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colAlisFiyati2.FieldName = "AlisFiyati2";
+            this.colAlisFiyati2.Name = "colAlisFiyati2";
+            this.colAlisFiyati2.OptionsColumn.AllowEdit = false;
+            this.colAlisFiyati2.Width = 36;
+            // 
+            // colAlisFiyati3
+            // 
+            this.colAlisFiyati3.Caption = "Alış F. 3";
+            this.colAlisFiyati3.DisplayFormat.FormatString = "C2";
+            this.colAlisFiyati3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colAlisFiyati3.FieldName = "AlisFiyati3";
+            this.colAlisFiyati3.Name = "colAlisFiyati3";
+            this.colAlisFiyati3.OptionsColumn.AllowEdit = false;
+            this.colAlisFiyati3.Width = 36;
+            // 
+            // colAlisToplam2
+            // 
+            this.colAlisToplam2.Caption = "Alış T. 2";
+            this.colAlisToplam2.DisplayFormat.FormatString = "C2";
+            this.colAlisToplam2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colAlisToplam2.FieldName = "AlisToplam2";
+            this.colAlisToplam2.Name = "colAlisToplam2";
+            this.colAlisToplam2.OptionsColumn.AllowEdit = false;
+            this.colAlisToplam2.Width = 36;
+            // 
+            // colALisToplam3
+            // 
+            this.colALisToplam3.Caption = "Alış T. 3";
+            this.colALisToplam3.DisplayFormat.FormatString = "C2";
+            this.colALisToplam3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colALisToplam3.FieldName = "AlisToplam3";
+            this.colALisToplam3.Name = "colALisToplam3";
+            this.colALisToplam3.OptionsColumn.AllowEdit = false;
+            this.colALisToplam3.Width = 45;
+            // 
+            // colCariAdi
+            // 
+            this.colCariAdi.Caption = "Cari Adı";
+            this.colCariAdi.FieldName = "CariAdi";
+            this.colCariAdi.Name = "colCariAdi";
+            this.colCariAdi.OptionsColumn.AllowEdit = false;
+            // 
+            // colCariGrubu
+            // 
+            this.colCariGrubu.Caption = "Cari Grubu";
+            this.colCariGrubu.FieldName = "CariGrubu";
+            this.colCariGrubu.Name = "colCariGrubu";
+            this.colCariGrubu.OptionsColumn.AllowEdit = false;
+            // 
+            // colCariKodu
+            // 
+            this.colCariKodu.Caption = "Cari Kodu";
+            this.colCariKodu.FieldName = "CariKodu";
+            this.colCariKodu.Name = "colCariKodu";
+            this.colCariKodu.OptionsColumn.AllowEdit = false;
+            // 
+            // colCariId
+            // 
+            this.colCariId.Caption = "Cari Id";
+            this.colCariId.FieldName = "CariId";
+            this.colCariId.Name = "colCariId";
+            this.colCariId.OptionsColumn.AllowEdit = false;
             // 
             // frmStokHareketRaporu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1134, 468);
+            this.ClientSize = new System.Drawing.Size(1567, 633);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panelControl1);
             this.Name = "frmStokHareketRaporu";
@@ -478,5 +610,16 @@ namespace IsbaSatis.BackOffice.Raporlar
         private DevExpress.XtraGrid.Columns.GridColumn colAlisToplam;
         private DevExpress.XtraGrid.Columns.GridColumn colKarZarar;
         private DevExpress.XtraGrid.Columns.GridColumn colAlisFiyati1;
+        private DevExpress.XtraGrid.Columns.GridColumn colKarZarar2;
+        private DevExpress.XtraGrid.Columns.GridColumn colKarZarar3;
+        private DevExpress.XtraGrid.Columns.GridColumn colAlisFiyati2;
+        private DevExpress.XtraGrid.Columns.GridColumn colAlisFiyati3;
+        private DevExpress.XtraGrid.Columns.GridColumn colAlisToplam2;
+        private DevExpress.XtraGrid.Columns.GridColumn colALisToplam3;
+        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCariAdi;
+        private DevExpress.XtraGrid.Columns.GridColumn colCariGrubu;
+        private DevExpress.XtraGrid.Columns.GridColumn colCariKodu;
+        private DevExpress.XtraGrid.Columns.GridColumn colCariId;
     }
 }

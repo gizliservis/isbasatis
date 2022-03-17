@@ -173,6 +173,8 @@
             this.colStokId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepoId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAlisFiyati = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAlisFiyati2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAlisFiyati3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtMiktar = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
@@ -246,8 +248,6 @@
             this.radialFiyat = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnFaturaYazdir = new DevExpress.XtraEditors.SimpleButton();
-            this.colAlisFiyati2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAlisFiyati3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.navPlasiyerBilgi)).BeginInit();
             this.navPlasiyerBilgi.SuspendLayout();
             this.navFisBilgi.SuspendLayout();
@@ -1336,7 +1336,26 @@
             this.colAlisFiyati.FieldName = "AlisFiyati";
             this.colAlisFiyati.Name = "colAlisFiyati";
             this.colAlisFiyati.OptionsColumn.AllowEdit = false;
-            this.colAlisFiyati.OptionsColumn.ShowInCustomizationForm = false;
+            this.colAlisFiyati.Visible = true;
+            this.colAlisFiyati.VisibleIndex = 12;
+            // 
+            // colAlisFiyati2
+            // 
+            this.colAlisFiyati2.Caption = "Alış Fiyatı 2";
+            this.colAlisFiyati2.FieldName = "AlisFiyati2";
+            this.colAlisFiyati2.Name = "colAlisFiyati2";
+            this.colAlisFiyati2.OptionsColumn.AllowEdit = false;
+            this.colAlisFiyati2.Visible = true;
+            this.colAlisFiyati2.VisibleIndex = 13;
+            // 
+            // colAlisFiyati3
+            // 
+            this.colAlisFiyati3.Caption = "Aliş Fiyatı 3";
+            this.colAlisFiyati3.FieldName = "AlisFiyati3";
+            this.colAlisFiyati3.Name = "colAlisFiyati3";
+            this.colAlisFiyati3.OptionsColumn.AllowEdit = false;
+            this.colAlisFiyati3.Visible = true;
+            this.colAlisFiyati3.VisibleIndex = 14;
             // 
             // panelControl1
             // 
@@ -1441,7 +1460,7 @@
             this.navOdemeEkrani.Name = "navOdemeEkrani";
             this.navOdemeEkrani.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.navOdemeEkrani.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
-            this.navOdemeEkrani.Size = new System.Drawing.Size(1021, 196);
+            this.navOdemeEkrani.Size = new System.Drawing.Size(1049, 213);
             // 
             // gridcontKasaHareket
             // 
@@ -1452,7 +1471,7 @@
             this.gridcontKasaHareket.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoKasa,
             this.repoKHSil});
-            this.gridcontKasaHareket.Size = new System.Drawing.Size(1021, 150);
+            this.gridcontKasaHareket.Size = new System.Drawing.Size(1049, 167);
             this.gridcontKasaHareket.TabIndex = 3;
             this.gridcontKasaHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridKasaHareket});
@@ -1619,7 +1638,7 @@
             this.flowOdemeTur.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowOdemeTur.Location = new System.Drawing.Point(0, 0);
             this.flowOdemeTur.Name = "flowOdemeTur";
-            this.flowOdemeTur.Size = new System.Drawing.Size(1021, 46);
+            this.flowOdemeTur.Size = new System.Drawing.Size(1049, 46);
             this.flowOdemeTur.TabIndex = 2;
             // 
             // navPersonelIslem
@@ -1629,7 +1648,7 @@
             this.navPersonelIslem.Controls.Add(this.panelControl2);
             this.navPersonelIslem.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.user_headset;
             this.navPersonelIslem.Name = "navPersonelIslem";
-            this.navPersonelIslem.Size = new System.Drawing.Size(1021, 187);
+            this.navPersonelIslem.Size = new System.Drawing.Size(1049, 197);
             // 
             // gridcontPersonelHareket
             // 
@@ -1642,7 +1661,7 @@
             this.repositoryItemButtonEdit1,
             this.repositoryItemButtonEdit2,
             this.repositoryItemButtonEdit3});
-            this.gridcontPersonelHareket.Size = new System.Drawing.Size(1021, 136);
+            this.gridcontPersonelHareket.Size = new System.Drawing.Size(1049, 146);
             this.gridcontPersonelHareket.TabIndex = 5;
             this.gridcontPersonelHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridPersonelHareket});
@@ -1833,7 +1852,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1021, 51);
+            this.panelControl2.Size = new System.Drawing.Size(1049, 51);
             this.panelControl2.TabIndex = 4;
             // 
             // cmbYil
@@ -2232,22 +2251,6 @@
             this.btnFaturaYazdir.TabIndex = 1;
             this.btnFaturaYazdir.Text = "Fatura Yazdır";
             this.btnFaturaYazdir.Click += new System.EventHandler(this.btnFaturaYazdir_Click);
-            // 
-            // colAlisFiyati2
-            // 
-            this.colAlisFiyati2.Caption = "Alış Fiyatı 2";
-            this.colAlisFiyati2.FieldName = "AlisFiyati2";
-            this.colAlisFiyati2.Name = "colAlisFiyati2";
-            this.colAlisFiyati2.OptionsColumn.AllowEdit = false;
-            this.colAlisFiyati2.OptionsColumn.ShowInCustomizationForm = false;
-            // 
-            // colAlisFiyati3
-            // 
-            this.colAlisFiyati3.Caption = "Aliş Fiyatı 3";
-            this.colAlisFiyati3.FieldName = "AlisFiyati3";
-            this.colAlisFiyati3.Name = "colAlisFiyati3";
-            this.colAlisFiyati3.OptionsColumn.AllowEdit = false;
-            this.colAlisFiyati3.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // frmFislerVeFaturalar
             // 

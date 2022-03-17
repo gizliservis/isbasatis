@@ -198,10 +198,10 @@ namespace Isbasatis.Entities.Data_Access
         {
             var result = context.StokHareketleri.Where(c => c.Hareket == "Stok Çıkış"
             && c.Siparis == false
-            && c.Irsaliye == false && c.Teklif == false && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date).Join(context.Stoklar,
-                hrk => hrk.StokId,
-                stk => stk.Id,
-                (hrk, stk) => new
+            && c.Irsaliye == false && c.Teklif == false && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date).Join(context.fisler,
+                hrk => hrk.FisKodu,
+                cari => cari.FisKodu,
+                (hrk, cari) => new
                 {
                     hrk.Id,
                     hrk.FisKodu,
@@ -214,6 +214,10 @@ namespace Isbasatis.Entities.Data_Access
                     hrk.DepoId,
                     hrk.IndirimOrani,
                     hrk.Aciklama,
+                    CariAdi=cari.Cari.CariAdi,
+                    CariKodu=cari.Cari.CariKodu,
+                    CariGrubu=cari.Cari.CariGrubu,
+                    CariId=cari.Cari.Id,
                     IndirimTutari = (hrk.BirimFiyati * hrk.IndirimOrani) / 100,
                     StokKodu = hrk.Stok.StokKodu,
                     DepoAdi = hrk.Depo.DepoAdi,
@@ -221,10 +225,15 @@ namespace Isbasatis.Entities.Data_Access
                     StokAdi = hrk.Stok.StokAdi,
                     Barkod = hrk.Stok.Barkod,
                     AlisFiyati = hrk.AlisFiyati,
+                    AlisFiyati2 = hrk.AlisFiyati2,
+                    AlisFiyati3 = hrk.AlisFiyati3,
                     SatisToplam = hrk.ToplamTutar,
                     AlisToplam = (hrk.AlisFiyati* hrk.Miktar),
-                    KarZarar = hrk.ToplamTutar - (hrk.AlisFiyati * hrk.Miktar)
-
+                    AlisToplam2 = (hrk.AlisFiyati2* hrk.Miktar),
+                    AlisToplam3= (hrk.AlisFiyati3* hrk.Miktar),
+                    KarZarar = hrk.ToplamTutar - (hrk.AlisFiyati * hrk.Miktar),
+                    KarZarar2 = hrk.ToplamTutar - (hrk.AlisFiyati2 * hrk.Miktar),
+                    KarZarar3 = hrk.ToplamTutar - (hrk.AlisFiyati3 * hrk.Miktar),
                 }).ToList();
             return result;
         }
