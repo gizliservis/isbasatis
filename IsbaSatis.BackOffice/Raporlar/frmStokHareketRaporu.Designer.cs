@@ -562,8 +562,11 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.ClientSize = new System.Drawing.Size(1567, 633);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panelControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmStokHareketRaporu";
-            this.Text = "Stok Hareket Raporu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Satış Karlılık Raporu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();

@@ -224,6 +224,8 @@ namespace Isbasatis.Entities.Data_Access
                     Birimi = hrk.Stok.Birimi,
                     StokAdi = hrk.Stok.StokAdi,
                     Barkod = hrk.Stok.Barkod,
+                    StokGrubu= hrk.Stok.StokGrubu,
+                    StokAltGrubu=hrk.Stok.StokAltGrubu,
                     AlisFiyati = hrk.AlisFiyati,
                     AlisFiyati2 = hrk.AlisFiyati2,
                     AlisFiyati3 = hrk.AlisFiyati3,

@@ -380,6 +380,12 @@
     <Compile Include="Raporlar\frmRaporListele.Designer.cs">
       <DependentUpon>frmRaporListele.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\frmStokHareketleriTarih.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmStokHareketleriTarih.Designer.cs">
+      <DependentUpon>frmStokHareketleriTarih.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\frmStokHareketRaporu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -591,6 +597,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmRaporListele.resx">
       <DependentUpon>frmRaporListele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmStokHareketleriTarih.resx">
+      <DependentUpon>frmStokHareketleriTarih.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmStokHareketRaporu.resx">
       <DependentUpon>frmStokHareketRaporu.cs</DependentUpon>

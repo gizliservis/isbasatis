@@ -55,21 +55,20 @@ namespace IsbaSatis.BackOffice.Raporlar
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            if (txtRaporAdi.Text == "Hareket Raporu Tarih Aralığı")
+            if (txtRaporAdi.Text == "Satış Karlılık Raporu")
             {
-                rapor = new rptStokHareketleri(dateBaslangic.DateTime, dateBitis.DateTime);
-                frmRaporGoruntule form = new frmRaporGoruntule(rapor);
-                rapor.FilterString = filterControl1.FilterString;
-                form.WindowState = FormWindowState.Maximized;
-                form.Show();
+                frmStokHareketRaporu frm = new frmStokHareketRaporu();
+                frm.ShowDialog();
+                //rapor = new rptStokHareketleri(dateBaslangic.DateTime, dateBitis.DateTime);
+                //frmRaporGoruntule form = new frmRaporGoruntule(rapor);
+                //rapor.FilterString = filterControl1.FilterString;
+                //form.WindowState = FormWindowState.Maximized;
+                //form.Show();
             }
-            else if (txtRaporAdi.Text == "Satış Raporu Günlük")
+            else if (txtRaporAdi.Text == "Stok Hareket Raporu")
             {
-                gunlukSatis = new rptGunlukSatis(dateBaslangic.DateTime);
-                frmRaporGoruntule form = new frmRaporGoruntule(gunlukSatis);
-                gunlukSatis.FilterString = filterControl1.FilterString;
-                form.WindowState = FormWindowState.Maximized;
-                form.Show();
+                frmStokHareketleriTarih frm = new frmStokHareketleriTarih();
+                frm.ShowDialog();
             }
             else if (txtRaporAdi.Text == "Grup Bazlı Hareketler")
             {
@@ -142,7 +141,7 @@ namespace IsbaSatis.BackOffice.Raporlar
                         break;
                 }
             }
-            if (txtRaporAdi.Text == "Stok Bazlı Hareketler")
+            if (txtRaporAdi.Text.Contains("Stok"))
             {
                 frmStokSec frm = new frmStokSec();
                 frm.ShowDialog();
@@ -206,6 +205,230 @@ namespace IsbaSatis.BackOffice.Raporlar
             lblGenel.Visible = false;
 
 
+        }
+
+        private void navBarItem1_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            var buton = sender as NavBarItem;
+            txtRaporAdi.Text = e.Link.Caption;
+            txtRaporGrubu.Text = e.Link.Group.Caption;
+            txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
+            dateBaslangic.Visible = false;
+            dateBitis.Visible = false;
+            dateBaslangic.DateTime = DateTime.Now;
+            dateBitis.DateTime = DateTime.Now;
+            lblBaslangic.Visible = true;
+            lblBitis.Visible = false;
+            txtGrup.Visible = false;
+            lblGenel.Visible = false;
+        }
+
+        private void navBarItem5_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            var buton = sender as NavBarItem;
+            txtRaporAdi.Text = e.Link.Caption;
+            txtRaporGrubu.Text = e.Link.Group.Caption;
+            txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
+            dateBaslangic.Visible = false;
+            dateBitis.Visible = false;
+            dateBaslangic.DateTime = DateTime.Now;
+            dateBitis.DateTime = DateTime.Now;
+            lblBaslangic.Visible = true;
+            lblBitis.Visible = false;
+            txtGrup.Visible = false;
+            lblGenel.Visible = false;
+        }
+
+        private void navBarItem13_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            var buton = sender as NavBarItem;
+            txtRaporAdi.Text = e.Link.Caption;
+            txtRaporGrubu.Text = e.Link.Group.Caption;
+            txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
+            dateBaslangic.Visible = false;
+            dateBitis.Visible = false;
+            dateBaslangic.DateTime = DateTime.Now;
+            dateBitis.DateTime = DateTime.Now;
+            lblBaslangic.Visible = true;
+            lblBitis.Visible = false;
+            txtGrup.Visible = false;
+            lblGenel.Visible = false;
+        }
+
+        private void navBarItem6_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            var buton = sender as NavBarItem;
+            txtRaporAdi.Text = e.Link.Caption;
+            txtRaporGrubu.Text = e.Link.Group.Caption;
+            txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
+            dateBaslangic.Visible = false;
+            dateBitis.Visible = false;
+            dateBaslangic.DateTime = DateTime.Now;
+            dateBitis.DateTime = DateTime.Now;
+            lblBaslangic.Visible = true;
+            lblBitis.Visible = false;
+            txtGrup.Visible = false;
+            lblGenel.Visible = false;
+        }
+
+        private void navBarItem7_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            var buton = sender as NavBarItem;
+            txtRaporAdi.Text = e.Link.Caption;
+            txtRaporGrubu.Text = e.Link.Group.Caption;
+            txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
+            dateBaslangic.Visible = false;
+            dateBitis.Visible = false;
+            dateBaslangic.DateTime = DateTime.Now;
+            dateBitis.DateTime = DateTime.Now;
+            lblBaslangic.Visible = true;
+            lblBitis.Visible = false;
+            txtGrup.Visible = false;
+            lblGenel.Visible = false;
+        }
+
+        private void navBarItem8_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            var buton = sender as NavBarItem;
+            txtRaporAdi.Text = e.Link.Caption;
+            txtRaporGrubu.Text = e.Link.Group.Caption;
+            txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
+            dateBaslangic.Visible = false;
+            dateBitis.Visible = false;
+            dateBaslangic.DateTime = DateTime.Now;
+            dateBitis.DateTime = DateTime.Now;
+            lblBaslangic.Visible = true;
+            lblBitis.Visible = false;
+            txtGrup.Visible = false;
+            lblGenel.Visible = false;
+        }
+
+        private void navBarItem9_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            var buton = sender as NavBarItem;
+            txtRaporAdi.Text = e.Link.Caption;
+            txtRaporGrubu.Text = e.Link.Group.Caption;
+            txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
+            dateBaslangic.Visible = false;
+            dateBitis.Visible = false;
+            dateBaslangic.DateTime = DateTime.Now;
+            dateBitis.DateTime = DateTime.Now;
+            lblBaslangic.Visible = true;
+            lblBitis.Visible = false;
+            txtGrup.Visible = false;
+            lblGenel.Visible = false;
+        }
+
+        private void navBarItem10_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            var buton = sender as NavBarItem;
+            txtRaporAdi.Text = e.Link.Caption;
+            txtRaporGrubu.Text = e.Link.Group.Caption;
+            txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
+            dateBaslangic.Visible = false;
+            dateBitis.Visible = false;
+            dateBaslangic.DateTime = DateTime.Now;
+            dateBitis.DateTime = DateTime.Now;
+            lblBaslangic.Visible = true;
+            lblBitis.Visible = false;
+            txtGrup.Visible = false;
+            lblGenel.Visible = false;
+        }
+
+        private void navBarItem11_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            var buton = sender as NavBarItem;
+            txtRaporAdi.Text = e.Link.Caption;
+            txtRaporGrubu.Text = e.Link.Group.Caption;
+            txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
+            dateBaslangic.Visible = false;
+            dateBitis.Visible = false;
+            dateBaslangic.DateTime = DateTime.Now;
+            dateBitis.DateTime = DateTime.Now;
+            lblBaslangic.Visible = true;
+            lblBitis.Visible = false;
+            txtGrup.Visible = false;
+            lblGenel.Visible = false;
+        }
+
+        private void navBarItem4_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            var buton = sender as NavBarItem;
+            txtRaporAdi.Text = e.Link.Caption;
+            txtRaporGrubu.Text = e.Link.Group.Caption;
+            txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
+            dateBaslangic.Visible = false;
+            dateBitis.Visible = false;
+            dateBaslangic.DateTime = DateTime.Now;
+            dateBitis.DateTime = DateTime.Now;
+            lblBaslangic.Visible = true;
+            lblBitis.Visible = false;
+            txtGrup.Visible = false;
+            lblGenel.Visible = false;
+        }
+
+        private void navBarItem1_LinkClicked_1(object sender, NavBarLinkEventArgs e)
+        {
+            var buton = sender as NavBarItem;
+            txtRaporAdi.Text = e.Link.Caption;
+            txtRaporGrubu.Text = e.Link.Group.Caption;
+            txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
+            dateBaslangic.Visible = false;
+            dateBitis.Visible = false;
+            dateBaslangic.DateTime = DateTime.Now;
+            dateBitis.DateTime = DateTime.Now;
+            lblBaslangic.Visible = true;
+            lblBitis.Visible = false;
+            txtGrup.Visible = false;
+            lblGenel.Visible = false;
+        }
+
+        private void rptDepoBakiye_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            var buton = sender as NavBarItem;
+            txtRaporAdi.Text = e.Link.Caption;
+            txtRaporGrubu.Text = e.Link.Group.Caption;
+            txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
+            dateBaslangic.Visible = false;
+            dateBitis.Visible = false;
+            dateBaslangic.DateTime = DateTime.Now;
+            dateBitis.DateTime = DateTime.Now;
+            lblBaslangic.Visible = true;
+            lblBitis.Visible = false;
+            txtGrup.Visible = false;
+            lblGenel.Visible = false;
+        }
+
+        private void rptStkBakiye_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            var buton = sender as NavBarItem;
+            txtRaporAdi.Text = e.Link.Caption;
+            txtRaporGrubu.Text = e.Link.Group.Caption;
+            txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
+            dateBaslangic.Visible = false;
+            dateBitis.Visible = false;
+            dateBaslangic.DateTime = DateTime.Now;
+            dateBitis.DateTime = DateTime.Now;
+            lblBaslangic.Visible = true;
+            lblBitis.Visible = false;
+            txtGrup.Visible = false;
+            lblGenel.Visible = false;
+        }
+
+        private void rptStokBazli_LinkClicked(object sender, NavBarLinkEventArgs e)
+        {
+            var buton = sender as NavBarItem;
+            txtRaporAdi.Text = e.Link.Caption;
+            txtRaporGrubu.Text = e.Link.Group.Caption;
+            txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
+            dateBaslangic.Visible = false;
+            dateBitis.Visible = false;
+            dateBaslangic.DateTime = DateTime.Now;
+            dateBitis.DateTime = DateTime.Now;
+            lblBaslangic.Visible = true;
+            lblBitis.Visible = false;
+            txtGrup.Visible = false;
+            lblGenel.Visible = false;
         }
     }
 }
