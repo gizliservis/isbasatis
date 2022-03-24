@@ -53,6 +53,7 @@ namespace Isbasatis.Entities.Data_Access
             return tablo;
 
         }
+       
         public object DepoStokListele1(IsbaSatisContext context)
         {
             var tablo = (from c in context.StokHareketleri
@@ -214,30 +215,59 @@ namespace Isbasatis.Entities.Data_Access
                     hrk.DepoId,
                     hrk.IndirimOrani,
                     hrk.Aciklama,
-                    CariAdi=cari.Cari.CariAdi,
-                    CariKodu=cari.Cari.CariKodu,
-                    CariGrubu=cari.Cari.CariGrubu,
-                    CariId=cari.Cari.Id,
+                    CariAdi = cari.Cari.CariAdi,
+                    CariKodu = cari.Cari.CariKodu,
+                    CariGrubu = cari.Cari.CariGrubu,
+                    CariId = cari.Cari.Id,
                     IndirimTutari = (hrk.BirimFiyati * hrk.IndirimOrani) / 100,
                     StokKodu = hrk.Stok.StokKodu,
                     DepoAdi = hrk.Depo.DepoAdi,
                     Birimi = hrk.Stok.Birimi,
                     StokAdi = hrk.Stok.StokAdi,
                     Barkod = hrk.Stok.Barkod,
-                    StokGrubu= hrk.Stok.StokGrubu,
-                    StokAltGrubu=hrk.Stok.StokAltGrubu,
+                    StokGrubu = hrk.Stok.StokGrubu,
+                    StokAltGrubu = hrk.Stok.StokAltGrubu,
                     AlisFiyati = hrk.AlisFiyati,
                     AlisFiyati2 = hrk.AlisFiyati2,
                     AlisFiyati3 = hrk.AlisFiyati3,
                     SatisToplam = hrk.ToplamTutar,
-                    AlisToplam = (hrk.AlisFiyati* hrk.Miktar),
-                    AlisToplam2 = (hrk.AlisFiyati2* hrk.Miktar),
-                    AlisToplam3= (hrk.AlisFiyati3* hrk.Miktar),
+                    AlisToplam = (hrk.AlisFiyati * hrk.Miktar),
+                    AlisToplam2 = (hrk.AlisFiyati2 * hrk.Miktar),
+                    AlisToplam3 = (hrk.AlisFiyati3 * hrk.Miktar),
                     KarZarar = hrk.ToplamTutar - (hrk.AlisFiyati * hrk.Miktar),
                     KarZarar2 = hrk.ToplamTutar - (hrk.AlisFiyati2 * hrk.Miktar),
                     KarZarar3 = hrk.ToplamTutar - (hrk.AlisFiyati3 * hrk.Miktar),
                 }).ToList();
             return result;
+        }
+        public object StokBazliRapor(int stokId, IsbaSatisContext context, DateTime baslangic, DateTime bitis)
+        {
+            var result = from stkHareket in context.StokHareketleri.Where(c => c.StokId == stokId && c.Siparis == false && c.Irsaliye == false && c.Teklif == false && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date)
+                         select new
+                         {
+                             stkHareket.Id,
+                             stkHareket.StokId,
+                             stkHareket.FisKodu,
+                             stkHareket.Hareket,
+                             StokAdi = stkHareket.Stok.StokAdi,
+                             StokKodu = stkHareket.Stok.StokKodu,
+                             StokGrubu = stkHareket.Stok.StokGrubu,
+                             stkHareket.Miktar,
+                             stkHareket.Kdv,
+                             stkHareket.BirimFiyati,
+                             stkHareket.IndirimOrani,
+                             stkHareket.DepoId,
+                             DepoAdi = stkHareket.Depo.DepoAdi,
+                             DepoKodu = stkHareket.Depo.DepoKodu,
+                             stkHareket.SeriNo,
+                             stkHareket.Tarih,
+                             stkHareket.Aciklama,
+                             Birimi = stkHareket.Stok.Birimi,
+                             Barkod = stkHareket.Stok.Barkod,
+                             indirimTutar = (stkHareket.BirimFiyati * stkHareket.IndirimOrani) / 100,
+                             stkHareket.ToplamTutar,
+                         };
+            return result.ToList();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using Isbasatis.Entities.Context;
 using Isbasatis.Entities.Data_Access;
+using Isbasatis.Entities.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,11 +18,13 @@ namespace IsbaSatis.BackOffice.Raporlar
     {
         StokHareketDAL stokHareketDal = new StokHareketDAL();
         IsbaSatisContext context = new IsbaSatisContext();
+        ExportTool export;
         public frmStokHareketleriTarih()
         {
             InitializeComponent();
             dateBitis.DateTime = DateTime.Now;
             dateBaslangic.DateTime = DateTime.Now;
+            export = new ExportTool(this, gridView1, dropDownButton1);
         }
    
         private void BtnHazırla_Click(object sender, EventArgs e)
@@ -31,6 +34,11 @@ namespace IsbaSatis.BackOffice.Raporlar
         public void Listele()
         {
             gridControl1.DataSource = stokHareketDal.StokKarZarar(context, dateBaslangic.DateTime, dateBitis.DateTime);
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -40,20 +40,27 @@
             this.rptStokDurumu = new DevExpress.XtraNavBar.NavBarItem();
             this.rptStokBazli = new DevExpress.XtraNavBar.NavBarItem();
             this.rptStkBakiye = new DevExpress.XtraNavBar.NavBarItem();
+            this.rptDepoBakiye = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.rptStokHareketleri = new DevExpress.XtraNavBar.NavBarItem();
             this.rptGrupStokHareketleri = new DevExpress.XtraNavBar.NavBarItem();
             this.rptStokBazliHareket = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.rptGunlukSatis = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem7 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup5 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lblGenel = new DevExpress.XtraEditors.LabelControl();
-            this.lblBitis = new DevExpress.XtraEditors.LabelControl();
-            this.lblBaslangic = new DevExpress.XtraEditors.LabelControl();
-            this.dateBitis = new DevExpress.XtraEditors.DateEdit();
-            this.dateBaslangic = new DevExpress.XtraEditors.DateEdit();
             this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
             this.txtRaporAdi = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -62,26 +69,11 @@
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.txtGrup = new DevExpress.XtraEditors.ButtonEdit();
             this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
-            this.navBarGroup5 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem7 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
-            this.rptDepoBakiye = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBitis.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBitis.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBaslangic.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBaslangic.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRaporAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRaporGrubu.Properties)).BeginInit();
@@ -101,7 +93,7 @@
             this.lblBaslik.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lblBaslik.ImageOptions.Image")));
             this.lblBaslik.Location = new System.Drawing.Point(0, 0);
             this.lblBaslik.Name = "lblBaslik";
-            this.lblBaslik.Size = new System.Drawing.Size(1063, 59);
+            this.lblBaslik.Size = new System.Drawing.Size(1070, 59);
             this.lblBaslik.TabIndex = 4;
             this.lblBaslik.Text = "Rapor Listesi";
             // 
@@ -119,7 +111,7 @@
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grpMenu.Location = new System.Drawing.Point(0, 465);
             this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(1063, 73);
+            this.grpMenu.Size = new System.Drawing.Size(1070, 73);
             this.grpMenu.TabIndex = 5;
             this.grpMenu.Text = "Menü";
             // 
@@ -128,7 +120,7 @@
             this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKapat.ImageOptions.ImageIndex = 0;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(968, 26);
+            this.btnKapat.Location = new System.Drawing.Point(975, 26);
             this.btnKapat.Name = "btnKapat";
             this.btnKapat.Size = new System.Drawing.Size(90, 45);
             this.btnKapat.TabIndex = 0;
@@ -181,6 +173,7 @@
             this.navBarControl1.Size = new System.Drawing.Size(238, 406);
             this.navBarControl1.TabIndex = 6;
             this.navBarControl1.Text = "navBarControl1";
+            this.navBarControl1.Click += new System.EventHandler(this.navBarControl1_Click);
             // 
             // navBarGroup1
             // 
@@ -214,6 +207,12 @@
             this.rptStkBakiye.Tag = "Bu rapor tüm stokların bakiyelerinin listelendiği rapordur";
             this.rptStkBakiye.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.rptStkBakiye_LinkClicked);
             // 
+            // rptDepoBakiye
+            // 
+            this.rptDepoBakiye.Caption = "Depo Bakiye Raporu";
+            this.rptDepoBakiye.Name = "rptDepoBakiye";
+            this.rptDepoBakiye.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.rptDepoBakiye_LinkClicked);
+            // 
             // navBarGroup2
             // 
             this.navBarGroup2.Caption = "Cari Raporları";
@@ -231,6 +230,26 @@
             this.navBarItem4.Name = "navBarItem4";
             this.navBarItem4.Tag = "Tüm Carilerin Bakiyelerini Gösterir";
             this.navBarItem4.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem4_LinkClicked);
+            // 
+            // navBarItem1
+            // 
+            this.navBarItem1.Caption = "Cari Hareket Raporu";
+            this.navBarItem1.Name = "navBarItem1";
+            this.navBarItem1.Tag = "Bu raporda bir cari seçilerek o cariye ait yapılan hareketler listelenir";
+            this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked_1);
+            // 
+            // navBarItem5
+            // 
+            this.navBarItem5.Caption = "Cari Tahsilat ve Ödeme Bazlı Rapor";
+            this.navBarItem5.Name = "navBarItem5";
+            this.navBarItem5.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem5_LinkClicked);
+            // 
+            // navBarItem13
+            // 
+            this.navBarItem13.Caption = "Cari Ekstre Raporu";
+            this.navBarItem13.Name = "navBarItem13";
+            this.navBarItem13.Tag = "Cari ekstresi için alınan rapordur";
+            this.navBarItem13.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem13_LinkClicked);
             // 
             // navBarGroup3
             // 
@@ -279,13 +298,63 @@
             this.rptGunlukSatis.Tag = "Bu rapor tarih aralığı kar/zarar raporudur";
             this.rptGunlukSatis.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.rptGunlukSatis_LinkClicked);
             // 
+            // navBarItem6
+            // 
+            this.navBarItem6.Caption = "Günlük Satış Raporu";
+            this.navBarItem6.Name = "navBarItem6";
+            this.navBarItem6.Tag = "Bu rapor günlük rolarak satışları gösterem rapordur";
+            this.navBarItem6.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem6_LinkClicked);
+            // 
+            // navBarItem7
+            // 
+            this.navBarItem7.Caption = "Ödeme Türü Bazlı Satış Raporu";
+            this.navBarItem7.Name = "navBarItem7";
+            this.navBarItem7.Tag = "Bu rapor ödeme türü seçilerek listelenene rapordur ";
+            this.navBarItem7.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem7_LinkClicked);
+            // 
+            // navBarGroup5
+            // 
+            this.navBarGroup5.Caption = "Banka Raporları";
+            this.navBarGroup5.Expanded = true;
+            this.navBarGroup5.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem10),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem11)});
+            this.navBarGroup5.Name = "navBarGroup5";
+            // 
+            // navBarItem8
+            // 
+            this.navBarItem8.Caption = "Banka Hesabı Bakiye Raporu";
+            this.navBarItem8.Name = "navBarItem8";
+            this.navBarItem8.Tag = "Bu rapor banka kartlarının bakiyesini görüntüler";
+            this.navBarItem8.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem8_LinkClicked);
+            // 
+            // navBarItem9
+            // 
+            this.navBarItem9.Caption = "Banka Hareket Raporu";
+            this.navBarItem9.Name = "navBarItem9";
+            this.navBarItem9.Tag = "Bu rapor banka hareketlerini raporlar";
+            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked);
+            // 
+            // navBarItem10
+            // 
+            this.navBarItem10.Caption = "Banka Kart Bazlı Hareket Raporu";
+            this.navBarItem10.Name = "navBarItem10";
+            this.navBarItem10.Tag = "Bu rapor seçilen bir banka hesabının hareket raporunu görüntüler";
+            this.navBarItem10.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem10_LinkClicked);
+            // 
+            // navBarItem11
+            // 
+            this.navBarItem11.Caption = "Banka İşlem Bazlı Hareket Raporu";
+            this.navBarItem11.Name = "navBarItem11";
+            this.navBarItem11.Tag = "bu rapor banka hesaplarıyla yapılan havale eft  vb. işlemlerden birini seçerek gö" +
+    "sterilen rapordur";
+            this.navBarItem11.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem11_LinkClicked);
+            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.lblGenel);
-            this.groupControl1.Controls.Add(this.lblBitis);
-            this.groupControl1.Controls.Add(this.lblBaslangic);
-            this.groupControl1.Controls.Add(this.dateBitis);
-            this.groupControl1.Controls.Add(this.dateBaslangic);
             this.groupControl1.Controls.Add(this.txtAciklama);
             this.groupControl1.Controls.Add(this.txtRaporAdi);
             this.groupControl1.Controls.Add(this.labelControl1);
@@ -296,57 +365,17 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(238, 59);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(825, 166);
+            this.groupControl1.Size = new System.Drawing.Size(832, 166);
             this.groupControl1.TabIndex = 7;
             this.groupControl1.Text = "Rapor Bilgileri";
             // 
             // lblGenel
             // 
-            this.lblGenel.Location = new System.Drawing.Point(734, 116);
+            this.lblGenel.Location = new System.Drawing.Point(624, 116);
             this.lblGenel.Name = "lblGenel";
             this.lblGenel.Size = new System.Drawing.Size(63, 13);
             this.lblGenel.TabIndex = 13;
             this.lblGenel.Text = "labelControl3";
-            // 
-            // lblBitis
-            // 
-            this.lblBitis.Location = new System.Drawing.Point(734, 74);
-            this.lblBitis.Name = "lblBitis";
-            this.lblBitis.Size = new System.Drawing.Size(48, 13);
-            this.lblBitis.TabIndex = 12;
-            this.lblBitis.Text = "Bitiş Tarihi";
-            // 
-            // lblBaslangic
-            // 
-            this.lblBaslangic.Location = new System.Drawing.Point(718, 31);
-            this.lblBaslangic.Name = "lblBaslangic";
-            this.lblBaslangic.Size = new System.Drawing.Size(73, 13);
-            this.lblBaslangic.TabIndex = 12;
-            this.lblBaslangic.Text = "Başlangıç Tarihi";
-            // 
-            // dateBitis
-            // 
-            this.dateBitis.EditValue = null;
-            this.dateBitis.Location = new System.Drawing.Point(625, 93);
-            this.dateBitis.Name = "dateBitis";
-            this.dateBitis.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateBitis.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateBitis.Size = new System.Drawing.Size(200, 20);
-            this.dateBitis.TabIndex = 10;
-            // 
-            // dateBaslangic
-            // 
-            this.dateBaslangic.EditValue = null;
-            this.dateBaslangic.Location = new System.Drawing.Point(625, 48);
-            this.dateBaslangic.Name = "dateBaslangic";
-            this.dateBaslangic.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateBaslangic.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateBaslangic.Size = new System.Drawing.Size(200, 20);
-            this.dateBaslangic.TabIndex = 10;
             // 
             // txtAciklama
             // 
@@ -427,95 +456,15 @@
             this.filterControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.filterControl1.Location = new System.Drawing.Point(238, 225);
             this.filterControl1.Name = "filterControl1";
-            this.filterControl1.Size = new System.Drawing.Size(825, 240);
+            this.filterControl1.Size = new System.Drawing.Size(832, 240);
             this.filterControl1.TabIndex = 8;
             this.filterControl1.Text = "filterControl1";
-            // 
-            // navBarGroup5
-            // 
-            this.navBarGroup5.Caption = "Banka Raporları";
-            this.navBarGroup5.Expanded = true;
-            this.navBarGroup5.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem10),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem11)});
-            this.navBarGroup5.Name = "navBarGroup5";
-            // 
-            // navBarItem1
-            // 
-            this.navBarItem1.Caption = "Cari Hareket Raporu";
-            this.navBarItem1.Name = "navBarItem1";
-            this.navBarItem1.Tag = "Bu raporda bir cari seçilerek o cariye ait yapılan hareketler listelenir";
-            this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked_1);
-            // 
-            // navBarItem5
-            // 
-            this.navBarItem5.Caption = "Cari Tahsilat ve Ödeme Bazlı Rapor";
-            this.navBarItem5.Name = "navBarItem5";
-            this.navBarItem5.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem5_LinkClicked);
-            // 
-            // navBarItem6
-            // 
-            this.navBarItem6.Caption = "Günlük Satış Raporu";
-            this.navBarItem6.Name = "navBarItem6";
-            this.navBarItem6.Tag = "Bu rapor günlük rolarak satışları gösterem rapordur";
-            this.navBarItem6.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem6_LinkClicked);
-            // 
-            // navBarItem7
-            // 
-            this.navBarItem7.Caption = "Ödeme Türü Bazlı Satış Raporu";
-            this.navBarItem7.Name = "navBarItem7";
-            this.navBarItem7.Tag = "Bu rapor ödeme türü seçilerek listelenene rapordur ";
-            this.navBarItem7.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem7_LinkClicked);
-            // 
-            // navBarItem8
-            // 
-            this.navBarItem8.Caption = "Banka Hesabı Bakiye Raporu";
-            this.navBarItem8.Name = "navBarItem8";
-            this.navBarItem8.Tag = "Bu rapor banka kartlarının bakiyesini görüntüler";
-            this.navBarItem8.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem8_LinkClicked);
-            // 
-            // navBarItem9
-            // 
-            this.navBarItem9.Caption = "Banka Hareket Raporu";
-            this.navBarItem9.Name = "navBarItem9";
-            this.navBarItem9.Tag = "Bu rapor banka hareketlerini raporlar";
-            this.navBarItem9.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem9_LinkClicked);
-            // 
-            // navBarItem10
-            // 
-            this.navBarItem10.Caption = "Banka Kart Bazlı Hareket Raporu";
-            this.navBarItem10.Name = "navBarItem10";
-            this.navBarItem10.Tag = "Bu rapor seçilen bir banka hesabının hareket raporunu görüntüler";
-            this.navBarItem10.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem10_LinkClicked);
-            // 
-            // navBarItem11
-            // 
-            this.navBarItem11.Caption = "Banka İşlem Bazlı Hareket Raporu";
-            this.navBarItem11.Name = "navBarItem11";
-            this.navBarItem11.Tag = "bu rapor banka hesaplarıyla yapılan havale eft  vb. işlemlerden birini seçerek gö" +
-    "sterilen rapordur";
-            this.navBarItem11.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem11_LinkClicked);
-            // 
-            // rptDepoBakiye
-            // 
-            this.rptDepoBakiye.Caption = "Depo Bakiye Raporu";
-            this.rptDepoBakiye.Name = "rptDepoBakiye";
-            this.rptDepoBakiye.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.rptDepoBakiye_LinkClicked);
-            // 
-            // navBarItem13
-            // 
-            this.navBarItem13.Caption = "Cari Ekstre Raporu";
-            this.navBarItem13.Name = "navBarItem13";
-            this.navBarItem13.Tag = "Cari ekstresi için alınan rapordur";
-            this.navBarItem13.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem13_LinkClicked);
             // 
             // frmRaporListele
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 538);
+            this.ClientSize = new System.Drawing.Size(1070, 538);
             this.Controls.Add(this.filterControl1);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.navBarControl1);
@@ -531,10 +480,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBitis.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBitis.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBaslangic.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBaslangic.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRaporAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRaporGrubu.Properties)).EndInit();
@@ -569,12 +514,8 @@
         private DevExpress.XtraEditors.FilterControl filterControl1;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup4;
         private DevExpress.XtraNavBar.NavBarItem rptGunlukSatis;
-        private DevExpress.XtraEditors.DateEdit dateBitis;
-        private DevExpress.XtraEditors.DateEdit dateBaslangic;
         private DevExpress.XtraEditors.ButtonEdit txtGrup;
         private DevExpress.XtraEditors.LabelControl lblGenel;
-        private DevExpress.XtraEditors.LabelControl lblBitis;
-        private DevExpress.XtraEditors.LabelControl lblBaslangic;
         private DevExpress.XtraNavBar.NavBarItem rptGrupStokHareketleri;
         private DevExpress.XtraNavBar.NavBarItem rptStokBazliHareket;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;

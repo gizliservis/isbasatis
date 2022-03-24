@@ -380,6 +380,18 @@
     <Compile Include="Raporlar\frmRaporListele.Designer.cs">
       <DependentUpon>frmRaporListele.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\frmStokBakiyeRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmStokBakiyeRaporu.Designer.cs">
+      <DependentUpon>frmStokBakiyeRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\frmStokBazliHrk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmStokBazliHrk.Designer.cs">
+      <DependentUpon>frmStokBazliHrk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\frmStokHareketleriTarih.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -391,6 +403,12 @@
     </Compile>
     <Compile Include="Raporlar\frmStokHareketRaporu.Designer.cs">
       <DependentUpon>frmStokHareketRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\frmStokBazliHrk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\frmStokBazliHrk.Designer.cs">
+      <DependentUpon>frmStokBazliHrk.cs</DependentUpon>
     </Compile>
     <Compile Include="Sms\frmSms.cs">
       <SubType>Form</SubType>
@@ -598,11 +616,20 @@
     <EmbeddedResource Include="Raporlar\frmRaporListele.resx">
       <DependentUpon>frmRaporListele.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmStokBakiyeRaporu.resx">
+      <DependentUpon>frmStokBakiyeRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmStokBazliHrk.resx">
+      <DependentUpon>frmStokBazliHrk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmStokHareketleriTarih.resx">
       <DependentUpon>frmStokHareketleriTarih.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmStokHareketRaporu.resx">
       <DependentUpon>frmStokHareketRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\frmStokBazliHrk.resx">
+      <DependentUpon>frmStokBazliHrk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sms\frmSms.resx">
       <DependentUpon>frmSms.cs</DependentUpon>

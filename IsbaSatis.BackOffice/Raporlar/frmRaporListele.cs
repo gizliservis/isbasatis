@@ -20,18 +20,10 @@ namespace IsbaSatis.BackOffice.Raporlar
 {
     public partial class frmRaporListele : DevExpress.XtraEditors.XtraForm
     {
-        rptStokHareketleri rapor;
-        rptGunlukSatis gunlukSatis;
-        rptGrupStokHareketleri rptGrupStok;
-        rptSokBazliHareket rptSokBazli;
-        rptStokDurumu stokDurumu;
+        int stokId;
         public frmRaporListele()
         {
             InitializeComponent();
-            dateBaslangic.Visible = false;
-            dateBitis.Visible = false;
-            lblBaslangic.Visible = false;
-            lblBitis.Visible = false;
             txtGrup.Visible = false;
             lblGenel.Visible = false;
         }
@@ -42,13 +34,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = true;
-            dateBitis.Visible = true;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = true;
-
             txtGrup.Visible = false;
             lblGenel.Visible = false;
         }
@@ -70,27 +55,27 @@ namespace IsbaSatis.BackOffice.Raporlar
                 frmStokHareketleriTarih frm = new frmStokHareketleriTarih();
                 frm.ShowDialog();
             }
-            else if (txtRaporAdi.Text == "Grup Bazlı Hareketler")
+            else if (txtRaporAdi.Text == "Stok Bakiye Raporu")
             {
-                rptGrupStok = new rptGrupStokHareketleri(dateBaslangic.DateTime, dateBitis.DateTime, txtGrup.Text);
-                frmRaporGoruntule form = new frmRaporGoruntule(rptGrupStok);
-                form.WindowState = FormWindowState.Maximized;
-                form.Show();
+                frmStokBakiyeRaporu frm = new frmStokBakiyeRaporu();
+                frm.ShowDialog();
+                //rptGrupStok = new rptGrupStokHareketleri(dateBaslangic.DateTime, dateBitis.DateTime, txtGrup.Text);
+                //frmRaporGoruntule form = new frmRaporGoruntule(rptGrupStok);
+                //form.WindowState = FormWindowState.Maximized;
+                //form.Show();
 
             }
-            else if (txtRaporAdi.Text == "Stok Bazlı Hareketler")
+            else if (txtRaporAdi.Text == "Stok Bazlı Hareket Raporu")
             {
-                rptSokBazli = new rptSokBazliHareket(dateBaslangic.DateTime, dateBitis.DateTime, txtGrup.Text);
-                frmRaporGoruntule form = new frmRaporGoruntule(rptSokBazli);
-                form.WindowState = FormWindowState.Maximized;
-                form.Show();
+                frmStokBazliHrk frm = new frmStokBazliHrk(stokId);
+                frm.ShowDialog();
             }
             else if (txtRaporAdi.Text== "Genel Stok Bakiye Durum Raporu")
             {
-                stokDurumu = new rptStokDurumu();
-                frmRaporGoruntule form = new frmRaporGoruntule(stokDurumu);
-                form.WindowState = FormWindowState.Maximized;
-                form.Show();
+                //stokDurumu = new rptStokDurumu();
+                //frmRaporGoruntule form = new frmRaporGoruntule(stokDurumu);
+                //form.WindowState = FormWindowState.Maximized;
+                //form.Show();
             }
             else
             {
@@ -112,12 +97,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = true;
-            dateBitis.Visible = false;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = false;
             txtGrup.Visible = false;
             lblGenel.Visible = false;
         }
@@ -149,6 +128,7 @@ namespace IsbaSatis.BackOffice.Raporlar
                 {
                     Isbasatis.Entities.Tables.Stok entity = frm.secilen.FirstOrDefault();
                     txtGrup.Text = entity.StokAdi;
+                    stokId = entity.Id;
                 }
 
             }
@@ -161,12 +141,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = true;
-            dateBitis.Visible = true;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = true;
             txtGrup.Visible = true;
             lblGenel.Visible = true;
             lblGenel.Text = "Stok Grubu";
@@ -178,12 +152,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = true;
-            dateBitis.Visible = true;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = true;
             txtGrup.Visible = true;
             lblGenel.Visible = true;
             lblGenel.Text = "Stok İsmi";
@@ -195,14 +163,9 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = false;
-            dateBitis.Visible = false;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = false;
             txtGrup.Visible = false;
             lblGenel.Visible = false;
+            lblGenel.Text = "Stok İsmi";
 
 
         }
@@ -213,12 +176,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = false;
-            dateBitis.Visible = false;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = false;
             txtGrup.Visible = false;
             lblGenel.Visible = false;
         }
@@ -229,12 +186,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = false;
-            dateBitis.Visible = false;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = false;
             txtGrup.Visible = false;
             lblGenel.Visible = false;
         }
@@ -245,12 +196,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = false;
-            dateBitis.Visible = false;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = false;
             txtGrup.Visible = false;
             lblGenel.Visible = false;
         }
@@ -261,12 +206,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = false;
-            dateBitis.Visible = false;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = false;
             txtGrup.Visible = false;
             lblGenel.Visible = false;
         }
@@ -277,13 +216,7 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = false;
-            dateBitis.Visible = false;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = false;
-            txtGrup.Visible = false;
+
             lblGenel.Visible = false;
         }
 
@@ -293,12 +226,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = false;
-            dateBitis.Visible = false;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = false;
             txtGrup.Visible = false;
             lblGenel.Visible = false;
         }
@@ -309,12 +236,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = false;
-            dateBitis.Visible = false;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = false;
             txtGrup.Visible = false;
             lblGenel.Visible = false;
         }
@@ -325,12 +246,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = false;
-            dateBitis.Visible = false;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = false;
             txtGrup.Visible = false;
             lblGenel.Visible = false;
         }
@@ -341,12 +256,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = false;
-            dateBitis.Visible = false;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = false;
             txtGrup.Visible = false;
             lblGenel.Visible = false;
         }
@@ -357,12 +266,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = false;
-            dateBitis.Visible = false;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = false;
             txtGrup.Visible = false;
             lblGenel.Visible = false;
         }
@@ -373,12 +276,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = false;
-            dateBitis.Visible = false;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = false;
             txtGrup.Visible = false;
             lblGenel.Visible = false;
         }
@@ -389,12 +286,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = false;
-            dateBitis.Visible = false;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = false;
             txtGrup.Visible = false;
             lblGenel.Visible = false;
         }
@@ -405,12 +296,6 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = false;
-            dateBitis.Visible = false;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = false;
             txtGrup.Visible = false;
             lblGenel.Visible = false;
         }
@@ -421,14 +306,14 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            dateBaslangic.Visible = false;
-            dateBitis.Visible = false;
-            dateBaslangic.DateTime = DateTime.Now;
-            dateBitis.DateTime = DateTime.Now;
-            lblBaslangic.Visible = true;
-            lblBitis.Visible = false;
-            txtGrup.Visible = false;
-            lblGenel.Visible = false;
+            txtGrup.Visible = true;
+            lblGenel.Visible = true;
+            lblGenel.Text = "Stok İsmi";
+        }
+
+        private void navBarControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
