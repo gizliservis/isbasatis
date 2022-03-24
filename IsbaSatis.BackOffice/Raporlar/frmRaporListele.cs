@@ -15,12 +15,14 @@ using DevExpress.XtraReports.UI;
 using IsbaSatis.Raporlar.Satis;
 using IsbaSatis.BackOffice.Tanım;
 using IsbaSatis.BackOffice.Stoklar;
+using IsbaSatis.BackOffice.Cari;
 
 namespace IsbaSatis.BackOffice.Raporlar
 {
     public partial class frmRaporListele : DevExpress.XtraEditors.XtraForm
     {
         int stokId;
+        int cariId;
         public frmRaporListele()
         {
             InitializeComponent();
@@ -70,12 +72,20 @@ namespace IsbaSatis.BackOffice.Raporlar
                 frmStokBazliHrk frm = new frmStokBazliHrk(stokId);
                 frm.ShowDialog();
             }
-            else if (txtRaporAdi.Text== "Genel Stok Bakiye Durum Raporu")
+            else if (txtRaporAdi.Text == "Genel Cari Bakiye Raporu")
             {
+                frmCariBakiyeRaporu frm = new frmCariBakiyeRaporu();
+                frm.ShowDialog();
+
                 //stokDurumu = new rptStokDurumu();
                 //frmRaporGoruntule form = new frmRaporGoruntule(stokDurumu);
                 //form.WindowState = FormWindowState.Maximized;
                 //form.Show();
+            }
+            else if (txtRaporAdi.Text== "Cari Hareket Raporu")
+            {
+                frmCariHrkRaporu frm = new frmCariHrkRaporu(cariId);
+                frm.ShowDialog();
             }
             else
             {
@@ -103,21 +113,15 @@ namespace IsbaSatis.BackOffice.Raporlar
 
         private void txtGrup_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            if (txtRaporAdi.Text == "Grup Bazlı Hareketler")
+            if (txtRaporAdi.Text.Contains("Cari"))
             {
-                switch (e.Button.Index)
+                frmCariSec cariFrm = new frmCariSec();
+                cariFrm.ShowDialog();
+                if (cariFrm.secildi)
                 {
-                    case 0:
-                        frmTanim form = new frmTanim(frmTanim.TanimTuru.StokGrubu);
-                        form.ShowDialog();
-                        if (form.secildi == true)
-                        {
-                            txtGrup.Text = form._entity.Tanimi;
-                        }
-                        break;
-                    case 1:
-                        txtGrup.Text = null;
-                        break;
+                    Isbasatis.Entities.Tables.Cari cari = cariFrm.secilen.FirstOrDefault();
+                    txtGrup.Text = cari.CariAdi;
+                    cariId = cari.Id; 
                 }
             }
             if (txtRaporAdi.Text.Contains("Stok"))
@@ -186,8 +190,10 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            txtGrup.Visible = false;
-            lblGenel.Visible = false;
+            txtGrup.Visible = true;
+            lblGenel.Visible = true;
+            lblGenel.Text = "Cari Adı";
+
         }
 
         private void navBarItem13_LinkClicked(object sender, NavBarLinkEventArgs e)
@@ -196,8 +202,9 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            txtGrup.Visible = false;
-            lblGenel.Visible = false;
+            txtGrup.Visible = true;
+            lblGenel.Visible = true;
+            lblGenel.Text = "Cari Adı";
         }
 
         private void navBarItem6_LinkClicked(object sender, NavBarLinkEventArgs e)
@@ -276,8 +283,9 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            txtGrup.Visible = false;
-            lblGenel.Visible = false;
+            txtGrup.Visible = true;
+            lblGenel.Visible = true;
+            lblGenel.Text = "Cari Adı";
         }
 
         private void rptDepoBakiye_LinkClicked(object sender, NavBarLinkEventArgs e)

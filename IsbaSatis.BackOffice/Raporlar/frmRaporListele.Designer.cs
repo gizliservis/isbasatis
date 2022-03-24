@@ -371,7 +371,7 @@
             // 
             // lblGenel
             // 
-            this.lblGenel.Location = new System.Drawing.Point(624, 116);
+            this.lblGenel.Location = new System.Drawing.Point(624, 29);
             this.lblGenel.Name = "lblGenel";
             this.lblGenel.Size = new System.Drawing.Size(63, 13);
             this.lblGenel.TabIndex = 13;
@@ -441,7 +441,7 @@
             // 
             // txtGrup
             // 
-            this.txtGrup.Location = new System.Drawing.Point(624, 135);
+            this.txtGrup.Location = new System.Drawing.Point(624, 48);
             this.txtGrup.Name = "txtGrup";
             this.txtGrup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});

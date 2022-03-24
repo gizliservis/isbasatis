@@ -1,0 +1,33 @@
+﻿using DevExpress.XtraEditors;
+using Isbasatis.Entities.Context;
+using Isbasatis.Entities.Data_Access;
+using Isbasatis.Entities.Tools;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace IsbaSatis.BackOffice.Raporlar
+{
+    public partial class frmCariBakiyeRaporu : DevExpress.XtraEditors.XtraForm
+    {
+        CariDAL cariDAL = new CariDAL();
+        IsbaSatisContext context = new IsbaSatisContext();
+        private ExportTool export;
+        public frmCariBakiyeRaporu()
+        {
+            InitializeComponent();
+            listele();
+            export = new ExportTool(this, gridView1, dropDownButton1);
+        }
+        public void listele()
+        {
+            gridControl1.DataSource = cariDAL.CariListele(context);
+        }
+    }
+}

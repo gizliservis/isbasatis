@@ -332,6 +332,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\frmCariBakiyeRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmCariBakiyeRaporu.Designer.cs">
+      <DependentUpon>frmCariBakiyeRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\frmCariHrkRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmCariHrkRaporu.Designer.cs">
+      <DependentUpon>frmCariHrkRaporu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\frmEtiketOlustur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -591,6 +603,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Personeller\frmPersonelSec.resx">
       <DependentUpon>frmPersonelSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmCariBakiyeRaporu.resx">
+      <DependentUpon>frmCariBakiyeRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmCariHrkRaporu.resx">
+      <DependentUpon>frmCariHrkRaporu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmEtiketOlustur.resx">
       <DependentUpon>frmEtiketOlustur.cs</DependentUpon>

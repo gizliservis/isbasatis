@@ -5,6 +5,7 @@ using Isbasatis.Entities.Tables;
 using Isbasatis.Entities.Validations;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Linq.Expressions;
@@ -129,5 +130,45 @@ namespace Isbasatis.Entities.Data_Access
             };
             return entity;
         }
+        public object CariHareket(IsbaSatisContext context, int CariId, DateTime baslangic, DateTime bitis)
+        {
+            var result = context.StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date)
+                         .Join(context.fisler.Where(c => c.CariId == CariId && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date), c => c.FisKodu, c => c.FisKodu, (stokHareket, fisler) => new
+                         {
+
+                             stokHareket.Id,
+                             stokHareket.FisKodu,
+                             stokHareket.Hareket,
+                             stokHareket.StokId,
+                             stokHareket.Miktar,
+                             stokHareket.Kdv,
+                             stokHareket.BirimFiyati,
+                             stokHareket.Tarih,
+                             stokHareket.DepoId,
+                             stokHareket.IndirimOrani,
+                             stokHareket.Aciklama,
+                             IslemTuru = fisler.FisTuru,
+                             IndirimTutari = (stokHareket.BirimFiyati * stokHareket.IndirimOrani) / 100,
+                             StokKodu = stokHareket.Stok.StokKodu,
+                             DepoAdi = stokHareket.Depo.DepoAdi,
+                             Birimi = stokHareket.Stok.Birimi,
+                             StokAdi = stokHareket.Stok.StokAdi,
+                             Barkod = stokHareket.Stok.Barkod,
+                             StokGrubu = stokHareket.Stok.StokGrubu,
+                             StokAltGrubu = stokHareket.Stok.StokAltGrubu,
+                             SatisToplam = stokHareket.ToplamTutar,
+
+                         }).ToList();
+            return result;
+        }
+        public object CariTahOdeme(IsbaSatisContext context, int CariId, DateTime baslangic, DateTime bitis)
+        {
+            var result = context.Cariler.Where(c => c.Id == CariId).Join(context.fisler.Where(c => c.CariId ==CariId && c.FisTuru.Contains("Tahsilat Fişi")  && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date), c => c.Id, c => c.CariId, (cariler, fisler) => new
+            {
+
+            }).ToList();
+            return result;
+        }
     }
+
 }
