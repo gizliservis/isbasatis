@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,12 +20,18 @@ namespace IsbaSatis.BackOffice.Raporlar
         StokHareketDAL stokHareketDAL = new StokHareketDAL();
         IsbaSatisContext context = new IsbaSatisContext();
         private ExportTool export;
+        string filename = "StokHareketRaporu.xml";
         public frmStokHareketRaporu()
         {
             InitializeComponent();
             dateBaslangic.DateTime = DateTime.Now;
             dateBitis.DateTime = DateTime.Now;
-            export = new ExportTool(this, gridView1, dropDownButton1);
+            export = new ExportTool(this, gridView1, dropDownButton1,filename);
+            FileInfo fi = new FileInfo(Application.StartupPath + "\\" + filename);
+            if (fi.Exists)
+            {
+                gridView1.RestoreLayoutFromXml(filename);
+            }
             //  listele(DateTime.Now, DateTime.Now);
         }
         void listele(DateTime baslangic, DateTime bitis)

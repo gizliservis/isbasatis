@@ -82,9 +82,14 @@ namespace IsbaSatis.BackOffice.Raporlar
                 //form.WindowState = FormWindowState.Maximized;
                 //form.Show();
             }
-            else if (txtRaporAdi.Text== "Cari Hareket Raporu")
+            else if (txtRaporAdi.Text == "Cari Hareket Raporu")
             {
                 frmCariHrkRaporu frm = new frmCariHrkRaporu(cariId);
+                frm.ShowDialog();
+            }
+            else if (txtRaporAdi.Text == "Cari Tahsilat ve Ödeme Bazlı Rapor")
+            {
+                frmCariOdemeTahsilat frm = new frmCariOdemeTahsilat(cariId);
                 frm.ShowDialog();
             }
             else
@@ -121,7 +126,7 @@ namespace IsbaSatis.BackOffice.Raporlar
                 {
                     Isbasatis.Entities.Tables.Cari cari = cariFrm.secilen.FirstOrDefault();
                     txtGrup.Text = cari.CariAdi;
-                    cariId = cari.Id; 
+                    cariId = cari.Id;
                 }
             }
             if (txtRaporAdi.Text.Contains("Stok"))

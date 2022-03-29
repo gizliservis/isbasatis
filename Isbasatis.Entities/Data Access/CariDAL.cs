@@ -163,9 +163,21 @@ namespace Isbasatis.Entities.Data_Access
         }
         public object CariTahOdeme(IsbaSatisContext context, int CariId, DateTime baslangic, DateTime bitis)
         {
-            var result = context.Cariler.Where(c => c.Id == CariId).Join(context.fisler.Where(c => c.CariId ==CariId && c.FisTuru.Contains("Tahsilat Fişi")  && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date), c => c.Id, c => c.CariId, (cariler, fisler) => new
+            var result = context.KasaHareketleri.Join(context.fisler.Where(c => c.CariId == CariId && DbFunctions.TruncateTime(c.Tarih) >= baslangic.Date && DbFunctions.TruncateTime(c.Tarih) <= bitis.Date), c => c.FisKodu, c => c.FisBaglantiKodu, (Kasahrk, fisler) => new
             {
-
+                fisler.FisKodu,
+                fisler.FisTuru,
+                Bankasi = fisler.banka.Bankasi,
+                fisler.BelgeNo,
+                fisler.Tarih,
+                fisler.IskontoOrani,
+                fisler.IskontoTutar,
+                fisler.Borc,
+                fisler.Alacak,
+                fisler.ToplamTutar,
+                kasaAdi=Kasahrk.Kasa.KasaAdi,
+                tptt=fisler.Alacak-fisler.Borc
+               
             }).ToList();
             return result;
         }

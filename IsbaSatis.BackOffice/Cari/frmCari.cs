@@ -12,6 +12,7 @@ using Isbasatis.Entities.Context;
 using Isbasatis.Entities.Data_Access;
 using Isbasatis.Entities.Tables.Other_Tables;
 using Isbasatis.Entities.Tools;
+using System.IO;
 
 namespace IsbaSatis.BackOffice.Cari
 {
@@ -21,11 +22,17 @@ namespace IsbaSatis.BackOffice.Cari
         CariDAL cariDAL = new CariDAL();
         Nullable<int> secilen=null;
         private ExportTool export;
+        string filename = "CariListe.xml";
         public frmCari()
         {
             InitializeComponent();
             RolTool.RolleriYukle(this);
-            export = new ExportTool(this,gridView1,dropDownButton1);
+            export = new ExportTool(this,gridView1,dropDownButton1,filename);
+            FileInfo fi = new FileInfo(Application.StartupPath + "\\" + filename);
+            if (fi.Exists)
+            {
+                gridView1.RestoreLayoutFromXml(filename);
+            }
         }
 
         private void btnEkle_Click(object sender, EventArgs e)

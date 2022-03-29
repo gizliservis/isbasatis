@@ -15,37 +15,46 @@ using System.Windows.Forms;
 
 namespace IsbaSatis.BackOffice.Raporlar
 {
-    public partial class frmStokHareketleriTarih : DevExpress.XtraEditors.XtraForm
+    public partial class frmCariOdemeTahsilat : DevExpress.XtraEditors.XtraForm
     {
-        StokHareketDAL stokHareketDal = new StokHareketDAL();
         IsbaSatisContext context = new IsbaSatisContext();
+        CariDAL cariDal = new CariDAL();
+        int _cariId;
+        string filename = "frmCariOdemeTah.xml";
         ExportTool export;
-        string filename = "StokHareketleriTarih.xml";
-        public frmStokHareketleriTarih()
+
+        public frmCariOdemeTahsilat(int cariId)
         {
             InitializeComponent();
-            dateBitis.DateTime = DateTime.Now;
+            _cariId = cariId;
             dateBaslangic.DateTime = DateTime.Now;
-            export = new ExportTool(this, gridView1, dropDownButton1,filename);
+            dateBitis.DateTime = DateTime.Now;
+            export = new ExportTool(this,gridView1,dropDownButton1,filename);
             FileInfo fi = new FileInfo(Application.StartupPath + "\\" + filename);
             if (fi.Exists)
             {
                 gridView1.RestoreLayoutFromXml(filename);
             }
+        
         }
-   
+
         private void BtnHazırla_Click(object sender, EventArgs e)
         {
-            Listele();
+            listele();
         }
-        public void Listele()
+        public void listele()
         {
-            gridControl1.DataSource = stokHareketDal.StokKarZarar(context, dateBaslangic.DateTime, dateBitis.DateTime);
+            gridControl1.DataSource = cariDal.CariTahOdeme(context, _cariId, dateBaslangic.DateTime, dateBitis.DateTime);
         }
 
-        private void gridControl1_Click(object sender, EventArgs e)
+        private void simpleButton1_Click(object sender, EventArgs e)
         {
+            gridView1.SaveLayoutToXml(filename);
+        }
 
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

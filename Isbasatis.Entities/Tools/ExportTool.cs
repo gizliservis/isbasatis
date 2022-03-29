@@ -15,10 +15,12 @@ namespace Isbasatis.Entities.Tools
         private XtraForm _form;
         private DropDownButton _buton;
         private GridView _grid;
+        private string _filename;
         BarManager manager = new BarManager();
         private PopupMenu menu;
-        public ExportTool(XtraForm form, GridView grid, DropDownButton dropDown)
+        public ExportTool(XtraForm form, GridView grid, DropDownButton dropDown,string filename)
         {
+            _filename = filename;
             _form = form;
             _grid = grid;
             _buton = dropDown;
@@ -121,45 +123,66 @@ namespace Isbasatis.Entities.Tools
             };
             csvExport.ItemClick += Export;
             menu.AddItem(csvExport);
+            BarButtonItem gridkaydet = new BarButtonItem
+            {
+                Name = "gridkaydet",
+                Caption = "Gridi Kaydet",
+              //  ImageOptions = { Image = Properties.Resources.csv }
+
+            };
+            gridkaydet.ItemClick += Export;
+            menu.AddItem(gridkaydet);
+
         }
 
         private void Export(object sender, ItemClickEventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = $"{e.Item.Caption}|*.{e.Item.Name}";
-            if (dialog.ShowDialog() == DialogResult.OK)
+            if (e.Item.Name=="gridkaydet")
             {
-                switch (e.Item.Name)
+                _grid.SaveLayoutToXml(_filename);
+            }
+            else
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    case "pdf":
-                        _grid.ExportToPdf(dialog.FileName);
-                        break;
-                    case "xlsx":
-                        _grid.ExportToXlsx(dialog.FileName);
-                        break;
-                    case "xls":
-                        _grid.ExportToXls(dialog.FileName);
-                        break;
-                    case "html":
-                        _grid.ExportToHtml(dialog.FileName);
-                        break;
-                    case "mht":
-                        _grid.ExportToMht(dialog.FileName);
-                        break;
-                    case "rtf":
-                        _grid.ExportToRtf(dialog.FileName);
-                        break;
-                    case "txt":
-                        _grid.ExportToText(dialog.FileName);
-                        break;
-                    case "docx":
-                        _grid.ExportToDocx(dialog.FileName);
-                        break;
-                    case "csv":
-                        _grid.ExportToCsv(dialog.FileName);
-                        break;
+                    switch (e.Item.Name)
+                    {
+                        case "pdf":
+                            _grid.ExportToPdf(dialog.FileName);
+                            break;
+                        case "xlsx":
+                            _grid.ExportToXlsx(dialog.FileName);
+                            break;
+                        case "xls":
+                            _grid.ExportToXls(dialog.FileName);
+                            break;
+                        case "html":
+                            _grid.ExportToHtml(dialog.FileName);
+                            break;
+                        case "mht":
+                            _grid.ExportToMht(dialog.FileName);
+                            break;
+                        case "rtf":
+                            _grid.ExportToRtf(dialog.FileName);
+                            break;
+                        case "txt":
+                            _grid.ExportToText(dialog.FileName);
+                            break;
+                        case "docx":
+                            _grid.ExportToDocx(dialog.FileName);
+                            break;
+                        case "csv":
+                            _grid.ExportToCsv(dialog.FileName);
+
+                            break;
+
+                    }
                 }
             }
+           
+           
         }
     }
 }

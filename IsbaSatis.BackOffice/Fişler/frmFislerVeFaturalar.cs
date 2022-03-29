@@ -841,13 +841,21 @@ namespace IsbaSatis.BackOffice.Fişler
 
                 if (fisAyarlari.BakiyeTuru == "Borç")
                 {
-                    fisOdeme.Alacak = txtOdenenTutar.Value;
-                    fisOdeme.Borc = null;
+                   
+                   
+                        fisOdeme.Alacak = txtOdenenTutar.Value;
+                        fisOdeme.Borc = null;
+                  
+                    
                 }
                 else if (fisAyarlari.BakiyeTuru == "Alacak")
                 {
-                    fisOdeme.Borc = txtOdenenTutar.Value;
-                    fisOdeme.Alacak = null;
+                  
+                   
+                        fisOdeme.Borc = txtOdenenTutar.Value;
+                        fisOdeme.Alacak = null;
+         
+                
                 }
                 foreach (var KasaVeri in context.KasaHareketleri.Local.ToList())
                 {
@@ -860,6 +868,7 @@ namespace IsbaSatis.BackOffice.Fişler
 
                     }
                 }
+              
                 fisOdeme.ToplamTutar = txtOdenenTutar.Value;
                 fisDAL.AddOrUpdate(context, fisOdeme);
             }

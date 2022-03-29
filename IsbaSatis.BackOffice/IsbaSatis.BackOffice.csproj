@@ -344,6 +344,12 @@
     <Compile Include="Raporlar\frmCariHrkRaporu.Designer.cs">
       <DependentUpon>frmCariHrkRaporu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\frmCariOdemeTahsilat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmCariOdemeTahsilat.Designer.cs">
+      <DependentUpon>frmCariOdemeTahsilat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\frmEtiketOlustur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -609,6 +615,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmCariHrkRaporu.resx">
       <DependentUpon>frmCariHrkRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmCariOdemeTahsilat.resx">
+      <DependentUpon>frmCariOdemeTahsilat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmEtiketOlustur.resx">
       <DependentUpon>frmEtiketOlustur.cs</DependentUpon>
