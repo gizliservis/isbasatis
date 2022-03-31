@@ -5,6 +5,7 @@ using Isbasatis.Entities.Tables;
 using Isbasatis.Entities.Tools;
 using IsbaSatis.BackOffice.Bankalar;
 using System;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -20,11 +21,19 @@ namespace IsbaSatis.BackOffice.Fişler
         StokHareketDAL stokHareketDAL = new StokHareketDAL();
         BankaHareketDAL bankaHareketDAL = new BankaHareketDAL();
         Fis fis = new Fis();
+        private ExportTool export;
+        string filename = "Fişler.xml";
 
         public frmFis()
         {
             InitializeComponent();
-            RolTool.RolleriYukle(this);
+            RolTool.RolleriYukle(this); 
+            export = new ExportTool(this, gridView1, dropDownButton1, filename);
+            FileInfo fi = new FileInfo(Application.StartupPath + "\\" + filename);
+            if (fi.Exists)
+            {
+                gridView1.RestoreLayoutFromXml(filename);
+            }
             listele();
         }
 

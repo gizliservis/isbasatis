@@ -52,6 +52,7 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
             this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
+            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlBanka)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridBanka)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
@@ -186,9 +187,9 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.btnAra.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnAra.ImageOptions.ImageIndex = 0;
             this.btnAra.ImageOptions.ImageList = this.ımageList1;
-            this.btnAra.Location = new System.Drawing.Point(468, 23);
+            this.btnAra.Location = new System.Drawing.Point(468, 22);
             this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(90, 48);
+            this.btnAra.Size = new System.Drawing.Size(90, 49);
             this.btnAra.TabIndex = 0;
             this.btnAra.Text = "Ara";
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
@@ -214,9 +215,9 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.btnGuncelle.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnGuncelle.ImageOptions.ImageIndex = 1;
             this.btnGuncelle.ImageOptions.ImageList = this.ımageList1;
-            this.btnGuncelle.Location = new System.Drawing.Point(371, 23);
+            this.btnGuncelle.Location = new System.Drawing.Point(371, 22);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(97, 48);
+            this.btnGuncelle.Size = new System.Drawing.Size(97, 49);
             this.btnGuncelle.TabIndex = 0;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
@@ -226,9 +227,9 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.btnHareket.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnHareket.ImageOptions.ImageIndex = 10;
             this.btnHareket.ImageOptions.ImageList = this.ımageList1;
-            this.btnHareket.Location = new System.Drawing.Point(274, 23);
+            this.btnHareket.Location = new System.Drawing.Point(274, 22);
             this.btnHareket.Name = "btnHareket";
-            this.btnHareket.Size = new System.Drawing.Size(97, 48);
+            this.btnHareket.Size = new System.Drawing.Size(97, 49);
             this.btnHareket.TabIndex = 1;
             this.btnHareket.Text = "Banka\r\nHareketleri";
             // 
@@ -237,9 +238,9 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.btnKapat.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnKapat.ImageOptions.ImageIndex = 6;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(828, 23);
+            this.btnKapat.Location = new System.Drawing.Point(828, 22);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(90, 48);
+            this.btnKapat.Size = new System.Drawing.Size(90, 49);
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
             // 
@@ -249,9 +250,9 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.btnSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSil.ImageOptions.Image")));
             this.btnSil.ImageOptions.ImageIndex = 5;
             this.btnSil.ImageOptions.ImageList = this.ımageList1;
-            this.btnSil.Location = new System.Drawing.Point(181, 23);
+            this.btnSil.Location = new System.Drawing.Point(181, 22);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(93, 48);
+            this.btnSil.Size = new System.Drawing.Size(93, 49);
             this.btnSil.TabIndex = 0;
             this.btnSil.Text = "Sil";
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
@@ -262,9 +263,9 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.btnDuzenle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDuzenle.ImageOptions.Image")));
             this.btnDuzenle.ImageOptions.ImageIndex = 2;
             this.btnDuzenle.ImageOptions.ImageList = this.ımageList1;
-            this.btnDuzenle.Location = new System.Drawing.Point(92, 23);
+            this.btnDuzenle.Location = new System.Drawing.Point(92, 22);
             this.btnDuzenle.Name = "btnDuzenle";
-            this.btnDuzenle.Size = new System.Drawing.Size(89, 48);
+            this.btnDuzenle.Size = new System.Drawing.Size(89, 49);
             this.btnDuzenle.TabIndex = 0;
             this.btnDuzenle.Text = "Düzenle";
             this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
@@ -275,9 +276,9 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.btnEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEkle.ImageOptions.Image")));
             this.btnEkle.ImageOptions.ImageIndex = 3;
             this.btnEkle.ImageOptions.ImageList = this.ımageList1;
-            this.btnEkle.Location = new System.Drawing.Point(2, 23);
+            this.btnEkle.Location = new System.Drawing.Point(2, 22);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(90, 48);
+            this.btnEkle.Size = new System.Drawing.Size(90, 49);
             this.btnEkle.TabIndex = 0;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
@@ -299,11 +300,21 @@ namespace IsbaSatis.BackOffice.Bankalar
             this.lblBaslik.TabIndex = 3;
             this.lblBaslik.Text = "Banka Kartları";
             // 
+            // dropDownButton1
+            // 
+            this.dropDownButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dropDownButton1.Location = new System.Drawing.Point(783, 18);
+            this.dropDownButton1.Name = "dropDownButton1";
+            this.dropDownButton1.Size = new System.Drawing.Size(135, 23);
+            this.dropDownButton1.TabIndex = 8;
+            this.dropDownButton1.Text = "Dışarı Çıkart";
+            // 
             // frmBanka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 524);
+            this.Controls.Add(this.dropDownButton1);
             this.Controls.Add(this.gridControlBanka);
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.lblBaslik);
@@ -343,5 +354,6 @@ namespace IsbaSatis.BackOffice.Bankalar
         private DevExpress.XtraGrid.Columns.GridColumn colHesapNo;
         private DevExpress.XtraGrid.Columns.GridColumn colYetkiliAdi;
         private DevExpress.XtraGrid.Columns.GridColumn colYetkiliTelefonu;
+        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
     }
 }

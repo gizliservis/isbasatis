@@ -55,6 +55,7 @@
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIndirimAktif = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
+            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridContIndirim)).BeginInit();
@@ -334,11 +335,21 @@
             this.lblBaslik.TabIndex = 4;
             this.lblBaslik.Text = "İndirimler";
             // 
+            // dropDownButton1
+            // 
+            this.dropDownButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dropDownButton1.Location = new System.Drawing.Point(858, 26);
+            this.dropDownButton1.Name = "dropDownButton1";
+            this.dropDownButton1.Size = new System.Drawing.Size(135, 23);
+            this.dropDownButton1.TabIndex = 8;
+            this.dropDownButton1.Text = "Dışarı Çıkart";
+            // 
             // frmIndirim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 524);
+            this.Controls.Add(this.dropDownButton1);
             this.Controls.Add(this.gridContIndirim);
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.lblBaslik);
@@ -385,5 +396,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colIndirimAktif;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repoBaslangicTarihi;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repoBitisTarihi;
+        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
     }
 }

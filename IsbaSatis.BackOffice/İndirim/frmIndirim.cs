@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Isbasatis.Entities.Data_Access;
 using Isbasatis.Entities.Context;
+using Isbasatis.Entities.Tools;
+using System.IO;
 
 namespace IsbaSatis.BackOffice.İndirim
 {
@@ -17,9 +19,19 @@ namespace IsbaSatis.BackOffice.İndirim
     {
         IsbaSatisContext context = new IsbaSatisContext();
         IndirimDAL indirimDAL = new IndirimDAL();
+        private ExportTool export;
+        string filename = "İndirim.xml";
+
         public frmIndirim()
         {
             InitializeComponent();
+            export = new ExportTool(this, gridIndirim, dropDownButton1, filename);
+            FileInfo fi = new FileInfo(Application.StartupPath + "\\" + filename);
+            if (fi.Exists)
+            {
+                gridIndirim.RestoreLayoutFromXml(filename);
+            }
+
             listele();
         }
         private void listele()

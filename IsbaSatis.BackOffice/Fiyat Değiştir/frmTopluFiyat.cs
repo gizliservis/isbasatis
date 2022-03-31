@@ -12,6 +12,8 @@ using IsbaSatis.BackOffice.Stoklar;
 using Isbasatis.Entities.Context;
 using Isbasatis.Entities.Data_Access;
 using System.Data.Entity;
+using Isbasatis.Entities.Tools;
+using System.IO;
 
 namespace IsbaSatis.BackOffice.Fiyat_Değiştir
 {
@@ -19,9 +21,18 @@ namespace IsbaSatis.BackOffice.Fiyat_Değiştir
     {
         IsbaSatisContext context = new IsbaSatisContext();
         StokDAL stokDAL = new StokDAL();
+        private ExportTool export;
+        string filename = "TopluFiyatD.xml";
         public frmTopluFiyat()
         {
             InitializeComponent();
+            export = new ExportTool(this, gridView1, dropDownButton1, filename);
+            FileInfo fi = new FileInfo(Application.StartupPath + "\\" + filename);
+            if (fi.Exists)
+            {
+                gridView1.RestoreLayoutFromXml(filename);
+            }
+
             listele();
         }
         private void listele()

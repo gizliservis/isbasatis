@@ -92,6 +92,7 @@
             this.colTarih = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPersonelAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPersonelKodu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
@@ -718,11 +719,21 @@
             this.colPersonelKodu.Name = "colPersonelKodu";
             this.colPersonelKodu.OptionsColumn.AllowEdit = false;
             // 
+            // dropDownButton1
+            // 
+            this.dropDownButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dropDownButton1.Location = new System.Drawing.Point(961, 12);
+            this.dropDownButton1.Name = "dropDownButton1";
+            this.dropDownButton1.Size = new System.Drawing.Size(135, 23);
+            this.dropDownButton1.TabIndex = 18;
+            this.dropDownButton1.Text = "Dışarı Çıkart";
+            // 
             // frmFis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1098, 565);
+            this.Controls.Add(this.dropDownButton1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.lblBaslik);
             this.Controls.Add(this.grpMenu);
@@ -808,5 +819,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
     }
 }

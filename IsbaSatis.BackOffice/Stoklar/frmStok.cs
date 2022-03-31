@@ -17,6 +17,7 @@ using Isbasatis.Entities.Data_Access;
 using IsbaSatis.BackOffice.Stoklar;
 using Isbasatis.Entities.Tools;
 using IsbaSatis.BackOffice.Stok;
+using System.IO;
 
 namespace IsbaSatis.BackOffice.AnaMenü
 {
@@ -24,11 +25,19 @@ namespace IsbaSatis.BackOffice.AnaMenü
     {
         IsbaSatisContext context = new IsbaSatisContext();
         StokDAL stokDAL = new StokDAL();
+        private ExportTool export;
+        string filename = "Stok.xml";
 
         int secilen;
         public frmStok()
         {
             InitializeComponent();
+            export = new ExportTool(this, gridView1, dropDownButton1, filename);
+            FileInfo fi = new FileInfo(Application.StartupPath + "\\" + filename);
+            if (fi.Exists)
+            {
+                gridView1.RestoreLayoutFromXml(filename);
+            }
 
 
         }
@@ -203,6 +212,13 @@ namespace IsbaSatis.BackOffice.AnaMenü
                     gridView1.OptionsView.ShowAutoFilterRow = true;
                 }
             }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            frmExcellAktar frm = new frmExcellAktar();
+            frm.ShowDialog();
+            GetAll();
         }
     }
 }

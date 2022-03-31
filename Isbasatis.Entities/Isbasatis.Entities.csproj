@@ -159,6 +159,7 @@
     <Compile Include="Tools\CodeTool.cs" />
     <Compile Include="Tools\ConnectionTool.cs" />
     <Compile Include="Tools\ConverterTool.cs" />
+    <Compile Include="Tools\ExcellAktarimTool.cs" />
     <Compile Include="Tools\ExchangeTool.cs" />
     <Compile Include="Tools\ExportTool.cs" />
     <Compile Include="Tools\OtomatikFisKodu.cs" />

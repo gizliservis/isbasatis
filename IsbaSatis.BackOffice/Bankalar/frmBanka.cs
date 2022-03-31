@@ -2,11 +2,13 @@
 using Isbasatis.Entities.Context;
 using Isbasatis.Entities.Data_Access;
 using Isbasatis.Entities.Tables;
+using Isbasatis.Entities.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,10 +21,18 @@ namespace IsbaSatis.BackOffice.Bankalar
         IsbaSatisContext context = new IsbaSatisContext();
         BankaDAL bankaDAL = new BankaDAL();
         int secilen;
+        private ExportTool export;
+        string filename = "Banka.xml";
 
         public frmBanka()
         {
             InitializeComponent();
+            export = new ExportTool(this, gridBanka, dropDownButton1, filename);
+            FileInfo fi = new FileInfo(Application.StartupPath + "\\" + filename);
+            if (fi.Exists)
+            {
+                gridBanka.RestoreLayoutFromXml(filename);
+            }
             listele();
         }
         void listele()

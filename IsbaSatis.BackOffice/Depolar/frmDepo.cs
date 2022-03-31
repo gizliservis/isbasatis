@@ -12,6 +12,7 @@ using Isbasatis.Entities.Data_Access;
 using Isbasatis.Entities.Context;
 using Isbasatis.Entities.Tables;
 using Isbasatis.Entities.Tools;
+using System.IO;
 
 namespace IsbaSatis.BackOffice.Depolar
 {
@@ -20,11 +21,20 @@ namespace IsbaSatis.BackOffice.Depolar
         IsbaSatisContext context = new IsbaSatisContext();
         DepoDAL depoDAL = new DepoDAL();
         private int Secilen;
+        private ExportTool export;
+        string filename = "Depo.xml";
 
         public frmDepo()
         {
             InitializeComponent();
             RolTool.RolleriYukle(this);
+            export = new ExportTool(this, gridDepo, dropDownButton1, filename);
+            FileInfo fi = new FileInfo(Application.StartupPath + "\\" + filename);
+            if (fi.Exists)
+            {
+                gridDepo.RestoreLayoutFromXml(filename);
+            }
+
         }
 
         private void frmDepo_Load(object sender, EventArgs e)
