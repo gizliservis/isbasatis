@@ -29,7 +29,7 @@ namespace IsbaSatis.Admin
         private void BaglantiCumleOlustur()
         {
             connectionStringBuilder.DataSource = txtServer.Text;
-            connectionStringBuilder.InitialCatalog = txtDbAdi.Text;
+            connectionStringBuilder.InitialCatalog = "İsba" + txtDbAdi.Text + DateTime.Now.Year.ToString() ;
             if (chkWindows.Checked)
             {
                 connectionStringBuilder.IntegratedSecurity = true;
@@ -49,7 +49,7 @@ namespace IsbaSatis.Admin
             connectionStringBuilder.InitialCatalog = "master";
             if (ConnectionTool.CheckConnection(connectionStringBuilder.ConnectionString))
             {
-                connectionStringBuilder.InitialCatalog = txtDbAdi.Text;
+                connectionStringBuilder.InitialCatalog = "İsba" + txtDbAdi.Text + DateTime.Now.Year.ToString();
                 MessageBox.Show("Sectiğiniz Serverda Belittiğiniz Database Yoksa Bu Mesajdan Sonra Oluşturulacak.Bu İşlem Uzun Sürebilir. ");
                 SettingsTool.AyarDegistir(SettingsTool.Ayarlar.DatabaseAyarlari_BaglantiCumlesi, connectionStringBuilder.ConnectionString);
                 SettingsTool.save();

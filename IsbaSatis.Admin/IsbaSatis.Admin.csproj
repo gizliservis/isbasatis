@@ -62,6 +62,7 @@
     <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraWizard.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -87,6 +88,18 @@
     <Compile Include="frmBaglantiAyarlari.Designer.cs">
       <DependentUpon>frmBaglantiAyarlari.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDevir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDevir.Designer.cs">
+      <DependentUpon>frmDevir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDonemSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDonemSec.Designer.cs">
+      <DependentUpon>frmDonemSec.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKullaniciGiris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,10 +124,22 @@
     <Compile Include="frmParolaHatirlat.Designer.cs">
       <DependentUpon>frmParolaHatirlat.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSirketMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSirketMenu.Designer.cs">
+      <DependentUpon>frmSirketMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBaglantiAyarlari.resx">
       <DependentUpon>frmBaglantiAyarlari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDevir.resx">
+      <DependentUpon>frmDevir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDonemSec.resx">
+      <DependentUpon>frmDonemSec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKullaniciGiris.resx">
       <DependentUpon>frmKullaniciGiris.cs</DependentUpon>
@@ -127,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmParolaHatirlat.resx">
       <DependentUpon>frmParolaHatirlat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSirketMenu.resx">
+      <DependentUpon>frmSirketMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

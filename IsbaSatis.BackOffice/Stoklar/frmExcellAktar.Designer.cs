@@ -37,7 +37,6 @@ namespace IsbaSatis.BackOffice.Stoklar
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.stokBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDurumu = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -68,17 +67,18 @@ namespace IsbaSatis.BackOffice.Stoklar
             this.colMaxStokMiktari = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStokHareket = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stokBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpMenu
             // 
+            this.grpMenu.Controls.Add(this.dropDownButton1);
             this.grpMenu.Controls.Add(this.simpleButton1);
             this.grpMenu.Controls.Add(this.labelControl2);
             this.grpMenu.Controls.Add(this.textEdit1);
@@ -87,7 +87,7 @@ namespace IsbaSatis.BackOffice.Stoklar
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpMenu.Location = new System.Drawing.Point(0, 0);
             this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(1024, 52);
+            this.grpMenu.Size = new System.Drawing.Size(1157, 52);
             this.grpMenu.TabIndex = 0;
             this.grpMenu.Text = "Menü";
             // 
@@ -95,9 +95,9 @@ namespace IsbaSatis.BackOffice.Stoklar
             // 
             this.simpleButton1.Location = new System.Drawing.Point(793, 25);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.Size = new System.Drawing.Size(84, 23);
             this.simpleButton1.TabIndex = 4;
-            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Text = "Stokları Kaydet";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // labelControl2
@@ -136,19 +136,14 @@ namespace IsbaSatis.BackOffice.Stoklar
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = this.stokBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 52);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1024, 397);
+            this.gridControl1.Size = new System.Drawing.Size(1157, 397);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // stokBindingSource
-            // 
-            this.stokBindingSource.DataSource = typeof(Isbasatis.Entities.Tables.Stok);
             // 
             // gridView1
             // 
@@ -199,25 +194,27 @@ namespace IsbaSatis.BackOffice.Stoklar
             this.colDurumu.OptionsColumn.AllowEdit = false;
             this.colDurumu.Visible = true;
             this.colDurumu.VisibleIndex = 0;
-            this.colDurumu.Width = 48;
+            this.colDurumu.Width = 78;
             // 
             // colStokKodu
             // 
+            this.colStokKodu.Caption = "StokKodu";
             this.colStokKodu.FieldName = "StokKodu";
             this.colStokKodu.Name = "colStokKodu";
             this.colStokKodu.OptionsColumn.AllowEdit = false;
             this.colStokKodu.Visible = true;
             this.colStokKodu.VisibleIndex = 1;
-            this.colStokKodu.Width = 140;
+            this.colStokKodu.Width = 151;
             // 
             // colStokAdi
             // 
+            this.colStokAdi.Caption = "StokAdi";
             this.colStokAdi.FieldName = "StokAdi";
             this.colStokAdi.Name = "colStokAdi";
             this.colStokAdi.OptionsColumn.AllowEdit = false;
             this.colStokAdi.Visible = true;
             this.colStokAdi.VisibleIndex = 2;
-            this.colStokAdi.Width = 189;
+            this.colStokAdi.Width = 276;
             // 
             // colBarkod
             // 
@@ -226,73 +223,71 @@ namespace IsbaSatis.BackOffice.Stoklar
             this.colBarkod.OptionsColumn.AllowEdit = false;
             this.colBarkod.Visible = true;
             this.colBarkod.VisibleIndex = 3;
-            this.colBarkod.Width = 134;
+            this.colBarkod.Width = 98;
             // 
             // colBarkodTuru
             // 
+            this.colBarkodTuru.Caption = "BarkodTuru";
             this.colBarkodTuru.FieldName = "BarkodTuru";
             this.colBarkodTuru.Name = "colBarkodTuru";
             this.colBarkodTuru.OptionsColumn.AllowEdit = false;
-            this.colBarkodTuru.Visible = true;
-            this.colBarkodTuru.VisibleIndex = 4;
-            this.colBarkodTuru.Width = 124;
+            this.colBarkodTuru.Width = 125;
             // 
             // colBirimi
             // 
+            this.colBirimi.Caption = "Birimi";
             this.colBirimi.FieldName = "Birimi";
             this.colBirimi.Name = "colBirimi";
             this.colBirimi.OptionsColumn.AllowEdit = false;
             this.colBirimi.Visible = true;
-            this.colBirimi.VisibleIndex = 5;
-            this.colBirimi.Width = 46;
+            this.colBirimi.VisibleIndex = 4;
+            this.colBirimi.Width = 42;
             // 
             // colStokGrubu
             // 
+            this.colStokGrubu.Caption = "StokGrubu";
             this.colStokGrubu.FieldName = "StokGrubu";
             this.colStokGrubu.Name = "colStokGrubu";
             this.colStokGrubu.OptionsColumn.AllowEdit = false;
             this.colStokGrubu.Visible = true;
-            this.colStokGrubu.VisibleIndex = 6;
-            this.colStokGrubu.Width = 22;
+            this.colStokGrubu.VisibleIndex = 5;
+            this.colStokGrubu.Width = 104;
             // 
             // colStokAltGrubu
             // 
+            this.colStokAltGrubu.Caption = "StokAltGrubu";
             this.colStokAltGrubu.FieldName = "StokAltGrubu";
             this.colStokAltGrubu.Name = "colStokAltGrubu";
             this.colStokAltGrubu.OptionsColumn.AllowEdit = false;
             this.colStokAltGrubu.Visible = true;
-            this.colStokAltGrubu.VisibleIndex = 7;
-            this.colStokAltGrubu.Width = 22;
+            this.colStokAltGrubu.VisibleIndex = 6;
+            this.colStokAltGrubu.Width = 79;
             // 
             // colMarka
             // 
             this.colMarka.FieldName = "Marka";
             this.colMarka.Name = "colMarka";
             this.colMarka.OptionsColumn.AllowEdit = false;
-            this.colMarka.Visible = true;
-            this.colMarka.VisibleIndex = 8;
-            this.colMarka.Width = 22;
+            this.colMarka.Width = 21;
             // 
             // colModeli
             // 
             this.colModeli.FieldName = "Modeli";
             this.colModeli.Name = "colModeli";
             this.colModeli.OptionsColumn.AllowEdit = false;
-            this.colModeli.Visible = true;
-            this.colModeli.VisibleIndex = 9;
-            this.colModeli.Width = 22;
+            this.colModeli.Width = 21;
             // 
             // colOzelKod1
             // 
+            this.colOzelKod1.Caption = "OzelKod1";
             this.colOzelKod1.FieldName = "OzelKod1";
             this.colOzelKod1.Name = "colOzelKod1";
             this.colOzelKod1.OptionsColumn.AllowEdit = false;
-            this.colOzelKod1.Visible = true;
-            this.colOzelKod1.VisibleIndex = 10;
-            this.colOzelKod1.Width = 22;
+            this.colOzelKod1.Width = 21;
             // 
             // colOzelKod2
             // 
+            this.colOzelKod2.Caption = "OzelKod2";
             this.colOzelKod2.FieldName = "OzelKod2";
             this.colOzelKod2.Name = "colOzelKod2";
             this.colOzelKod2.OptionsColumn.AllowEdit = false;
@@ -300,6 +295,7 @@ namespace IsbaSatis.BackOffice.Stoklar
             // 
             // colOzelKod3
             // 
+            this.colOzelKod3.Caption = "OzelKod3";
             this.colOzelKod3.FieldName = "OzelKod3";
             this.colOzelKod3.Name = "colOzelKod3";
             this.colOzelKod3.OptionsColumn.AllowEdit = false;
@@ -307,6 +303,7 @@ namespace IsbaSatis.BackOffice.Stoklar
             // 
             // colOzelKod4
             // 
+            this.colOzelKod4.Caption = "OzelKod4";
             this.colOzelKod4.FieldName = "OzelKod4";
             this.colOzelKod4.Name = "colOzelKod4";
             this.colOzelKod4.OptionsColumn.AllowEdit = false;
@@ -314,6 +311,7 @@ namespace IsbaSatis.BackOffice.Stoklar
             // 
             // colGarantiSuresi
             // 
+            this.colGarantiSuresi.Caption = "GarantiSuresi";
             this.colGarantiSuresi.FieldName = "GarantiSuresi";
             this.colGarantiSuresi.Name = "colGarantiSuresi";
             this.colGarantiSuresi.OptionsColumn.AllowEdit = false;
@@ -321,6 +319,7 @@ namespace IsbaSatis.BackOffice.Stoklar
             // 
             // colUreticiKodu
             // 
+            this.colUreticiKodu.Caption = "UreticiKodu";
             this.colUreticiKodu.FieldName = "UreticiKodu";
             this.colUreticiKodu.Name = "colUreticiKodu";
             this.colUreticiKodu.OptionsColumn.AllowEdit = false;
@@ -328,78 +327,79 @@ namespace IsbaSatis.BackOffice.Stoklar
             // 
             // colAlisKdv
             // 
+            this.colAlisKdv.Caption = "AlisKdv";
             this.colAlisKdv.FieldName = "AlisKdv";
             this.colAlisKdv.Name = "colAlisKdv";
             this.colAlisKdv.OptionsColumn.AllowEdit = false;
             this.colAlisKdv.Visible = true;
-            this.colAlisKdv.VisibleIndex = 11;
-            this.colAlisKdv.Width = 22;
+            this.colAlisKdv.VisibleIndex = 7;
+            this.colAlisKdv.Width = 63;
             // 
             // colSatisKdv
             // 
+            this.colSatisKdv.Caption = "SatisKdv";
             this.colSatisKdv.FieldName = "SatisKdv";
             this.colSatisKdv.Name = "colSatisKdv";
             this.colSatisKdv.OptionsColumn.AllowEdit = false;
             this.colSatisKdv.Visible = true;
-            this.colSatisKdv.VisibleIndex = 12;
-            this.colSatisKdv.Width = 22;
+            this.colSatisKdv.VisibleIndex = 8;
+            this.colSatisKdv.Width = 63;
             // 
             // colAlisFiyati1
             // 
+            this.colAlisFiyati1.Caption = "AlisFiyati1";
             this.colAlisFiyati1.FieldName = "AlisFiyati1";
             this.colAlisFiyati1.Name = "colAlisFiyati1";
             this.colAlisFiyati1.OptionsColumn.AllowEdit = false;
             this.colAlisFiyati1.Visible = true;
-            this.colAlisFiyati1.VisibleIndex = 13;
-            this.colAlisFiyati1.Width = 22;
+            this.colAlisFiyati1.VisibleIndex = 9;
+            this.colAlisFiyati1.Width = 63;
             // 
             // colAlisFiyati2
             // 
+            this.colAlisFiyati2.Caption = "AlisFiyati2";
             this.colAlisFiyati2.FieldName = "AlisFiyati2";
             this.colAlisFiyati2.Name = "colAlisFiyati2";
             this.colAlisFiyati2.OptionsColumn.AllowEdit = false;
-            this.colAlisFiyati2.Visible = true;
-            this.colAlisFiyati2.VisibleIndex = 14;
-            this.colAlisFiyati2.Width = 22;
+            this.colAlisFiyati2.Width = 21;
             // 
             // colAlisFiyati3
             // 
+            this.colAlisFiyati3.Caption = "AlisFiyati3";
             this.colAlisFiyati3.FieldName = "AlisFiyati3";
             this.colAlisFiyati3.Name = "colAlisFiyati3";
             this.colAlisFiyati3.OptionsColumn.AllowEdit = false;
-            this.colAlisFiyati3.Visible = true;
-            this.colAlisFiyati3.VisibleIndex = 15;
-            this.colAlisFiyati3.Width = 22;
+            this.colAlisFiyati3.Width = 21;
             // 
             // colSatisFiyati1
             // 
+            this.colSatisFiyati1.Caption = "SatisFiyati1";
             this.colSatisFiyati1.FieldName = "SatisFiyati1";
             this.colSatisFiyati1.Name = "colSatisFiyati1";
             this.colSatisFiyati1.OptionsColumn.AllowEdit = false;
             this.colSatisFiyati1.Visible = true;
-            this.colSatisFiyati1.VisibleIndex = 16;
-            this.colSatisFiyati1.Width = 22;
+            this.colSatisFiyati1.VisibleIndex = 10;
+            this.colSatisFiyati1.Width = 121;
             // 
             // colSatisFiyati2
             // 
+            this.colSatisFiyati2.Caption = "SatisFiyati2";
             this.colSatisFiyati2.FieldName = "SatisFiyati2";
             this.colSatisFiyati2.Name = "colSatisFiyati2";
             this.colSatisFiyati2.OptionsColumn.AllowEdit = false;
-            this.colSatisFiyati2.Visible = true;
-            this.colSatisFiyati2.VisibleIndex = 17;
-            this.colSatisFiyati2.Width = 22;
+            this.colSatisFiyati2.Width = 21;
             // 
             // colSatisFiyati3
             // 
+            this.colSatisFiyati3.Caption = "SatisFiyati3";
             this.colSatisFiyati3.FieldName = "SatisFiyati3";
             this.colSatisFiyati3.Name = "colSatisFiyati3";
             this.colSatisFiyati3.OptionsColumn.AllowEdit = false;
-            this.colSatisFiyati3.Visible = true;
-            this.colSatisFiyati3.VisibleIndex = 18;
-            this.colSatisFiyati3.Width = 49;
+            this.colSatisFiyati3.Width = 56;
             // 
             // colMinStokMiktari
             // 
+            this.colMinStokMiktari.Caption = "MinStokMiktari";
             this.colMinStokMiktari.FieldName = "MinStokMiktari";
             this.colMinStokMiktari.Name = "colMinStokMiktari";
             this.colMinStokMiktari.OptionsColumn.AllowEdit = false;
@@ -407,6 +407,7 @@ namespace IsbaSatis.BackOffice.Stoklar
             // 
             // colMaxStokMiktari
             // 
+            this.colMaxStokMiktari.Caption = "MaxStokMiktari";
             this.colMaxStokMiktari.FieldName = "MaxStokMiktari";
             this.colMaxStokMiktari.Name = "colMaxStokMiktari";
             this.colMaxStokMiktari.OptionsColumn.AllowEdit = false;
@@ -414,6 +415,7 @@ namespace IsbaSatis.BackOffice.Stoklar
             // 
             // colAciklama
             // 
+            this.colAciklama.Caption = "Aciklama";
             this.colAciklama.FieldName = "Aciklama";
             this.colAciklama.Name = "colAciklama";
             this.colAciklama.OptionsColumn.AllowEdit = false;
@@ -421,16 +423,26 @@ namespace IsbaSatis.BackOffice.Stoklar
             // 
             // colStokHareket
             // 
+            this.colStokHareket.Caption = "StokHareket";
             this.colStokHareket.FieldName = "StokHareket";
             this.colStokHareket.Name = "colStokHareket";
             this.colStokHareket.OptionsColumn.AllowEdit = false;
             this.colStokHareket.Width = 46;
             // 
+            // dropDownButton1
+            // 
+            this.dropDownButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dropDownButton1.Location = new System.Drawing.Point(1022, 27);
+            this.dropDownButton1.Name = "dropDownButton1";
+            this.dropDownButton1.Size = new System.Drawing.Size(135, 23);
+            this.dropDownButton1.TabIndex = 8;
+            this.dropDownButton1.Text = "Dışarı Çıkart";
+            // 
             // frmExcellAktar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 449);
+            this.ClientSize = new System.Drawing.Size(1157, 449);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.grpMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -444,7 +456,6 @@ namespace IsbaSatis.BackOffice.Stoklar
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stokBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -459,7 +470,6 @@ namespace IsbaSatis.BackOffice.Stoklar
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit textEdit1;
-        private System.Windows.Forms.BindingSource stokBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colDurumu;
         private DevExpress.XtraGrid.Columns.GridColumn colStokKodu;
@@ -490,5 +500,6 @@ namespace IsbaSatis.BackOffice.Stoklar
         private DevExpress.XtraGrid.Columns.GridColumn colAciklama;
         private DevExpress.XtraGrid.Columns.GridColumn colStokHareket;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
     }
 }

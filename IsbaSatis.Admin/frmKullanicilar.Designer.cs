@@ -47,6 +47,8 @@
             this.colGorevi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKayitTarihi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSonGirisTarihi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -68,6 +70,8 @@
             // grpMenu
             // 
             this.grpMenu.Controls.Add(this.btnKapat);
+            this.grpMenu.Controls.Add(this.simpleButton2);
+            this.grpMenu.Controls.Add(this.simpleButton1);
             this.grpMenu.Controls.Add(this.btnAra);
             this.grpMenu.Controls.Add(this.btnGuncelle);
             this.grpMenu.Controls.Add(this.btnSil);
@@ -243,6 +247,25 @@
             this.colSonGirisTarihi.Visible = true;
             this.colSonGirisTarihi.VisibleIndex = 5;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.ImageIndex = 2;
+            this.simpleButton1.Location = new System.Drawing.Point(496, 28);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(90, 45);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Text = "Ara";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ImageOptions.ImageIndex = 2;
+            this.simpleButton2.Location = new System.Drawing.Point(496, 23);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(90, 45);
+            this.simpleButton2.TabIndex = 0;
+            this.simpleButton2.Text = "Ara";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
             // frmKullanicilar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,5 +308,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colGorevi;
         private DevExpress.XtraGrid.Columns.GridColumn colKayitTarihi;
         private DevExpress.XtraGrid.Columns.GridColumn colSonGirisTarihi;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

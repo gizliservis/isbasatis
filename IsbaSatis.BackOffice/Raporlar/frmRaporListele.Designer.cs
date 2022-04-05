@@ -91,9 +91,9 @@
             this.lblBaslik.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblBaslik.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.lblBaslik.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lblBaslik.ImageOptions.Image")));
-            this.lblBaslik.Location = new System.Drawing.Point(0, 0);
+            this.lblBaslik.Location = new System.Drawing.Point(238, 0);
             this.lblBaslik.Name = "lblBaslik";
-            this.lblBaslik.Size = new System.Drawing.Size(1070, 59);
+            this.lblBaslik.Size = new System.Drawing.Size(832, 59);
             this.lblBaslik.TabIndex = 4;
             this.lblBaslik.Text = "Rapor Listesi";
             // 
@@ -109,9 +109,9 @@
             this.grpMenu.Controls.Add(this.btnKapat);
             this.grpMenu.Controls.Add(this.btnEkle);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 465);
+            this.grpMenu.Location = new System.Drawing.Point(238, 465);
             this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(1070, 73);
+            this.grpMenu.Size = new System.Drawing.Size(832, 73);
             this.grpMenu.TabIndex = 5;
             this.grpMenu.Text = "Menü";
             // 
@@ -120,7 +120,7 @@
             this.btnKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnKapat.ImageOptions.ImageIndex = 0;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(975, 26);
+            this.btnKapat.Location = new System.Drawing.Point(737, 26);
             this.btnKapat.Name = "btnKapat";
             this.btnKapat.Size = new System.Drawing.Size(90, 45);
             this.btnKapat.TabIndex = 0;
@@ -167,10 +167,10 @@
             this.navBarItem11,
             this.rptDepoBakiye,
             this.navBarItem13});
-            this.navBarControl1.Location = new System.Drawing.Point(0, 59);
+            this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 238;
-            this.navBarControl1.Size = new System.Drawing.Size(238, 406);
+            this.navBarControl1.Size = new System.Drawing.Size(238, 538);
             this.navBarControl1.TabIndex = 6;
             this.navBarControl1.Text = "navBarControl1";
             this.navBarControl1.Click += new System.EventHandler(this.navBarControl1_Click);
@@ -467,9 +467,9 @@
             this.ClientSize = new System.Drawing.Size(1070, 538);
             this.Controls.Add(this.filterControl1);
             this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.lblBaslik);
+            this.Controls.Add(this.navBarControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmRaporListele";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

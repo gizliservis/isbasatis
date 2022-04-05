@@ -51,7 +51,7 @@ namespace IsbaSatis.BackOffice
         {
             InitializeComponent();
 
-
+       
             using (var context = new IsbaSatisContext())
             {
                 context.Database.CreateIfNotExists();
@@ -68,10 +68,10 @@ namespace IsbaSatis.BackOffice
                     context.SaveChanges();
                 }
             }
-
             frmKullaniciGiris form = new frmKullaniciGiris();
             form.ShowDialog();
-            barKullaniciAdi.Caption = $"Giriş Yapan Kullanıcı : {RolTool.KullaniciEntity.KullaniciAdi}";
+            barKullaniciAdi.Caption = $"Giriş Yapan Kullanıcı : {RolTool.KullaniciEntity.KullaniciAdi != null}";
+
 
         }
         frmStok stok;
@@ -79,12 +79,14 @@ namespace IsbaSatis.BackOffice
         frmCari cari;
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             RolTool.RolleriYukle(ribbonControl1);
             if (anaMenuBilgi == null || anaMenuBilgi.IsDisposed)
             {
                 anaMenuBilgi = new frmAnaMenuBilgi();
                 anaMenuBilgi.MdiParent = this;
                 anaMenuBilgi.Show();
+                
             }
 
 

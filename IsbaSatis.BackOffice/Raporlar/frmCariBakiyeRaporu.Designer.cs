@@ -396,7 +396,7 @@ namespace IsbaSatis.BackOffice.Raporlar
             // dropDownButton1
             // 
             this.dropDownButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dropDownButton1.Location = new System.Drawing.Point(660, 6);
+            this.dropDownButton1.Location = new System.Drawing.Point(670, 6);
             this.dropDownButton1.Name = "dropDownButton1";
             this.dropDownButton1.Size = new System.Drawing.Size(135, 23);
             this.dropDownButton1.TabIndex = 7;

@@ -56,5 +56,11 @@ namespace IsbaSatis.Admin
         {
             Guncelle();
         }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            frmDevir form = new frmDevir();
+            form.ShowDialog();
+        }
     }
 }

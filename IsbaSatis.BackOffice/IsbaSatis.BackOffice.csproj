@@ -338,6 +338,12 @@
     <Compile Include="Raporlar\frmCariBakiyeRaporu.Designer.cs">
       <DependentUpon>frmCariBakiyeRaporu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\frmCariEkstre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmCariEkstre.Designer.cs">
+      <DependentUpon>frmCariEkstre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\frmCariHrkRaporu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -618,6 +624,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmCariBakiyeRaporu.resx">
       <DependentUpon>frmCariBakiyeRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmCariEkstre.resx">
+      <DependentUpon>frmCariEkstre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmCariHrkRaporu.resx">
       <DependentUpon>frmCariHrkRaporu.cs</DependentUpon>

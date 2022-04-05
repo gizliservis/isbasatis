@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using Isbasatis.Entities.Context;
 using Isbasatis.Entities.Tools;
 using Isbasatis.Entities.Tables;
+using System.Data.SqlClient;
 
 namespace IsbaSatis.Admin
 {
@@ -18,15 +19,28 @@ namespace IsbaSatis.Admin
     {
         IsbaSatisContext context;
         private bool girisBasarili = false;
+        SqlConnectionStringBuilder connectionStringBuilder = new SqlConnectionStringBuilder();
+        
         public frmKullaniciGiris()
         {
             InitializeComponent();
+            frmSirketMenu form = new frmSirketMenu();
+            form.ShowDialog();
+            connectionStringBuilder.ConnectionString = SettingsTool.AyarOku(SettingsTool.Ayarlar.DatabaseAyarlari_BaglantiCumlesi);
+            if (!String.IsNullOrEmpty(form.secilenDonem))
+            {
+                connectionStringBuilder.InitialCatalog = form.secilenDonem;
+                SettingsTool.AyarDegistir(SettingsTool.Ayarlar.DatabaseAyarlari_BaglantiCumlesi, connectionStringBuilder.ConnectionString);
+                context = new IsbaSatisContext();
+
+            }
             if (!ConnectionTool.CheckConnection(SettingsTool.AyarOku(SettingsTool.Ayarlar.DatabaseAyarlari_BaglantiCumlesi)))
             {
                 frmBaglantiAyarlari frm = new frmBaglantiAyarlari();
                 frm.ShowDialog();
             }
-           context = new IsbaSatisContext();
+           
+           
 
         }
 
@@ -80,6 +94,7 @@ namespace IsbaSatis.Admin
         private void btnKapat_Click(object sender, EventArgs e)
         {
             Application.Exit();
+            return;
         }
     }
 }

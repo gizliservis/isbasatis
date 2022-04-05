@@ -91,10 +91,14 @@ namespace IsbaSatis.BackOffice.Raporlar
             {
                 frmCariOdemeTahsilat frm = new frmCariOdemeTahsilat(cariId);
                 frm.ShowDialog();
+            } else if (txtRaporAdi.Text == "Cari Ekstre Raporu")
+            {
+                frmCariEkstre frm = new frmCariEkstre(cariId);
+                frm.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Helal Keke");
+                MessageBox.Show("Seçim Yapın");
             }
 
 

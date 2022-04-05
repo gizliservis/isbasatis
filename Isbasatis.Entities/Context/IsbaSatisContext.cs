@@ -18,6 +18,10 @@ namespace Isbasatis.Entities.Context
         {
             Database.SetInitializer<IsbaSatisContext>(new MigrateDatabaseToLatestVersion<IsbaSatisContext, Configuration>());
         }
+        public IsbaSatisContext(string connString):base(connString)
+        {
+            Database.SetInitializer<IsbaSatisContext>(new MigrateDatabaseToLatestVersion<IsbaSatisContext, Configuration>());
+        }
         public DbSet<Stok> Stoklar { get; set; }
         public DbSet<Cari> Cariler { get; set; }
         public DbSet<Fis> fisler { get; set; }
