@@ -93,6 +93,7 @@
             this.btnIrsaliyeVerilen = new DevExpress.XtraBars.BarButtonItem();
             this.btnTeklifAlinan = new DevExpress.XtraBars.BarButtonItem();
             this.btnTeklifVerilen = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDepoIrsaliyesi = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -117,7 +118,6 @@
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.btnDepoIrsaliyesi = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -125,6 +125,7 @@
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.AutoSaveLayoutToXml = true;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -194,6 +195,7 @@
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 63;
             this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.OptionsAnimation.PageCategoryShowAnimation = DevExpress.Utils.DefaultBoolean.True;
             this.ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -202,7 +204,8 @@
             this.ribbonPage3});
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemHypertextLabel1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1378, 147);
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
+            this.ribbonControl1.Size = new System.Drawing.Size(1508, 162);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
@@ -638,7 +641,7 @@
             // 
             // barStaticItem2
             // 
-            this.barStaticItem2.Caption = "copyright © 2021 tüm hakları  İsba Yazılım tarafından saklıdır";
+            this.barStaticItem2.Caption = "Copyright © 2021 Tüm Hakları  İSBA YAZILIM tarafından saklıdır";
             this.barStaticItem2.Id = 54;
             this.barStaticItem2.Name = "barStaticItem2";
             // 
@@ -692,6 +695,13 @@
             this.btnTeklifVerilen.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.contract__1_;
             this.btnTeklifVerilen.Name = "btnTeklifVerilen";
             this.btnTeklifVerilen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // btnDepoIrsaliyesi
+            // 
+            this.btnDepoIrsaliyesi.Caption = "Depo İrsaliyesi";
+            this.btnDepoIrsaliyesi.Id = 62;
+            this.btnDepoIrsaliyesi.Name = "btnDepoIrsaliyesi";
+            this.btnDepoIrsaliyesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
             // 
             // ribbonPageCategory1
             // 
@@ -872,10 +882,10 @@
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem2);
             this.ribbonStatusBar1.ItemLinks.Add(this.barKullaniciAdi);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 730);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 728);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1378, 23);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1508, 26);
             // 
             // xtraTabbedMdiManager1
             // 
@@ -886,19 +896,12 @@
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "ribbonPage5";
             // 
-            // btnDepoIrsaliyesi
-            // 
-            this.btnDepoIrsaliyesi.Caption = "Depo İrsaliyesi";
-            this.btnDepoIrsaliyesi.Id = 62;
-            this.btnDepoIrsaliyesi.Name = "btnDepoIrsaliyesi";
-            this.btnDepoIrsaliyesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1378, 753);
+            this.ClientSize = new System.Drawing.Size(1508, 754);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

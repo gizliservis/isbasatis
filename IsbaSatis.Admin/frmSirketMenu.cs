@@ -40,6 +40,8 @@ namespace IsbaSatis.Admin
                 Text = "Yeni Şirket Oluştur",
                 Height = 250,
                 Width=200,
+                ImageList=ımageList1,
+                ImageIndex=3
                
             };
             btn.Appearance.Font=new Font("Tahoma",14,FontStyle.Bold);
@@ -54,12 +56,13 @@ namespace IsbaSatis.Admin
                     Text = item.Replace("İsba", ""),
                     GroupIndex = 1,
                     ImageList = ımageList1,
-                    ImageIndex = 1,
+                    ImageIndex = 2,
                     Height = 250,
-                    Width = 250,
+                    Width = 200,
 
                 };
                 buton.Appearance.TextOptions.WordWrap = WordWrap.Wrap;
+                buton.Appearance.Font = new Font("Tahoma", 12, FontStyle.Bold);
                 buton.Click += SecilenButon;
                 flowLayoutPanel1.Controls.Add(buton);
             }
@@ -106,5 +109,7 @@ namespace IsbaSatis.Admin
         {
             Application.Exit();
         }
+
+    
     }
 }

@@ -18,7 +18,7 @@ namespace IsbaSatis.Admin
     public partial class frmKullaniciGiris : DevExpress.XtraEditors.XtraForm
     {
         IsbaSatisContext context;
-        private bool girisBasarili = false;
+        public bool girisBasarili = false;
         SqlConnectionStringBuilder connectionStringBuilder = new SqlConnectionStringBuilder();
         
         public frmKullaniciGiris()
@@ -94,7 +94,35 @@ namespace IsbaSatis.Admin
         private void btnKapat_Click(object sender, EventArgs e)
         {
             Application.Exit();
-            return;
+           
+        }
+
+        private void txtParola_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode==Keys.Enter)
+                {
+                    if (context.Kullanicilar.Any(c => c.KullaniciAdi == txtKullanici.Text && c.Parola == txtParola.Text))
+                    {
+                        girisBasarili = true;
+                        RolTool.KullaniciEntity = context.Kullanicilar.SingleOrDefault(c => c.KullaniciAdi == txtKullanici.Text);
+                        this.Close();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Girdiğiniz Kullanıcı Adı Veya Parola Yanlış");
+                        txtKullanici.Text = null;
+                        txtParola.Text = null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }  
         }
     }
 }

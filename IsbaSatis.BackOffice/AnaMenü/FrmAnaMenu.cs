@@ -7,28 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Isbasatis.Entities.Context;
-using Isbasatis.Entities.Data_Access;
 using Isbasatis.Entities.Tables;
 using IsbaSatis.BackOffice.AnaMenü;
 using IsbaSatis.BackOffice.Cari;
 using IsbaSatis.BackOffice.Kasalar;
 using IsbaSatis.BackOffice.Depolar;
 using IsbaSatis.BackOffice.Ödeme_Türü;
-using IsbaSatis.BackOffice.Tanım;
 using IsbaSatis.BackOffice.Fişler;
 using IsbaSatis.BackOffice.Stok_Hareketleri;
 using IsbaSatis.BackOffice.KasaHareketleri;
 using IsbaSatis.BackOffice.Personeller;
 using IsbaSatis.BackOffice.Fiyat_Değiştir;
 using IsbaSatis.BackOffice.İndirim;
-using IsbaSatis.Raporlar.Stok;
 using IsbaSatis.BackOffice.Raporlar;
 using IsbaSatis.Raporlar.Fatura_Ve_Fiş;
 using IsbaSatis.BackOffice.ajanda;
 using IsbaSatis.BackOffice.DovizKurları;
 using IsbaSatis.BackOffice.Ayarlar;
-using IsbaSatisBackup;
-using IsbaSatis.Update;
 using System.Diagnostics;
 using System.Reflection;
 using System.Net;
@@ -36,7 +31,6 @@ using IsbaSatis.BackOffice.Hızlı_Satış;
 using IsbaSatis.Admin;
 using Isbasatis.Entities.Tools;
 using IsbaSatis.BackOffice.Kod;
-using Isbasatis.LicenseManager.LicenseInformations;
 using Isbasatis.LicenseManger.LicenseInformations.Manager;
 using IsbaSatis.BackOffice.Bankalar;
 using DevExpress.XtraReports.UI;
@@ -47,6 +41,7 @@ namespace IsbaSatis.BackOffice
     public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         LicenseConfirmation confirm = new LicenseConfirmation();
+    
         public Form1()
         {
             InitializeComponent();
@@ -70,7 +65,11 @@ namespace IsbaSatis.BackOffice
             }
             frmKullaniciGiris form = new frmKullaniciGiris();
             form.ShowDialog();
-            barKullaniciAdi.Caption = $"Giriş Yapan Kullanıcı : {RolTool.KullaniciEntity.KullaniciAdi != null}";
+            if (form.girisBasarili)
+            {
+                barKullaniciAdi.Caption = $"Giriş Yapan Kullanıcı : {RolTool.KullaniciEntity.KullaniciAdi}";
+                RolTool.RolleriYukle(ribbonControl1);
+            }
 
 
         }
@@ -79,8 +78,7 @@ namespace IsbaSatis.BackOffice
         frmCari cari;
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-            RolTool.RolleriYukle(ribbonControl1);
+           
             if (anaMenuBilgi == null || anaMenuBilgi.IsDisposed)
             {
                 anaMenuBilgi = new frmAnaMenuBilgi();
@@ -524,9 +522,9 @@ namespace IsbaSatis.BackOffice
 
         private void barButtonItem42_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            rptFatura fatura = new rptFatura("dnmfis000036");
-            ReportDesignTool designTool = new ReportDesignTool(fatura);
-            designTool.ShowDesigner();
+            //rptFatura fatura = new rptFatura("dnmfis000036");
+            //ReportDesignTool designTool = new ReportDesignTool(fatura);
+            //designTool.ShowDesigner();
 
         }
 

@@ -18,6 +18,7 @@ using IsbaSatis.BackOffice.Stoklar;
 using Isbasatis.Entities.Tools;
 using IsbaSatis.BackOffice.Stok;
 using System.IO;
+using Isbasatis.Entities.Tools.LoadingTool;
 
 namespace IsbaSatis.BackOffice.AnaMenü
 {
@@ -27,29 +28,36 @@ namespace IsbaSatis.BackOffice.AnaMenü
         StokDAL stokDAL = new StokDAL();
         private ExportTool export;
         string filename = "Stok.xml";
+        LoadingTool lt;
+      public  bool silindi = false;
 
         int secilen;
         public frmStok()
         {
             InitializeComponent();
+            lt = new LoadingTool(this);
             export = new ExportTool(this, gridView1, dropDownButton1, filename);
             FileInfo fi = new FileInfo(Application.StartupPath + "\\" + filename);
             if (fi.Exists)
             {
+                
                 gridView1.RestoreLayoutFromXml(filename);
+                
             }
-
-
+            RolTool.RolleriYukle(this);
+            GetAll();
         }
 
         private void frmStok_Load(object sender, EventArgs e)
         {
-            RolTool.RolleriYukle(this);
-            GetAll();
+          
+           
         }
         private void GetAll()
         {
+            lt.AnimasyonBaslat();
             gridControl1.DataSource = stokDAL.StokListele(context);
+            lt.AnimasyonBitir();
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -61,34 +69,36 @@ namespace IsbaSatis.BackOffice.AnaMenü
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
+         
             GetAll();
+           
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-           
+
             if (MessageBox.Show("Seçili Olan Veriyi Silmek İstediğinie Eminmisiniz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
 
                 foreach (var hrkt in context.StokHareketleri)
                 {
-                    if (hrkt.StokId==secilen)
+                    if (hrkt.StokId == secilen)
                     {
                         MessageBox.Show("Bu Ürünün Hareketi Bulunmakta Fatura ve Fişlerden Siliniz");
+                        silindi = true;
                         return;
                     }
-                    else
-                    {
-                        stokDAL.Delete(context, c => c.Id == secilen);
-                        stokDAL.Save(context);
-                        GetAll();
-                    }
-
-                
-                
+                  
                 }
-              
+                if (!silindi)
+                {
+                    stokDAL.Delete(context, c => c.Id == secilen);
+                    stokDAL.Save(context);
+                    GetAll();
+                }
+             
+
 
 
 
@@ -109,8 +119,17 @@ namespace IsbaSatis.BackOffice.AnaMenü
         private void btnDuzenle_Click(object sender, EventArgs e)
         {
             secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
-            frmStokIslem form = new frmStokIslem(stokDAL.GetByFilter(context, c => c.Id == secilen));
-            form.ShowDialog();
+            if (gridView1.RowCount==0)
+            {
+                MessageBox.Show("Lütfen İşlem İçin Bir Stok Seçiniz");
+                return;
+            }
+            else
+            {
+                frmStokIslem form = new frmStokIslem(stokDAL.GetByFilter(context, c => c.Id == secilen));
+                form.ShowDialog();
+            }
+            
 
 
         }
@@ -129,9 +148,12 @@ namespace IsbaSatis.BackOffice.AnaMenü
         private void btnStokHareket_Click(object sender, EventArgs e)
         {
             secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
-
-            frmStokHareket frm = new frmStokHareket(secilen);
-            frm.ShowDialog();
+            if (gridView1.RowCount!=0)
+            {
+                frmStokHareket frm = new frmStokHareket(secilen);
+                frm.ShowDialog();
+            }
+           
         }
 
         private void btnAra_Click(object sender, EventArgs e)
@@ -148,7 +170,7 @@ namespace IsbaSatis.BackOffice.AnaMenü
 
         private void frmStok_KeyDown(object sender, KeyEventArgs e)
         {
-           
+
         }
 
         private void gridControl1_KeyDown(object sender, KeyEventArgs e)
@@ -176,14 +198,16 @@ namespace IsbaSatis.BackOffice.AnaMenü
                         if (hrkt.StokId == secilen)
                         {
                             MessageBox.Show("Bu Ürünün Hareketi Bulunmakta Fatura ve Fişlerden Siliniz");
+                            silindi = true;
                             return;
                         }
-                        else
-                        {
-                            stokDAL.Delete(context, c => c.Id == secilen);
-                            stokDAL.Save(context);
-                            GetAll();
-                        }
+                      
+                    }
+                    if (!silindi)
+                    {
+                        stokDAL.Delete(context, c => c.Id == secilen);
+                        stokDAL.Save(context);
+                        GetAll();
                     }
                 }
             }
