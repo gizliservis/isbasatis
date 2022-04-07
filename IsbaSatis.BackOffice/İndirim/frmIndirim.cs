@@ -60,42 +60,50 @@ namespace IsbaSatis.BackOffice.İndirim
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Seçili Olan Veriyi Silmek İstediğinize Eminmisiniz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (gridIndirim.RowCount>0)
             {
-                var secilen = gridIndirim.GetFocusedRowCellValue(colStokKodu).ToString();
-                indirimDAL.Delete(context, c => c.StokKodu == secilen);
-                indirimDAL.Save(context);
-                listele();
+                if (MessageBox.Show("Seçili Olan Veriyi Silmek İstediğinize Eminmisiniz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    var secilen = gridIndirim.GetFocusedRowCellValue(colStokKodu).ToString();
+                    indirimDAL.Delete(context, c => c.StokKodu == secilen);
+                    indirimDAL.Save(context);
+                    listele();
+                }
             }
+         
         }
 
 
 
         private void btnDurum_Click(object sender, EventArgs e)
         {
-            var secilenStokKodu = gridIndirim.GetFocusedRowCellValue(colStokKodu).ToString();
-            var secilen = indirimDAL.GetByFilter(context, c => c.StokKodu == secilenStokKodu);
-            if (Convert.ToBoolean(gridIndirim.GetFocusedRowCellValue(colDurumu)))
+            if (gridIndirim.RowCount>0)
             {
+                var secilenStokKodu = gridIndirim.GetFocusedRowCellValue(colStokKodu).ToString();
+                var secilen = indirimDAL.GetByFilter(context, c => c.StokKodu == secilenStokKodu);
+                if (Convert.ToBoolean(gridIndirim.GetFocusedRowCellValue(colDurumu)))
+                {
 
-                secilen.Durumu = false;
+                    secilen.Durumu = false;
 
-                btnPasifYap.Text = "Aktif Yap";
-                gridIndirim.SetFocusedRowCellValue(colDurumu, true);
-                btnPasifYap.ImageOptions.ImageIndex = 6;
-                indirimDAL.Save(context);
-                listele();
+                    btnPasifYap.Text = "Aktif Yap";
+                    gridIndirim.SetFocusedRowCellValue(colDurumu, true);
+                    btnPasifYap.ImageOptions.ImageIndex = 6;
+                    indirimDAL.Save(context);
+                    listele();
 
+                }
+                else
+                {
+                    secilen.Durumu = true;
+                    btnPasifYap.Text = "Pasif Yap";
+                    gridIndirim.SetFocusedRowCellValue(colDurumu, false);
+                    btnPasifYap.ImageOptions.ImageIndex = 7;
+                    indirimDAL.Save(context);
+                    listele();
+                }
             }
-            else
-            {
-                secilen.Durumu = true;
-                btnPasifYap.Text = "Pasif Yap";
-                gridIndirim.SetFocusedRowCellValue(colDurumu, false);
-                btnPasifYap.ImageOptions.ImageIndex = 7;
-                indirimDAL.Save(context);
-                listele();
-            }
+           
 
         }
 
@@ -121,6 +129,11 @@ namespace IsbaSatis.BackOffice.İndirim
         private void btnAra_Click(object sender, EventArgs e)
         {
             gridIndirim.OptionsView.ShowAutoFilterRow = true ? gridIndirim.OptionsView.ShowAutoFilterRow == false : gridIndirim.OptionsView.ShowAutoFilterRow = true;
+        }
+
+        private void btnDuzenle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -93,6 +93,7 @@
     <Compile Include="Data Access\KullaniciRolDAL.cs" />
     <Compile Include="Data Access\OdemeTuruDAL.cs" />
     <Compile Include="Data Access\PersonelDAL.cs" />
+    <Compile Include="Data Access\SirketBilgiDAL.cs" />
     <Compile Include="Extensions\FluentValidation\RuleBuilderExtensions.cs" />
     <Compile Include="Extensions\FluentValidation\UniqueValidator.cs" />
     <Compile Include="Mapping\BankaHareketMap.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="Mapping\KodMap.cs" />
     <Compile Include="Mapping\KullaniciMap.cs" />
     <Compile Include="Mapping\KullaniciRolMap.cs" />
+    <Compile Include="Mapping\SirketBilgiMap.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -153,6 +155,7 @@
     <Compile Include="Tables\KasaHareket.cs" />
     <Compile Include="Tables\OdemeTuru.cs" />
     <Compile Include="Tables\Personel.cs" />
+    <Compile Include="Tables\SirketBilgi.cs" />
     <Compile Include="Tables\Stok.cs" />
     <Compile Include="Tables\StokHareket.cs" />
     <Compile Include="Tables\Tanim.cs" />
@@ -190,6 +193,7 @@
     <Compile Include="Validations\OdemeTuruValidator.cs" />
     <Compile Include="Validations\PersonelHareketValidator.cs" />
     <Compile Include="Validations\PersonelValidator.cs" />
+    <Compile Include="Validations\SirketBilgiValidator.cs" />
     <Compile Include="Validations\StokHareketValidator.cs" />
     <Compile Include="Validations\StokValidator.cs" />
     <Compile Include="Validations\TanimValidator.cs" />

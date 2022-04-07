@@ -160,6 +160,7 @@
             this.btnDuzenle.Size = new System.Drawing.Size(96, 46);
             this.btnDuzenle.TabIndex = 0;
             this.btnDuzenle.Text = "Düzenle";
+            this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
             // 
             // btnEkle
             // 

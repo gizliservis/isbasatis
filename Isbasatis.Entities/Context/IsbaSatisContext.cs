@@ -43,6 +43,7 @@ namespace Isbasatis.Entities.Context
         public DbSet<Kod>Kodlar { get; set; }
         public DbSet<Banka>Bankalar { get; set; }
         public DbSet<BankaHareket>BankaHareketleri { get; set; }
+        public DbSet<SirketBilgi>SirketBilgileri { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -66,6 +67,7 @@ namespace Isbasatis.Entities.Context
             modelBuilder.Configurations.Add(new KodMap());
             modelBuilder.Configurations.Add(new BankaMap());
             modelBuilder.Configurations.Add(new BankaHareketMap());
+            modelBuilder.Configurations.Add(new SirketBilgiMap());
         }
     }
 }

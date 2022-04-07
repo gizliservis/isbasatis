@@ -62,10 +62,43 @@
             this.colYetkiliAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lblCariKodu = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.txtSirketKodu = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.txtSirketKisaAdi = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.txtUnvanı = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.txtUlkesi = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.txtIli = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.txtIlcesi = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.txtSemt = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.txtVD = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.txtVNo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.txtFax = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
+            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.txtWeb = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.txtYetkilisi = new DevExpress.XtraEditors.TextEdit();
+            this.txtAdresi = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
+            this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTelNo = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
             this.navigationPane1.SuspendLayout();
+            this.navigationPage1.SuspendLayout();
             this.navigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbBilgiFisiYazici.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFaturaYazici.Properties)).BeginInit();
@@ -75,6 +108,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSirketKodu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSirketKisaAdi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUnvanı.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUlkesi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIli.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIlcesi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSemt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVD.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFax.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWeb.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYetkilisi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAdresi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTelNo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ımageList1
@@ -153,9 +202,41 @@
             // 
             // navigationPage1
             // 
-            this.navigationPage1.Caption = "Genel Ayarlar";
+            this.navigationPage1.Caption = "Şirket Bilgileri";
+            this.navigationPage1.Controls.Add(this.txtAciklama);
+            this.navigationPage1.Controls.Add(this.txtAdresi);
+            this.navigationPage1.Controls.Add(this.labelControl20);
+            this.navigationPage1.Controls.Add(this.txtTelNo);
+            this.navigationPage1.Controls.Add(this.txtYetkilisi);
+            this.navigationPage1.Controls.Add(this.labelControl21);
+            this.navigationPage1.Controls.Add(this.labelControl19);
+            this.navigationPage1.Controls.Add(this.labelControl18);
+            this.navigationPage1.Controls.Add(this.txtWeb);
+            this.navigationPage1.Controls.Add(this.labelControl17);
+            this.navigationPage1.Controls.Add(this.txtEmail);
+            this.navigationPage1.Controls.Add(this.labelControl16);
+            this.navigationPage1.Controls.Add(this.txtFax);
+            this.navigationPage1.Controls.Add(this.labelControl15);
+            this.navigationPage1.Controls.Add(this.txtVNo);
+            this.navigationPage1.Controls.Add(this.labelControl14);
+            this.navigationPage1.Controls.Add(this.txtVD);
+            this.navigationPage1.Controls.Add(this.labelControl13);
+            this.navigationPage1.Controls.Add(this.txtSemt);
+            this.navigationPage1.Controls.Add(this.labelControl12);
+            this.navigationPage1.Controls.Add(this.txtIlcesi);
+            this.navigationPage1.Controls.Add(this.labelControl11);
+            this.navigationPage1.Controls.Add(this.txtIli);
+            this.navigationPage1.Controls.Add(this.labelControl10);
+            this.navigationPage1.Controls.Add(this.txtUlkesi);
+            this.navigationPage1.Controls.Add(this.labelControl9);
+            this.navigationPage1.Controls.Add(this.txtUnvanı);
+            this.navigationPage1.Controls.Add(this.labelControl8);
+            this.navigationPage1.Controls.Add(this.txtSirketKisaAdi);
+            this.navigationPage1.Controls.Add(this.labelControl7);
+            this.navigationPage1.Controls.Add(this.txtSirketKodu);
+            this.navigationPage1.Controls.Add(this.labelControl6);
             this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(718, 290);
+            this.navigationPage1.Size = new System.Drawing.Size(718, 305);
             // 
             // navigationPage2
             // 
@@ -173,7 +254,7 @@
             this.navigationPage2.Controls.Add(this.gridLookUpEdit1);
             this.navigationPage2.Controls.Add(this.lblCariKodu);
             this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(718, 290);
+            this.navigationPage2.Size = new System.Drawing.Size(718, 305);
             // 
             // cmbBilgiFisiYazici
             // 
@@ -419,6 +500,294 @@
             this.lblCariKodu.TabIndex = 3;
             this.lblCariKodu.Text = "Varsayılan Depo :";
             // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Options.UseTextOptions = true;
+            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl6.Location = new System.Drawing.Point(3, 11);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(80, 13);
+            this.labelControl6.TabIndex = 0;
+            this.labelControl6.Text = "Şirket Kodu :";
+            // 
+            // txtSirketKodu
+            // 
+            this.txtSirketKodu.Location = new System.Drawing.Point(89, 8);
+            this.txtSirketKodu.Name = "txtSirketKodu";
+            this.txtSirketKodu.Size = new System.Drawing.Size(224, 20);
+            this.txtSirketKodu.TabIndex = 1;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Options.UseTextOptions = true;
+            this.labelControl7.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl7.Location = new System.Drawing.Point(3, 37);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(80, 13);
+            this.labelControl7.TabIndex = 0;
+            this.labelControl7.Text = "Şirket Kısa Adı :";
+            // 
+            // txtSirketKisaAdi
+            // 
+            this.txtSirketKisaAdi.Location = new System.Drawing.Point(89, 34);
+            this.txtSirketKisaAdi.Name = "txtSirketKisaAdi";
+            this.txtSirketKisaAdi.Size = new System.Drawing.Size(224, 20);
+            this.txtSirketKisaAdi.TabIndex = 1;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Options.UseTextOptions = true;
+            this.labelControl8.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl8.Location = new System.Drawing.Point(3, 63);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(80, 13);
+            this.labelControl8.TabIndex = 0;
+            this.labelControl8.Text = "Şirket Unvanı :";
+            // 
+            // txtUnvanı
+            // 
+            this.txtUnvanı.Location = new System.Drawing.Point(89, 60);
+            this.txtUnvanı.Name = "txtUnvanı";
+            this.txtUnvanı.Size = new System.Drawing.Size(224, 20);
+            this.txtUnvanı.TabIndex = 1;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Options.UseTextOptions = true;
+            this.labelControl9.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl9.Location = new System.Drawing.Point(3, 89);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(80, 13);
+            this.labelControl9.TabIndex = 0;
+            this.labelControl9.Text = "Ükesi :";
+            // 
+            // txtUlkesi
+            // 
+            this.txtUlkesi.Location = new System.Drawing.Point(89, 86);
+            this.txtUlkesi.Name = "txtUlkesi";
+            this.txtUlkesi.Size = new System.Drawing.Size(224, 20);
+            this.txtUlkesi.TabIndex = 1;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Options.UseTextOptions = true;
+            this.labelControl10.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl10.Location = new System.Drawing.Point(3, 115);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(80, 13);
+            this.labelControl10.TabIndex = 0;
+            this.labelControl10.Text = "İli :";
+            // 
+            // txtIli
+            // 
+            this.txtIli.Location = new System.Drawing.Point(89, 112);
+            this.txtIli.Name = "txtIli";
+            this.txtIli.Size = new System.Drawing.Size(224, 20);
+            this.txtIli.TabIndex = 1;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Options.UseTextOptions = true;
+            this.labelControl11.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl11.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl11.Location = new System.Drawing.Point(3, 141);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(80, 13);
+            this.labelControl11.TabIndex = 0;
+            this.labelControl11.Text = "İlçesi :";
+            // 
+            // txtIlcesi
+            // 
+            this.txtIlcesi.Location = new System.Drawing.Point(89, 138);
+            this.txtIlcesi.Name = "txtIlcesi";
+            this.txtIlcesi.Size = new System.Drawing.Size(224, 20);
+            this.txtIlcesi.TabIndex = 1;
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Options.UseTextOptions = true;
+            this.labelControl12.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl12.Location = new System.Drawing.Point(3, 167);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(80, 13);
+            this.labelControl12.TabIndex = 0;
+            this.labelControl12.Text = "Semt :";
+            // 
+            // txtSemt
+            // 
+            this.txtSemt.Location = new System.Drawing.Point(89, 164);
+            this.txtSemt.Name = "txtSemt";
+            this.txtSemt.Size = new System.Drawing.Size(224, 20);
+            this.txtSemt.TabIndex = 1;
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Options.UseTextOptions = true;
+            this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl13.Location = new System.Drawing.Point(3, 193);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(80, 13);
+            this.labelControl13.TabIndex = 0;
+            this.labelControl13.Text = "Vergi Dairesi :";
+            // 
+            // txtVD
+            // 
+            this.txtVD.Location = new System.Drawing.Point(89, 190);
+            this.txtVD.Name = "txtVD";
+            this.txtVD.Size = new System.Drawing.Size(224, 20);
+            this.txtVD.TabIndex = 1;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Appearance.Options.UseTextOptions = true;
+            this.labelControl14.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl14.Location = new System.Drawing.Point(3, 219);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(80, 13);
+            this.labelControl14.TabIndex = 0;
+            this.labelControl14.Text = "Vergi No :";
+            // 
+            // txtVNo
+            // 
+            this.txtVNo.Location = new System.Drawing.Point(89, 216);
+            this.txtVNo.Name = "txtVNo";
+            this.txtVNo.Size = new System.Drawing.Size(224, 20);
+            this.txtVNo.TabIndex = 1;
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Appearance.Options.UseTextOptions = true;
+            this.labelControl15.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl15.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl15.Location = new System.Drawing.Point(3, 245);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(80, 13);
+            this.labelControl15.TabIndex = 0;
+            this.labelControl15.Text = "Fax :";
+            // 
+            // txtFax
+            // 
+            this.txtFax.Location = new System.Drawing.Point(89, 242);
+            this.txtFax.Name = "txtFax";
+            this.txtFax.Size = new System.Drawing.Size(224, 20);
+            this.txtFax.TabIndex = 1;
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Appearance.Options.UseTextOptions = true;
+            this.labelControl16.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl16.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl16.Location = new System.Drawing.Point(3, 271);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Size = new System.Drawing.Size(80, 13);
+            this.labelControl16.TabIndex = 0;
+            this.labelControl16.Text = "Email :";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(89, 268);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(224, 20);
+            this.txtEmail.TabIndex = 1;
+            // 
+            // labelControl17
+            // 
+            this.labelControl17.Appearance.Options.UseTextOptions = true;
+            this.labelControl17.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl17.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl17.Location = new System.Drawing.Point(318, 11);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(80, 13);
+            this.labelControl17.TabIndex = 0;
+            this.labelControl17.Text = "Web :";
+            // 
+            // txtWeb
+            // 
+            this.txtWeb.Location = new System.Drawing.Point(404, 8);
+            this.txtWeb.Name = "txtWeb";
+            this.txtWeb.Size = new System.Drawing.Size(224, 20);
+            this.txtWeb.TabIndex = 1;
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Appearance.Options.UseTextOptions = true;
+            this.labelControl18.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl18.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl18.Location = new System.Drawing.Point(318, 37);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(80, 13);
+            this.labelControl18.TabIndex = 0;
+            this.labelControl18.Text = "Yetkilisi :";
+            // 
+            // txtYetkilisi
+            // 
+            this.txtYetkilisi.Location = new System.Drawing.Point(404, 34);
+            this.txtYetkilisi.Name = "txtYetkilisi";
+            this.txtYetkilisi.Size = new System.Drawing.Size(224, 20);
+            this.txtYetkilisi.TabIndex = 1;
+            // 
+            // txtAdresi
+            // 
+            this.txtAdresi.Location = new System.Drawing.Point(404, 84);
+            this.txtAdresi.Name = "txtAdresi";
+            this.txtAdresi.Size = new System.Drawing.Size(224, 96);
+            this.txtAdresi.TabIndex = 2;
+            // 
+            // labelControl19
+            // 
+            this.labelControl19.Appearance.Options.UseTextOptions = true;
+            this.labelControl19.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl19.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl19.Location = new System.Drawing.Point(319, 89);
+            this.labelControl19.Name = "labelControl19";
+            this.labelControl19.Size = new System.Drawing.Size(80, 13);
+            this.labelControl19.TabIndex = 0;
+            this.labelControl19.Text = "Adresi :";
+            // 
+            // labelControl20
+            // 
+            this.labelControl20.Appearance.Options.UseTextOptions = true;
+            this.labelControl20.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl20.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl20.Location = new System.Drawing.Point(319, 189);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(80, 13);
+            this.labelControl20.TabIndex = 0;
+            this.labelControl20.Text = "Açıklama :";
+            // 
+            // txtAciklama
+            // 
+            this.txtAciklama.Location = new System.Drawing.Point(404, 184);
+            this.txtAciklama.Name = "txtAciklama";
+            this.txtAciklama.Size = new System.Drawing.Size(224, 96);
+            this.txtAciklama.TabIndex = 2;
+            // 
+            // labelControl21
+            // 
+            this.labelControl21.Appearance.Options.UseTextOptions = true;
+            this.labelControl21.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControl21.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl21.Location = new System.Drawing.Point(318, 63);
+            this.labelControl21.Name = "labelControl21";
+            this.labelControl21.Size = new System.Drawing.Size(80, 13);
+            this.labelControl21.TabIndex = 0;
+            this.labelControl21.Text = "Tel No :";
+            // 
+            // txtTelNo
+            // 
+            this.txtTelNo.Location = new System.Drawing.Point(404, 60);
+            this.txtTelNo.Name = "txtTelNo";
+            this.txtTelNo.Size = new System.Drawing.Size(224, 20);
+            this.txtTelNo.TabIndex = 1;
+            // 
             // frmAyarlar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,11 +801,12 @@
             this.MinimizeBox = false;
             this.Name = "frmAyarlar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAyarlar";
+            this.Text = "Ayarlar";
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).EndInit();
             this.navigationPane1.ResumeLayout(false);
+            this.navigationPage1.ResumeLayout(false);
             this.navigationPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmbBilgiFisiYazici.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFaturaYazici.Properties)).EndInit();
@@ -446,6 +816,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSirketKodu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSirketKisaAdi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUnvanı.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUlkesi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIli.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIlcesi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSemt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVD.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtVNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFax.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWeb.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYetkilisi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAdresi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTelNo.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -484,5 +870,37 @@
         private DevExpress.XtraEditors.ComboBoxEdit cmbFaturaYazici;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.TextEdit txtEmail;
+        private DevExpress.XtraEditors.LabelControl labelControl16;
+        private DevExpress.XtraEditors.TextEdit txtFax;
+        private DevExpress.XtraEditors.LabelControl labelControl15;
+        private DevExpress.XtraEditors.TextEdit txtVNo;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraEditors.TextEdit txtVD;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.TextEdit txtSemt;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.TextEdit txtIlcesi;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.TextEdit txtIli;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.TextEdit txtUlkesi;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.TextEdit txtUnvanı;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.TextEdit txtSirketKisaAdi;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.TextEdit txtSirketKodu;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.TextEdit txtYetkilisi;
+        private DevExpress.XtraEditors.LabelControl labelControl18;
+        private DevExpress.XtraEditors.TextEdit txtWeb;
+        private DevExpress.XtraEditors.LabelControl labelControl17;
+        private DevExpress.XtraEditors.MemoEdit txtAciklama;
+        private DevExpress.XtraEditors.MemoEdit txtAdresi;
+        private DevExpress.XtraEditors.LabelControl labelControl20;
+        private DevExpress.XtraEditors.LabelControl labelControl19;
+        private DevExpress.XtraEditors.TextEdit txtTelNo;
+        private DevExpress.XtraEditors.LabelControl labelControl21;
     }
 }

@@ -127,6 +127,15 @@ namespace IsbaSatis.Admin
                             Turu = "Birimi",
                             Aciklama = "Sistem Tarafından Oluşturulmuştur"
                         });
+                        context.SirketBilgileri.Add(new SirketBilgi
+                        {
+                            SirketKodu = "İsbaYazilim",
+                            SirketKisaAdi = "İsbay",
+                            SirketUnvani="İsba Yazılım A.Ş",
+                            Ili="Osmaniye",
+                            Ulkesi="Türkiye",
+                            YetkiliKisi="İsmail Cem Babaoğlu"
+                        });
                         context.SaveChanges();
 
                     }

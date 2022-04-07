@@ -35,13 +35,14 @@ using Isbasatis.LicenseManger.LicenseInformations.Manager;
 using IsbaSatis.BackOffice.Bankalar;
 using DevExpress.XtraReports.UI;
 using IsbaSatis.BackOffice.Stoklar;
+using Isbasatis.Entities.Data_Access;
 
 namespace IsbaSatis.BackOffice
 {
     public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         LicenseConfirmation confirm = new LicenseConfirmation();
-    
+        
         public Form1()
         {
             InitializeComponent();
@@ -431,7 +432,10 @@ namespace IsbaSatis.BackOffice
         {
             if (confirm.ModuleConfirm(Isbasatis.LicenseManager.LicenseInformations.Enums.ModuleTypeEnum.Ayarlar))
             {
-                frmAyarlar frm = new frmAyarlar();
+                SirketBilgiDAL sirketBilgiDal = new SirketBilgiDAL();
+                IsbaSatisContext context = new IsbaSatisContext();
+
+                frmAyarlar frm = new frmAyarlar(sirketBilgiDal.GetByFilter(context, c => c.Id == 1));
                 frm.ShowDialog();
             }
             else
