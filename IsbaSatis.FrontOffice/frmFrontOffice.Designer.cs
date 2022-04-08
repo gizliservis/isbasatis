@@ -325,7 +325,7 @@
             this.navigationPane1.Controls.Add(this.navigationPage4);
             this.navigationPane1.Controls.Add(this.navigationPage5);
             this.navigationPane1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.navigationPane1.Location = new System.Drawing.Point(1314, 0);
+            this.navigationPane1.Location = new System.Drawing.Point(1328, 0);
             this.navigationPane1.Name = "navigationPane1";
             this.navigationPane1.PageProperties.ShowCollapseButton = false;
             this.navigationPane1.PageProperties.ShowExpandButton = false;
@@ -338,7 +338,7 @@
             this.navigationPage5});
             this.navigationPane1.RegularSize = new System.Drawing.Size(287, 756);
             this.navigationPane1.SelectedPage = this.navigationPage1;
-            this.navigationPane1.Size = new System.Drawing.Size(70, 756);
+            this.navigationPane1.Size = new System.Drawing.Size(56, 756);
             this.navigationPane1.State = DevExpress.XtraBars.Navigation.NavigationPaneState.Collapsed;
             this.navigationPane1.TabIndex = 0;
             this.navigationPane1.Text = "navigationPane1";
@@ -353,7 +353,7 @@
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.navigationPage1.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
-            this.navigationPage1.Size = new System.Drawing.Size(183, 692);
+            this.navigationPage1.Size = new System.Drawing.Size(0, 0);
             // 
             // groupControl2
             // 
@@ -376,7 +376,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 256);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(183, 436);
+            this.groupControl2.Size = new System.Drawing.Size(0, 0);
             this.groupControl2.TabIndex = 36;
             this.groupControl2.Text = "Ödeme ve  Para Üstü";
             // 
@@ -542,7 +542,7 @@
             this.txtOdenen.Properties.Mask.EditMask = "C2";
             this.txtOdenen.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtOdenen.Properties.NullText = "₺0,00";
-            this.txtOdenen.Size = new System.Drawing.Size(104, 42);
+            this.txtOdenen.Size = new System.Drawing.Size(104, 36);
             this.txtOdenen.TabIndex = 39;
             this.txtOdenen.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.txtOdenen_ButtonClick);
             // 
@@ -579,7 +579,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 169);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(183, 87);
+            this.groupControl1.Size = new System.Drawing.Size(0, 87);
             this.groupControl1.TabIndex = 35;
             this.groupControl1.Text = "İskonto Bilgileri";
             // 
@@ -662,7 +662,7 @@
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl5.Location = new System.Drawing.Point(0, 0);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(183, 169);
+            this.groupControl5.Size = new System.Drawing.Size(0, 169);
             this.groupControl5.TabIndex = 5;
             this.groupControl5.Text = "Genel Bilgiler";
             this.groupControl5.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl5_Paint);
@@ -1398,7 +1398,7 @@
             this.btnUrunBu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUrunBu.ImageOptions.Image = global::IsbaSatis.FrontOffice.Properties.Resources.Ürün_Bul24;
             this.btnUrunBu.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnUrunBu.Location = new System.Drawing.Point(1198, 6);
+            this.btnUrunBu.Location = new System.Drawing.Point(1212, 6);
             this.btnUrunBu.Name = "btnUrunBu";
             this.btnUrunBu.Size = new System.Drawing.Size(110, 47);
             this.btnUrunBu.TabIndex = 0;
@@ -1417,7 +1417,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.xtraTabControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1314, 756);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1328, 756);
             this.splitContainerControl1.SplitterPosition = 434;
             this.splitContainerControl1.TabIndex = 1;
             // 
@@ -1432,7 +1432,7 @@
             this.navOdeme,
             this.navStokHareket});
             this.navigationFrame1.SelectedPage = this.navStokHareket;
-            this.navigationFrame1.Size = new System.Drawing.Size(1314, 281);
+            this.navigationFrame1.Size = new System.Drawing.Size(1328, 281);
             this.navigationFrame1.TabIndex = 0;
             this.navigationFrame1.Text = "navigationFrame1";
             // 
@@ -1441,7 +1441,7 @@
             this.navOdeme.Controls.Add(this.gridcontKasaHareket);
             this.navOdeme.Controls.Add(this.groupControl6);
             this.navOdeme.Name = "navOdeme";
-            this.navOdeme.Size = new System.Drawing.Size(1314, 281);
+            this.navOdeme.Size = new System.Drawing.Size(1328, 281);
             // 
             // gridcontKasaHareket
             // 
@@ -1452,7 +1452,7 @@
             this.gridcontKasaHareket.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoKasa,
             this.repoKHSil});
-            this.gridcontKasaHareket.Size = new System.Drawing.Size(1314, 202);
+            this.gridcontKasaHareket.Size = new System.Drawing.Size(1328, 202);
             this.gridcontKasaHareket.TabIndex = 4;
             this.gridcontKasaHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridKasaHareket});
@@ -1632,7 +1632,7 @@
             this.groupControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControl6.Location = new System.Drawing.Point(0, 202);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(1314, 79);
+            this.groupControl6.Size = new System.Drawing.Size(1328, 79);
             this.groupControl6.TabIndex = 5;
             this.groupControl6.Text = "Toplamlar Ve Ek Bilgiler";
             // 
@@ -1650,7 +1650,7 @@
             // 
             this.txtOdemesiGereken.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOdemesiGereken.Enabled = false;
-            this.txtOdemesiGereken.Location = new System.Drawing.Point(1156, 51);
+            this.txtOdemesiGereken.Location = new System.Drawing.Point(1170, 51);
             this.txtOdemesiGereken.Name = "txtOdemesiGereken";
             this.txtOdemesiGereken.Properties.Appearance.BackColor = System.Drawing.Color.Green;
             this.txtOdemesiGereken.Properties.Appearance.ForeColor = System.Drawing.Color.White;
@@ -1674,7 +1674,7 @@
             this.labelControl19.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl19.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl19.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl19.Location = new System.Drawing.Point(1021, 54);
+            this.labelControl19.Location = new System.Drawing.Point(1035, 54);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(129, 15);
             this.labelControl19.TabIndex = 32;
@@ -1687,7 +1687,7 @@
             this.labelControl18.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.labelControl18.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.labelControl18.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl18.Location = new System.Drawing.Point(1021, 28);
+            this.labelControl18.Location = new System.Drawing.Point(1035, 28);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(129, 15);
             this.labelControl18.TabIndex = 33;
@@ -1697,7 +1697,7 @@
             // 
             this.txtOdenenTutar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOdenenTutar.Enabled = false;
-            this.txtOdenenTutar.Location = new System.Drawing.Point(1156, 25);
+            this.txtOdenenTutar.Location = new System.Drawing.Point(1170, 25);
             this.txtOdenenTutar.Name = "txtOdenenTutar";
             this.txtOdenenTutar.Properties.Appearance.BackColor = System.Drawing.Color.Green;
             this.txtOdenenTutar.Properties.Appearance.ForeColor = System.Drawing.Color.White;
@@ -1714,7 +1714,7 @@
             // 
             this.navStokHareket.Controls.Add(this.gridcontStokHareket);
             this.navStokHareket.Name = "navStokHareket";
-            this.navStokHareket.Size = new System.Drawing.Size(1314, 281);
+            this.navStokHareket.Size = new System.Drawing.Size(1328, 281);
             // 
             // gridcontStokHareket
             // 
@@ -1727,7 +1727,7 @@
             this.repoBirimFiyat,
             this.repoDepo,
             this.repoSeriNo});
-            this.gridcontStokHareket.Size = new System.Drawing.Size(1314, 281);
+            this.gridcontStokHareket.Size = new System.Drawing.Size(1328, 281);
             this.gridcontStokHareket.TabIndex = 4;
             this.gridcontStokHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridStokHareket});
@@ -2050,7 +2050,7 @@
             this.flowOdemeTur.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowOdemeTur.Location = new System.Drawing.Point(0, 107);
             this.flowOdemeTur.Name = "flowOdemeTur";
-            this.flowOdemeTur.Size = new System.Drawing.Size(1314, 46);
+            this.flowOdemeTur.Size = new System.Drawing.Size(1328, 46);
             this.flowOdemeTur.TabIndex = 5;
             // 
             // panelControl1
@@ -2064,7 +2064,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1314, 107);
+            this.panelControl1.Size = new System.Drawing.Size(1328, 107);
             this.panelControl1.TabIndex = 4;
             // 
             // txtMiktar
@@ -2106,7 +2106,7 @@
             // txtIslem
             // 
             this.txtIslem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtIslem.Location = new System.Drawing.Point(1027, 5);
+            this.txtIslem.Location = new System.Drawing.Point(1041, 5);
             this.txtIslem.Name = "txtIslem";
             this.txtIslem.Properties.Appearance.BackColor = System.Drawing.Color.Green;
             this.txtIslem.Properties.Appearance.Font = new System.Drawing.Font("Century", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -2131,7 +2131,7 @@
             this.txtBarkod.Properties.Appearance.Options.UseBackColor = true;
             this.txtBarkod.Properties.Appearance.Options.UseFont = true;
             this.txtBarkod.Properties.Appearance.Options.UseForeColor = true;
-            this.txtBarkod.Size = new System.Drawing.Size(789, 48);
+            this.txtBarkod.Size = new System.Drawing.Size(803, 48);
             this.txtBarkod.TabIndex = 33;
             this.txtBarkod.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarkod_KeyDown);
             // 
@@ -2156,7 +2156,7 @@
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.Size = new System.Drawing.Size(1314, 312);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1328, 312);
             this.xtraTabControl1.TabIndex = 0;
             // 
             // radialFiyat

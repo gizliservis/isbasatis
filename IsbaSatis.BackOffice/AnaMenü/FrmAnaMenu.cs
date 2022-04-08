@@ -248,7 +248,7 @@ namespace IsbaSatis.BackOffice
             {
                 if (ksHareket == null || ksHareket.IsDisposed)
                 {
-                    ksHareket = new frmKasaHareketler();
+                    ksHareket = new frmKasaHareketler("Kasa Hareketler Raporu",null);
                     ksHareket.MdiParent = this;
                     ksHareket.Show();
                 }

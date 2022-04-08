@@ -13,17 +13,17 @@ namespace IsbaSatis.Raporlar.Satis
     {
         public rptGunlukSatis(DateTime giris)
         {
-            InitializeComponent();
-            IsbaSatisContext context = new IsbaSatisContext();
-            KasaHareketDAL kasaHareketDAL = new KasaHareketDAL();
+            //InitializeComponent();
+            //IsbaSatisContext context = new IsbaSatisContext();
+            //KasaHareketDAL kasaHareketDAL = new KasaHareketDAL();
 
-            ObjectDataSource kasaDatasource = new ObjectDataSource { DataSource = kasaHareketDAL.OdemeTuruSatisListele(context,giris) };
-            this.DataSource = kasaDatasource;
-            colOdemeTuru.DataBindings.Add("Text", this.DataSource, "OdemeTuruAdi");
+            //ObjectDataSource kasaDatasource = new ObjectDataSource { DataSource = kasaHareketDAL.OdemeTuruSatisListele(context,giris) };
+            //this.DataSource = kasaDatasource;
+            //colOdemeTuru.DataBindings.Add("Text", this.DataSource, "OdemeTuruAdi");
 
-            colKasaGiris.DataBindings.Add("Text", this.DataSource, "KasaGiris", "{0:C2}");
-            colKasaCikis.DataBindings.Add("Text", this.DataSource, "KasaCikis", "{0:C2}");
-            colBakiye.DataBindings.Add("Text", this.DataSource, "Bakiye", "{0:C2}");
+            //colKasaGiris.DataBindings.Add("Text", this.DataSource, "KasaGiris", "{0:C2}");
+            //colKasaCikis.DataBindings.Add("Text", this.DataSource, "KasaCikis", "{0:C2}");
+            //colBakiye.DataBindings.Add("Text", this.DataSource, "Bakiye", "{0:C2}");
 
         }
 

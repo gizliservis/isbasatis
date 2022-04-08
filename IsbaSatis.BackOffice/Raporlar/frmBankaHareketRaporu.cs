@@ -15,42 +15,35 @@ using System.Windows.Forms;
 
 namespace IsbaSatis.BackOffice.Raporlar
 {
-    public partial class frmStokHareketRaporu : DevExpress.XtraEditors.XtraForm
+    public partial class frmBankaHareketRaporu : DevExpress.XtraEditors.XtraForm
     {
-        StokHareketDAL stokHareketDAL = new StokHareketDAL();
         IsbaSatisContext context = new IsbaSatisContext();
+        BankaHareketDAL bankaHrkDal = new BankaHareketDAL();
         private ExportTool export;
-        string filename = "KarZarar.xml";
-        public frmStokHareketRaporu()
+        string filename = "BankaHaretlerRpt.xml";
+        public frmBankaHareketRaporu()
         {
             InitializeComponent();
             dateBaslangic.DateTime = DateTime.Now;
             dateBitis.DateTime = DateTime.Now;
-            export = new ExportTool(this, gridView1, dropDownButton1,filename);
+            export = new ExportTool(this, gridView1, dropDownButton1, filename);
             FileInfo fi = new FileInfo(Application.StartupPath + "\\" + filename);
             if (fi.Exists)
             {
                 gridView1.RestoreLayoutFromXml(filename);
             }
-            //  listele(DateTime.Now, DateTime.Now);
-        }
-        void listele(DateTime baslangic, DateTime bitis)
-        {
-            gridControl1.DataSource = stokHareketDAL.StokKarZarar(context, baslangic, bitis);
+            listele();
 
         }
+        public void listele()
+        {
+            gridControl1.DataSource = bankaHrkDal.BankaHareketleri(context, dateBaslangic.DateTime, dateBitis.DateTime);
+
+        }
+
         private void BtnHazırla_Click(object sender, EventArgs e)
         {
-            if (dateBaslangic.DateTime > dateBitis.DateTime)
-            {
-                dateBitis.DateTime = dateBaslangic.DateTime;
-            }
-           listele(dateBaslangic.DateTime, dateBitis.DateTime);
-        }
-
-        private void gridControl1_Click(object sender, EventArgs e)
-        {
-
+            listele();
         }
     }
 }

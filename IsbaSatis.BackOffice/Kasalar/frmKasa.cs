@@ -73,7 +73,7 @@ namespace IsbaSatis.BackOffice.Kasalar
 
         private void btnDuzenle_Click(object sender, EventArgs e)
         {
-            secilen =Convert.ToInt32(layoutView1.GetFocusedRowCellValue(colId));
+            secilen =Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
             frmKasaIslem form = new frmKasaIslem(kasaDAL.GetByFilter(context, c => c.Id == secilen));
             form.ShowDialog();
             if (form.Kaydedildi)
@@ -86,7 +86,7 @@ namespace IsbaSatis.BackOffice.Kasalar
         {
             if (MessageBox.Show("Seçili Olan Veriyi Silmek İstediğinie Eminmisiniz", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                secilen = Convert.ToInt32(layoutView1.GetFocusedRowCellValue(colId));
+                secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
 
                 foreach (var hrkt in context.KasaHareketleri)
                 {
@@ -112,7 +112,7 @@ namespace IsbaSatis.BackOffice.Kasalar
 
         private void btnKasaHareketleri_Click(object sender, EventArgs e)
         {
-            secilen = Convert.ToInt32(layoutView1.GetFocusedRowCellValue(colId));
+            secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
             frmKasaHareketleri frm = new frmKasaHareketleri(secilen);
             frm.ShowDialog();
             Guncelle();

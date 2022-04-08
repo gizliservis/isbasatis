@@ -11,6 +11,8 @@ using DevExpress.XtraEditors;
 using Isbasatis.Entities.Context;
 using Isbasatis.Entities.Data_Access;
 using IsbaSatis.BackOffice.Fişler;
+using Isbasatis.Entities.Tools;
+using System.IO;
 
 namespace IsbaSatis.BackOffice.KasaHareketleri
 {
@@ -18,20 +20,42 @@ namespace IsbaSatis.BackOffice.KasaHareketleri
     {
         IsbaSatisContext context = new IsbaSatisContext();
         KasaHareketDAL kasaHareketDAL = new KasaHareketDAL();
-        public frmKasaHareketler()
+        private ExportTool export;
+        string filename = "KasaHareketRpt.xml";
+        string _raporIsim;
+        int? _id;
+        public frmKasaHareketler(string raporIsim,int? id)
         {
             InitializeComponent();
+            _raporIsim = raporIsim;
+            _id = id;
             listele();
+            export = new ExportTool(this, gridView1, dropDownButton1, filename);
+            FileInfo fi = new FileInfo(Application.StartupPath + "\\" + filename);
+            if (fi.Exists)
+            {
+                gridView1.RestoreLayoutFromXml(filename);
+            }
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-           // gridView1.ShowPrintPreview();
+            // gridView1.ShowPrintPreview();
             listele();
         }
         private void listele()
         {
-            gridControl1.DataSource = kasaHareketDAL.GetAll(context);
+
+            if (_raporIsim == "Kasa Hareketler Raporu")
+            {
+                gridControl1.DataSource = kasaHareketDAL.GetAll(context);
+            }
+            else if (_raporIsim == "Kasa Bazlı Hareket Raporu")
+            {
+                gridControl1.DataSource = kasaHareketDAL.GetAll(context,c=>c.KasaId==_id);
+            }
+
+            //  gridControl1.DataSource = kasaHareketDAL.GetByFilter(context,c=>c.KasaId==1);
         }
 
         private void frmKasaHareketleri_Load(object sender, EventArgs e)

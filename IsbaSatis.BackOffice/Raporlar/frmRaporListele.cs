@@ -16,6 +16,9 @@ using IsbaSatis.Raporlar.Satis;
 using IsbaSatis.BackOffice.Tanım;
 using IsbaSatis.BackOffice.Stoklar;
 using IsbaSatis.BackOffice.Cari;
+using IsbaSatis.BackOffice.Stok_Hareketleri;
+using IsbaSatis.BackOffice.KasaHareketleri;
+using IsbaSatis.BackOffice.Kasalar;
 
 namespace IsbaSatis.BackOffice.Raporlar
 {
@@ -23,6 +26,7 @@ namespace IsbaSatis.BackOffice.Raporlar
     {
         int stokId;
         int cariId;
+        int kasaId;
         public frmRaporListele()
         {
             InitializeComponent();
@@ -52,9 +56,19 @@ namespace IsbaSatis.BackOffice.Raporlar
                 //form.WindowState = FormWindowState.Maximized;
                 //form.Show();
             }
+            else if (txtRaporAdi.Text == "Günlük Satış Raporu")
+            {
+                frmSatisRaporu frm = new frmSatisRaporu();
+                frm.ShowDialog();
+                //rapor = new rptStokHareketleri(dateBaslangic.DateTime, dateBitis.DateTime);
+                //frmRaporGoruntule form = new frmRaporGoruntule(rapor);
+                //rapor.FilterString = filterControl1.FilterString;
+                //form.WindowState = FormWindowState.Maximized;
+                //form.Show();
+            }
             else if (txtRaporAdi.Text == "Stok Hareket Raporu")
             {
-                frmStokHareketleriTarih frm = new frmStokHareketleriTarih();
+                frmStokHareketleri frm = new frmStokHareketleri();
                 frm.ShowDialog();
             }
             else if (txtRaporAdi.Text == "Stok Bakiye Raporu")
@@ -91,11 +105,38 @@ namespace IsbaSatis.BackOffice.Raporlar
             {
                 frmCariOdemeTahsilat frm = new frmCariOdemeTahsilat(cariId);
                 frm.ShowDialog();
-            } else if (txtRaporAdi.Text == "Cari Ekstre Raporu")
+            }
+            else if (txtRaporAdi.Text == "Cari Ekstre Raporu")
             {
                 frmCariEkstre frm = new frmCariEkstre(cariId);
                 frm.ShowDialog();
             }
+            else if (txtRaporAdi.Text == "Kasa Bakiye Raporu")
+            {
+                frmKasaBakiyeRaporu frm = new frmKasaBakiyeRaporu();
+                frm.ShowDialog();
+            }  
+            else if (txtRaporAdi.Text == "Kasa Hareketler Raporu")
+            {
+                frmKasaHareketler frm = new frmKasaHareketler(txtRaporAdi.Text,null);
+                frm.ShowDialog();
+            }
+            else if (txtRaporAdi.Text == "Kasa Bazlı Hareket Raporu")
+            {
+                frmKasaHareketler frm = new frmKasaHareketler(txtRaporAdi.Text,kasaId);
+                frm.ShowDialog();
+            } 
+            else if (txtRaporAdi.Text == "Banka Hesabı Bakiye Raporu")
+            {
+                frmBankaBakiyeRpt frm = new frmBankaBakiyeRpt();
+                frm.ShowDialog();
+            }
+            else if (txtRaporAdi.Text == "Banka Hareket Raporu")
+            {
+                frmBankaHareketRaporu frm = new frmBankaHareketRaporu();
+                frm.ShowDialog();
+            }
+
             else
             {
                 MessageBox.Show("Seçim Yapın");
@@ -145,6 +186,18 @@ namespace IsbaSatis.BackOffice.Raporlar
                 }
 
             }
+            if (txtRaporAdi.Text.Contains("Kasa"))
+            {
+                frmKasaSec form = new frmKasaSec();
+                form.ShowDialog();
+                if (form.secildi)
+                {
+                    Isbasatis.Entities.Tables.Kasa entity = form.secilen.FirstOrDefault();
+                    txtGrup.Text = entity.KasaAdi;
+                    kasaId = entity.Id;
+
+                }
+            }
 
         }
 
@@ -154,9 +207,9 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtRaporAdi.Text = e.Link.Caption;
             txtRaporGrubu.Text = e.Link.Group.Caption;
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
-            txtGrup.Visible = true;
-            lblGenel.Visible = true;
-            lblGenel.Text = "Stok Grubu";
+            txtGrup.Visible = false;
+            lblGenel.Visible = false;
+            
         }
 
         private void rptStokBazliHareket_LinkClicked(object sender, NavBarLinkEventArgs e)
@@ -167,7 +220,7 @@ namespace IsbaSatis.BackOffice.Raporlar
             txtAciklama.Text = buton.Tag == null ? txtAciklama.Text = null : txtAciklama.Text = buton.Tag.ToString();
             txtGrup.Visible = true;
             lblGenel.Visible = true;
-            lblGenel.Text = "Stok İsmi";
+            lblGenel.Text = "Kasa Seç";
         }
 
         private void rptStokDurumu_LinkClicked(object sender, NavBarLinkEventArgs e)
@@ -328,7 +381,9 @@ namespace IsbaSatis.BackOffice.Raporlar
             lblGenel.Text = "Stok İsmi";
         }
 
-        private void navBarControl1_Click(object sender, EventArgs e)
+       
+
+        private void navBarItem2_LinkClicked(object sender, NavBarLinkEventArgs e)
         {
 
         }

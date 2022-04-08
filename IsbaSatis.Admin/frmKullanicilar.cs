@@ -22,6 +22,8 @@ namespace IsbaSatis.Admin
         public frmKullanicilar()
         {
             InitializeComponent();
+            frmKullaniciGiris frm = new frmKullaniciGiris();
+            frm.ShowDialog();
             Guncelle();
         }
 
@@ -33,11 +35,11 @@ namespace IsbaSatis.Admin
 
         private void frmKullanicilar_Load(object sender, EventArgs e)
         {
-            frmKullaniciGiris frm = new frmKullaniciGiris();
-            frm.ShowDialog();
+           
         }
         private void Guncelle()
         {
+            context = new IsbaSatisContext();
             gridControl1.DataSource = kullaniciDAL.GetAll(context); 
         }
 

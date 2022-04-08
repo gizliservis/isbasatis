@@ -332,6 +332,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\frmBankaBakiyeRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmBankaBakiyeRpt.Designer.cs">
+      <DependentUpon>frmBankaBakiyeRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\frmBankaHareketRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmBankaHareketRaporu.Designer.cs">
+      <DependentUpon>frmBankaHareketRaporu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\frmCariBakiyeRaporu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -361,6 +373,12 @@
     </Compile>
     <Compile Include="Raporlar\frmEtiketOlustur.Designer.cs">
       <DependentUpon>frmEtiketOlustur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\frmKasaBakiyeRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmKasaBakiyeRaporu.Designer.cs">
+      <DependentUpon>frmKasaBakiyeRaporu.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\frmOzgunRaporHazirla.cs">
       <SubType>Form</SubType>
@@ -622,6 +640,12 @@
     <EmbeddedResource Include="Personeller\frmPersonelSec.resx">
       <DependentUpon>frmPersonelSec.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmBankaBakiyeRpt.resx">
+      <DependentUpon>frmBankaBakiyeRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmBankaHareketRaporu.resx">
+      <DependentUpon>frmBankaHareketRaporu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmCariBakiyeRaporu.resx">
       <DependentUpon>frmCariBakiyeRaporu.cs</DependentUpon>
     </EmbeddedResource>
@@ -636,6 +660,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmEtiketOlustur.resx">
       <DependentUpon>frmEtiketOlustur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmKasaBakiyeRaporu.resx">
+      <DependentUpon>frmKasaBakiyeRaporu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmOzgunRaporHazirla.resx">
       <DependentUpon>frmOzgunRaporHazirla.cs</DependentUpon>

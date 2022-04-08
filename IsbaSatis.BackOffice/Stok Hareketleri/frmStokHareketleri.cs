@@ -11,6 +11,8 @@ using DevExpress.XtraEditors;
 using Isbasatis.Entities.Context;
 using Isbasatis.Entities.Data_Access;
 using IsbaSatis.BackOffice.Fişler;
+using Isbasatis.Entities.Tools;
+using System.IO;
 
 namespace IsbaSatis.BackOffice.Stok_Hareketleri
 {
@@ -18,10 +20,17 @@ namespace IsbaSatis.BackOffice.Stok_Hareketleri
     {
         IsbaSatisContext context = new IsbaSatisContext();
         StokHareketDAL stokHareketDAL = new StokHareketDAL();
+        private ExportTool export;
+        string filename = "StokHareketRaporu.xml";
         public frmStokHareketleri()
         {
             InitializeComponent();
-
+            export = new ExportTool(this, gridView1, dropDownButton1, filename);
+            FileInfo fi = new FileInfo(Application.StartupPath + "\\" + filename);
+            if (fi.Exists)
+            {
+                gridView1.RestoreLayoutFromXml(filename);
+            }
         }
         private void listele()
         {

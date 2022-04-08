@@ -27,7 +27,7 @@ namespace IsbaSatis.BackOffice.Fişler
         public frmFis()
         {
             InitializeComponent();
-            RolTool.RolleriYukle(this); 
+            RolTool.RolleriYukle(this);
             export = new ExportTool(this, gridView1, dropDownButton1, filename);
             FileInfo fi = new FileInfo(Application.StartupPath + "\\" + filename);
             if (fi.Exists)
@@ -60,7 +60,7 @@ namespace IsbaSatis.BackOffice.Fişler
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-             listele();
+            listele();
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -77,15 +77,16 @@ namespace IsbaSatis.BackOffice.Fişler
                 {
 
                     fisDAL.Delete(context, c => c.FisKodu == secilen.FisBaglantiKodu);
-                    fisDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
-                    kasaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisBaglantiKodu);
-                    stokHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
-                    stokHareketDAL.Delete(context, c => c.FisBaglantiKodu == secilen.FisKodu);
-                    bankaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
-                  
                     fisDAL.Save(context);
+                    fisDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
+                    fisDAL.Save(context);
+                    kasaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisBaglantiKodu);
                     kasaHareketDAL.Save(context);
+                    stokHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     stokHareketDAL.Save(context);
+                    stokHareketDAL.Delete(context, c => c.FisBaglantiKodu == secilen.FisKodu);
+                    stokHareketDAL.Save(context);
+                    bankaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     bankaHareketDAL.Save(context);
                     listele();
                 }
@@ -96,13 +97,14 @@ namespace IsbaSatis.BackOffice.Fişler
                 {
                     //  string secilen = gridFis.GetFocusedRowCellValue(colFisKodu).ToString();
                     fisDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
-                    kasaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
-                    stokHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
-                    stokHareketDAL.Delete(context, c => c.FisBaglantiKodu == secilen.FisKodu);
-                    bankaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     fisDAL.Save(context);
+                    kasaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     kasaHareketDAL.Save(context);
+                    stokHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     stokHareketDAL.Save(context);
+                    stokHareketDAL.Delete(context, c => c.FisBaglantiKodu == secilen.FisKodu);
+                    stokHareketDAL.Save(context);
+                    bankaHareketDAL.Delete(context, c => c.FisKodu == secilen.FisKodu);
                     bankaHareketDAL.Save(context);
                     listele();
                 }
@@ -121,15 +123,15 @@ namespace IsbaSatis.BackOffice.Fişler
         private void btnDuzenle_Click(object sender, EventArgs e)
         {
             Fis secilen = (Fis)gridView1.GetFocusedRow();
-            if (secilen.FisTuru == "Gelen Havale"|| secilen.FisTuru == "Giden Havale" || secilen.FisTuru == "Gelen EFT" ||secilen.FisTuru== "Giden EFT" || secilen.FisTuru == "Bankaya Yatırılan Nakit" || secilen.FisTuru== "Bankadan Çekilen Nakit")
+            if (secilen.FisTuru == "Gelen Havale" || secilen.FisTuru == "Giden Havale" || secilen.FisTuru == "Gelen EFT" || secilen.FisTuru == "Giden EFT" || secilen.FisTuru == "Bankaya Yatırılan Nakit" || secilen.FisTuru == "Bankadan Çekilen Nakit")
             {
                 //BankaHareket bnk = new BankaHareket();
-            
+
                 frmBankaIslemleri frm = new frmBankaIslemleri(secilen.FisKodu);
                 frm.ShowDialog();
                 listele();
             }
-           else if (secilen.FisTuru == "Fiş Ödemesi")
+            else if (secilen.FisTuru == "Fiş Ödemesi")
             {
                 frmFislerVeFaturalar form = new frmFislerVeFaturalar(secilen.FisBaglantiKodu, null);
                 form.ShowDialog();
@@ -154,7 +156,7 @@ namespace IsbaSatis.BackOffice.Fişler
                 MessageBox.Show("Faturalandırmak İstediğiniz Fiş \n " +
                     "Sipariş Fişi,\n" +
                     " İrsaliye Fişi Veya \n " +
-                    "Teklif Fişi Değildir","!!!!hata",MessageBoxButtons.OK);
+                    "Teklif Fişi Değildir", "!!!!hata", MessageBoxButtons.OK);
             }
             else
             {

@@ -37,12 +37,13 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.colOdemeTuruAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.lblArasinda = new DevExpress.XtraEditors.LabelControl();
+            this.lblBitisTarihi = new DevExpress.XtraEditors.LabelControl();
+            this.lblBaslangicTarihi = new DevExpress.XtraEditors.LabelControl();
             this.BtnHazırla = new DevExpress.XtraEditors.SimpleButton();
             this.dateBitis = new DevExpress.XtraEditors.DateEdit();
             this.dateBaslangic = new DevExpress.XtraEditors.DateEdit();
-            this.lblBaslangicTarihi = new DevExpress.XtraEditors.LabelControl();
-            this.lblBitisTarihi = new DevExpress.XtraEditors.LabelControl();
-            this.lblArasinda = new DevExpress.XtraEditors.LabelControl();
+            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -59,7 +60,7 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.gridControl1.Location = new System.Drawing.Point(0, 74);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(881, 287);
+            this.gridControl1.Size = new System.Drawing.Size(1016, 287);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -134,6 +135,7 @@ namespace IsbaSatis.BackOffice.Raporlar
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.dropDownButton1);
             this.panelControl1.Controls.Add(this.lblArasinda);
             this.panelControl1.Controls.Add(this.lblBitisTarihi);
             this.panelControl1.Controls.Add(this.lblBaslangicTarihi);
@@ -143,8 +145,32 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(881, 74);
+            this.panelControl1.Size = new System.Drawing.Size(1016, 74);
             this.panelControl1.TabIndex = 2;
+            // 
+            // lblArasinda
+            // 
+            this.lblArasinda.Location = new System.Drawing.Point(391, 46);
+            this.lblArasinda.Name = "lblArasinda";
+            this.lblArasinda.Size = new System.Drawing.Size(42, 13);
+            this.lblArasinda.TabIndex = 4;
+            this.lblArasinda.Text = "Arasında";
+            // 
+            // lblBitisTarihi
+            // 
+            this.lblBitisTarihi.Location = new System.Drawing.Point(486, 46);
+            this.lblBitisTarihi.Name = "lblBitisTarihi";
+            this.lblBitisTarihi.Size = new System.Drawing.Size(55, 13);
+            this.lblBitisTarihi.TabIndex = 3;
+            this.lblBitisTarihi.Text = "Bitis Tarihi :";
+            // 
+            // lblBaslangicTarihi
+            // 
+            this.lblBaslangicTarihi.Location = new System.Drawing.Point(11, 46);
+            this.lblBaslangicTarihi.Name = "lblBaslangicTarihi";
+            this.lblBaslangicTarihi.Size = new System.Drawing.Size(80, 13);
+            this.lblBaslangicTarihi.TabIndex = 3;
+            this.lblBaslangicTarihi.Text = "Başlangıç Tarihi :";
             // 
             // BtnHazırla
             // 
@@ -179,39 +205,27 @@ namespace IsbaSatis.BackOffice.Raporlar
             this.dateBaslangic.Size = new System.Drawing.Size(234, 20);
             this.dateBaslangic.TabIndex = 0;
             // 
-            // lblBaslangicTarihi
+            // dropDownButton1
             // 
-            this.lblBaslangicTarihi.Location = new System.Drawing.Point(11, 46);
-            this.lblBaslangicTarihi.Name = "lblBaslangicTarihi";
-            this.lblBaslangicTarihi.Size = new System.Drawing.Size(80, 13);
-            this.lblBaslangicTarihi.TabIndex = 3;
-            this.lblBaslangicTarihi.Text = "Başlangıç Tarihi :";
-            // 
-            // lblBitisTarihi
-            // 
-            this.lblBitisTarihi.Location = new System.Drawing.Point(486, 46);
-            this.lblBitisTarihi.Name = "lblBitisTarihi";
-            this.lblBitisTarihi.Size = new System.Drawing.Size(55, 13);
-            this.lblBitisTarihi.TabIndex = 3;
-            this.lblBitisTarihi.Text = "Bitis Tarihi :";
-            // 
-            // lblArasinda
-            // 
-            this.lblArasinda.Location = new System.Drawing.Point(391, 46);
-            this.lblArasinda.Name = "lblArasinda";
-            this.lblArasinda.Size = new System.Drawing.Size(42, 13);
-            this.lblArasinda.TabIndex = 4;
-            this.lblArasinda.Text = "Arasında";
+            this.dropDownButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dropDownButton1.Location = new System.Drawing.Point(881, 45);
+            this.dropDownButton1.Name = "dropDownButton1";
+            this.dropDownButton1.Size = new System.Drawing.Size(135, 23);
+            this.dropDownButton1.TabIndex = 8;
+            this.dropDownButton1.Text = "Dışarı Çıkart";
             // 
             // frmSatisRaporu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 361);
+            this.ClientSize = new System.Drawing.Size(1016, 361);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panelControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmSatisRaporu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Satış Raporları";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -241,5 +255,6 @@ namespace IsbaSatis.BackOffice.Raporlar
         private DevExpress.XtraEditors.LabelControl lblArasinda;
         private DevExpress.XtraEditors.LabelControl lblBitisTarihi;
         private DevExpress.XtraEditors.LabelControl lblBaslangicTarihi;
+        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
     }
 }

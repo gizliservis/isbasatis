@@ -62,6 +62,7 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             ((System.ComponentModel.ISupportInitialize)(this.repoSeriNoo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -85,6 +86,7 @@
             this.filterControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.filterControl1.Location = new System.Drawing.Point(0, 0);
             this.filterControl1.Name = "filterControl1";
+            this.filterControl1.ShowCustomFunctions = DevExpress.Utils.DefaultBoolean.True;
             this.filterControl1.Size = new System.Drawing.Size(1055, 149);
             this.filterControl1.SortFilterColumns = false;
             this.filterControl1.SourceControl = this.gridControl1;
@@ -99,7 +101,7 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoSeriNoo});
-            this.gridControl1.Size = new System.Drawing.Size(1055, 321);
+            this.gridControl1.Size = new System.Drawing.Size(1055, 317);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -382,11 +384,21 @@
             this.splitContainerControl1.SplitterPosition = 149;
             this.splitContainerControl1.TabIndex = 10;
             // 
+            // dropDownButton1
+            // 
+            this.dropDownButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dropDownButton1.Location = new System.Drawing.Point(915, 13);
+            this.dropDownButton1.Name = "dropDownButton1";
+            this.dropDownButton1.Size = new System.Drawing.Size(135, 23);
+            this.dropDownButton1.TabIndex = 11;
+            this.dropDownButton1.Text = "Dışarı Çıkart";
+            // 
             // frmKasaHareketler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1055, 595);
+            this.Controls.Add(this.dropDownButton1);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.lblBaslik);
             this.Controls.Add(this.grpMenu);
@@ -435,5 +447,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
+        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
     }
 }
