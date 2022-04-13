@@ -61,9 +61,9 @@
             this.colMinStokMiktari = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaxStokMiktari = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMevcutStok = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStokCikis = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStokGiris = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
             this.btnAra = new DevExpress.XtraEditors.SimpleButton();
             this.lblUyari = new DevExpress.XtraEditors.LabelControl();
@@ -139,9 +139,9 @@
             this.colMinStokMiktari,
             this.colMaxStokMiktari,
             this.colAciklama,
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3});
+            this.colMevcutStok,
+            this.colStokCikis,
+            this.colStokGiris});
             this.gridStoklar.GridControl = this.gridcontStoklar;
             this.gridStoklar.Name = "gridStoklar";
             // 
@@ -380,32 +380,32 @@
             this.colAciklama.VisibleIndex = 12;
             this.colAciklama.Width = 128;
             // 
-            // gridColumn1
+            // colMevcutStok
             // 
-            this.gridColumn1.Caption = "Mevcut Stok";
-            this.gridColumn1.FieldName = "MevcutStokBakiye";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 15;
+            this.colMevcutStok.Caption = "Mevcut Stok";
+            this.colMevcutStok.FieldName = "MevcutStokBakiye";
+            this.colMevcutStok.Name = "colMevcutStok";
+            this.colMevcutStok.OptionsColumn.AllowEdit = false;
+            this.colMevcutStok.Visible = true;
+            this.colMevcutStok.VisibleIndex = 15;
             // 
-            // gridColumn2
+            // colStokCikis
             // 
-            this.gridColumn2.Caption = "Stok Çıkış";
-            this.gridColumn2.FieldName = "StokCikis";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 14;
+            this.colStokCikis.Caption = "Stok Çıkış";
+            this.colStokCikis.FieldName = "StokCikis";
+            this.colStokCikis.Name = "colStokCikis";
+            this.colStokCikis.OptionsColumn.AllowEdit = false;
+            this.colStokCikis.Visible = true;
+            this.colStokCikis.VisibleIndex = 14;
             // 
-            // gridColumn3
+            // colStokGiris
             // 
-            this.gridColumn3.Caption = "Stok Giriş";
-            this.gridColumn3.FieldName = "StokGiris";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.AllowEdit = false;
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 13;
+            this.colStokGiris.Caption = "Stok Giriş";
+            this.colStokGiris.FieldName = "StokGiris";
+            this.colStokGiris.Name = "colStokGiris";
+            this.colStokGiris.OptionsColumn.AllowEdit = false;
+            this.colStokGiris.Visible = true;
+            this.colStokGiris.VisibleIndex = 13;
             // 
             // grpMenu
             // 
@@ -424,9 +424,9 @@
             // 
             this.btnAra.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnAra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAra.ImageOptions.Image")));
-            this.btnAra.Location = new System.Drawing.Point(775, 23);
+            this.btnAra.Location = new System.Drawing.Point(775, 27);
             this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(75, 62);
+            this.btnAra.Size = new System.Drawing.Size(75, 58);
             this.btnAra.TabIndex = 2;
             this.btnAra.Text = "Ara";
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
@@ -449,9 +449,9 @@
             this.btnStokSec.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnStokSec.ImageOptions.ImageIndex = 0;
             this.btnStokSec.ImageOptions.ImageList = this.ımageList1;
-            this.btnStokSec.Location = new System.Drawing.Point(850, 23);
+            this.btnStokSec.Location = new System.Drawing.Point(850, 27);
             this.btnStokSec.Name = "btnStokSec";
-            this.btnStokSec.Size = new System.Drawing.Size(90, 62);
+            this.btnStokSec.Size = new System.Drawing.Size(90, 58);
             this.btnStokSec.TabIndex = 0;
             this.btnStokSec.Text = "Seç";
             this.btnStokSec.Click += new System.EventHandler(this.btnStokSec_Click);
@@ -468,9 +468,9 @@
             this.btnKapat.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnKapat.ImageOptions.ImageIndex = 1;
             this.btnKapat.ImageOptions.ImageList = this.ımageList1;
-            this.btnKapat.Location = new System.Drawing.Point(940, 23);
+            this.btnKapat.Location = new System.Drawing.Point(940, 27);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(90, 62);
+            this.btnKapat.Size = new System.Drawing.Size(90, 58);
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
@@ -530,9 +530,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMinStokMiktari;
         private DevExpress.XtraGrid.Columns.GridColumn colMaxStokMiktari;
         private DevExpress.XtraGrid.Columns.GridColumn colAciklama;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn colMevcutStok;
+        private DevExpress.XtraGrid.Columns.GridColumn colStokCikis;
+        private DevExpress.XtraGrid.Columns.GridColumn colStokGiris;
         private DevExpress.XtraEditors.GroupControl grpMenu;
         private DevExpress.XtraEditors.SimpleButton btnStokSec;
         private System.Windows.Forms.ImageList ımageList1;

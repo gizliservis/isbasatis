@@ -24,11 +24,11 @@ namespace IsbaSatis.BackOffice.AnaMenü
 {
     public partial class frmStok : DevExpress.XtraEditors.XtraForm
     {
-        IsbaSatisContext context = new IsbaSatisContext();
-        StokDAL stokDAL = new StokDAL();
-        private ExportTool export;
-        string filename = "Stok.xml";
-        LoadingTool lt;
+        readonly IsbaSatisContext context = new IsbaSatisContext();
+        readonly StokDAL stokDAL = new StokDAL();
+        private readonly ExportTool export;
+        readonly string filename = "Stok.xml";
+        readonly LoadingTool lt;
       public  bool silindi = false;
 
         int secilen;
@@ -71,7 +71,6 @@ namespace IsbaSatis.BackOffice.AnaMenü
         {
          
             GetAll();
-           
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -138,9 +137,11 @@ namespace IsbaSatis.BackOffice.AnaMenü
         {
             secilen = Convert.ToInt32(gridView1.GetFocusedRowCellValue(colId));
             Isbasatis.Entities.Tables.Stok stokentity = new Isbasatis.Entities.Tables.Stok();
+            
             stokentity = stokDAL.GetByFilter(context, c => c.Id == secilen);
-            stokentity.Id = -1;
+            stokentity.Id =Convert.ToInt32("-1");
             stokentity.StokKodu = null;
+            stokentity.Barkod = null;
             Stok.frmStokIslem form = new Stok.frmStokIslem(stokentity);
             form.ShowDialog();
         }

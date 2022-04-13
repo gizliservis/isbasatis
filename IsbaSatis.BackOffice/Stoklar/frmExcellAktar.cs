@@ -18,12 +18,11 @@ namespace IsbaSatis.BackOffice.Stoklar
 {
     public partial class frmExcellAktar : DevExpress.XtraEditors.XtraForm
     {
-        ExcellAktarimTool exc = new ExcellAktarimTool();
-        StokDAL stokDal = new StokDAL();
-        Isbasatis.Entities.Tables.Stok stkk = new Isbasatis.Entities.Tables.Stok();
-        IsbaSatisContext context = new IsbaSatisContext();
-        private ExportTool export;
-        string filename = "ExceelStok.xml";
+        readonly ExcellAktarimTool exc = new ExcellAktarimTool();
+        readonly StokDAL stokDal = new StokDAL();
+        readonly IsbaSatisContext context = new IsbaSatisContext();
+        private readonly ExportTool export;
+        readonly string filename = "ExceelStok.xml";
 
         public frmExcellAktar()
         {
@@ -36,9 +35,9 @@ namespace IsbaSatis.BackOffice.Stoklar
             }
         }
 
-        private void buttonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void ButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            if (textEdit1.Text!="")
+            if (textEdit1.Text != "")
             {
                 try
                 {
@@ -49,54 +48,56 @@ namespace IsbaSatis.BackOffice.Stoklar
 
                     MessageBox.Show(ex.Message);
                 }
-                
+
             }
-            
+
 
 
         }
 
-        private void buttonEdit1_EditValueChanged(object sender, EventArgs e)
+        private void ButtonEdit1_EditValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void SimpleButton1_Click(object sender, EventArgs e)
         {
-            if (gridView1.RowCount>0)
+            if (gridView1.RowCount > 0)
             {
                 try
                 {
                     for (int i = 0; i < gridView1.RowCount; i++)
                     {
 
-                        Isbasatis.Entities.Tables.Stok stk = new Isbasatis.Entities.Tables.Stok();
-                        stk.Durumu = Convert.ToBoolean(gridView1.GetRowCellValue(i, colDurumu) != null);
-                        stk.StokKodu = (gridView1.GetRowCellValue(i, colStokKodu)).ToString();
-                        stk.StokAdi = (gridView1.GetRowCellValue(i, colStokAdi)).ToString();
-                        stk.Barkod = (gridView1.GetRowCellValue(i, colBarkod) ).ToString();
-                        stk.BarkodTuru = (gridView1.GetRowCellValue(i, colBarkodTuru) != null).ToString();
-                        stk.Birimi = (gridView1.GetRowCellValue(i, colBirimi)).ToString();
-                        stk.StokGrubu = (gridView1.GetRowCellValue(i, colStokGrubu) != null).ToString();
-                        stk.StokAltGrubu = (gridView1.GetRowCellValue(i, colStokAltGrubu) != null).ToString();
-                        stk.Marka = (gridView1.GetRowCellValue(i, colMarka) != null).ToString();
-                        stk.Modeli = (gridView1.GetRowCellValue(i, colModeli) != null).ToString();
-                        stk.OzelKod1 = (gridView1.GetRowCellValue(i, colOzelKod1) != null).ToString();
-                        stk.OzelKod2 = (gridView1.GetRowCellValue(i, colOzelKod2) != null).ToString();
-                        stk.OzelKod3 = (gridView1.GetRowCellValue(i, colOzelKod3) != null).ToString();
-                        stk.OzelKod4 = (gridView1.GetRowCellValue(i, colOzelKod4) != null).ToString();
-                        stk.GarantiSuresi = (gridView1.GetRowCellValue(i, colGarantiSuresi) != null).ToString();
-                        stk.UreticiKodu = (gridView1.GetRowCellValue(i, colUreticiKodu) != null).ToString();
-                        stk.AlisKdv = Convert.ToInt32(gridView1.GetRowCellValue(i, colAlisKdv) != null);
-                        stk.SatisKdv = Convert.ToInt32(gridView1.GetRowCellValue(i, colSatisKdv) != null);
-                        stk.AlisFiyati1 = Convert.ToDecimal(gridView1.GetRowCellValue(i, colAlisFiyati1) != null);
-                        stk.AlisFiyati2 = Convert.ToDecimal(gridView1.GetRowCellValue(i, colAlisFiyati2) != null);
-                        stk.AlisFiyati3 = Convert.ToDecimal(gridView1.GetRowCellValue(i, colAlisFiyati3) != null);
-                        stk.SatisFiyati1 = Convert.ToDecimal(gridView1.GetRowCellValue(i, colSatisFiyati1) != null);
-                        stk.SatisFiyati2 = Convert.ToDecimal(gridView1.GetRowCellValue(i, colSatisFiyati2) != null);
-                        stk.SatisFiyati3 = Convert.ToDecimal(gridView1.GetRowCellValue(i, colSatisFiyati3) != null);
-                        stk.MinStokMiktari = Convert.ToDecimal(gridView1.GetRowCellValue(i, colMinStokMiktari) != null);
-                        stk.MaxStokMiktari = Convert.ToDecimal(gridView1.GetRowCellValue(i, colMaxStokMiktari) != null);
+                        Isbasatis.Entities.Tables.Stok stk = new Isbasatis.Entities.Tables.Stok
+                        {
+                            Durumu = Convert.ToBoolean(gridView1.GetRowCellValue(i, colDurumu) != null),
+                            StokKodu = (gridView1.GetRowCellValue(i, colStokKodu)).ToString(),
+                            StokAdi = (gridView1.GetRowCellValue(i, colStokAdi)).ToString(),
+                            Barkod = (gridView1.GetRowCellValue(i, colBarkod)).ToString(),
+                            BarkodTuru = (gridView1.GetRowCellValue(i, colBarkodTuru) != null).ToString(),
+                            Birimi = (gridView1.GetRowCellValue(i, colBirimi)).ToString(),
+                            StokGrubu = (gridView1.GetRowCellValue(i, colStokGrubu) != null).ToString(),
+                            StokAltGrubu = (gridView1.GetRowCellValue(i, colStokAltGrubu) != null).ToString(),
+                            Marka = (gridView1.GetRowCellValue(i, colMarka) != null).ToString(),
+                            Modeli = (gridView1.GetRowCellValue(i, colModeli) != null).ToString(),
+                            OzelKod1 = (gridView1.GetRowCellValue(i, colOzelKod1) != null).ToString(),
+                            OzelKod2 = (gridView1.GetRowCellValue(i, colOzelKod2) != null).ToString(),
+                            OzelKod3 = (gridView1.GetRowCellValue(i, colOzelKod3) != null).ToString(),
+                            OzelKod4 = (gridView1.GetRowCellValue(i, colOzelKod4) != null).ToString(),
+                            GarantiSuresi = (gridView1.GetRowCellValue(i, colGarantiSuresi) != null).ToString(),
+                            UreticiKodu = (gridView1.GetRowCellValue(i, colUreticiKodu) != null).ToString(),
+                            AlisKdv = Convert.ToInt32(gridView1.GetRowCellValue(i, colAlisKdv) != null),
+                            SatisKdv = Convert.ToInt32(gridView1.GetRowCellValue(i, colSatisKdv) != null),
+                            AlisFiyati1 = Convert.ToDecimal(gridView1.GetRowCellValue(i, colAlisFiyati1) != null),
+                            AlisFiyati2 = Convert.ToDecimal(gridView1.GetRowCellValue(i, colAlisFiyati2) != null),
+                            AlisFiyati3 = Convert.ToDecimal(gridView1.GetRowCellValue(i, colAlisFiyati3) != null),
+                            SatisFiyati1 = Convert.ToDecimal(gridView1.GetRowCellValue(i, colSatisFiyati1) != null),
+                            SatisFiyati2 = Convert.ToDecimal(gridView1.GetRowCellValue(i, colSatisFiyati2) != null),
+                            SatisFiyati3 = Convert.ToDecimal(gridView1.GetRowCellValue(i, colSatisFiyati3) != null),
+                            MinStokMiktari = Convert.ToDecimal(gridView1.GetRowCellValue(i, colMinStokMiktari) != null),
+                            MaxStokMiktari = Convert.ToDecimal(gridView1.GetRowCellValue(i, colMaxStokMiktari) != null)
+                        };
                         stokDal.AddOrUpdate(context, stk);
                         context.SaveChanges();
                     }
@@ -112,7 +113,7 @@ namespace IsbaSatis.BackOffice.Stoklar
             {
                 MessageBox.Show("Lütrfen Excell Dosyası Seçiniz");
             }
-          
+
 
         }
     }

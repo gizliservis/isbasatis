@@ -12,6 +12,7 @@
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
             ContextKey = "Isbasatis.Entities.Context.IsbaSatisContext";
+            
         }
 
         protected override void Seed(Isbasatis.Entities.Context.IsbaSatisContext context)

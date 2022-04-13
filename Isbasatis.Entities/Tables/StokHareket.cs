@@ -43,6 +43,9 @@ namespace Isbasatis.Entities.Tables
         public Nullable<decimal> AlisFiyati3 { get; set; }
         public Nullable<decimal> IndirimOrani { get; set; }
         public Nullable<decimal> ToplamTutar { get; set; }
+        public Nullable<decimal> MevcutStok { get; set; }
+        public Nullable<decimal> SayimMiktari { get; set; }
+
         public int DepoId { get; set; }
        
         public string SeriNo { get; set; }

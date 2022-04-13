@@ -15,10 +15,11 @@ namespace IsbaSatis.BackOffice.Stoklar
 {
     public partial class frmStokSec : DevExpress.XtraEditors.XtraForm
     {
-        StokDAL stokDAL = new StokDAL();
-        IsbaSatisContext context = new IsbaSatisContext();
+        readonly StokDAL stokDAL = new StokDAL();
+        readonly IsbaSatisContext context = new IsbaSatisContext();
         public bool secildi = false;
         public List<Isbasatis.Entities.Tables.Stok> secilen = new List<Isbasatis.Entities.Tables.Stok>();
+        public decimal bakiye;
         public bool kaydedildi = false;
         public frmStokSec(bool coklusecim=false)
            
@@ -44,6 +45,7 @@ namespace IsbaSatis.BackOffice.Stoklar
                 foreach (var row in gridStoklar.GetSelectedRows())
                 {
                     string StokKodu = gridStoklar.GetRowCellValue(row, colStokKodu).ToString();
+                    bakiye = Convert.ToDecimal(gridStoklar.GetRowCellValue(row,colMevcutStok));
                     secilen.Add(context.Stoklar.SingleOrDefault(c => c.StokKodu == StokKodu));
                 }
                 secildi = true;

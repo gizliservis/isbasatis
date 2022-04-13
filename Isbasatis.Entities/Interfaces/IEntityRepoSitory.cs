@@ -12,7 +12,7 @@ using System.ComponentModel;
 
 namespace Isbasatis.Entities.Interfaces
 {
-    public interface IEntityRepoSitory<TContext,TEntity> 
+    public interface IEntityRepoSitory<TContext,TEntity> : IDisposable
         where TContext:DbContext,new()
         where TEntity:class,IEntity,new()
     {

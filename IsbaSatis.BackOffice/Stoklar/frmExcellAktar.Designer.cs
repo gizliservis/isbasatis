@@ -98,7 +98,7 @@ namespace IsbaSatis.BackOffice.Stoklar
             this.simpleButton1.Size = new System.Drawing.Size(84, 23);
             this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "Stokları Kaydet";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.simpleButton1.Click += new System.EventHandler(this.SimpleButton1_Click);
             // 
             // labelControl2
             // 
@@ -131,8 +131,8 @@ namespace IsbaSatis.BackOffice.Stoklar
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.buttonEdit1.Size = new System.Drawing.Size(414, 20);
             this.buttonEdit1.TabIndex = 0;
-            this.buttonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.buttonEdit1_ButtonClick);
-            this.buttonEdit1.EditValueChanged += new System.EventHandler(this.buttonEdit1_EditValueChanged);
+            this.buttonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ButtonEdit1_ButtonClick);
+            this.buttonEdit1.EditValueChanged += new System.EventHandler(this.ButtonEdit1_EditValueChanged);
             // 
             // gridControl1
             // 

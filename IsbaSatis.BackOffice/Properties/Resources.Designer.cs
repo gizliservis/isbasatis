@@ -313,6 +313,26 @@ namespace IsbaSatis.BackOffice.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap delivery_note {
+            get {
+                object obj = ResourceManager.GetObject("delivery-note", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap dispatch_note {
+            get {
+                object obj = ResourceManager.GetObject("dispatch-note", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap Düzenle {
             get {
                 object obj = ResourceManager.GetObject("Düzenle", resourceCulture);
@@ -553,6 +573,16 @@ namespace IsbaSatis.BackOffice.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap offer {
+            get {
+                object obj = ResourceManager.GetObject("offer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap package {
             get {
                 object obj = ResourceManager.GetObject("package", resourceCulture);
@@ -596,6 +626,16 @@ namespace IsbaSatis.BackOffice.Properties {
         internal static System.Drawing.Bitmap printer__1_ {
             get {
                 object obj = ResourceManager.GetObject("printer (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap received {
+            get {
+                object obj = ResourceManager.GetObject("received", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -776,6 +816,16 @@ namespace IsbaSatis.BackOffice.Properties {
         internal static System.Drawing.Bitmap Stok_Devir_fw1 {
             get {
                 object obj = ResourceManager.GetObject("Stok Devir.fw1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap Stok_Grup32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Stok_Grup32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -966,6 +1016,16 @@ namespace IsbaSatis.BackOffice.Properties {
         internal static System.Drawing.Bitmap user1 {
             get {
                 object obj = ResourceManager.GetObject("user1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap verilen_irsaliye {
+            get {
+                object obj = ResourceManager.GetObject("verilen irsaliye", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

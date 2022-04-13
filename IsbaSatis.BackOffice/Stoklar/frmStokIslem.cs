@@ -96,8 +96,10 @@ namespace IsbaSatis.BackOffice.Stok
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+           // context.ChangeTracker.DetectChanges();
             if (stokDAL.AddOrUpdate(context, _entity))
             {
+               
                 kodOlustur.KodArttirma();
                 stokDAL.Save(context);
                 this.Close();
