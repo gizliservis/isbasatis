@@ -1,4 +1,5 @@
 ﻿using Isbasatis.Entities.Data_Access;
+using Isbasatis.Entities.Tables;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;

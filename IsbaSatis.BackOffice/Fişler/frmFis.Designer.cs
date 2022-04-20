@@ -331,7 +331,7 @@
             // 
             this.barBtnSiparis.Caption = "Sipariş Fişleri";
             this.barBtnSiparis.Id = 16;
-            this.barBtnSiparis.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.received;
+            this.barBtnSiparis.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.received;
             this.barBtnSiparis.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
@@ -363,7 +363,7 @@
             // 
             this.BarBtnIrsaliye.Caption = "İrsaliye Fişleri";
             this.BarBtnIrsaliye.Id = 20;
-            this.BarBtnIrsaliye.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.delivery_note;
+            this.BarBtnIrsaliye.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.delivery_note;
             this.BarBtnIrsaliye.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem4),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem5),
@@ -374,7 +374,7 @@
             // 
             this.barButtonItem4.Caption = "İrsaliye Fişi(Alınan)";
             this.barButtonItem4.Id = 21;
-            this.barButtonItem4.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.dispatch_note;
+            this.barButtonItem4.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.dispatch_note;
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
             // 
@@ -390,7 +390,7 @@
             // 
             this.barButtonItem8.Caption = "Depo İrsaliyesi";
             this.barButtonItem8.Id = 27;
-            this.barButtonItem8.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.Stok_Grup32x32;
+            this.barButtonItem8.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.Stok_Grup32x32;
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
             // 
@@ -398,7 +398,7 @@
             // 
             this.barSubItem2.Caption = "Teklif Fişleri";
             this.barSubItem2.Id = 23;
-            this.barSubItem2.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.offer;
+            this.barSubItem2.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.offer;
             this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7)});
@@ -408,7 +408,7 @@
             // 
             this.barButtonItem6.Caption = "Teklif Fişi(Alınan)";
             this.barButtonItem6.Id = 24;
-            this.barButtonItem6.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.contract__1_;
+            this.barButtonItem6.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.contract__1_;
             this.barButtonItem6.Name = "barButtonItem6";
             this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
             // 
@@ -416,7 +416,7 @@
             // 
             this.barButtonItem7.Caption = "Teklif Fişi(Verilen)";
             this.barButtonItem7.Id = 25;
-            this.barButtonItem7.ImageOptions.Image = global::IsbaSatis.BackOffice.Properties.Resources.contract;
+            this.barButtonItem7.ImageOptions.LargeImage = global::IsbaSatis.BackOffice.Properties.Resources.contract;
             this.barButtonItem7.Name = "barButtonItem7";
             this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
             // 

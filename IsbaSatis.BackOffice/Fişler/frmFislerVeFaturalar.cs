@@ -133,17 +133,18 @@ namespace IsbaSatis.BackOffice.Fişler
             cmbYil.Text = DateTime.Now.Year.ToString();
           
             
-            if (_fisentity.FisTuru == "Depo Sayım Fişi")
-            {
-                colMiktar.FieldName = "colMiktar";
-                colMiktar.OptionsColumn.AllowEdit = false;
-                colSayimMiktari.OptionsColumn.AllowEdit = true;
-                colMevcukStok.OptionsColumn.AllowEdit = false;
-                colToplamTutar.UnboundExpression = "[BirimFiyati] * [colMiktar] - [BirimFiyati] * [colMiktar] / 100 * [IndirimOrani]";
-            }
+         
             gridcontStokHareket.DataSource = context.StokHareketleri.Local.ToBindingList();
             gridcontKasaHareket.DataSource = context.KasaHareketleri.Local.ToBindingList();
             gridcontPersonelHareket.DataSource = context.PersonelHareketleri.Local.ToBindingList();
+            if (_fisentity.FisTuru == "Depo Sayım Fişi")
+            {
+              //  colMiktar.FieldName = "colMiktar";
+                colMiktar.OptionsColumn.AllowEdit = false;
+                colSayimMiktari.OptionsColumn.AllowEdit = false;
+                colMevcukStok.OptionsColumn.AllowEdit = false;
+               // colToplamTutar.UnboundExpression = "[BirimFiyati] * [colMiktar] - [BirimFiyati] * [colMiktar] / 100 * [IndirimOrani]";
+            }
             FisAyar();
             toplamlar();
             OdenenTutarGuncelle();
@@ -527,7 +528,7 @@ namespace IsbaSatis.BackOffice.Fişler
             IndirimDAL indirimDAL = new IndirimDAL();
             stokHareket.StokId = entity.Id;
             stokHareket.DepoId = Convert.ToInt32(SettingsTool.AyarOku(SettingsTool.Ayarlar.SatisAyarlari_VarsayilanDepo));
-            stokHareket.BirimFiyati = new[] { "Alış Faturası", "Alış İade Faturası" }.Contains(txtFisturu.Text) ? entity.AlisFiyati1 : entity.SatisFiyati1;
+            stokHareket.BirimFiyati = new[] { "Alış Faturası", "Alış İade Faturası", "Sayım Fazlası Fişi", "Stok Devir Fişi", "Depo Sayım Fişi", "Sipariş Fişi(Verilen)", "Teklif Fişi(Alınan)", "İrsaliye Fişi(Alınan)", "Depo İrsaliyesi" }.Contains(txtFisturu.Text) ? entity.AlisFiyati1 : entity.SatisFiyati1;
             stokHareket.AlisFiyati2 = entity.AlisFiyati2;
             stokHareket.AlisFiyati3 = entity.AlisFiyati3;
             stokHareket.AlisFiyati = entity.AlisFiyati1;
@@ -539,9 +540,10 @@ namespace IsbaSatis.BackOffice.Fişler
             stokHareket.Kdv = entity.SatisKdv;
             return stokHareket;
         }
-        frmStokSec frm = new frmStokSec();
+        frmStokSec frm; 
         private void btnUrunBul_Click(object sender, EventArgs e)
         {
+            frm= new frmStokSec();
             frm.ShowDialog();
             if (frm.secildi)
             {
@@ -580,6 +582,7 @@ namespace IsbaSatis.BackOffice.Fişler
                 //decimal mevcukStok = ((context.StokHareketleri.Where(c => c.StokId == entity.Id && c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Giriş").Sum(c => c.Miktar ?? 0)) - (context.StokHareketleri.Where(c => c.StokId == entity.Id && c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Çıkış").Sum(c => c.Miktar ?? 0)));
                 if (entity != null)
                 {
+                    frm= new frmStokSec();
                     stokHareketDAL.AddOrUpdate(context, StokSec(entity, frm.bakiye));
                     toplamlar();
                 }
@@ -741,7 +744,7 @@ namespace IsbaSatis.BackOffice.Fişler
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-
+          //  colMiktar.FieldName = "Miktar";
             if (toggleSwitch1.IsOn == true && txtFisturu.Text == "Cari Devir Fişi")
             {
                 fisAyarlari.KasaHareketi = "Kasa Çıkış";

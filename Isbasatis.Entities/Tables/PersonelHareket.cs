@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Isbasatis.Entities.Data_Access
+namespace Isbasatis.Entities.Tables
 {
     public class PersonelHareket:IEntity
     {

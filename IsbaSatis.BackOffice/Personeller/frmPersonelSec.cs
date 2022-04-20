@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using Isbasatis.Entities.Data_Access;
 using Isbasatis.Entities.Context;
 using DevExpress.Utils.Extensions;
+using Isbasatis.Entities.Tables;
 
 namespace IsbaSatis.BackOffice.Personeller
 {
@@ -19,7 +20,7 @@ namespace IsbaSatis.BackOffice.Personeller
         PersonelDAL personelDAL = new PersonelDAL();
         IsbaSatisContext context = new IsbaSatisContext();
         public bool secildi;
-        public List<Isbasatis.Entities.Data_Access.PersonelHareket> secilen = new List<Isbasatis.Entities.Data_Access.PersonelHareket>();
+        public List<PersonelHareket> secilen = new List<PersonelHareket>();
         private DateTime _donem;
         public frmPersonelSec(DateTime donemi,bool coklusecim = false)
         {
