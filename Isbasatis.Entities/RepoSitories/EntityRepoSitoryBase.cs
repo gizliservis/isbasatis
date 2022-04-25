@@ -21,6 +21,7 @@ namespace Isbasatis.Entities.RepoSitories
     {
         private bool disposedValue;
 
+       
         public List<TEntity> GetAll(TContext context, Expression<Func<TEntity, bool>> filter = null)
         {
             return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList();
@@ -79,6 +80,11 @@ namespace Isbasatis.Entities.RepoSitories
             // Bu kodu değiştirmeyin. Temizleme kodunu 'Dispose(bool disposing)' metodunun içine yerleştirin.
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
+        }
+
+        public IEnumerable<TEntity> GetList(TContext context, Expression<Func<TEntity, bool>> filter, params Expression<Func<TEntity, object>>[] includes)
+        {
+            return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList();
         }
     }
 }

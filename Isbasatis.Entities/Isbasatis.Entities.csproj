@@ -106,7 +106,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\IsbaSatisContext.cs" />
-    <Compile Include="Context\IsbaSqlLiteContext.cs" />
     <Compile Include="Data Access\BankaDAL.cs" />
     <Compile Include="Data Access\BankaHareketDAL.cs" />
     <Compile Include="Data Access\CariDAL.cs" />

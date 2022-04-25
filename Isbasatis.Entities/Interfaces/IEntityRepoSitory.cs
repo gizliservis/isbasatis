@@ -16,7 +16,9 @@ namespace Isbasatis.Entities.Interfaces
         where TContext:DbContext,new()
         where TEntity:class,IEntity,new()
     {
-         bool AddOrUpdate(TContext context, TEntity entity);
+        IEnumerable<TEntity> GetList(TContext context,Expression<Func<TEntity, bool>> filter,
+          params Expression<Func<TEntity, object>>[] includes);
+        bool AddOrUpdate(TContext context, TEntity entity);
         void Delete(TContext context, Expression<Func<TEntity, bool>> filter);
         void Save(TContext context); 
       
