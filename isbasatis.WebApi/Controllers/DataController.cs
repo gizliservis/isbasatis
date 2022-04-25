@@ -50,8 +50,13 @@ namespace isbasatis.WebApi.Controllers
                     db.SaveChanges();
                     
                 }
-        
-
+        }
+        public void StokSil(Stok stok)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["IsbaSatisContext"].ConnectionString);
+            IsbaSatisContext context = new IsbaSatisContext(con.ConnectionString);
+            StokDAL stokDal = new StokDAL();
+            StokDAL.Delete(context,stok,c);
         }
 
     }
