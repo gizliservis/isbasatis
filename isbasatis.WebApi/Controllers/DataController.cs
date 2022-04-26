@@ -17,7 +17,7 @@ namespace isbasatis.WebApi.Controllers
     {
 
         [HttpGet]
-
+        [Route("api/Data/StokListele")]
         public object StokListele()
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["IsbaSatisContext"].ConnectionString);
@@ -28,6 +28,7 @@ namespace isbasatis.WebApi.Controllers
 
         }
         [HttpPost]
+        [Route("api/Data/StokEkle")]
         public void StokEkle(Stok stk)
         {
             
@@ -51,12 +52,25 @@ namespace isbasatis.WebApi.Controllers
                     
                 }
         }
+        [HttpPost]
+        [Route("api/Data/StokSil")]
         public void StokSil(Stok stok)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["IsbaSatisContext"].ConnectionString);
             IsbaSatisContext context = new IsbaSatisContext(con.ConnectionString);
             StokDAL stokDal = new StokDAL();
-            StokDAL.Delete(context,stok,c);
+            stokDal.Delete(context, c => c.Id == stok.Id);
+            stokDal.Save(context);
+        }
+        [HttpPost]
+        [Route("api/Data/StokUpdate")]
+        public void StokUpdate(Stok stok)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["IsbaSatisContext"].ConnectionString);
+            IsbaSatisContext context = new IsbaSatisContext(con.ConnectionString);
+            StokDAL stokDal = new StokDAL();
+            stokDal.AddOrUpdate(context, stok);
+            stokDal.Save(context);
         }
 
     }
