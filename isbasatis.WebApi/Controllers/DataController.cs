@@ -27,6 +27,18 @@ namespace isbasatis.WebApi.Controllers
             return stk;
 
         }
+
+        //[HttpGet]
+        //[Route("api/Data/StokListeleFilter")]
+        //public object StokListeleFilter(Stok stok)
+        //{
+        //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["IsbaSatisContext"].ConnectionString);
+        //    IsbaSatisContext context = new IsbaSatisContext(con.ConnectionString);
+        //    StokDAL stokDAL = new StokDAL();
+        //    var stk = stokDAL.StokListeleFilter(context,stok);
+        //    return stk;
+
+        //}
         [HttpPost]
         [Route("api/Data/StokEkle")]
         public void StokEkle(Stok stk)

@@ -56,6 +56,48 @@ namespace Isbasatis.Entities.Data_Access
 
 
         }
+        public object StokListeleFilter(IsbaSatisContext context,Stok stok)
+        {
+            var tablo = context.Stoklar.Where(c=>c.StokKodu==stok.StokKodu && c.StokAdi==stok.StokAdi && c.Barkod==stok.Barkod).GroupJoin(context.StokHareketleri, c => c.Id, c => c.StokId, (Stoklar, StokHareketleri) => new
+            {
+
+                Stoklar.Id,
+                Stoklar.Durumu,
+                Stoklar.StokKodu,
+                Stoklar.StokAdi,
+                Stoklar.Barkod,
+                Stoklar.BarkodTuru,
+                Stoklar.Birimi,
+                Stoklar.StokGrubu,
+                Stoklar.StokAltGrubu,
+                Stoklar.Marka,
+                Stoklar.Modeli,
+                Stoklar.OzelKod1,
+                Stoklar.OzelKod2,
+                Stoklar.OzelKod3,
+                Stoklar.OzelKod4,
+                Stoklar.GarantiSuresi,
+                Stoklar.UreticiKodu,
+                Stoklar.AlisKdv,
+                Stoklar.SatisKdv,
+                Stoklar.AlisFiyati1,
+                Stoklar.AlisFiyati2,
+                Stoklar.AlisFiyati3,
+                Stoklar.SatisFiyati1,
+                Stoklar.SatisFiyati2,
+                Stoklar.SatisFiyati3,
+                Stoklar.MinStokMiktari,
+                Stoklar.MaxStokMiktari,
+                Stoklar.Aciklama,
+                StokGiris = StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Giriş").Sum(c => c.Miktar) ?? 0,
+                StokCikis = StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Çıkış").Sum(c => c.Miktar) ?? 0,
+                MevcutStokBakiye = ((StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Giriş").Sum(c => c.Miktar) ?? 0) - (StokHareketleri.Where(c => c.Siparis == false && c.Irsaliye == false && c.Teklif == false && c.Hareket == "Stok Çıkış").Sum(c => c.Miktar) ?? 0))
+
+            }).ToList();
+            return tablo;
+
+
+        }
 
 
 
