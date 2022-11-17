@@ -26,6 +26,18 @@ namespace isbasatis.WebApi.Controllers
             var stk = stokDAL.StokListele(context);
             return stk;
 
+
+        }
+        [HttpGet]
+        [Route("api/Data/CariListele")]
+        public object CariListele()
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["IsbaSatisContext"].ConnectionString);
+            IsbaSatisContext context = new IsbaSatisContext(con.ConnectionString);
+            CariDAL cariDal = new CariDAL();
+            var cari = cariDal.CariListele(context);
+            return cari;
+
         }
 
         //[HttpGet]
@@ -65,6 +77,31 @@ namespace isbasatis.WebApi.Controllers
                 }
         }
         [HttpPost]
+        [Route("api/Data/CariEkle")]
+        public void CariEkle(Cari stk)
+        {
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["IsbaSatisContext"].ConnectionString);
+            using (var db = new IsbaSatisContext(con.ConnectionString))
+            {
+                db.Cariler.Add(new Cari
+                {
+                    
+                    CariKodu = stk.CariKodu,
+                    CariAdi = stk.CariAdi,
+                    FaturaUnvani = stk.FaturaUnvani,
+                    CariGrubu = stk.CariGrubu,
+                    CariTuru = stk.CariTuru,
+                    Il = stk.Il,
+                    Ilce = stk.Ilce,
+                    Adres = stk.Adres
+
+                });
+                db.SaveChanges();
+
+            }
+        }
+        [HttpPost]
         [Route("api/Data/StokSil")]
         public void StokSil(Stok stok)
         {
@@ -73,6 +110,16 @@ namespace isbasatis.WebApi.Controllers
             StokDAL stokDal = new StokDAL();
             stokDal.Delete(context, c => c.Id == stok.Id);
             stokDal.Save(context);
+        }
+        [HttpPost]
+        [Route("api/Data/CariSil")]
+        public void CariSil(Cari cari)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["IsbaSatisContext"].ConnectionString);
+            IsbaSatisContext context = new IsbaSatisContext(con.ConnectionString);
+            CariDAL cariDal = new CariDAL();
+            cariDal.Delete(context, c => c.Id == cari.Id);
+            cariDal.Save(context);
         }
         [HttpPost]
         [Route("api/Data/StokUpdate")]
