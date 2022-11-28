@@ -17,7 +17,7 @@ namespace isbasatis.WebApi
             // Uygulama başlangıcında çalışan kod
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);            
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }
 }

@@ -12,6 +12,7 @@ namespace isbasatis.WebApi
             // Web API yapılandırması ve hizmetler
 
             // Web API yolları
+            config.EnableCors();
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

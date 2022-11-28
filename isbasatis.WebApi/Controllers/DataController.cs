@@ -9,10 +9,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace isbasatis.WebApi.Controllers
 {
-
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")] // tune to your needs
     public class DataController : ApiController
     {
 
@@ -24,6 +25,33 @@ namespace isbasatis.WebApi.Controllers
             IsbaSatisContext context = new IsbaSatisContext(con.ConnectionString);
             StokDAL stokDAL = new StokDAL();
             var stk = stokDAL.StokListele(context);
+            return stk;
+
+            //try
+            //{
+            //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["IsbaSatisContext"].ConnectionString);
+            //    IsbaSatisContext context = new IsbaSatisContext(con.ConnectionString);
+            //    StokDAL stokDAL = new StokDAL();
+            //    var stk = stokDAL.StokListele(context);
+            //    return stk;
+                
+         
+
+            //}
+            //catch (Exception e)
+            //{
+            //    return e.Message;
+            //}
+    
+
+        }
+        [HttpGet]
+        [Route("api/Data/StokListeleGrup")]
+        public object StokListeleGrup(string grup)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["IsbaSatisContext"].ConnectionString);
+            IsbaSatisContext context = new IsbaSatisContext(con.ConnectionString);
+            var stk = context.Stoklar.Where(c=>c.StokKodu==grup).Select(c=>c.StokAdi).ToList();
             return stk;
 
 
